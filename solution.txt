@@ -1,0 +1,72 @@
+ 
+
+QUESTION-1
+ANS - We can achieve concurrency by using asynchronous functions.  Asynchronous function can be suspended and resumed later, although only one piece of the program executes at a time.
+It is different from Parallel Computing where multiple piece of code runs simultaneously.
+
+Asynchronous functions are used with "async" keyword example is...
+  func promotion(marks: Int) async-> String {
+   let marks =  //.... Some computation 
+   if marks > 90{
+   return "Promoted"
+   } else{
+    return "Not promoted"
+    }
+ 
+QUESTION -2 
+ANS - Optional binding is used to check whether an optional has non-nil value and if so , assign 
+      That value to a variable . In this way we are binding a value to a variable. 
+      Example of optional binding -> var x : String?
+                                     if let y = x {    // here if x has non nil value then 
+                                     print(y)              we will assign it to y.
+                                     }
+
+      Optional Chaining -> Optional chaining allows us to call methods, properties and subscript on
+      an optional that might be nil. If any of the chained value is nil ,the return value will be 
+      Nil. Example of Optional chaining->   class house {
+                                            var rooms: Rooms?
+                                           }
+
+                                           Class Rooms{
+                                           var roomcount = 4
+                                           }
+
+                                          let x = house()
+                                          Let noOfRooms = x.rooms?.roomcount.
+
+
+QUESTION-6
+ANS-3  Same as Question 1 (repeated)
+
+QUESTION -9
+ANS - Protocols are used to define a “blueprint of methods, properties, and other requirements that       suit a particular task or piece of functionality.” Protocols provide a layout to developers to
+ include some necessary functionality. Protocols can be adopted by class, structure and enumerations.
+ Protocols only declare methods and properties and not define these properties.
+ 
+ Syntax -> protocol ProtocolName{. // it is defined by protocol keyword
+          //.....
+       }
+
+In simple words protocol allows us to know how structs, classes and enum will work. What methods or 
+Properties they should have .
+
+QUESTION - 12
+ANS - In order to prevent this retain cycle, we need to declare at least one of the variable as weak or unowned. We can break the retain cycle with adding a weak keyword .In order to deallocate an object from memory, its ARC value must be zero. However, when some two object refers each other via strong references, they prevent the compiler from deallocating either object because their ARC value would always be 1. That is called a retain cycle. So to avoid retain cycle arc value must be 1 and 
+ With strong reference that would not be possible.
+
+QUESTION-13
+ANS-  Type casting in Swift is implemented with the is and as operators. (is) is used to check the   type of a value whereas (as) is used to cast a value to a different type. The (is) operator is used to check Certain value type whereas (as!) is used to force-fully downcast a type. It should be performed Only when you are sure that downcast will succeed else it will result in run-time error.
+The (as?) is used to conditionally downcast a type such and this form of the operator will always return an optional value, and the value will be nil if the downcast was not possible
+
+
+ QUESTION-14
+ ANS - The key difference between a strong and a weak or unowned reference is that a strong reference prevents the class instance it points to from being deallocated. ARC keeps track of the number of strong references to a class instance. Weak and unowned references also point to class instances. The difference is that ARC doesn't take these references into account to determine when it is safe to deallocate a class instance.
+In other words, weak and unowned references cannot prevent a class instance from being deallocated.
+
+
+
+
+
+
+
+
