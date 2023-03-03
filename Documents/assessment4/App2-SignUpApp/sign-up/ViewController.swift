@@ -9,8 +9,9 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    @IBOutlet weak var username: UITextField!
-    @IBOutlet weak var password: UITextField!
+    // MARK: IBOutlet
+    @IBOutlet weak var UserName: UITextField!
+    @IBOutlet weak var PassWord: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,15 +29,17 @@ class ViewController: UIViewController {
         return emailPredicate.evaluate(with: email)
     }
     
+// MARK: IBAction
+ 
+    @IBAction func LoginBtn(_ sender: Any) {
 
-    
-    @IBAction func loginbutton(_ sender: Any) {
-//       if username.text?.isEmpty == true {
-//           return
-//       }
+        /*
+         here we have made a secondViewController named vc using guard let .
+         if such viewController cannot be created then return in this case.
+         */
         
         guard let vc = self.storyboard?.instantiateViewController(withIdentifier: "newViewController") as? newViewController else {return}
-        vc.newstring = username.text
+        vc.newstring = UserName.text
         navigationController?.pushViewController(vc, animated: true)
     }
 }

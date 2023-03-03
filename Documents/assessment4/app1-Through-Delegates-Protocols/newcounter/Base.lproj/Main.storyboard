@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="hAU-Gw-hme">
-    <device id="retina5_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -13,20 +12,20 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="newcounter" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="5ff74e1445f78b849ce5d7f72068a632" translatesAutoresizingMaskIntoConstraints="NO" id="1UO-gK-UYs">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VHj-oo-NHw">
-                                <rect key="frame" x="20" y="86" width="374" height="70"/>
+                                <rect key="frame" x="20" y="86" width="560" height="70"/>
                                 <fontDescription key="fontDescription" name="Optima-ExtraBlack" family="Optima" pointSize="57"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2ix-g3-efC">
-                                <rect key="frame" x="95" y="581.66666666666663" width="224" height="85.333333333333371"/>
+                                <rect key="frame" x="188" y="445.66666666666669" width="224" height="85.333333333333314"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="224" id="FQB-du-0kH"/>
                                 </constraints>
@@ -49,7 +48,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iJq-BN-qOB">
-                                <rect key="frame" x="36.000000000000007" y="186" width="103.66666666666669" height="63"/>
+                                <rect key="frame" x="36" y="186" width="150" height="63"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain">
                                     <backgroundConfiguration key="background">
@@ -69,7 +68,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zJH-JZ-cZx">
-                                <rect key="frame" x="36.000000000000007" y="259" width="103.66666666666669" height="63"/>
+                                <rect key="frame" x="36" y="259" width="150" height="63"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="-">
                                     <backgroundConfiguration key="background">
@@ -106,8 +105,8 @@
                     </view>
                     <navigationItem key="navigationItem" id="2yP-em-YTc"/>
                     <connections>
-                        <outlet property="minusbutton" destination="zJH-JZ-cZx" id="Gpt-J1-Q6o"/>
-                        <outlet property="plusbutton" destination="iJq-BN-qOB" id="fH7-1O-uTs"/>
+                        <outlet property="minusBtn" destination="zJH-JZ-cZx" id="Gpt-J1-Q6o"/>
+                        <outlet property="plusBtn" destination="iJq-BN-qOB" id="fH7-1O-uTs"/>
                         <outlet property="result" destination="VHj-oo-NHw" id="i0F-cE-9nO"/>
                         <outlet property="view" destination="2ix-g3-efC" id="bqN-vK-dGe"/>
                     </connections>
@@ -121,16 +120,16 @@
             <objects>
                 <viewController storyboardIdentifier="SecondViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Hzm-0r-ehw" customClass="SecondViewController" customModule="newcounter" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8cp-rQ-0iT">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="20" translatesAutoresizingMaskIntoConstraints="NO" id="U65-UO-HjJ">
-                                <rect key="frame" x="30" y="30" width="354" height="34"/>
+                                <rect key="frame" x="30" y="30" width="540" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" semanticContentAttribute="forceLeftToRight" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tvr-AO-oid">
-                                <rect key="frame" x="121" y="137" width="172" height="35"/>
+                                <rect key="frame" x="121" y="137" width="358" height="35"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Submit" cornerStyle="capsule" titleAlignment="center">
                                     <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

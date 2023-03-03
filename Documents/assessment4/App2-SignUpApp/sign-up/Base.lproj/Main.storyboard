@@ -104,8 +104,8 @@
                     </view>
                     <navigationItem key="navigationItem" id="N39-O8-teZ"/>
                     <connections>
-                        <outlet property="password" destination="SxA-2e-bEB" id="aMH-22-14V"/>
-                        <outlet property="username" destination="IH0-7Z-jYc" id="NjV-Lv-obi"/>
+                        <outlet property="PassWord" destination="SxA-2e-bEB" id="aMH-22-14V"/>
+                        <outlet property="UserName" destination="IH0-7Z-jYc" id="NjV-Lv-obi"/>
                         <outlet property="view" destination="xM5-uA-MLH" id="82a-RZ-Q22"/>
                     </connections>
                 </viewController>

@@ -1,32 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="hAU-Gw-hme">
-    <device id="retina5_5" orientation="portrait" appearance="light"/>
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Counter View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="newcounter" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="CounterViewController" customModule="newcounter" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="5ff74e1445f78b849ce5d7f72068a632" translatesAutoresizingMaskIntoConstraints="NO" id="1UO-gK-UYs">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                                <rect key="frame" x="0.0" y="0.0" width="393" height="818"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VHj-oo-NHw">
-                                <rect key="frame" x="20" y="86" width="374" height="70"/>
+                                <rect key="frame" x="20" y="145" width="353" height="70"/>
                                 <fontDescription key="fontDescription" name="Optima-ExtraBlack" family="Optima" pointSize="57"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2ix-g3-efC">
-                                <rect key="frame" x="95" y="581.66666666666663" width="224" height="85.333333333333371"/>
+                                <rect key="frame" x="84.666666666666686" y="663.66666666666663" width="224" height="85.333333333333371"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="224" id="FQB-du-0kH"/>
                                 </constraints>
@@ -49,7 +50,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iJq-BN-qOB">
-                                <rect key="frame" x="36.000000000000007" y="186" width="103.66666666666669" height="63"/>
+                                <rect key="frame" x="35.999999999999993" y="245" width="98.333333333333314" height="63"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain">
                                     <backgroundConfiguration key="background">
@@ -65,11 +66,11 @@
                                     <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </buttonConfiguration>
                                 <connections>
-                                    <action selector="plusbuttontap:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Tsa-iX-62b"/>
+                                    <action selector="plusBtnTap:" destination="BYZ-38-t0r" eventType="touchUpInside" id="2yE-xM-Pth"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zJH-JZ-cZx">
-                                <rect key="frame" x="36.000000000000007" y="259" width="103.66666666666669" height="63"/>
+                                <rect key="frame" x="35.999999999999993" y="318" width="98.333333333333314" height="63"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="-">
                                     <backgroundConfiguration key="background">
@@ -79,7 +80,7 @@
                                     <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </buttonConfiguration>
                                 <connections>
-                                    <action selector="minusbuttontap:" destination="BYZ-38-t0r" eventType="touchUpInside" id="g4E-lC-Z5G"/>
+                                    <action selector="minusBtnTap:" destination="BYZ-38-t0r" eventType="touchUpInside" id="LSe-vZ-Su5"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -106,8 +107,8 @@
                     </view>
                     <navigationItem key="navigationItem" id="2yP-em-YTc"/>
                     <connections>
-                        <outlet property="minusbutton" destination="zJH-JZ-cZx" id="Gpt-J1-Q6o"/>
-                        <outlet property="plusbutton" destination="iJq-BN-qOB" id="fH7-1O-uTs"/>
+                        <outlet property="minusBtn" destination="zJH-JZ-cZx" id="Gpt-J1-Q6o"/>
+                        <outlet property="plusBtn" destination="iJq-BN-qOB" id="fH7-1O-uTs"/>
                         <outlet property="result" destination="VHj-oo-NHw" id="i0F-cE-9nO"/>
                         <outlet property="view" destination="2ix-g3-efC" id="bqN-vK-dGe"/>
                     </connections>
@@ -116,28 +117,28 @@
             </objects>
             <point key="canvasLocation" x="1904.6153846153845" y="-34.834123222748815"/>
         </scene>
-        <!--Second View Controller-->
+        <!--Set Limit View Controller-->
         <scene sceneID="RR5-k1-zIN">
             <objects>
-                <viewController storyboardIdentifier="SecondViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Hzm-0r-ehw" customClass="SecondViewController" customModule="newcounter" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SetLimitViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Hzm-0r-ehw" customClass="SetLimitViewController" customModule="newcounter" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8cp-rQ-0iT">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="20" translatesAutoresizingMaskIntoConstraints="NO" id="U65-UO-HjJ">
-                                <rect key="frame" x="30" y="30" width="354" height="34"/>
+                                <rect key="frame" x="30" y="89" width="333" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" semanticContentAttribute="forceLeftToRight" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tvr-AO-oid">
-                                <rect key="frame" x="121" y="137" width="172" height="35"/>
+                                <rect key="frame" x="121" y="196" width="151" height="35"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Submit" cornerStyle="capsule" titleAlignment="center">
                                     <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <color key="baseBackgroundColor" red="0.92029500750000004" green="0.077289646360000006" blue="0.1676141266" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </buttonConfiguration>
                                 <connections>
-                                    <action selector="submitButton:" destination="Hzm-0r-ehw" eventType="touchUpInside" id="cAl-0u-M3p"/>
+                                    <action selector="submitBtn:" destination="Hzm-0r-ehw" eventType="touchUpInside" id="xHA-ru-d4v"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -153,7 +154,7 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="userlimit" destination="U65-UO-HjJ" id="Xh6-fG-cJz"/>
+                        <outlet property="userLimit" destination="U65-UO-HjJ" id="Xh6-fG-cJz"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ubk-Kn-FA0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -166,7 +167,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="hAU-Gw-hme" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="j6z-p3-g4s">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
