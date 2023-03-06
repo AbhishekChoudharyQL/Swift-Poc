@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="mDd-8Q-ItA">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Poppins-Bold.ttf">
+            <string>Poppins-Bold</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--Clock-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="CountDown" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="623"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="technology-geometric-circle-digital-clock-concept-vector-41471919" translatesAutoresizingMaskIntoConstraints="NO" id="hvW-sj-EuK">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="623"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:60" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EHI-FQ-gb6">
+                                <rect key="frame" x="87.5" y="200" width="200" height="70"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="70" id="Unk-bj-1SM"/>
+                                    <constraint firstAttribute="width" constant="200" id="VFF-sg-37w"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Poppins-Bold" family="Poppins" pointSize="62"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IM8-Hl-qPA">
+                                <rect key="frame" x="30" y="464" width="80" height="80"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="80" id="GZ4-Aa-DIC"/>
+                                    <constraint firstAttribute="width" secondItem="IM8-Hl-qPA" secondAttribute="height" multiplier="1:1" id="WU5-y8-vGx"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="START" cornerStyle="capsule">
+                                    <fontDescription key="titleFontDescription" type="system" pointSize="0.0"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="StartBtn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Jm8-G9-bfb"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9BG-Qg-vze">
+                                <rect key="frame" x="265" y="464" width="80" height="80"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="80" id="13J-uv-UZ3"/>
+                                    <constraint firstAttribute="width" secondItem="9BG-Qg-vze" secondAttribute="height" multiplier="1:1" id="Qih-pc-Cwn"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="PAUSE" cornerStyle="capsule"/>
+                                <connections>
+                                    <action selector="PauseBtn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="WBi-HO-YGT"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="EHI-FQ-gb6" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="4dz-MK-qrU"/>
+                            <constraint firstItem="hvW-sj-EuK" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="4fc-DL-9aR"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="IM8-Hl-qPA" secondAttribute="bottom" constant="30" id="5HO-Xi-mZC"/>
+                            <constraint firstItem="hvW-sj-EuK" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="Fq6-UU-wsU"/>
+                            <constraint firstAttribute="bottom" secondItem="hvW-sj-EuK" secondAttribute="bottom" id="Mh3-41-H3w"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="9BG-Qg-vze" secondAttribute="bottom" constant="30" id="O09-wA-I3y"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="9BG-Qg-vze" secondAttribute="trailing" constant="30" id="YxE-gb-UUD"/>
+                            <constraint firstItem="EHI-FQ-gb6" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="200" id="ZpN-Bb-ZDu"/>
+                            <constraint firstItem="IM8-Hl-qPA" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="30" id="dHi-hw-5Qg"/>
+                            <constraint firstItem="hvW-sj-EuK" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="hgo-u5-bZd"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" tag="4" title="Clock" id="8Qe-xx-6qt">
+                        <imageReference key="image" image="clock.fill" catalog="system" symbolScale="large"/>
+                    </tabBarItem>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
+                    <connections>
+                        <outlet property="TimerCount" destination="EHI-FQ-gb6" id="d1R-gN-BhO"/>
+                        <outlet property="pauseButton" destination="9BG-Qg-vze" id="ODl-bt-Dzp"/>
+                        <outlet property="startButton" destination="IM8-Hl-qPA" id="U3Y-WJ-DU9"/>
+                        <outlet property="startButtonWidthConstraint" destination="GZ4-Aa-DIC" id="TD1-dB-hmr"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="245.59999999999999" y="-2188.1559220389809"/>
+        </scene>
+        <!--Next-->
+        <scene sceneID="6Vx-qt-uJH">
+            <objects>
+                <viewController id="rCf-dB-9mK" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="6uN-rh-zYg">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="dFS-zw-wxJ"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Next" image="arrowshape.forward.fill" catalog="system" id="ml5-YK-iqI"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yL2-Mj-zxI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1026" y="-2294"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="f29-kf-ZOf">
+            <objects>
+                <tabBarController extendedLayoutIncludesOpaqueBars="YES" keyboardType="off" id="mDd-8Q-ItA" sceneMemberID="viewController">
+                    <value key="contentSizeForViewInPopover" type="size" width="1" height="0.0"/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="jJi-k7-yRz">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" systemColor="systemIndigoColor"/>
+                        <color key="barTintColor" systemColor="systemIndigoColor"/>
+                        <color key="selectedImageTintColor" systemColor="systemOrangeColor"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="c8l-kK-0US"/>
+                        <segue destination="rCf-dB-9mK" kind="relationship" relationship="viewControllers" id="2tZ-AL-P7T"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="PgX-8H-Uda" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="247" y="-2976"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="arrowshape.forward.fill" catalog="system" width="128" height="104"/>
+        <image name="clock.fill" catalog="system" width="128" height="123"/>
+        <image name="technology-geometric-circle-digital-clock-concept-vector-41471919" width="391" height="250"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemIndigoColor">
+            <color red="0.34509803921568627" green="0.33725490196078434" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemOrangeColor">
+            <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
