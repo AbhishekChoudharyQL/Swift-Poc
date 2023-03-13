@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="OIz-9J-QgV">
+    <device id="ipad12_9rounded" orientation="portrait" layout="fullscreen" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Map view configurations" minToolsVersion="14.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--MAPKIT-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController title="MAPKIT" id="BYZ-38-t0r" customClass="ViewController" customModule="searchLocation" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="1366"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XHQ-Rh-jJe">
+                                <rect key="frame" x="0.0" y="75" width="1024" height="252"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="252" id="tk4-AF-MH2"/>
+                                </constraints>
+                                <standardMapConfiguration key="preferredConfiguration"/>
+                            </mapView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="80" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="ShS-6d-BMn">
+                                <rect key="frame" x="0.0" y="327" width="1024" height="1019"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" rowHeight="80" id="fym-vh-8eN" customClass="myTableViewCell" customModule="searchLocation" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="50" width="1024" height="80"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="fym-vh-8eN" id="MDe-36-m2D">
+                                            <rect key="frame" x="0.0" y="0.0" width="1024" height="80"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="XHQ-Rh-jJe" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="5cg-h1-CI8"/>
+                            <constraint firstItem="ShS-6d-BMn" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="Ci2-hk-nf8"/>
+                            <constraint firstItem="ShS-6d-BMn" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="Uau-RM-KeI"/>
+                            <constraint firstItem="ShS-6d-BMn" firstAttribute="top" secondItem="XHQ-Rh-jJe" secondAttribute="bottom" id="f2c-qd-XB0"/>
+                            <constraint firstItem="XHQ-Rh-jJe" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="1" id="fuT-By-yDe"/>
+                            <constraint firstItem="XHQ-Rh-jJe" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="gAU-sb-tvh"/>
+                            <constraint firstItem="ShS-6d-BMn" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="oB6-rP-8Me"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="MAPKIT " largeTitleDisplayMode="always" id="Na4-4V-UcX"/>
+                    <connections>
+                        <outlet property="mapHeightConstraint" destination="tk4-AF-MH2" id="eYs-i4-DfI"/>
+                        <outlet property="myMap" destination="XHQ-Rh-jJe" id="aAK-d7-nA6"/>
+                        <outlet property="myTable" destination="ShS-6d-BMn" id="eXu-58-YvD"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="930" y="-27.464788732394368"/>
+        </scene>
+        <!--MAPKIT-->
+        <scene sceneID="0QX-pI-Ho0">
+            <objects>
+                <navigationController title="MAPKIT" automaticallyAdjustsScrollViewInsets="NO" id="OIz-9J-QgV" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="oDE-GQ-ppY">
+                        <rect key="frame" x="0.0" y="24" width="1024" height="50"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="DCl-8o-YM2"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="MiF-6K-kOD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3.8167938931297707" y="-27.464788732394368"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
