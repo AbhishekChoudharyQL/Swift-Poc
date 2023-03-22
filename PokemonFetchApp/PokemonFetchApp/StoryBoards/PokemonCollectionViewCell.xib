@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="BubbleGum.ttf">
+            <string>BUBBLEGUM2PERSONALUSE-Regular</string>
+        </array>
+        <array key="Deloresamores.ttf">
+            <string>VtksDeloresAmores</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="PokemonCollectionViewCell" id="gTV-IL-0wX" customClass="PokemonCollectionViewCell" customModule="PokemonFetchApp" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="828" height="1018"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="828" height="1018"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="A5B-nn-DpR">
+                        <rect key="frame" x="20" y="40" width="788" height="938"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="FireBackground" translatesAutoresizingMaskIntoConstraints="NO" id="os7-ZC-LOA">
+                                <rect key="frame" x="0.0" y="0.0" width="788" height="938"/>
+                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="c4j-zb-Shp">
+                                <rect key="frame" x="20" y="545.5" width="748" height="372.5"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="clip" baselineAdjustment="alignBaselines" minimumScaleFactor="0.25" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dTW-QX-ZP8">
+                                        <rect key="frame" x="0.0" y="0.0" width="748" height="103.5"/>
+                                        <fontDescription key="fontDescription" name="BUBBLEGUM2PERSONALUSE-Regular" family="BUBBLEGUM 2 PERSONAL USE" pointSize="75"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="clip" baselineAdjustment="alignBaselines" minimumScaleFactor="0.25" adjustsLetterSpacingToFitWidth="YES" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4Vd-GW-Bgk">
+                                        <rect key="frame" x="0.0" y="113.5" width="748" height="43.5"/>
+                                        <fontDescription key="fontDescription" name="VtksDeloresAmores" family="Vtks DeloresAmores" pointSize="40"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="clip" baselineAdjustment="alignBaselines" minimumScaleFactor="0.25" adjustsLetterSpacingToFitWidth="YES" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="K90-Vg-PHj">
+                                        <rect key="frame" x="0.0" y="167" width="748" height="44"/>
+                                        <fontDescription key="fontDescription" name="VtksDeloresAmores" family="Vtks DeloresAmores" pointSize="40"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="clip" baselineAdjustment="alignBaselines" minimumScaleFactor="0.25" adjustsLetterSpacingToFitWidth="YES" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="k1I-fH-tIJ">
+                                        <rect key="frame" x="0.0" y="221" width="748" height="43.5"/>
+                                        <fontDescription key="fontDescription" name="VtksDeloresAmores" family="Vtks DeloresAmores" pointSize="40"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="K90-Vg-PHj" secondAttribute="trailing" id="0Lc-My-Zvm"/>
+                                    <constraint firstItem="K90-Vg-PHj" firstAttribute="leading" secondItem="c4j-zb-Shp" secondAttribute="leading" id="7vD-RU-x77"/>
+                                    <constraint firstAttribute="trailing" secondItem="dTW-QX-ZP8" secondAttribute="trailing" id="Rgl-gP-u8E"/>
+                                    <constraint firstItem="4Vd-GW-Bgk" firstAttribute="top" secondItem="dTW-QX-ZP8" secondAttribute="bottom" constant="10" id="U0z-h6-kyC"/>
+                                    <constraint firstItem="4Vd-GW-Bgk" firstAttribute="leading" secondItem="c4j-zb-Shp" secondAttribute="leading" id="UeN-gC-ZgN"/>
+                                    <constraint firstItem="k1I-fH-tIJ" firstAttribute="top" secondItem="K90-Vg-PHj" secondAttribute="bottom" constant="10" id="Wyq-g1-Wg9"/>
+                                    <constraint firstAttribute="trailing" secondItem="4Vd-GW-Bgk" secondAttribute="trailing" id="Ykf-vQ-pPg"/>
+                                    <constraint firstAttribute="trailing" secondItem="k1I-fH-tIJ" secondAttribute="trailing" id="ZXt-Wu-IDa"/>
+                                    <constraint firstItem="dTW-QX-ZP8" firstAttribute="leading" secondItem="c4j-zb-Shp" secondAttribute="leading" id="Zjd-d0-iPl"/>
+                                    <constraint firstItem="dTW-QX-ZP8" firstAttribute="top" secondItem="c4j-zb-Shp" secondAttribute="top" id="hTP-zn-hT3"/>
+                                    <constraint firstItem="K90-Vg-PHj" firstAttribute="top" secondItem="4Vd-GW-Bgk" secondAttribute="bottom" constant="10" id="i1w-KD-a5O"/>
+                                    <constraint firstItem="k1I-fH-tIJ" firstAttribute="leading" secondItem="c4j-zb-Shp" secondAttribute="leading" id="rcO-IU-RHN"/>
+                                </constraints>
+                            </view>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="8tY-K9-z7e">
+                                <rect key="frame" x="0.0" y="0.0" width="788" height="525.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="8tY-K9-z7e" secondAttribute="height" multiplier="1.5:1" id="jUZ-Ni-xyA"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="c4j-zb-Shp" firstAttribute="top" secondItem="8tY-K9-z7e" secondAttribute="bottom" constant="20" id="48y-j3-TgT"/>
+                            <constraint firstItem="os7-ZC-LOA" firstAttribute="leading" secondItem="A5B-nn-DpR" secondAttribute="leading" id="4ER-ei-ra9"/>
+                            <constraint firstItem="c4j-zb-Shp" firstAttribute="leading" secondItem="A5B-nn-DpR" secondAttribute="leading" constant="20" symbolic="YES" id="9eq-yd-q0k"/>
+                            <constraint firstItem="os7-ZC-LOA" firstAttribute="top" secondItem="A5B-nn-DpR" secondAttribute="top" id="DMR-Yz-9el"/>
+                            <constraint firstAttribute="trailing" secondItem="8tY-K9-z7e" secondAttribute="trailing" id="NbE-wL-Afp"/>
+                            <constraint firstAttribute="bottom" secondItem="c4j-zb-Shp" secondAttribute="bottom" constant="20" symbolic="YES" id="NcV-Sf-jEt"/>
+                            <constraint firstAttribute="trailing" secondItem="os7-ZC-LOA" secondAttribute="trailing" id="O4u-6g-ML5"/>
+                            <constraint firstAttribute="bottom" secondItem="os7-ZC-LOA" secondAttribute="bottom" id="P4H-be-Q62"/>
+                            <constraint firstAttribute="trailing" secondItem="c4j-zb-Shp" secondAttribute="trailing" constant="20" symbolic="YES" id="Ti9-Ym-iTL"/>
+                            <constraint firstItem="8tY-K9-z7e" firstAttribute="top" secondItem="A5B-nn-DpR" secondAttribute="top" id="eDb-EV-aOs"/>
+                            <constraint firstItem="8tY-K9-z7e" firstAttribute="leading" secondItem="A5B-nn-DpR" secondAttribute="leading" id="fNn-th-hQ0"/>
+                        </constraints>
+                    </view>
+                </subviews>
+            </view>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="A5B-nn-DpR" firstAttribute="leading" secondItem="ZTg-uK-7eu" secondAttribute="leading" constant="20" id="2xa-Ja-uWw"/>
+                <constraint firstItem="ZTg-uK-7eu" firstAttribute="trailing" secondItem="A5B-nn-DpR" secondAttribute="trailing" constant="20" id="6hd-bA-39h"/>
+                <constraint firstItem="ZTg-uK-7eu" firstAttribute="top" secondItem="A5B-nn-DpR" secondAttribute="top" constant="-40" id="C0u-f9-w2o"/>
+                <constraint firstItem="A5B-nn-DpR" firstAttribute="bottom" secondItem="ZTg-uK-7eu" secondAttribute="bottom" constant="-40" id="kBa-zt-PNS"/>
+            </constraints>
+            <size key="customSize" width="765" height="145"/>
+            <connections>
+                <outlet property="cardBackgroundImageView" destination="os7-ZC-LOA" id="nF7-wg-VjM"/>
+                <outlet property="mainContentView" destination="A5B-nn-DpR" id="dx0-0P-ZAe"/>
+                <outlet property="pokemonHeightLabel" destination="K90-Vg-PHj" id="bp7-d5-Vpc"/>
+                <outlet property="pokemonIDLabel" destination="4Vd-GW-Bgk" id="G5v-kJ-IpZ"/>
+                <outlet property="pokemonImageView" destination="8tY-K9-z7e" id="mMo-rE-zBY"/>
+                <outlet property="pokemonNameLabel" destination="dTW-QX-ZP8" id="RdD-N1-eJW"/>
+                <outlet property="pokemonWeightLabel" destination="k1I-fH-tIJ" id="AyL-NW-QwI"/>
+            </connections>
+            <point key="canvasLocation" x="-972.79999999999995" y="-456.97151424287858"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="FireBackground" width="2574" height="3861"/>
+    </resources>
+</document>
