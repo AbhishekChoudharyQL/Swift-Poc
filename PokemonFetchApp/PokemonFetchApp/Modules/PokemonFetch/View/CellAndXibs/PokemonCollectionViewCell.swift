@@ -21,14 +21,6 @@ class PokemonCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var cardBackgroundImageView:UIImageView!
     
     //MARK: - Properties
-//    var pokemonData: Pokemon? {
-//        didSet {
-//            if let pokemonData = pokemonData {
-//                setup(using: pokemonData)
-//            }
-//        }
-//    }
-    
     var pokemonData: PokemonData? {
         didSet {
             if let pokemonData = pokemonData {

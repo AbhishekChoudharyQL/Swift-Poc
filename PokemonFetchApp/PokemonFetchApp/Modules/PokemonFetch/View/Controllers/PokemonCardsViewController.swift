@@ -40,7 +40,10 @@ class PokemonCardsViewController: UIViewController {
             guard let weakSelf = self else {print("Self not available"); return}
             
             weakSelf.allPokemons = allPokemons
-            weakSelf.myCollectionView.reloadData()
+            DispatchQueue.main.async {
+                weakSelf.myCollectionView.reloadData()
+            }
+            
             //TODO: hide activity indicator
         }
     }
