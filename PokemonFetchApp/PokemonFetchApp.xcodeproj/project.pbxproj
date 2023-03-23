@@ -18,8 +18,8 @@
 		46A4AD9B29C470B9002A59E6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 46A4AD9929C470B9002A59E6 /* LaunchScreen.storyboard */; };
 		46A4ADA429C470E2002A59E6 /* PokemonCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46A4ADA229C470E2002A59E6 /* PokemonCollectionViewCell.swift */; };
 		46A4ADA529C470E2002A59E6 /* PokemonCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 46A4ADA329C470E2002A59E6 /* PokemonCollectionViewCell.xib */; };
-		46AE0B2029CC34AA00D926EB /* PokemonCardsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46AE0B1F29CC34AA00D926EB /* PokemonCardsViewModel.swift */; };
 		46C8CFB029CC0CC300AB33B6 /* NetworkCall.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46C8CFAF29CC0CC300AB33B6 /* NetworkCall.swift */; };
+		5D4EA6D529CC7FA900A221D7 /* ViewModel in Resources */ = {isa = PBXBuildFile; fileRef = 5D4EA6D429CC7FA900A221D7 /* ViewModel */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,8 +36,8 @@
 		46A4AD9C29C470B9002A59E6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		46A4ADA229C470E2002A59E6 /* PokemonCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonCollectionViewCell.swift; sourceTree = "<group>"; };
 		46A4ADA329C470E2002A59E6 /* PokemonCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PokemonCollectionViewCell.xib; sourceTree = "<group>"; };
-		46AE0B1F29CC34AA00D926EB /* PokemonCardsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonCardsViewModel.swift; sourceTree = "<group>"; };
 		46C8CFAF29CC0CC300AB33B6 /* NetworkCall.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkCall.swift; sourceTree = "<group>"; };
+		5D4EA6D429CC7FA900A221D7 /* ViewModel */ = {isa = PBXFileReference; lastKnownFileType = folder; path = ViewModel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,9 +82,9 @@
 		469E2C6D29CB3C99008F7402 /* PokemonFetch */ = {
 			isa = PBXGroup;
 			children = (
+				5D4EA6D429CC7FA900A221D7 /* ViewModel */,
 				469E2C6E29CB3CAE008F7402 /* Model */,
 				469E2C6F29CB3CC5008F7402 /* View */,
-				469E2C7129CB3D4C008F7402 /* View-Model */,
 			);
 			path = PokemonFetch;
 			sourceTree = "<group>";
@@ -112,14 +112,6 @@
 				46A4AD9229C470B7002A59E6 /* PokemonCardsViewController.swift */,
 			);
 			path = Controllers;
-			sourceTree = "<group>";
-		};
-		469E2C7129CB3D4C008F7402 /* View-Model */ = {
-			isa = PBXGroup;
-			children = (
-				46AE0B1F29CC34AA00D926EB /* PokemonCardsViewModel.swift */,
-			);
-			path = "View-Model";
 			sourceTree = "<group>";
 		};
 		469E2C7229CB3D66008F7402 /* StoryBoards */ = {
@@ -236,6 +228,7 @@
 			files = (
 				46A4AD9B29C470B9002A59E6 /* LaunchScreen.storyboard in Resources */,
 				46A4AD9829C470B9002A59E6 /* Assets.xcassets in Resources */,
+				5D4EA6D529CC7FA900A221D7 /* ViewModel in Resources */,
 				469E2C6A29CADFD9008F7402 /* Deloresamores.ttf in Resources */,
 				4699D81129CADEA200B551D6 /* BubbleGum.ttf in Resources */,
 				46A4ADA529C470E2002A59E6 /* PokemonCollectionViewCell.xib in Resources */,
@@ -252,7 +245,6 @@
 			files = (
 				46A4AD9329C470B7002A59E6 /* PokemonCardsViewController.swift in Sources */,
 				46A4AD8F29C470B7002A59E6 /* AppDelegate.swift in Sources */,
-				46AE0B2029CC34AA00D926EB /* PokemonCardsViewModel.swift in Sources */,
 				46A4ADA429C470E2002A59E6 /* PokemonCollectionViewCell.swift in Sources */,
 				46A1D1A029C8358D00D0C8EF /* PokemonModel.swift in Sources */,
 				46C8CFB029CC0CC300AB33B6 /* NetworkCall.swift in Sources */,
