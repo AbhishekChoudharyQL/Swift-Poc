@@ -39,7 +39,8 @@ class PokemonCardsViewController: UIViewController {
         pokemonCardsViewModel.getPokemonData { [weak self] allPokemons in
             guard let weakSelf = self else {print("Self not available"); return}
             
-            weakSelf.allPokemons = allPokemons
+            weakSelf.allPokemons.append(allPokemons)
+            
             DispatchQueue.main.async {
                 weakSelf.myCollectionView.reloadData()
             }

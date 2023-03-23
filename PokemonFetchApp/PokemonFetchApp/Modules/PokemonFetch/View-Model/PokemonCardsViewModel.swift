@@ -10,9 +10,9 @@ import Foundation
 class PokemonCardsViewModel {
     
     //MARK: - Public methods
-    public func getPokemonData(pokemonData: @escaping ([PokemonData]) -> ()) {
+    public func getPokemonData(pokemonData: @escaping (PokemonData) -> ()) {
         // right approach
-        NetworkManager.shared.serviceRequest(endPoint: .pokemonListing,listingCount: 500) { data, response, error in
+        NetworkManager.shared.serviceRequest(endPoint: .pokemonListing,listingCount: 1200) { data, response, error in
             do {
                 //let decodedResponse  = try JSONDecoder().decode(PokemonListResponse.self, from: data!)
                 let decodedResponse  = try JSONDecoder().decode(PokemonListResponse.self, from: data!)
@@ -30,10 +30,7 @@ class PokemonCardsViewModel {
     }
     
     //MARK: - private methods
-    private func getPokemonDataFromPokemonListing(pokemonList: [Pokemon], pokemonData: @escaping ([PokemonData]) -> ()) {
-        //create a container to store data
-        var allPokemons : [PokemonData] = []
-
+    private func getPokemonDataFromPokemonListing(pokemonList: [Pokemon], pokemonData: @escaping (PokemonData) -> ()) {
         // get pokemondata for each pokemon
         for pokemon in pokemonList {
             // URl
@@ -44,13 +41,8 @@ class PokemonCardsViewModel {
                 guard let data = data else {print("Failed to extract data"); return }
 
                 do {
-                    let jsonresposne = try JSONDecoder().decode(PokemonData.self, from: data)
-                    debugPrint(jsonresposne)
-                    allPokemons.append(jsonresposne)
-
-                    if pokemonList.count == allPokemons.count {
-                        pokemonData(allPokemons)
-                    }
+                    let parsedPokemonData = try JSONDecoder().decode(PokemonData.self, from: data)
+                    pokemonData(parsedPokemonData)
                 } catch let error  {
                     print("cathing error: \(error)")
                 }
