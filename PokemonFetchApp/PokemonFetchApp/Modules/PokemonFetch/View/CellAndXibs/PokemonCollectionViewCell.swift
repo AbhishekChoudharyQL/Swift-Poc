@@ -21,7 +21,15 @@ class PokemonCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var cardBackgroundImageView:UIImageView!
     
     //MARK: - Properties
-    var pokemonData: Pokemon? {
+//    var pokemonData: Pokemon? {
+//        didSet {
+//            if let pokemonData = pokemonData {
+//                setup(using: pokemonData)
+//            }
+//        }
+//    }
+    
+    var pokemonData: PokemonData? {
         didSet {
             if let pokemonData = pokemonData {
                 setup(using: pokemonData)
@@ -71,40 +79,47 @@ class PokemonCollectionViewCell: UICollectionViewCell {
         view.layer.cornerRadius = 48
     }
     
-    private func setup(using pokemonData: Pokemon) {
-        // set name on label
-        if let name = pokemonData.name {
-            self.pokemonNameLabel.text = name
-        }
-        
-        // fetching data from api
-        guard let Url = URL(string: pokemonData.url) else {print("failed to extract URL"); return }
-        
-        URLSession.shared.dataTask(with: Url) {
-            data,response, error in
-            guard let data = data else {print("Failed to extract data"); return }
-
-            do {
-                let jsonresposne = try JSONDecoder().decode(PokemonData.self, from: data)
-                
-                DispatchQueue.main.async {
-                    //Set data on view
-                    self.pokemonHeightLabel.text = "Height: \(jsonresposne.height)"
-                    self.pokemonWeightLabel.text = "Weight: \(jsonresposne.weight)"
-                    self.pokemonIDLabel.text = "ID: \(jsonresposne.id)"
-                    self.setupImage(from: jsonresposne.sprites.other?.officialArtwork?.front_default	)
-                }
-                
-                
-            } catch let error  {
-                print("cathing error: \(error)")
-            }
-        }.resume()
+    
+    
+//    private func setup(using pokemonData: Pokemon) {
+//        // set name on label
+//        if let name = pokemonData.name {
+//            self.pokemonNameLabel.text = name
+//        }
+//
+//        // fetching data from api
+//        guard let Url = URL(string: pokemonData.url) else {print("failed to extract URL"); return }
+//
+//        URLSession.shared.dataTask(with: Url) {
+//            data,response, error in
+//            guard let data = data else {print("Failed to extract data"); return }
+//
+//            do {
+//                let jsonresposne = try JSONDecoder().decode(PokemonData.self, from: data)
+//
+//                DispatchQueue.main.async {
+//                    //Set data on view
+//                    self.pokemonHeightLabel.text = "Height: \(jsonresposne.height)"
+//                    self.pokemonWeightLabel.text = "Weight: \(jsonresposne.weight)"
+//                    self.pokemonIDLabel.text = "ID: \(jsonresposne.id)"
+//                    self.setupImage(from: jsonresposne.sprites.other?.officialArtwork?.front_default	)
+//                }
+//
+//
+//            } catch let error  {
+//                print("cathing error: \(error)")
+//            }
+//        }.resume()
+//    }
+    
+    private func setup(using pokemonData: PokemonData) {
+        self.pokemonHeightLabel.text = "Height: \(pokemonData.height)"
+        self.pokemonWeightLabel.text = "Weight: \(pokemonData.weight)"
+        self.pokemonIDLabel.text = "ID: \(pokemonData.id)"
+        self.setupImage(from: pokemonData.sprites.other?.officialArtwork?.front_default    )
     }
     
     private func setupImage(from url: String?) {
-        
-        
         guard let urlString = url,
                 let imageUrl = URL(string: urlString)
         else {print("unable to extract image url"); return}
@@ -114,7 +129,6 @@ class PokemonCollectionViewCell: UICollectionViewCell {
                 DispatchQueue.main.async {
                     self.pokemonImageView.image = UIImage(data: imageData)
                 }
-                
             } else {
                 print(URLResponse)
                 print(apiError)

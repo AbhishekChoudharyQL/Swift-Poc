@@ -20,5 +20,101 @@
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "B880D3C8-75F1-49A8-95A4-59D32513D1E7"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PokemonFetchApp/Moduels/PokemonFetch/Networking/NetworkCall.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "56"
+            endingLineNumber = "56"
+            landmarkName = "serviceRequest(endPoint:listingCount:completion:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "B880D3C8-75F1-49A8-95A4-59D32513D1E7 - 3ddaf79ca5c31df4"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "PokemonFetchApp.NetworkManager.serviceRequest(endPoint: PokemonFetchApp.EndpointsProvider, listingCount: Swift.Int, completion: (Swift.Optional&lt;Swift.Array&lt;PokemonFetchApp.Pokemon&gt;&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "PokemonFetchApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/abhishek/Documents/PokemonApp/PokemonFetchApp/PokemonFetchApp/Moduels/PokemonFetch/Networking/NetworkCall.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "56"
+                  endingLineNumber = "56"
+                  offsetFromSymbolStart = "900">
+               </Location>
+               <Location
+                  uuid = "B880D3C8-75F1-49A8-95A4-59D32513D1E7 - 3ddaf79ca5c31df4"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "PokemonFetchApp.NetworkManager.serviceRequest(endPoint: PokemonFetchApp.EndpointsProvider, listingCount: Swift.Int, completion: (Swift.Optional&lt;Swift.Array&lt;PokemonFetchApp.Pokemon&gt;&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "PokemonFetchApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/abhishek/Documents/PokemonApp/PokemonFetchApp/PokemonFetchApp/Moduels/PokemonFetch/Networking/NetworkCall.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "56"
+                  endingLineNumber = "56"
+                  offsetFromSymbolStart = "1444">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "2299625C-CDF1-4D64-A24F-0BA408C1F441"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PokemonFetchApp/Modules/PokemonFetch/View-Model/PokemonCardsViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "61"
+            endingLineNumber = "61"
+            landmarkName = "getPokemonDataFromPokemonListing(pokemonList:pokemonData:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "A8BE806E-1EDF-4C22-A668-BA54D797F58A"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PokemonFetchApp/Modules/PokemonFetch/View-Model/PokemonCardsViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "53"
+            endingLineNumber = "53"
+            landmarkName = "getPokemonDataFromPokemonListing(pokemonList:pokemonData:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "37E68518-E74C-4B65-BF03-1C529EA5D296"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PokemonFetchApp/Modules/PokemonFetch/View-Model/PokemonCardsViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "37"
+            endingLineNumber = "37"
+            landmarkName = "getPokemonDataFromPokemonListing(pokemonList:pokemonData:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
    </Breakpoints>
 </Bucket>

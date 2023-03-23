@@ -8,73 +8,62 @@
 import UIKit
 
 
-class ViewController: UIViewController {
-
-   
+class PokemonCardsViewController: UIViewController {
     //MARK: - IBOutlets
     @IBOutlet weak var myCollectionView: UICollectionView!
     
     //MARK: - PROPERTIES
-    var pokemonList: [Pokemon] = []
+    var allPokemons : [PokemonData] = []
+    
+    let pokemonCardsViewModel : PokemonCardsViewModel = PokemonCardsViewModel()
     
     // MARK: - LIFECYCLE METHODS
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        setupMyCollectionView()
+        loadData()
+    }
+    
+    //MARK: - Private methods
+    private func setupMyCollectionView() {
         myCollectionView.delegate = self
         myCollectionView.dataSource = self
         
         let nib =  UINib(nibName: "PokemonCollectionViewCell", bundle: nil)
         myCollectionView.register(nib, forCellWithReuseIdentifier: "PokemonCollectionViewCell")
-        fetchPokemonList()
-       
     }
-
-    //MARK: - PUBLIC METHODS
-    func fetchPokemonList() {
-        guard let url = URL(string: "https://pokeapi.co/api/v2/pokemon?limit=50") else { return }
-        
-        URLSession.shared.dataTask(with: url) { (data, response, error) in
-            guard let data = data else { return }
+    
+    private func loadData() {
+        //TODO: show activity indicator
+        pokemonCardsViewModel.getPokemonData { [weak self] allPokemons in
+            guard let weakSelf = self else {print("Self not available"); return}
             
-            do {
-                let decoder = JSONDecoder()
-                let pokemonListResponse = try decoder.decode(PokemonListResponse.self, from: data)
-                self.pokemonList = pokemonListResponse.results
-                print(self.pokemonList)
-                // fetchedUrl = pokemonList.url
-                DispatchQueue.main.async {
-                    self.myCollectionView.reloadData()
-                }
-            } catch let error {
-                print("Error decoding JSON: \(error)")
-            }
-        }.resume()
-        self.myCollectionView.reloadData()
+            weakSelf.allPokemons = allPokemons
+            weakSelf.myCollectionView.reloadData()
+            //TODO: hide activity indicator
+        }
     }
 }
 
 //MARK: - EXTENSIONS
-extension ViewController : UICollectionViewDelegate,UICollectionViewDataSource {
+extension PokemonCardsViewController : UICollectionViewDelegate,UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return pokemonList.count
-        
+        return allPokemons.count
         
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PokemonCollectionViewCell", for: indexPath) as! PokemonCollectionViewCell
         
-        
-        cell.pokemonData = pokemonList[indexPath.row]
-        
+        cell.pokemonData = allPokemons[indexPath.row]
         
         return cell
     }
     
     
 }
-extension ViewController : UICollectionViewDelegateFlowLayout {
+extension PokemonCardsViewController : UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
 
