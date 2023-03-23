@@ -29,12 +29,14 @@ struct PokemonData : Codable {
     var sprites: Sprites // needs to be extracted from sprites
     var height: Int
     var weight: Int
+    var name: String
     
     enum CodingKeys: String, CodingKey {
         case id
         case sprites
         case height
         case weight
+        case name
     }
 }
 

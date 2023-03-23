@@ -2,7 +2,7 @@
 //  PokemonCardsViewModel.swift
 //  PokemonFetchApp
 //
-//  Created by abhishek on 23/03/23.
+//  Created by Manish Solanki on 23/03/23.
 //
 
 import Foundation

@@ -71,40 +71,8 @@ class PokemonCollectionViewCell: UICollectionViewCell {
         view.layer.cornerRadius = 48
     }
     
-    
-    
-//    private func setup(using pokemonData: Pokemon) {
-//        // set name on label
-//        if let name = pokemonData.name {
-//            self.pokemonNameLabel.text = name
-//        }
-//
-//        // fetching data from api
-//        guard let Url = URL(string: pokemonData.url) else {print("failed to extract URL"); return }
-//
-//        URLSession.shared.dataTask(with: Url) {
-//            data,response, error in
-//            guard let data = data else {print("Failed to extract data"); return }
-//
-//            do {
-//                let jsonresposne = try JSONDecoder().decode(PokemonData.self, from: data)
-//
-//                DispatchQueue.main.async {
-//                    //Set data on view
-//                    self.pokemonHeightLabel.text = "Height: \(jsonresposne.height)"
-//                    self.pokemonWeightLabel.text = "Weight: \(jsonresposne.weight)"
-//                    self.pokemonIDLabel.text = "ID: \(jsonresposne.id)"
-//                    self.setupImage(from: jsonresposne.sprites.other?.officialArtwork?.front_default	)
-//                }
-//
-//
-//            } catch let error  {
-//                print("cathing error: \(error)")
-//            }
-//        }.resume()
-//    }
-    
     private func setup(using pokemonData: PokemonData) {
+        self.pokemonNameLabel.text = pokemonData.name
         self.pokemonHeightLabel.text = "Height: \(pokemonData.height)"
         self.pokemonWeightLabel.text = "Weight: \(pokemonData.weight)"
         self.pokemonIDLabel.text = "ID: \(pokemonData.id)"
