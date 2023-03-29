@@ -16,7 +16,7 @@ struct MapView: View {
     //MARK: - State Variables
     @State private var region = MKCoordinateRegion ()
   
-    
+    //MARK: - View Builder
     var body: some View {
         Map(coordinateRegion: $region)                    // need to ask about this ....
             .onAppear {
@@ -33,7 +33,7 @@ struct MapView: View {
     }
 
 }
-
+//MARK: - Previews
 struct MapView_Previews: PreviewProvider {
     static var previews: some View {
         MapView(coordinates: CLLocationCoordinate2D(latitude: 29.5300, longitude: 78.7747))

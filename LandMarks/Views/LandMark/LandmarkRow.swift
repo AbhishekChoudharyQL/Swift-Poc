@@ -11,7 +11,7 @@ struct LandmarkRow: View {
     
     //MARK: - Properties
     var landmark : Landmark
-    
+    //MARK: - View Builder
     var body: some View {
         HStack{
             landmark.image
@@ -20,7 +20,7 @@ struct LandmarkRow: View {
             Text(landmark.name)
                 .foregroundColor(.black)
                 .font(.title3)
-                .padding(10)
+                .padding(5)
                Spacer()
               Image("star")
             if landmark.isFavorite {
@@ -32,7 +32,7 @@ struct LandmarkRow: View {
         
     }
 }
-
+//MARK: - Previews
 struct LandmarkRow_Previews: PreviewProvider {
     static var landmarks = ModelData().landmarks
     static var previews: some View {

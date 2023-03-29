@@ -23,6 +23,7 @@ struct LandmarkDetail: View {
             modelData.landmarks.firstIndex(where: { $0.id == landmark.id })!
         }
 
+    //MARK: - View Builder
     var body: some View {
         ScrollView {
             MapView(coordinates: landmark.locationCoordinate)
@@ -64,6 +65,7 @@ struct LandmarkDetail: View {
     }
 }
 
+//MARK: - Previews
 struct LandmarkDetail_Previews: PreviewProvider {
      
     static var previews: some View {

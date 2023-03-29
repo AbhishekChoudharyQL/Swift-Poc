@@ -70,3 +70,11 @@ import Foundation
 //
 //}
 //}
+
+   // Category Item code for display image of landmark.
+//               landmark.image
+//                .renderingMode(.original)
+//                .resizable()
+//                .frame(width: 150,height: 140)
+//                .cornerRadius(10)
+//                .shadow(color: .green, radius: 2,x: 0,y: 5)

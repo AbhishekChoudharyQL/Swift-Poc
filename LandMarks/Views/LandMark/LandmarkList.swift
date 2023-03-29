@@ -8,9 +8,11 @@
 import SwiftUI
 
 struct LandmarkList: View {
-    //MARK: - Properties
+    //MARK: - @State Variable
     @State private var showOnlyFavorite = true
+    //MARK: - @EnvironmentObject
     @EnvironmentObject var modelData : ModelData
+    //MARK: - Computed Property
     var filteredLandmarks : [Landmark] {
         modelData.landmarks.filter {
             landmark in
@@ -18,7 +20,7 @@ struct LandmarkList: View {
             
         }
     }
-    
+    //MARK: - View Builder
     var body: some View {
         NavigationView {
             List {
@@ -31,7 +33,6 @@ struct LandmarkList: View {
                         LandmarkDetail(landmark: landmark)
                     } label: {                                 // whats the use of label here??
                         LandmarkRow(landmark: landmark)
-                        
                     }
                 }
                 .navigationTitle("Landmarks")
@@ -39,7 +40,7 @@ struct LandmarkList: View {
         }
     }
 }
-
+//MARK: - Previews
 struct LandmarkList_Previews: PreviewProvider {
     static var previews: some View {
             LandmarkList()

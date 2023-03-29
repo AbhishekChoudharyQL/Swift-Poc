@@ -10,6 +10,7 @@ import SwiftUI
 struct FavouriteBtn: View {
    //MARK: - Properties
     @Binding var isSet : Bool
+    //MARK: - View Builder
     var body: some View {
         Button{
             isSet.toggle()
@@ -20,8 +21,8 @@ struct FavouriteBtn: View {
         }
     }
 }
-
-struct FavouriteBtn_Previews: PreviewProvider {
+  //MARK: - Previews
+  struct FavouriteBtn_Previews: PreviewProvider {
     static var previews: some View {
         FavouriteBtn(isSet: .constant(true))
     }
