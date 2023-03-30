@@ -18,10 +18,10 @@ struct CategoryRow: View {
             Text(categoryName)
                 .font(.title)
                 .padding(.leading, 15)
-                .padding(.top, 15)
+                .padding(.top, 12)
             
             ScrollView(.horizontal,showsIndicators: false){
-                HStack(alignment: .top, spacing: 0) {
+                HStack(alignment: .top, spacing: 4) {
                     ForEach(item) { landmarks in
                         NavigationLink {
                             LandmarkDetail(landmark: landmarks)
@@ -36,7 +36,7 @@ struct CategoryRow: View {
             }
             
           
-        }.frame(height: 240) // this will give frame size for a row in list not to CategoryItem ....
+        }.frame(height: 310) // this will give frame size for a row in list not to CategoryItem ....
     }
 }
 //MARK: - Previews

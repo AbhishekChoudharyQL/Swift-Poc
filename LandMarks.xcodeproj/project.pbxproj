@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		465CC59C29D474F600A0CDFF /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 465CC59B29D474F600A0CDFF /* Profile.swift */; };
 		4665C44E29D210B1001FF691 /* FavouriteBtn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4665C44D29D210B1001FF691 /* FavouriteBtn.swift */; };
 		4695F73429D30F7500C13CCF /* CategoryHome.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4695F73329D30F7500C13CCF /* CategoryHome.swift */; };
 		46A90E5729D15AD200D68C37 /* Landmark.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46A90E5629D15AD200D68C37 /* Landmark.swift */; };
@@ -27,6 +28,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		465CC59B29D474F600A0CDFF /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
 		4665C44D29D210B1001FF691 /* FavouriteBtn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouriteBtn.swift; sourceTree = "<group>"; };
 		4695F73329D30F7500C13CCF /* CategoryHome.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryHome.swift; sourceTree = "<group>"; };
 		46A90E5629D15AD200D68C37 /* Landmark.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Landmark.swift; sourceTree = "<group>"; };
@@ -58,6 +60,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		465CC59A29D4742C00A0CDFF /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
 		4695F71229D2F13400C13CCF /* LandMark */ = {
 			isa = PBXGroup;
 			children = (
@@ -91,6 +100,7 @@
 		46A90E5A29D1660800D68C37 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				465CC59A29D4742C00A0CDFF /* Profile */,
 				46C5987F29CDA5200081DEFB /* ContentView.swift */,
 				46C5987D29CDA5200081DEFB /* LandMarksApp.swift */,
 				4695F73229D30F5C00C13CCF /* Categories */,
@@ -105,6 +115,7 @@
 			children = (
 				46A90E5829D15E5900D68C37 /* ModelData.swift */,
 				46A90E5629D15AD200D68C37 /* Landmark.swift */,
+				465CC59B29D474F600A0CDFF /* Profile.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -234,6 +245,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4695F73429D30F7500C13CCF /* CategoryHome.swift in Sources */,
+				465CC59C29D474F600A0CDFF /* Profile.swift in Sources */,
 				46C5988029CDA5200081DEFB /* ContentView.swift in Sources */,
 				46C5989029CDB3000081DEFB /* MapView.swift in Sources */,
 				46C5987E29CDA5200081DEFB /* LandMarksApp.swift in Sources */,

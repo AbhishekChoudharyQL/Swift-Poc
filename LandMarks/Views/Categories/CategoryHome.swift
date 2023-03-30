@@ -12,23 +12,48 @@ struct CategoryHome: View {
     @EnvironmentObject var modelData : ModelData
     //MARK: - View Builder
     var body: some View {
-        NavigationView {
-            List{
-                modelData.landmarks[0].image
-                    .resizable()
-                    .scaledToFill()
-                    .frame(height: 290)
-                    .clipped()
+        ZStack{
+            Image("pexels-peter-stewart-346972")
+                .resizable()
+                .scaledToFit()
+            NavigationView {
+                List{
+                    modelData.landmarks[0].image
+                        .resizable()
+                        .scaledToFill()
+                        .frame(height: 290)
+                        .clipped()
+                        .listRowInsets(EdgeInsets())
+                    ForEach(modelData.categories.keys.sorted(), id: \.self) {
+                        key in
+                        CategoryRow(categoryName: key, item: modelData.categories[key]!)
+                    }
                     .listRowInsets(EdgeInsets())
-                ForEach(modelData.categories.keys.sorted(), id: \.self) {
-                    key in
-                    CategoryRow(categoryName: key, item: modelData.categories[key]!)
-                }
-                .listRowInsets(EdgeInsets())
+                    
+                }.navigationTitle("Featured")
                 
-            }.navigationTitle("Featured")
+            }.foregroundColor(.blue)
             
         }
+        
+        
+//        NavigationView {
+//            List{
+//                modelData.landmarks[0].image
+//                    .resizable()
+//                    .scaledToFill()
+//                    .frame(height: 290)
+//                    .clipped()
+//                    .listRowInsets(EdgeInsets())
+//                ForEach(modelData.categories.keys.sorted(), id: \.self) {
+//                    key in
+//                    CategoryRow(categoryName: key, item: modelData.categories[key]!)
+//                }
+//                .listRowInsets(EdgeInsets())
+//
+//            }.navigationTitle("Featured")
+//
+//        }
     }
 }
 //MARK: - Previews

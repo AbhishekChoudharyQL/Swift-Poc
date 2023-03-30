@@ -12,15 +12,17 @@ struct CategoryItem: View {
      var landmark : Landmark
     //MARK: - View Builder
     var body: some View {
-        VStack(alignment: .leading) {
+        VStack(alignment: .center) {    //
             CircleImage(image: landmark.image)
-                .frame(width: 125,height: 125)
+//                .frame(width: 125,height: 125)
                 Text(landmark.name)
                 .font(.title3)
                 .foregroundColor(.primary)
         }
-        .padding()
+        .padding(.top,10)
+        
         .padding(.leading,10)
+        .padding(.bottom,10)
     }
 }
 //MARK: - Previews
