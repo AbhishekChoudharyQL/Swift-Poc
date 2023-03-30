@@ -32,9 +32,11 @@ struct CategoryHome: View {
                     
                 }.navigationTitle("Featured")
                 
+                
             }.foregroundColor(.blue)
-            
-        }
+               
+//                .background(Color.black)
+        } 
         
         
 //        NavigationView {
