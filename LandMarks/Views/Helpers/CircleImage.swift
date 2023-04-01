@@ -21,7 +21,7 @@ struct CircleImage: View {
                 Circle().stroke(Color.white,lineWidth: 10)
             )
             .shadow(radius: 7)
-            .frame(width: UIScreen.main.bounds.width / 2, height: UIScreen.main.bounds.width / 2, alignment: .center)
+            .frame(width: UIScreen.main.bounds.width / 3, height: UIScreen.main.bounds.width / 2, alignment: .center)
     }
 }
 //MARK: - Previews

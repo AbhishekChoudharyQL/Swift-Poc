@@ -13,7 +13,8 @@ struct SplashView: View {
     @State private var opacity = 0.5
     var body: some View {
         if isActive {
-            ContentView()
+//            ContentView()
+            RegisterView()
         } else {
             VStack{
                 VStack{
@@ -36,7 +37,7 @@ struct SplashView: View {
                 }
             }
             .onAppear {
-                DispatchQueue.main.asyncAfter(deadline: .now()+2.0){
+                DispatchQueue.main.asyncAfter(deadline: .now()+3.0){
                     self.isActive = true
                 }
         }

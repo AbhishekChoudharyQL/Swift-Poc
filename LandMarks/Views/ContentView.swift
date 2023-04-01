@@ -9,9 +9,9 @@
 import SwiftUI
 
 struct ContentView: View {
-    //MARK: - @State Varible
+    //MARK: - @State Variable
     @State private var selection: Tab = .featured
-    
+
     //MARK: - Enum
     enum Tab {
         case featured
@@ -35,6 +35,7 @@ struct ContentView: View {
                 .tag(Tab.list)
         }.background(Color.black)
     }
+    
 }
 
 //MARK: - Previews

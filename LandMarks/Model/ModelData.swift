@@ -22,7 +22,37 @@ final class ModelData : ObservableObject {           // final class ??
         })
     }
 }
-//
+class UserSetting : ObservableObject {
+    @Published var fisrtNameRegister : String {
+        didSet{
+            UserDefaults.standard.set(fisrtNameRegister, forKey: "fisrtNameRegister")
+        }
+        
+    }
+    @Published var lastNameRegister : String {
+        didSet{
+            UserDefaults.standard.set(lastNameRegister, forKey: "lastNameRegister")
+        }
+    }
+    @Published var emailRegister : String {
+        didSet{
+            UserDefaults.standard.set(emailRegister, forKey: "emailRegister")
+        }
+    }
+    @Published var passwordRegister : String {
+        didSet{
+            UserDefaults.standard.set(passwordRegister, forKey: "passwordRegister")
+        }
+    }
+    init() {
+        self.fisrtNameRegister = UserDefaults.standard.object(forKey: "fisrtNameRegister") as! String
+        self.lastNameRegister = UserDefaults.standard.object(forKey: "lastNameRegister") as! String
+        self.emailRegister = UserDefaults.standard.object(forKey: "emailRegister") as! String
+        self.passwordRegister = UserDefaults.standard.object(forKey: "passwordRegister") as! String
+    }
+}
+
+
     //MARK: - Public Methods
 func loadLandmarksArray<T: Decodable>(_ filename: String) -> T {
     let data: Data

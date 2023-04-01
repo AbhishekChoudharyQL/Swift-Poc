@@ -10,53 +10,31 @@ import SwiftUI
 struct CategoryHome: View {
     //MARK: - EnvironmentObject
     @EnvironmentObject var modelData : ModelData
+    
     //MARK: - View Builder
     var body: some View {
-        ZStack{
-            Image("pexels-peter-stewart-346972")
-                .resizable()
-                .scaledToFit()
-            NavigationView {
-                List{
-                    modelData.landmarks[0].image
-                        .resizable()
-                        .scaledToFill()
-                        .frame(height: 290)
-                        .clipped()
-                        .listRowInsets(EdgeInsets())
-                    ForEach(modelData.categories.keys.sorted(), id: \.self) {
-                        key in
-                        CategoryRow(categoryName: key, item: modelData.categories[key]!)
-                    }
+     
+        NavigationView {
+            List(content: {
+                modelData.landmarks[0].image
+                    .resizable()
+                    .scaledToFill()
+                    .frame(height: 290)
+                    .clipped()
                     .listRowInsets(EdgeInsets())
-                    
-                }.navigationTitle("Featured")
-                
-                
-            }.foregroundColor(.blue)
-               
-//                .background(Color.black)
-        } 
-        
-        
-//        NavigationView {
-//            List{
-//                modelData.landmarks[0].image
-//                    .resizable()
-//                    .scaledToFill()
-//                    .frame(height: 290)
-//                    .clipped()
-//                    .listRowInsets(EdgeInsets())
-//                ForEach(modelData.categories.keys.sorted(), id: \.self) {
-//                    key in
-//                    CategoryRow(categoryName: key, item: modelData.categories[key]!)
-//                }
-//                .listRowInsets(EdgeInsets())
-//
-//            }.navigationTitle("Featured")
-//
-//        }
+                ForEach(modelData.categories.keys.sorted(), id: \.self) {
+                    key in
+                    CategoryRow(categoryName: key, item: modelData.categories[key]!).background(Color.white)
+
+                }
+                .listRowInsets(EdgeInsets())
+                .listStyle(PlainListStyle())
+            })
+            .navigationTitle("Featured")
+        }
+        .foregroundColor(.blue)
     }
+        
 }
 //MARK: - Previews
 struct CatgeoryHome_Previews: PreviewProvider {

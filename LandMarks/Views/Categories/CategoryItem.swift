@@ -14,14 +14,17 @@ struct CategoryItem: View {
     var body: some View {
         VStack(alignment: .center) {    //
             CircleImage(image: landmark.image)
+                .padding(.top,5)
+                .padding(.leading,5)
 //                .frame(width: 125,height: 125)
                 Text(landmark.name)
                 .font(.title3)
                 .foregroundColor(.primary)
+                .frame(width: UIScreen.main.bounds.width / 3, alignment: .center)
         }
-        .padding(.top,10)
+//        .padding(.top,10)
         
-        .padding(.leading,10)
+//        .padding(.leading,10)
         .padding(.bottom,10)
     }
 }
