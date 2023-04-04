@@ -12,7 +12,8 @@ struct MusicApp: App {
     var body: some Scene {
         WindowGroup {
 //            MainView()
-            TabBarManager()
+//            TabBarManager()
+            AudioPlayerView()
         }
     }
 }

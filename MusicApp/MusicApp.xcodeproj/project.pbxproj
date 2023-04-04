@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4677786429DC96490089C807 /* SongDurationSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4677786329DC96490089C807 /* SongDurationSlider.swift */; };
+		4677786729DC9FB40089C807 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4677786629DC9FB40089C807 /* Extensions.swift */; };
+		4677786929DCA0B80089C807 /* AudioScreenButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4677786829DCA0B80089C807 /* AudioScreenButtons.swift */; };
+		4677786B29DCA42B0089C807 /* AudioImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4677786A29DCA42B0089C807 /* AudioImageView.swift */; };
 		469676B529DC0FA5007724EF /* AudioPlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 469676B429DC0FA5007724EF /* AudioPlayerView.swift */; };
 		469676BB29DC442A007724EF /* TabBarManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 469676BA29DC442A007724EF /* TabBarManager.swift */; };
 		469676DF29DC6435007724EF /* TabItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = 469676DE29DC6435007724EF /* TabItems.swift */; };
@@ -24,6 +28,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4677786329DC96490089C807 /* SongDurationSlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongDurationSlider.swift; sourceTree = "<group>"; };
+		4677786629DC9FB40089C807 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		4677786829DCA0B80089C807 /* AudioScreenButtons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioScreenButtons.swift; sourceTree = "<group>"; };
+		4677786A29DCA42B0089C807 /* AudioImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioImageView.swift; sourceTree = "<group>"; };
 		469676B429DC0FA5007724EF /* AudioPlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioPlayerView.swift; sourceTree = "<group>"; };
 		469676BA29DC442A007724EF /* TabBarManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarManager.swift; sourceTree = "<group>"; };
 		469676DE29DC6435007724EF /* TabItems.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabItems.swift; sourceTree = "<group>"; };
@@ -52,6 +60,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4677786229DC96090089C807 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				46F44FD629DAD37500936230 /* HomeView.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
 		469676AC29DC0417007724EF /* Modules */ = {
 			isa = PBXGroup;
 			children = (
@@ -63,12 +79,11 @@
 		469676AD29DC0464007724EF /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				4677786229DC96090089C807 /* Home */,
 				46F44FCA29DAD35800936230 /* MainView.swift */,
-				46F44FD629DAD37500936230 /* HomeView.swift */,
 				46F64E9229DB04F200B44B3D /* FavouriteView.swift */,
 				46F64E9429DB050100B44B3D /* SearchView.swift */,
 				46F44FD829DAE5ED00936230 /* ListView.swift */,
-				469676B429DC0FA5007724EF /* AudioPlayerView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -103,6 +118,10 @@
 		469676B129DC0511007724EF /* AudioPlayer */ = {
 			isa = PBXGroup;
 			children = (
+				469676B429DC0FA5007724EF /* AudioPlayerView.swift */,
+				4677786329DC96490089C807 /* SongDurationSlider.swift */,
+				4677786829DCA0B80089C807 /* AudioScreenButtons.swift */,
+				4677786A29DCA42B0089C807 /* AudioImageView.swift */,
 			);
 			path = AudioPlayer;
 			sourceTree = "<group>";
@@ -110,7 +129,7 @@
 		469676DA29DC634F007724EF /* Common */ = {
 			isa = PBXGroup;
 			children = (
-				469676B129DC0511007724EF /* AudioPlayer */,
+				4677786629DC9FB40089C807 /* Extensions.swift */,
 				469676AE29DC04B4007724EF /* TabBar */,
 			);
 			path = Common;
@@ -177,8 +196,9 @@
 			isa = PBXGroup;
 			children = (
 				469676DA29DC634F007724EF /* Common */,
-				469676AF29DC04DC007724EF /* Resources */,
 				469676AC29DC0417007724EF /* Modules */,
+				469676B129DC0511007724EF /* AudioPlayer */,
+				469676AF29DC04DC007724EF /* Resources */,
 				469676B029DC0506007724EF /* Networking */,
 				46F44FCE29DAD35900936230 /* Preview Content */,
 			);
@@ -263,6 +283,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4677786429DC96490089C807 /* SongDurationSlider.swift in Sources */,
+				4677786929DCA0B80089C807 /* AudioScreenButtons.swift in Sources */,
+				4677786B29DCA42B0089C807 /* AudioImageView.swift in Sources */,
 				46F44FD929DAE5ED00936230 /* ListView.swift in Sources */,
 				46F44FD729DAD37500936230 /* HomeView.swift in Sources */,
 				46F44FCB29DAD35800936230 /* MainView.swift in Sources */,
@@ -275,6 +298,7 @@
 				46F44FDB29DAE8B200936230 /* TabBar.swift in Sources */,
 				469676DF29DC6435007724EF /* TabItems.swift in Sources */,
 				469676B529DC0FA5007724EF /* AudioPlayerView.swift in Sources */,
+				4677786729DC9FB40089C807 /* Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
