@@ -21,17 +21,9 @@ struct HomeView: View {
                     .foregroundColor(.white)
                     .font(.largeTitle)
                     .bold()
-//                ListView () {
-//
-//
-//                }
-                TabBar()
-                
             }
-            
         }
         .cornerRadius(30)
-//        .padding(.all,10)
         .onAppear {
             withAnimation(.easeIn(duration: 1.0)){
                 isAnimating = true

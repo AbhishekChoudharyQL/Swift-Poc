@@ -7,9 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		46ACC75929DB4239004A690E /* CustumTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46ACC75829DB4239004A690E /* CustumTabView.swift */; };
-		46F44FC929DAD35800936230 /* MusicAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46F44FC829DAD35800936230 /* MusicAppApp.swift */; };
-		46F44FCB29DAD35800936230 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46F44FCA29DAD35800936230 /* ContentView.swift */; };
+		469676B529DC0FA5007724EF /* AudioPlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 469676B429DC0FA5007724EF /* AudioPlayerView.swift */; };
+		469676BB29DC442A007724EF /* TabBarManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 469676BA29DC442A007724EF /* TabBarManager.swift */; };
+		469676DF29DC6435007724EF /* TabItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = 469676DE29DC6435007724EF /* TabItems.swift */; };
+		469676E329DC649F007724EF /* CustomTabItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 469676E229DC649F007724EF /* CustomTabItem.swift */; };
+		46F44FC929DAD35800936230 /* MusicApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46F44FC829DAD35800936230 /* MusicApp.swift */; };
+		46F44FCB29DAD35800936230 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46F44FCA29DAD35800936230 /* MainView.swift */; };
 		46F44FCD29DAD35900936230 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 46F44FCC29DAD35900936230 /* Assets.xcassets */; };
 		46F44FD029DAD35900936230 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 46F44FCF29DAD35900936230 /* Preview Assets.xcassets */; };
 		46F44FD729DAD37500936230 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46F44FD629DAD37500936230 /* HomeView.swift */; };
@@ -21,10 +24,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		46ACC75829DB4239004A690E /* CustumTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustumTabView.swift; sourceTree = "<group>"; };
+		469676B429DC0FA5007724EF /* AudioPlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioPlayerView.swift; sourceTree = "<group>"; };
+		469676BA29DC442A007724EF /* TabBarManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarManager.swift; sourceTree = "<group>"; };
+		469676DE29DC6435007724EF /* TabItems.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabItems.swift; sourceTree = "<group>"; };
+		469676E229DC649F007724EF /* CustomTabItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabItem.swift; sourceTree = "<group>"; };
 		46F44FC529DAD35800936230 /* MusicApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MusicApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		46F44FC829DAD35800936230 /* MusicAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicAppApp.swift; sourceTree = "<group>"; };
-		46F44FCA29DAD35800936230 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		46F44FC829DAD35800936230 /* MusicApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicApp.swift; sourceTree = "<group>"; };
+		46F44FCA29DAD35800936230 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		46F44FCC29DAD35900936230 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		46F44FCF29DAD35900936230 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		46F44FD629DAD37500936230 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
@@ -46,6 +52,111 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		469676AC29DC0417007724EF /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				469676AD29DC0464007724EF /* Views */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		469676AD29DC0464007724EF /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				46F44FCA29DAD35800936230 /* MainView.swift */,
+				46F44FD629DAD37500936230 /* HomeView.swift */,
+				46F64E9229DB04F200B44B3D /* FavouriteView.swift */,
+				46F64E9429DB050100B44B3D /* SearchView.swift */,
+				46F44FD829DAE5ED00936230 /* ListView.swift */,
+				469676B429DC0FA5007724EF /* AudioPlayerView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		469676AE29DC04B4007724EF /* TabBar */ = {
+			isa = PBXGroup;
+			children = (
+				469676DD29DC63FA007724EF /* Model */,
+				469676DC29DC63F7007724EF /* View */,
+				469676DB29DC63F2007724EF /* ViewModel */,
+			);
+			path = TabBar;
+			sourceTree = "<group>";
+		};
+		469676AF29DC04DC007724EF /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				46F44FC829DAD35800936230 /* MusicApp.swift */,
+				46F64E9829DB084800B44B3D /* refrencefile.swift */,
+				46F44FCC29DAD35900936230 /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		469676B029DC0506007724EF /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		469676B129DC0511007724EF /* AudioPlayer */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = AudioPlayer;
+			sourceTree = "<group>";
+		};
+		469676DA29DC634F007724EF /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				469676B129DC0511007724EF /* AudioPlayer */,
+				469676AE29DC04B4007724EF /* TabBar */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		469676DB29DC63F2007724EF /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		469676DC29DC63F7007724EF /* View */ = {
+			isa = PBXGroup;
+			children = (
+				469676E029DC644D007724EF /* Main */,
+				469676E129DC6450007724EF /* Components */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		469676DD29DC63FA007724EF /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				469676DE29DC6435007724EF /* TabItems.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		469676E029DC644D007724EF /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				469676BA29DC442A007724EF /* TabBarManager.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		469676E129DC6450007724EF /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				46F44FDA29DAE8B200936230 /* TabBar.swift */,
+				469676E229DC649F007724EF /* CustomTabItem.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
 		46F44FBC29DAD35800936230 = {
 			isa = PBXGroup;
 			children = (
@@ -65,16 +176,10 @@
 		46F44FC729DAD35800936230 /* MusicApp */ = {
 			isa = PBXGroup;
 			children = (
-				46F44FC829DAD35800936230 /* MusicAppApp.swift */,
-				46F44FCA29DAD35800936230 /* ContentView.swift */,
-				46F44FD629DAD37500936230 /* HomeView.swift */,
-				46F44FDA29DAE8B200936230 /* TabBar.swift */,
-				46ACC75829DB4239004A690E /* CustumTabView.swift */,
-				46F64E9829DB084800B44B3D /* refrencefile.swift */,
-				46F64E9229DB04F200B44B3D /* FavouriteView.swift */,
-				46F64E9429DB050100B44B3D /* SearchView.swift */,
-				46F44FD829DAE5ED00936230 /* ListView.swift */,
-				46F44FCC29DAD35900936230 /* Assets.xcassets */,
+				469676DA29DC634F007724EF /* Common */,
+				469676AF29DC04DC007724EF /* Resources */,
+				469676AC29DC0417007724EF /* Modules */,
+				469676B029DC0506007724EF /* Networking */,
 				46F44FCE29DAD35900936230 /* Preview Content */,
 			);
 			path = MusicApp;
@@ -158,15 +263,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				46ACC75929DB4239004A690E /* CustumTabView.swift in Sources */,
 				46F44FD929DAE5ED00936230 /* ListView.swift in Sources */,
 				46F44FD729DAD37500936230 /* HomeView.swift in Sources */,
-				46F44FCB29DAD35800936230 /* ContentView.swift in Sources */,
+				46F44FCB29DAD35800936230 /* MainView.swift in Sources */,
 				46F64E9529DB050100B44B3D /* SearchView.swift in Sources */,
+				469676BB29DC442A007724EF /* TabBarManager.swift in Sources */,
 				46F64E9929DB084800B44B3D /* refrencefile.swift in Sources */,
-				46F44FC929DAD35800936230 /* MusicAppApp.swift in Sources */,
+				46F44FC929DAD35800936230 /* MusicApp.swift in Sources */,
+				469676E329DC649F007724EF /* CustomTabItem.swift in Sources */,
 				46F64E9329DB04F200B44B3D /* FavouriteView.swift in Sources */,
 				46F44FDB29DAE8B200936230 /* TabBar.swift in Sources */,
+				469676DF29DC6435007724EF /* TabItems.swift in Sources */,
+				469676B529DC0FA5007724EF /* AudioPlayerView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

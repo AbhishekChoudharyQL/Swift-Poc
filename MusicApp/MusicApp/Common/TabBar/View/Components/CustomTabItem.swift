@@ -1,14 +1,14 @@
 //
-//  CustumTabView.swift
+//  CustomTabItem.swift
 //  MusicApp
 //
-//  Created by abhishek on 03/04/23.
+//  Created by abhishek on 04/04/23.
 //
 
 import SwiftUI
 
 struct CustomTabItem: View {
-    let tab: Tab
+    let tab: TabItems
     let itemAction : (() -> ())
 
     var body: some View {
@@ -17,6 +17,7 @@ struct CustomTabItem: View {
         }, label: {
             Image(systemName: tab.rawValue)
                 .resizable()
+                .font(.system(size: 25,weight: .regular,design: .default))
                 .frame(width: 60, height: 60, alignment: .center)
                 .padding(.horizontal)
         })
@@ -24,3 +25,10 @@ struct CustomTabItem: View {
     }
 }
 
+struct CustomTabItem_Previews: PreviewProvider {
+    static var previews: some View {
+        CustomTabItem(tab: TabItems.music, itemAction: {
+            // 
+        })
+    }
+}

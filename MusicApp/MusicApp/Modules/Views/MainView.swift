@@ -8,7 +8,7 @@
 import SwiftUI
 import AVKit
 
-struct ContentView: View {
+struct MainView: View {
     var body: some View {
         VStack {
             HomeView()
@@ -31,6 +31,6 @@ struct ContentView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        MainView()
     }
 }
