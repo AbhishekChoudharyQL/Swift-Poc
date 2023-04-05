@@ -15,13 +15,15 @@ struct AudioPlayerView: View {
                 .scaledToFill()
                 .ignoresSafeArea()
                 .opacity(0.7)
-            VStack(alignment: .leading,spacing: 50, content: {
+            VStack(alignment: .leading,spacing: 40, content: {
                 AudioScreenButtons(buttonName: "heart")
                     .overlay(alignment: .topTrailing, content: {
                         
                     })
                 AudioImageView()
-                    .padding(.all ,30)
+                    .padding(.leading,30)
+                    .padding(.trailing,30)
+                
                 HStack(alignment: .center,spacing: 80, content: {
                     AudioScreenButtons(buttonName: "backward.circle.fill")
                     AudioScreenButtons(buttonName: "play.circle.fill")
