@@ -12,7 +12,7 @@ class PokemonCardsViewModel {
     //MARK: - Public methods
     public func getPokemonData(pokemonData: @escaping (PokemonData) -> ()) {
         // right approach
-        NetworkManager.shared.serviceRequest(endPoint: .pokemonListing,listingCount: 1200) { data, response, error in
+        NetworkManager.shared.serviceRequest(endPoint: .pokemonListing,listingCount: 5) { data, response, error in
             do {
                 //let decodedResponse  = try JSONDecoder().decode(PokemonListResponse.self, from: data!)
                 let decodedResponse  = try JSONDecoder().decode(PokemonListResponse.self, from: data!)

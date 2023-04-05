@@ -30,13 +30,15 @@ struct PokemonData : Codable {
     var height: Int
     var weight: Int
     var name: String
-    
+    //var baseExperience : String
+     
     enum CodingKeys: String, CodingKey {
         case id
         case sprites
         case height
         case weight
         case name
+        //case baseExperience = "base_experience"
     }
 }
 
