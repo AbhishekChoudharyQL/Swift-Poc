@@ -9,21 +9,24 @@ import SwiftUI
 
 // Root View
 struct TabBarManager: View {
-    @State var selectedTab: TabItems = .music
+    @State var selectedTab: TabItems = .home
     
     var body: some View {
         VStack(alignment: .center, content: {
             switch selectedTab {
-            case .music:
+            case .home:
                 HomeView()
+            case .music:
+                FloatingScreenView()
             case .heart:
                 FavouriteView()
             case .magnifyingglass:
                 SearchView()
+           
             }
         })
         .frame(height: UIScreen.main.bounds.height)
-        .background(Color.red)
+//        .background(Color.red)
         .overlay(alignment: .bottom ,content: {
             TabBar(selectedTab: $selectedTab)
         })

@@ -7,15 +7,18 @@
 
 import SwiftUI
 
-struct FlaotingScreenView: View {
+struct FloatingScreenView: View {
     @State var opacity : Double = 1
     @State var height : CGFloat = 0
     @State var floating = false
     var body: some View {
         GeometryReader { geo in
+          
             ZStack{
-                Color.orange
-            }.gesture(DragGesture()
+               AudioPlayerView()
+            }.frame(width: UIScreen.main.bounds.width,height: UIScreen.main.bounds.height)
+                .edgesIgnoringSafeArea(.all)
+            .gesture(DragGesture()
                 .onChanged({
                     (value) in
                     if self.height >= 0 {
@@ -23,29 +26,34 @@ struct FlaotingScreenView: View {
                     }
                 })
                     .onEnded({ (value) in
-                      if self.height > 10 {
-                            self.height = geo.size.height - 60  // this will give the height of
+                      if self.height > 100 && !self.floating {
+                         self.height = geo.size.height  - 755 // this will give the height of
                           self.opacity = 1                      // minimized screen
                           self.floating = true
                         }
                         else{
-                            if self.height < geo.size.height - 100 {
+                            if self.height < geo.size.height - 150  {
                                 self.height = 0
                             }
                             else {
-                                self.height = geo.size.height - 75
+                                self.height = geo.size.height - 150
+                                self.floating = false
                             }
                         }
                     })
             ).opacity(opacity)
                 .offset(y:self.height)
                 .animation(.spring())
+           
              }
+       
           }
+    
       }
 
 struct FlaotingScreenView_Previews: PreviewProvider {
     static var previews: some View {
-        FlaotingScreenView()
+        FloatingScreenView()
     }
 }
+

@@ -21,7 +21,7 @@ struct TabBar: View {
             }
         })
         .padding(20)
-        .frame(width: UIScreen.main.bounds.width)
+        .frame(width: UIScreen.main.bounds.width, height: 85)
         .background(Color.black)
     }
 }

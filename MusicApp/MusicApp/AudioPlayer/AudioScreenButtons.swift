@@ -10,6 +10,7 @@ import SwiftUI
 struct AudioScreenButtons: View {
     var buttonName : String = ""
     var body: some View {
+       
         Button(action: {print("tapped")}, label: {
             Image(systemName: buttonName)
                 .resizable()

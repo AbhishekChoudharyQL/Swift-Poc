@@ -13,6 +13,7 @@ struct HomeView: View {
         ZStack {
         Image("musichome")
                 .resizable()
+                .ignoresSafeArea()
                 .scaledToFill()
                 .scaleEffect(isAnimating ? 1.0 : 0.6)
               
@@ -23,7 +24,7 @@ struct HomeView: View {
                     .bold()
             }
         }
-        .cornerRadius(30)
+//        .cornerRadius(30)
         .onAppear {
             withAnimation(.easeIn(duration: 1.0)){
                 isAnimating = true

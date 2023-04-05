@@ -39,3 +39,49 @@ import Foundation
 //        .tint(.white)
 //    }
 //}
+
+
+//
+//ZStack{
+//    Image("marcela-laskoski-YrtFlrLo2DQ-unsplash")
+//        .resizable()
+//        .scaledToFill()
+//        .ignoresSafeArea()
+//        .opacity(0.7)
+//    VStack(alignment: .leading,spacing: 40, content: {
+//        AudioScreenButtons(buttonName: "heart")
+//            .overlay(alignment: .topTrailing, content: {
+//
+//            })
+//        AudioImageView()
+//            .padding(.leading,30)
+//            .padding(.trailing,30)
+//
+//        HStack(alignment: .center,spacing: 80, content: {
+//            AudioScreenButtons(buttonName: "backward.circle.fill")
+//            AudioScreenButtons(buttonName: "play.circle.fill")
+//            AudioScreenButtons(buttonName: "forward.circle.fill")
+//        })
+//        SongDurationSlider()
+//    })
+//}.scaleEffect(scale)
+//    .animation(.easeInOut(duration: 0.2))
+//    .offset(x: offset.width, y: offset.height)
+//    .gesture(DragGesture()
+//                .onChanged { gesture in
+//                    self.offset = gesture.translation
+//                }
+//                .onEnded { gesture in
+//                    withAnimation {
+//                        self.position.x += gesture.translation.width
+//                        self.position.y += gesture.translation.height
+//                        self.offset = .zero
+//    }
+//})
+//    .gesture(MagnificationGesture()
+//                            .onChanged { value in
+//                                self.scale = value.magnitude
+//                            }
+//                            .onEnded { value in
+//                                self.scale = 1.0
+//                            })

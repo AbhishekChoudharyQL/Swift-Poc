@@ -15,7 +15,8 @@
 		469676BB29DC442A007724EF /* TabBarManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 469676BA29DC442A007724EF /* TabBarManager.swift */; };
 		469676DF29DC6435007724EF /* TabItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = 469676DE29DC6435007724EF /* TabItems.swift */; };
 		469676E329DC649F007724EF /* CustomTabItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 469676E229DC649F007724EF /* CustomTabItem.swift */; };
-		46AB0B7729DD60A100C347E7 /* FlaotingScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46AB0B7629DD60A100C347E7 /* FlaotingScreenView.swift */; };
+		46AB0B7729DD60A100C347E7 /* FloatingScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46AB0B7629DD60A100C347E7 /* FloatingScreenView.swift */; };
+		46AB0B7C29DDB1CA00C347E7 /* AppColors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 46AB0B7B29DDB1CA00C347E7 /* AppColors.xcassets */; };
 		46F44FC929DAD35800936230 /* MusicApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46F44FC829DAD35800936230 /* MusicApp.swift */; };
 		46F44FCD29DAD35900936230 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 46F44FCC29DAD35900936230 /* Assets.xcassets */; };
 		46F44FD029DAD35900936230 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 46F44FCF29DAD35900936230 /* Preview Assets.xcassets */; };
@@ -36,7 +37,8 @@
 		469676BA29DC442A007724EF /* TabBarManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarManager.swift; sourceTree = "<group>"; };
 		469676DE29DC6435007724EF /* TabItems.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabItems.swift; sourceTree = "<group>"; };
 		469676E229DC649F007724EF /* CustomTabItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabItem.swift; sourceTree = "<group>"; };
-		46AB0B7629DD60A100C347E7 /* FlaotingScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlaotingScreenView.swift; sourceTree = "<group>"; };
+		46AB0B7629DD60A100C347E7 /* FloatingScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatingScreenView.swift; sourceTree = "<group>"; };
+		46AB0B7B29DDB1CA00C347E7 /* AppColors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = AppColors.xcassets; sourceTree = "<group>"; };
 		46F44FC529DAD35800936230 /* MusicApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MusicApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		46F44FC829DAD35800936230 /* MusicApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicApp.swift; sourceTree = "<group>"; };
 		46F44FCC29DAD35900936230 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -100,6 +102,7 @@
 		469676AF29DC04DC007724EF /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				46AB0B7A29DDB1BA00C347E7 /* AppColors */,
 				46F44FC829DAD35800936230 /* MusicApp.swift */,
 				46F64E9829DB084800B44B3D /* refrencefile.swift */,
 				46F44FCC29DAD35900936230 /* Assets.xcassets */,
@@ -121,7 +124,7 @@
 				4677786329DC96490089C807 /* SongDurationSlider.swift */,
 				4677786829DCA0B80089C807 /* AudioScreenButtons.swift */,
 				4677786A29DCA42B0089C807 /* AudioImageView.swift */,
-				46AB0B7629DD60A100C347E7 /* FlaotingScreenView.swift */,
+				46AB0B7629DD60A100C347E7 /* FloatingScreenView.swift */,
 			);
 			path = AudioPlayer;
 			sourceTree = "<group>";
@@ -190,6 +193,14 @@
 				46F64E9429DB050100B44B3D /* SearchView.swift */,
 			);
 			path = Search;
+			sourceTree = "<group>";
+		};
+		46AB0B7A29DDB1BA00C347E7 /* AppColors */ = {
+			isa = PBXGroup;
+			children = (
+				46AB0B7B29DDB1CA00C347E7 /* AppColors.xcassets */,
+			);
+			path = AppColors;
 			sourceTree = "<group>";
 		};
 		46F44FBC29DAD35800936230 = {
@@ -289,6 +300,7 @@
 			files = (
 				46F44FD029DAD35900936230 /* Preview Assets.xcassets in Resources */,
 				46F44FCD29DAD35900936230 /* Assets.xcassets in Resources */,
+				46AB0B7C29DDB1CA00C347E7 /* AppColors.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -301,7 +313,7 @@
 			files = (
 				4677786429DC96490089C807 /* SongDurationSlider.swift in Sources */,
 				4677786929DCA0B80089C807 /* AudioScreenButtons.swift in Sources */,
-				46AB0B7729DD60A100C347E7 /* FlaotingScreenView.swift in Sources */,
+				46AB0B7729DD60A100C347E7 /* FloatingScreenView.swift in Sources */,
 				4677786B29DCA42B0089C807 /* AudioImageView.swift in Sources */,
 				46F44FD929DAE5ED00936230 /* ListView.swift in Sources */,
 				46F44FD729DAD37500936230 /* HomeView.swift in Sources */,
