@@ -18,7 +18,7 @@ struct AudioPlayerView: View {
                 .scaledToFill()
                 .opacity(0.78)
                 .frame(width: UIScreen.main.bounds.width,height: UIScreen.main.bounds.height)
-                .edgesIgnoringSafeArea(.all)
+                .edgesIgnoringSafeArea(.top)
             
             VStack(alignment: .center,spacing: 30, content: {
                 AudioScreenButtons(buttonName: "heart")

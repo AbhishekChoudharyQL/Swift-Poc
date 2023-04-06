@@ -16,54 +16,54 @@ struct FloatingScreenView: View {
     //MARK: - View Builder
     var body: some View {
         GeometryReader { geo in
-            ZStack{
-               AudioPlayerView()
+            VStack{
+                MiniPlayerView()
+                AudioPlayerView()
+                    .opacity(0.3)
             }//: Setting dynamic frame for Zstack
             .frame(width: UIScreen.main.bounds.width,height: UIScreen.main.bounds.height)
-                .edgesIgnoringSafeArea(.all)
-            
+            .edgesIgnoringSafeArea(.top)
             .gesture(DragGesture()
                 .onChanged({
                     (value) in
-                    if self.height >= 0 {
-                        self.height += value.translation.height
-                    }
+                    onGestureChange(value)
                 })
-                
+                     
                 .onEnded({ (value) in
-                      if self.height > 100 && !self.floating {
-                         self.height = geo.size.height - 150 // this will give the height of
-                          self.opacity = 1                      // minimized screen
-                          self.floating = true
-                        }
-                        else{
-                            if self.height < geo.size.height - 300  {
-                                self.height = 0
-                            }
-                            else {
-                                self.height = geo.size.height - 150
-                                self.opacity = 0.1
-                                self.floating = false
-                            }
-                        }
-                    })
+                    onGestureEnded(value, geo)
+                })
             ).opacity(opacity)
                 .offset(y:self.height)
                 .scaleEffect(1.0)
-//                .animation(.easeInOut)
+            //                .animation(.easeInOut)
             
-             }
-          }
+        }
+    }
     
     //MARK: - private methods
     private func onGestureChange(_ value: DragGesture.Value)  {
-        
+        if self.height >= 0 {
+            self.height += value.translation.height
+        }
     }
     
-    private func onGestureEnded(_ value: DragGesture.Value) {
-        
+    private func onGestureEnded(_ value: DragGesture.Value, _ geo: GeometryProxy) {
+        if self.height > 100 && !self.floating {
+            self.height = geo.size.height - 150 // this will give the height of
+            self.opacity = 1                      // minimized screen
+            self.floating = true
+        } else{
+            if self.height < geo.size.height - 300  {
+                self.height = 0
+            }
+            else {
+                self.height = geo.size.height - 150
+                self.opacity = 0.1
+                self.floating = false
+            }
+        }
     }
-      }
+}
 
 struct FlaotingScreenView_Previews: PreviewProvider {
     static var previews: some View {
