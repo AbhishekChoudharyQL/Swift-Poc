@@ -16,11 +16,11 @@ struct FloatingScreenView: View {
     //MARK: - View Builder
     var body: some View {
         GeometryReader { geo in
-            VStack{
+            ZStack(alignment: .top, content: {
                 MiniPlayerView()
                 AudioPlayerView()
                     .opacity(0.3)
-            }//: Setting dynamic frame for Zstack
+            })//: Setting dynamic frame for Zstack
             .frame(width: UIScreen.main.bounds.width,height: UIScreen.main.bounds.height)
             .edgesIgnoringSafeArea(.top)
             .gesture(DragGesture()

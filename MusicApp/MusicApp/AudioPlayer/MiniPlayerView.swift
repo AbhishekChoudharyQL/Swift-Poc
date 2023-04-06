@@ -13,71 +13,25 @@ struct MiniPlayerView: View {
     @State var floatingStatusOfMiniPlayer = false
     //MARK: - View Builder
     var body: some View {
-        GeometryReader {
-            geo in
-                HStack(spacing: 12,content: {
-                    //:- Setting up song image to display in mini player ..
-                   Image("juja-han-uT55XxQLQGU-unsplash")
-                        .resizable()
-                        .scaledToFill()
-                        .frame(width: UIScreen.main.bounds.width/14,height: UIScreen.main.bounds.height/7)
-                        .padding(.trailing,40)
-                    //:- Setting up text to display song name in mini palyer..
-                    Text("Song-Name")
-                        .foregroundColor(.white)
-                        .fontDesign(.serif)
-                        .font(.title3)
-                        .fontWeight(.bold)
-                        .multilineTextAlignment(.center)
-                        .padding()
-                    //:- Calling AudioScreenButtonsView to display buttons of mini player...
-                       AudioScreenButtons(buttonName: "play.circle.fill")
-                        AudioScreenButtons(buttonName: "forward.circle.fill")
-                })
-            .frame(width: UIScreen.main.bounds.width,height: UIScreen.main.bounds.height/9,alignment: .bottomLeading)
-                .background(Color.brown)
-                //: - Setting dynamic frame and background color to Z-stack which will hold every element..
-        }.gesture(DragGesture()
-            .onChanged({
-                (value) in
-                if heightOfMiniPlayer >= 0 {
-                    self.heightOfMiniPlayer += value.translation.height
-                }
-            })
-                .onEnded({
-                    (value) in
-                    
-                })
-        )
-//        ZStack(alignment: .bottom,content: {
-//            HStack(spacing: 12,content: {
-//                //:- Setting up song image to display in mini player ..
-//               Image("juja-han-uT55XxQLQGU-unsplash")
-//                    .resizable()
-//                    .scaledToFill()
-//                    .frame(width: UIScreen.main.bounds.width/14)
-//                    .padding(.trailing,40)
-////                //:- Setting up text to display song name in mini palyer..
-//                Text("Song-Name")
-//                    .foregroundColor(.white)
-//                    .fontDesign(.serif)
-//                    .font(.title3)
-//                    .fontWeight(.bold)
-//                    .multilineTextAlignment(.center)
-//                    .padding()
-//                //:- Calling AudioScreenButtonsView to display buttons of mini player...
-//                   AudioScreenButtons(buttonName: "play.circle.fill")
-//                    AudioScreenButtons(buttonName: "forward.circle.fill")
-//            })
-//        }).frame(width: UIScreen.main.bounds.width,height: UIScreen.main.bounds.height/9,alignment: .bottomLeading)
-//            .background(Color.brown)
-//            //: - Setting dynamic frame and background color to Z-stack which will hold every element..
-//            .gesture(DragGesture()
-//                .onChanged({
-//                    (value) in
-//                    self.heightOfMiniPlayer
-//                })
-//            )
+        HStack(spacing: 12,content: {
+            //:- Setting up song image to display in mini player ..
+           Image("juja-han-uT55XxQLQGU-unsplash")
+                .resizable()
+                .scaledToFill()
+                .frame(width: UIScreen.main.bounds.width/14,height: UIScreen.main.bounds.height/7)
+                .padding(.trailing,40)
+            //:- Setting up text to display song name in mini palyer..
+            Text("Song-Name")
+                .foregroundColor(.white)
+                .fontDesign(.serif)
+                .font(.title3)
+                .fontWeight(.bold)
+                .multilineTextAlignment(.center)
+                .padding()
+            //:- Calling AudioScreenButtonsView to display buttons of mini player...
+               AudioScreenButtons(buttonName: "play.circle.fill")
+                AudioScreenButtons(buttonName: "forward.circle.fill")
+        })
     }
 }
 //MARK: - Previews
