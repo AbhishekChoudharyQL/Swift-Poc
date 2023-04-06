@@ -18,7 +18,7 @@ struct CustomTabItem: View {
             Image(systemName: tab.rawValue)
                 .resizable()
                 .font(.system(size: 25,weight: .regular,design: .default))
-                .frame(width: 60, height: 60, alignment: .center)
+                .frame(width: 50, height: 50, alignment: .center)
                 .padding(.horizontal)
         })
         .tint(.white)

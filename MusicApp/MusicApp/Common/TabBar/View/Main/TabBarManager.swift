@@ -22,11 +22,12 @@ struct TabBarManager: View {
                 FavouriteView()
             case .magnifyingglass:
                 SearchView()
-           
             }
         })
         .frame(height: UIScreen.main.bounds.height)
         .overlay(alignment: .bottom ,content: {
+//            FloatingScreenView()
+          
             TabBar(selectedTab: $selectedTab)
         })
     }

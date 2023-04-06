@@ -12,6 +12,7 @@ struct AudioScreenButtons: View {
     var buttonName : String = ""
     //MARK: - View Builder
     var body: some View {
+        //:- Reusable button properties
         Button(action: {print("tapped")}, label: {
             Image(systemName: buttonName)
                 .resizable()
