@@ -12,17 +12,24 @@ struct TabBar: View {
     @Binding var selectedTab : TabItems
     
     var body: some View {
-        HStack(content: {
-            ForEach(TabItems.allCases, id: \.rawValue) { element in
-                CustomTabItem(tab: element, itemAction: {
-                    selectedTab = element
-                }).opacity(selectedTab == element ? 1 : 0.5)
-                
-            }
-        })
-        .padding(20)
-        .frame(width: UIScreen.main.bounds.width, height: 85)
-        .background(Color.black)
+        ZStack( content: {
+            VStack(content: {
+//                MiniPlayerView()
+                HStack(content: {
+                    ForEach(TabItems.allCases, id: \.rawValue) { element in
+                        CustomTabItem(tab: element, itemAction: {
+                            selectedTab = element
+                        }).opacity(selectedTab == element ? 1 : 0.5)
+                        
+                    }
+                })
+                .padding(20)
+                .frame(width: UIScreen.main.bounds.width, height: 85)
+                .background(Color.black)
+            })
+            })
+        
+       
     }
 }
 
