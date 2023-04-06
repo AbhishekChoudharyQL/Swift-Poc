@@ -26,7 +26,6 @@ struct TabBarManager: View {
             }
         })
         .frame(height: UIScreen.main.bounds.height)
-//        .background(Color.red)
         .overlay(alignment: .bottom ,content: {
             TabBar(selectedTab: $selectedTab)
         })

@@ -8,7 +8,9 @@
 import SwiftUI
 
 struct AudioImageView: View {
+    //MARK: - View Builder
     var body: some View {
+        //: Reusable image properties for song images ..
         Image("juja-han-uT55XxQLQGU-unsplash")
             .resizable()
             .frame(width: 250,height: 250)
@@ -16,7 +18,7 @@ struct AudioImageView: View {
             .clipShape(Circle())
     }
 }
-
+//MARK: - Previews
 struct AudioImageVierw_Previews: PreviewProvider {
     static var previews: some View {
         AudioImageView()

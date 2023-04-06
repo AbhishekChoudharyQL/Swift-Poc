@@ -8,9 +8,10 @@
 import SwiftUI
 
 struct AudioScreenButtons: View {
+   //MARK: - Properties
     var buttonName : String = ""
+    //MARK: - View Builder
     var body: some View {
-       
         Button(action: {print("tapped")}, label: {
             Image(systemName: buttonName)
                 .resizable()
@@ -21,7 +22,7 @@ struct AudioScreenButtons: View {
         })
     }
 }
-
+//MARK: - Previews
 struct AudioScreenButton_Previews: PreviewProvider {
     static var previews: some View {
         AudioScreenButtons()
