@@ -18,16 +18,26 @@ struct FloatingScreenView: View {
     var body: some View {
         GeometryReader { geo in
             ZStack(alignment: .top, content: {
-                AudioPlayerView()
+                                AudioPlayerView()
+//                                 if self.floating {
+//                                     MiniPlayerView()
+//                                         .transition(.move(edge: .top))
+//                                      if !self.floating {
+//                                       AudioPlayerView()
+//                                     }
+//                                 }
+//                                if self.floating {
+//                                    MiniPlayerView()
+//                                        .transition(.move(edge: .bottom))
+//                                }
                 if self.floating {
-                MiniPlayerView()
-                    }
-//                VStack(alignment: .center,content: {
-//                    if self.floating {
-//                    MiniPlayerView()
-//                          }
-//                   })
+                    MiniPlayerView()
 
+//                    if !self.floating {
+//                        AudioPlayerView()
+//                    }
+                }
+//
             })//: Setting dynamic frame for Zstack
             .frame(width: UIScreen.main.bounds.width,height: UIScreen.main.bounds.height)
             .edgesIgnoringSafeArea(.top)
@@ -60,8 +70,7 @@ struct FloatingScreenView: View {
             self.height = geo.size.height - 160 // this will give the height of
             self.opacity = 1                      // minimized screen
             self.floating = true
-        }  else if self.height < -100 && self.floating {
-            MiniPlayerView().opacity(0)
+        }  else if self.height >= geo.size.height - 160 && self.floating {
             self.height = 0
             self.opacity = 1
 
@@ -69,12 +78,11 @@ struct FloatingScreenView: View {
         }
         else{
             if self.height < geo.size.height - 320  {
-                MiniPlayerView().opacity(0)
                 self.height = 0
-
+                self.floating = false
             }
             else {
-                self.height = geo.size.height - 160
+                self.height = geo.size.height - 170
                 self.opacity = 1
                 self.floating = false
             }

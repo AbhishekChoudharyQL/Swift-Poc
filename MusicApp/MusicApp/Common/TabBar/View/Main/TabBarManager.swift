@@ -13,6 +13,7 @@ struct TabBarManager: View {
     
     var body: some View {
         VStack(alignment: .center, content: {
+            
             switch selectedTab {
             case .home:
                 HomeView()
