@@ -11,8 +11,9 @@ import SwiftUI
 struct MusicApp: App {
     var body: some Scene {
         WindowGroup {
-
-            TabBarManager()
+            HomeView()
+//             IntroScreensViews()
+//            TabBarManager()
 //            AudioPlayerView()
         }
     }
