@@ -85,3 +85,16 @@ import Foundation
 //                            .onEnded { value in
 //                                self.scale = 1.0
 //                            })
+
+//                NavigationStack{
+
+//                } .navigationTitle("Search")
+//                    .searchable(text: $searchText,prompt: "Artist,Songs,Playlists")
+
+//TextField("Search", text: $searchText, onEditingChanged: { isEditing in
+//    self.showCancelButton = true
+//    // Handle editing changed event, if needed
+//})
+//.textFieldStyle(RoundedBorderTextFieldStyle())
+//.foregroundColor(.pink)
+//.padding(.horizontal)

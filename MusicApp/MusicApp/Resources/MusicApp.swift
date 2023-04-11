@@ -9,11 +9,14 @@ import SwiftUI
 
 @main
 struct MusicApp: App {
+//    var networking = Networking()
     var body: some Scene {
         WindowGroup {
-            HomeView()
+            
+//            HomeView()
+//                .environmentObject(networking)
 //             IntroScreensViews()
-//            TabBarManager()
+            TabBarManager()
 //            AudioPlayerView()
         }
     }

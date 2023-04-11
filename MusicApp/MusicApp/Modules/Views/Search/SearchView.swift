@@ -8,9 +8,25 @@
 import SwiftUI
 
 struct SearchView: View {
+    @State private var searchText = ""
+    @State private var showCancelButton: Bool = false
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
-//            .background(Color.blue)
+        ZStack{
+            Image("musichome")
+                .resizable()
+                .opacity(0.8)
+                .ignoresSafeArea()
+                
+            VStack {
+                Text("Search Your Favorites")
+                    .foregroundColor(.white)
+                    .bold()
+                    .font(.largeTitle)
+                   SearchBar()
+                       Spacer()
+
+            }
+        }
     }
 }
 

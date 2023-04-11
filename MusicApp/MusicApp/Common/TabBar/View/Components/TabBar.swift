@@ -24,8 +24,12 @@ struct TabBar: View {
                     }
                 })
                 .padding(20)
-                .frame(width: UIScreen.main.bounds.width, height: 75)
-                .background(Color.black)
+                .frame(width: UIScreen.main.bounds.width, height: 70)
+                .background(Color.black
+                    .cornerRadius(50)
+                    .padding(.leading)
+                    .padding(.trailing)
+                )
             })
         })
         
@@ -36,7 +40,7 @@ struct TabBar: View {
 
 struct TabBar_Previews: PreviewProvider {
     static var previews: some View {
-        TabBar(selectedTab: .constant(.music))
+        TabBar(selectedTab: .constant(.home))
             .previewDevice("iPhone 14 Pro Max")
             .previewLayout(.sizeThatFits)
     }

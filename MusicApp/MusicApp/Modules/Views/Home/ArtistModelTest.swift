@@ -7,8 +7,8 @@
 
 import Foundation
 
-struct Artist : Codable,Identifiable {
-    var id : Int
-    var name : String
-    var picture_medium : String
-}
+//struct Artist : Codable,Identifiable,Hashable {
+//    var id : Int
+//    var name : String
+//    var picture_medium : String
+//}
