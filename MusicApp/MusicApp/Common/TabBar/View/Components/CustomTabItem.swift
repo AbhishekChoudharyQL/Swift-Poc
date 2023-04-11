@@ -27,7 +27,7 @@ struct CustomTabItem: View {
 
 struct CustomTabItem_Previews: PreviewProvider {
     static var previews: some View {
-        CustomTabItem(tab: TabItems.music, itemAction: {
+        CustomTabItem(tab: TabItems.home, itemAction: {
             // 
         }).background(Color(.black))
     }

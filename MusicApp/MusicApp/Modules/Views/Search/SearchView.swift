@@ -15,7 +15,7 @@ struct SearchView: View {
             Image("musichome")
                 .resizable()
                 .opacity(0.8)
-                .ignoresSafeArea()
+                //.ignoresSafeArea()
                 
             VStack {
                 Text("Search Your Favorites")

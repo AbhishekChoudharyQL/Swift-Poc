@@ -18,7 +18,7 @@ struct HomeView: View {
             //: - 𝑺𝒆𝒕𝒕𝒊𝒏𝒈 𝒖𝒑 𝒃𝒂𝒄𝒌𝒈𝒓𝒐𝒖𝒏𝒅 𝒊𝒎𝒂𝒈𝒆𝒔 𝒇𝒐𝒓 𝒉𝒐𝒎𝒆 𝒔𝒄𝒓𝒆𝒆𝒏 𝒊𝒏𝒔𝒊𝒅𝒆 𝒁𝒔𝒕𝒂𝒄𝒌..
             Image("musichome")
                 .resizable()
-                .ignoresSafeArea()
+                //.ignoresSafeArea()
                 .scaledToFill()
                 .opacity(isAnimating ? 1.0 : 0.38)
             //: - 𝐏𝐚𝐫𝐞𝐧𝐭 𝐕𝐬𝐭𝐚𝐜𝐤 𝐭𝐨 𝐡𝐨𝐥𝐝 𝐭𝐢𝐭𝐥𝐞, 𝐚𝐫𝐭𝐢𝐬𝐭𝐬-𝐬𝐜𝐫𝐨𝐥𝐥𝐕𝐢𝐞𝐰, 𝐩𝐥𝐚𝐲𝐥𝐢𝐬𝐭-𝐬𝐜𝐫𝐨𝐥𝐥𝐕𝐢𝐞𝐰..
@@ -46,7 +46,7 @@ struct HomeView: View {
                                 Text("Artist-Name")
                                     .foregroundColor(.white)
                             }
-                        }
+                        }.padding()
 //                        ForEach(networking.artists,id: \.self){ artistData in
 //                            VStack {
 //                                Image("\(artistData.picture_medium)")

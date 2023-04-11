@@ -17,8 +17,8 @@ struct TabBarManager: View {
             switch selectedTab {
             case .home:
                 HomeView()
-            case .music:
-                FloatingScreenView()
+//            case .music:
+//                FloatingScreenView()
             case .heart:
                 FavouriteView()
             case .magnifyingglass:
@@ -26,10 +26,13 @@ struct TabBarManager: View {
             }
         })
         .frame(height: UIScreen.main.bounds.height)
+//        .padding(.bottom, -60)
         .overlay(alignment: .bottom ,content: {
-//            FloatingScreenView()
-          
-            TabBar(selectedTab: $selectedTab)
+            VStack(spacing: 0, content: {
+                FloatingScreenView()
+              
+                TabBar(selectedTab: $selectedTab)
+            })
         })
     }
 }
