@@ -39,8 +39,8 @@ struct FloatingScreenView: View {
                 }
 //
             })//: Setting dynamic frame for Zstack
-            .frame(width: UIScreen.main.bounds.width,height: UIScreen.main.bounds.height)
-            .edgesIgnoringSafeArea(.top)
+//            .frame(width: UIScreen.main.bounds.width,height: UIScreen.main.bounds.height)
+//            .edgesIgnoringSafeArea(.top)
             .gesture(DragGesture()
                 .onChanged({
                     (value) in
@@ -55,7 +55,8 @@ struct FloatingScreenView: View {
                 .scaleEffect(1.0)
             //                .animation(.easeInOut)
 
-        } //:- Geometry Reader Ends Here
+        }.frame(width: UIScreen.main.bounds.width,height: UIScreen.main.bounds.height)
+        //:- Geometry Reader Ends Here
     } //:- Body Ends Here
 
     //MARK: - private methods
@@ -67,7 +68,7 @@ struct FloatingScreenView: View {
 
     private func onGestureEnded(_ value: DragGesture.Value, _ geo: GeometryProxy) {
         if self.height > 100 && !self.floating {
-            self.height = geo.size.height - 160 // this will give the height of
+            self.height = geo.size.height - 40 // this will give the height of
             self.opacity = 1                      // minimized screen
             self.floating = true
         }  else if self.height >= geo.size.height - 160 && self.floating {
@@ -98,3 +99,4 @@ struct FlaotingScreenView_Previews: PreviewProvider {
 }
 
 
+//160

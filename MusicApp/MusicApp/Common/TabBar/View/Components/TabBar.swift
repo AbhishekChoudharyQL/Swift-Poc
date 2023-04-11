@@ -24,16 +24,17 @@ struct TabBar: View {
                     }
                 })
                 .padding(20)
-                .frame(width: UIScreen.main.bounds.width, height: 70)
+                .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height*0.15)
                 .background(Color.black
-                    .cornerRadius(50)
-                    .padding(.leading)
-                    .padding(.trailing)
+//                    .cornerRadius(50)
+//                    .padding(.leading)
+//                    .padding(.trailing)
+                    
                 )
             })
         })
         
-        
+        //70
        
     }
 }

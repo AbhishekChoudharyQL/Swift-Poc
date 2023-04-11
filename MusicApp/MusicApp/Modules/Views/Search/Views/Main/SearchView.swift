@@ -22,10 +22,10 @@ struct SearchView: View {
                     .foregroundColor(.white)
                     .bold()
                     .font(.largeTitle)
+//                    .padding(.top,20)
                    SearchBar()
                        Spacer()
-
-            }
+            }.padding(.top,30)
         }
     }
 }

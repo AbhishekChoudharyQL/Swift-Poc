@@ -6,7 +6,7 @@
 //
 
 import SwiftUI
-
+//marcela-laskoski-YrtFlrLo2DQ-unsplash
 struct AudioPlayerView: View {
     //MARK: - Properties
     @State private var isMinimised = false
@@ -14,19 +14,19 @@ struct AudioPlayerView: View {
     //MARK: - View Builder
     var body: some View {
         ZStack{
-            Image("marcela-laskoski-YrtFlrLo2DQ-unsplash")
+            Image("musichome")
                 .resizable()
                 .scaledToFill()
-                .opacity(0.78)
+                .opacity(1.0)
                 .frame(width: UIScreen.main.bounds.width,height: UIScreen.main.bounds.height)
                 .edgesIgnoringSafeArea(.top)
-
+            
             VStack(alignment: .center,spacing: 30, content: {
                 //:- Calling AudioScreenButtonsView to display buttons of mini player...
                 AudioScreenButtons(buttonName: "heart")
                     .overlay(alignment: .topTrailing, content: {
-
-                    }).padding(.zero)
+                        
+                    }).padding(.top,30)
                 //:- Calling AudioImage to show image of song being played...
                 AudioImageView()
                     .padding(.leading,30)
@@ -36,18 +36,22 @@ struct AudioPlayerView: View {
                     .foregroundColor(.white)
                     .font(.largeTitle)
                     .fontWeight(.bold)
+                    .padding()
                 //:- Calling SongDuration slider to show duration of song played...
                 SongDurationSlider()
+        
                 HStack(alignment: .center,spacing: 80, content: {
                     //:- Calling AudioScreenButtonsView to display buttons of mini player...
                     AudioScreenButtons(buttonName: "backward.circle.fill")
                     AudioScreenButtons(buttonName: "play.circle.fill")
                     AudioScreenButtons(buttonName: "forward.circle.fill")
                 })
-                    //:- Padding for elements in Vstack
-                    .padding(.bottom,70)
-            })
+                //:- Padding for elements in Vstack
+//                .padding(.all)
+            }).frame(width: UIScreen.main.bounds.width,height:UIScreen.main.bounds.height)
+                .padding()
         }
+//        }.frame(width: UIScreen.main.bounds.width,height: UIScreen.main.bounds.height)
     }
 }
 

@@ -16,7 +16,8 @@ struct AudioScreenButtons: View {
         Button(action: {print("tapped")}, label: {
             Image(systemName: buttonName)
                 .resizable()
-                .frame(width: 50,height: 50)
+//                .frame(width: 50,height: 50)
+                .frame(width: UIScreen.main.bounds.width*0.08,height: UIScreen.main.bounds.height*0.06)
                 .aspectRatio(contentMode: .fit)
                 .foregroundColor(.white)
 //                .background(.white)

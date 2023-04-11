@@ -29,7 +29,7 @@ struct HomeView: View {
                     .foregroundColor(.white)
                     .font(.custom("Georgia", size: 45, relativeTo: .headline))
                     .bold().padding(.bottom, 20)
-                
+                    .padding(.top,30)
                 //: 𝙑𝙨𝙩𝙖𝙘𝙠 𝙩𝙤 𝙙𝙞𝙨𝙥𝙡𝙖𝙮 "𝙍𝙚𝙘𝙤𝙢𝙢𝙚𝙣𝙙𝙚𝙙 𝘼𝙧𝙩𝙞𝙨𝙩 𝙏𝙞𝙩𝙡𝙚" 𝙖𝙣𝙙 𝙨𝙘𝙧𝙤𝙡𝙡𝙫𝙞𝙚𝙬 𝙤𝙛 𝙖𝙧𝙩𝙞𝙨𝙩𝙨..
                 Text("Recommended Artist")
                     .foregroundColor(Color.white)
@@ -79,7 +79,7 @@ struct HomeView: View {
                 ScrollView(showsIndicators: false) {
                     ForEach(0..<8){
                         index in
-                        HStack{ //:- 𝐏𝐚𝐫𝐞𝐧𝐭 𝐇𝐬𝐭𝐚𝐜𝐤 𝐭𝐨 𝐡𝐨𝐥𝐝 𝐩𝐥𝐚𝐲𝐥𝐢𝐬𝐭𝐬..
+                        HStack(spacing: 10){ //:- 𝐏𝐚𝐫𝐞𝐧𝐭 𝐇𝐬𝐭𝐚𝐜𝐤 𝐭𝐨 𝐡𝐨𝐥𝐝 𝐩𝐥𝐚𝐲𝐥𝐢𝐬𝐭𝐬..
                             VStack{
                                 RoundedRectangle(cornerRadius: 25)
                                     .fill(Color.white)
@@ -91,7 +91,7 @@ struct HomeView: View {
                                     .foregroundColor(.white)
                             }
                             
-                            VStack{
+                            VStack(spacing: 10){
                                 RoundedRectangle(cornerRadius: 25)
                                     .fill(Color.white)
                                     .frame(height: 150)

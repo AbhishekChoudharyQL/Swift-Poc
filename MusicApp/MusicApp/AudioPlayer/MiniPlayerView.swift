@@ -34,9 +34,14 @@ struct MiniPlayerView: View {
                 .padding(.top)
                 AudioScreenButtons(buttonName: "forward.circle.fill")
                 .padding(.top)
+                .padding(.trailing)
         }).background(AppColor.sliderAccentColor)
-            .frame(width: UIScreen.main.bounds.width,height: 95)
-
+            .frame(width: UIScreen.main.bounds.width,height: UIScreen.main.bounds.height*0.01)
+//            .cornerRadius(25)
+//            .padding(.leading,20)
+//            .padding(.trailing,20)
+ //95
+        
     }
 }
 //MARK: - Previews
