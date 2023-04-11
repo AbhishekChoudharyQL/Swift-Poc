@@ -24,14 +24,14 @@ struct MusicApp: App {
             
             switch userSession {
             case .userOnIntroScreen:
-                IntroScreensViews(userSession: $userSession)
+                OnboardingView(userSession: $userSession)
             case .userOnMainApp:
                 TabBarManager()
             }
             
 //            HomeView()
 //                .environmentObject(networking)
-//           IntroScreensViews()
+//           OnboardingView()
             //TabBarManager()
 //            AudioPlayerView()
 //            PlaylistApi()

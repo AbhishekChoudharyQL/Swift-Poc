@@ -26,7 +26,7 @@ struct PageView: View {
                 .italic()
                 .bold()
                 .padding()
-                .foregroundColor(.buttonColor)
+                .foregroundColor(AppColor.sliderAccentColor)
                     Text(page.description)
                 .font(.title2)
                         .frame(width: 300)
