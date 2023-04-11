@@ -26,7 +26,7 @@ struct IntroScreensViews: View {
                        ).buttonStyle(.borderedProminent)
                           .buttonStyle(.bordered)
                 } else {
-                    Button("next", action: incrementPage)
+                    Button("Next", action: incrementPage)
                         .buttonStyle(.borderedProminent)
                         .padding(.bottom,40)
                 }

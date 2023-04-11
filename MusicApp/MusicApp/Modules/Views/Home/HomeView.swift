@@ -10,6 +10,7 @@ import SwiftUI
 //artist json = "https://api.jsonserve.com/A5rmJ5"
 struct HomeView: View {
     //MARK: - Properties
+    @EnvironmentObject var playlists : PlaylistApi
 //    @EnvironmentObject var networking : Networking
     @State var isAnimating = false
     //MARK: - View Builder
@@ -56,6 +57,16 @@ struct HomeView: View {
 //                                    .foregroundColor(.white)
 //                            }
 //
+//                        }
+//                        ForEach(playlists.playlist,id: \.id){
+//                            index in
+//                            VStack{
+//                                Image("\(index.picture_medium)")
+//                                    .frame(width: 200,height: 200)
+//                                    .shadow(color: .pink, radius: 10)
+//                                Text("\(index.title)")
+//                                    .foregroundColor(.white)
+//                            }
 //                        }
                     }
                 }.frame(width: UIScreen.main.bounds.width, height: 200)//: - 𝙎𝙘𝙧𝙤𝙡𝙡 𝙑𝙞𝙚𝙬 𝙛𝙤𝙧 𝙖𝙧𝙩𝙞𝙨𝙩𝙨 𝙚𝙣𝙙𝙨 𝙝𝙚𝙧𝙚...
@@ -108,6 +119,6 @@ struct HomeView_Previews: PreviewProvider {
     static var previews: some View {
         HomeView()
 //            .environmentObject(Networking())
-           
+            .environmentObject(PlaylistApi())
     }
 }
