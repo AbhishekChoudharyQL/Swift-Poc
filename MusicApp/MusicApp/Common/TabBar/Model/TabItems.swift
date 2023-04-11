@@ -9,7 +9,7 @@ import Foundation
 
 enum TabItems : String , CaseIterable {
     case home = "music.note.house.fill"
-    case music = "music.note.list"
+    //case music = "music.note.list"
     case heart = "heart.circle.fill"
     case magnifyingglass = "magnifyingglass.circle.fill"
    
