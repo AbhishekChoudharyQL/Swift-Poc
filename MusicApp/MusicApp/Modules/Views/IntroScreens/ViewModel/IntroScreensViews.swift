@@ -8,9 +8,13 @@
 import SwiftUI
 
 struct IntroScreensViews: View {
-    @State private var pageIndex = 0
-    private var pages : [Page] = Page.samplePages
-    private let dotApppearence = UIPageControl.appearance()
+    @Binding var userSession : UserSession
+    
+    @State var pageIndex = 0
+    var pages : [Page] = Page.samplePages
+    let dotApppearence = UIPageControl.appearance()
+    
+    
     
     var body: some View {
         TabView(selection: $pageIndex, content: {
@@ -19,7 +23,7 @@ struct IntroScreensViews: View {
                     PageView(page: page)
                     if page == pages.last {
                         Button( action: {
-                            TabBarManager()
+                            self.userSession = .userOnMainApp
                         }, label: {
                             Text("Get Started")
                         }
@@ -55,6 +59,6 @@ struct IntroScreensViews: View {
 
 struct IntroScreensView_Previews: PreviewProvider {
     static var previews: some View {
-        IntroScreensViews()
+        IntroScreensViews(userSession: .constant(.userOnIntroScreen))
     }
 }
