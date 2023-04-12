@@ -12,11 +12,12 @@ struct FloatingScreenView: View {
     //MARK: - Properties
     @State var offset : CGFloat = 0 {
         didSet {
-            print("new line")
-            print(offset)
+            //print("new line")
+            //print(offset)
         }
     }
     @State var floating = false
+    @State var audioPlayerVisiblityState : AudioPlayerVisiblityState = .minimised
     
     //MARK: - View Builder
     var body: some View {
@@ -45,7 +46,7 @@ struct FloatingScreenView: View {
 
     //MARK: - private methods
     private func onGestureChange(_ value: DragGesture.Value)  {
-//        print("ongesture changed, ", value.translation.height)
+       print("ongesture changed, ", value.translation.height)
         if self.offset >= 0 {
             self.offset += value.translation.height
         }
@@ -53,18 +54,17 @@ struct FloatingScreenView: View {
 
     private func onGestureEnded(_ value: DragGesture.Value, _ geo: GeometryProxy) {
         //print("ongesture ended, ", value.translation.height)
-        if self.offset > 100 && !(self.floating) {
+        if (self.offset > (geo.size.height / 2) && !(self.floating)) {
             self.offset = geo.size.height - 40 // this will give the height of miniplayer
             self.floating = true
-        }  else if self.offset >= geo.size.height - 160 && self.floating {
-            self.offset = 0
-            self.floating = false
-        }
-        else{
+            
+        } else{
+            
             if self.offset < geo.size.height - 320  {
                 self.offset = 0
                 self.floating = false
             }
+            
 //            else {
 //                self.offset = geo.size.height - 170
 //                self.floating = false
