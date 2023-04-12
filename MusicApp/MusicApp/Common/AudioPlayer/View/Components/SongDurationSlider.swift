@@ -12,7 +12,7 @@ struct SongDurationSlider: View {
     @State var sliderValue : Double = 0.0
     //MARK: - View Builder
     var body: some View {
-        //:- Reusable properties of slider for song duration ..
+        // 𝐑𝐞𝐮𝐬𝐚𝐛𝐥𝐞 𝐩𝐫𝐨𝐩𝐞𝐫𝐭𝐢𝐞𝐬 𝐨𝐟 𝐬𝐥𝐢𝐝𝐞𝐫 𝐟𝐨𝐫 𝐬𝐨𝐧𝐠 𝐝𝐮𝐫𝐚𝐭𝐢𝐨𝐧 ..
         Slider(value: $sliderValue,in: 0...60)
             .frame(width: UIScreen.main.bounds.width-100)
             .accentColor(.init(red: 249/253, green: 125/253, blue: 218/253))

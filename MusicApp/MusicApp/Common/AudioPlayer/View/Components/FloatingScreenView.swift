@@ -46,14 +46,14 @@ struct FloatingScreenView: View {
 
     //MARK: - private methods
     private func onGestureChange(_ value: DragGesture.Value)  {
-       print("ongesture changed, ", value.translation.height)
+//       print("ongesture changed, ", value.translation.height)
         if self.offset >= 0 {
             self.offset += value.translation.height
         }
     }
 
     private func onGestureEnded(_ value: DragGesture.Value, _ geo: GeometryProxy) {
-        //print("ongesture ended, ", value.translation.height)
+//        print("ongesture ended, ", value.translation.height)
         if (self.offset > (geo.size.height / 2) && !(self.floating)) {
             self.offset = geo.size.height - 40 // this will give the height of miniplayer
             self.floating = true
@@ -64,13 +64,19 @@ struct FloatingScreenView: View {
                 self.offset = 0
                 self.floating = false
             }
-            
-//            else {
-//                self.offset = geo.size.height - 170
-//                self.floating = false
-//            }
+            else if self.offset >= geo.size.height*0.874 {
+                self.offset = geo.size.height*0.953
+                self.floating = true
+            }
+            else {
+                self.offset = 0.0
+                self.floating = false
+            }
         }
+        print("zeoreader-height:\(geo.size.height)")
+        print("\(self.offset)")
     }
+
 }
 
 //MARK: - Previews
