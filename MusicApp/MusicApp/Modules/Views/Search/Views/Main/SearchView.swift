@@ -11,22 +11,54 @@ struct SearchView: View {
     @State private var searchText = ""
     @State private var showCancelButton: Bool = false
     var body: some View {
-        ZStack{
-            Image("musichome")
-                .resizable()
-                .opacity(0.8)
-                //.ignoresSafeArea()
-                
-            VStack {
-                Text("Search Your Favorites")
-                    .foregroundColor(.white)
-                    .bold()
-                    .font(.largeTitle)
-//                    .padding(.top,20)
-                   SearchBar()
-                       Spacer()
-            }.padding(.top,30)
-        }
+//        ZStack{
+//            Image("musichome")
+//                .resizable()
+////                .scaledToFill()
+//                .opacity(0.8)
+//                .ignoresSafeArea()
+//
+//            VStack(alignment: .center) {
+//                Text("Search Your Favorites")
+//                    .foregroundColor(.white)
+//                    .bold()
+//                    .font(.largeTitle)
+//                VStack{
+//                    SearchBar()
+//                        .ignoresSafeArea()
+//                }
+//                    List{
+//                        ForEach(0..<9){
+//                            index in
+//                            Text("Favorite Songs")
+//                                .foregroundColor(.white)
+//                        }
+//                    }
+//            }.padding()
+//        }
+        ZStack {
+                    Image("musichome")
+                        .resizable()
+                        .opacity(0.8)
+                        .edgesIgnoringSafeArea(.all)
+                        
+                    VStack {
+                        Text("Search Your Favorites")
+                            .foregroundColor(.white)
+                            .bold()
+                            .font(.largeTitle)
+                        
+                        SearchBar(text: $searchText, showCancelButton: $showCancelButton)
+                            .padding(.horizontal)
+                        
+                        ScrollView {
+                            ForEach(0..<9) { index in
+                                Text("Favorite Songs")
+                                    .foregroundColor(.white)
+                            }
+                        }.padding(.bottom)
+                    }
+                }
     }
 }
 

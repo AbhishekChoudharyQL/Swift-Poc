@@ -14,12 +14,13 @@ struct MiniPlayerView: View {
     @State var floatingStatusOfMiniPlayer = false
     //MARK: - View Builder
     var body: some View {
-        HStack(alignment: .top,spacing: 25,content: {
+        HStack(alignment: .top,spacing: 10,content: {
             //:- Setting up song image to display in mini player ..
            Image("juja-han-uT55XxQLQGU-unsplash")
                 .resizable()
                 .scaledToFill()
-                .frame(width: UIScreen.main.bounds.width/14,height: UIScreen.main.bounds.height/7)
+                .frame(width: UIScreen.main.bounds.width/20,height: UIScreen.main.bounds.height/7)
+                .padding(.trailing)
             Spacer()
             //:- Setting up text to display song name in mini palyer..
             Text("Song-Name")
@@ -29,14 +30,18 @@ struct MiniPlayerView: View {
                 .fontWeight(.bold)
                 .multilineTextAlignment(.center)
                 .padding(.top)
+                .padding(.leading,15)
             //:- Calling AudioScreenButtonsView to display buttons of mini player...
                AudioScreenButtons(buttonName: "play.circle.fill")
                 .padding(.top)
+                .padding(.trailing)
                 AudioScreenButtons(buttonName: "forward.circle.fill")
                 .padding(.top)
-                .padding(.trailing)
+//                .padding(.trailing,20)
+            Spacer()
         }).background(AppColor.sliderAccentColor)
             .frame(width: UIScreen.main.bounds.width,height: UIScreen.main.bounds.height*0.01)
+//            .padding(.all,25)
 //            .cornerRadius(25)
 //            .padding(.leading,20)
 //            .padding(.trailing,20)
