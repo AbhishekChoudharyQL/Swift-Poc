@@ -98,3 +98,21 @@ import Foundation
 //.textFieldStyle(RoundedBorderTextFieldStyle())
 //.foregroundColor(.pink)
 //.padding(.horizontal)
+
+
+//:- Setting up text to display song name in mini palyer..
+//            Text("Song-Name")
+//                .foregroundColor(Color.white)
+//                .fontDesign(.serif)
+//                .font(.custom("Helvitica", fixedSize: 25))
+//                .fontWeight(.bold)
+//                .multilineTextAlignment(.center)
+//                .padding(.top)
+//                .padding(.leading,15)
+//            //:- Calling AudioScreenButtonsView to display buttons of mini player...
+//               AudioScreenButtons(buttonName: "play.circle.fill")
+//                .padding(.top)
+//                .padding(.trailing)
+//                AudioScreenButtons(buttonName: "forward.circle.fill")
+//                .padding(.top)
+//                .padding(.trailing,20)
