@@ -14,28 +14,18 @@ struct TabBar: View {
     var body: some View {
         ZStack( content: {
             VStack(content: {
-//                MiniPlayerView()
                 HStack(content: {
                     ForEach(TabItems.allCases, id: \.rawValue) { element in
                         CustomTabItem(tab: element, itemAction: {
                             selectedTab = element
                         }).opacity(selectedTab == element ? 1 : 0.5)
-                        
                     }
                 })
-                .padding(20)
-                .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height*0.15)
-                .background(Color.black
-//                    .cornerRadius(50)
-//                    .padding(.leading)
-//                    .padding(.trailing)
-                    
-                )
+                .frame(width: UIConstants.screenWidth)
+                .background(Color.black)
+                
             })
         })
-        
-        //70
-       
     }
 }
 

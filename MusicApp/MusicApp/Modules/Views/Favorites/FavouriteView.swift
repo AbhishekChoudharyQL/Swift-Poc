@@ -9,8 +9,10 @@ import SwiftUI
 
 struct FavouriteView: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
-//            .background(Color.red)
+        VStack(content: {
+            Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+            Spacer()
+        })
     }
        
 }

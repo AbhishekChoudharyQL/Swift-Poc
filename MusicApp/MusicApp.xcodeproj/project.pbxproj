@@ -35,8 +35,9 @@
 		46F44FDB29DAE8B200936230 /* TabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46F44FDA29DAE8B200936230 /* TabBar.swift */; };
 		46F64E9329DB04F200B44B3D /* FavouriteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46F64E9229DB04F200B44B3D /* FavouriteView.swift */; };
 		46F64E9529DB050100B44B3D /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46F64E9429DB050100B44B3D /* SearchView.swift */; };
-		46F64E9929DB084800B44B3D /* refrencefile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46F64E9829DB084800B44B3D /* refrencefile.swift */; };
 		5D127D3629E54D41007DA0D0 /* OnboardingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D127D3529E54D41007DA0D0 /* OnboardingViewModel.swift */; };
+		5D17937029E680640014FCAC /* UIConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D17936F29E680640014FCAC /* UIConstants.swift */; };
+		5D17937729E683B30014FCAC /* AudioPlayerVisiblityState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D17937629E683B30014FCAC /* AudioPlayerVisiblityState.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -69,8 +70,9 @@
 		46F44FDA29DAE8B200936230 /* TabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBar.swift; sourceTree = "<group>"; };
 		46F64E9229DB04F200B44B3D /* FavouriteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouriteView.swift; sourceTree = "<group>"; };
 		46F64E9429DB050100B44B3D /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
-		46F64E9829DB084800B44B3D /* refrencefile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = refrencefile.swift; sourceTree = "<group>"; };
 		5D127D3529E54D41007DA0D0 /* OnboardingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewModel.swift; sourceTree = "<group>"; };
+		5D17936F29E680640014FCAC /* UIConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIConstants.swift; sourceTree = "<group>"; };
+		5D17937629E683B30014FCAC /* AudioPlayerVisiblityState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioPlayerVisiblityState.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -129,7 +131,6 @@
 			children = (
 				46AB0B7A29DDB1BA00C347E7 /* AppColors */,
 				46F44FC829DAD35800936230 /* MusicApp.swift */,
-				46F64E9829DB084800B44B3D /* refrencefile.swift */,
 				46F44FCC29DAD35900936230 /* Assets.xcassets */,
 			);
 			path = Resources;
@@ -146,12 +147,9 @@
 		469676B129DC0511007724EF /* AudioPlayer */ = {
 			isa = PBXGroup;
 			children = (
-				469676B429DC0FA5007724EF /* AudioPlayerView.swift */,
-				4677786329DC96490089C807 /* SongDurationSlider.swift */,
-				4677786829DCA0B80089C807 /* AudioScreenButtons.swift */,
-				4677786A29DCA42B0089C807 /* AudioImageView.swift */,
-				46AB0B7629DD60A100C347E7 /* FloatingScreenView.swift */,
-				46C2E97129DE8E4A005DD3D5 /* MiniPlayerView.swift */,
+				5D17937329E683820014FCAC /* Model */,
+				5D17937229E6837C0014FCAC /* View */,
+				5D17937129E6837A0014FCAC /* ViewModel */,
 			);
 			path = AudioPlayer;
 			sourceTree = "<group>";
@@ -161,6 +159,7 @@
 			children = (
 				46BCC28629E528A800ACF2C0 /* Model */,
 				469676AE29DC04B4007724EF /* TabBar */,
+				469676B129DC0511007724EF /* AudioPlayer */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -319,9 +318,9 @@
 		46F44FC729DAD35800936230 /* MusicApp */ = {
 			isa = PBXGroup;
 			children = (
+				5D17936E29E680590014FCAC /* Constants */,
 				469676DA29DC634F007724EF /* Common */,
 				469676AC29DC0417007724EF /* Modules */,
-				469676B129DC0511007724EF /* AudioPlayer */,
 				469676AF29DC04DC007724EF /* Resources */,
 				469676B029DC0506007724EF /* Networking */,
 				46F44FCE29DAD35900936230 /* Preview Content */,
@@ -335,6 +334,58 @@
 				46F44FCF29DAD35900936230 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		5D17936E29E680590014FCAC /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				5D17936F29E680640014FCAC /* UIConstants.swift */,
+			);
+			path = Constants;
+			sourceTree = "<group>";
+		};
+		5D17937129E6837A0014FCAC /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		5D17937229E6837C0014FCAC /* View */ = {
+			isa = PBXGroup;
+			children = (
+				5D17937529E683890014FCAC /* Components */,
+				5D17937429E683860014FCAC /* MainView */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		5D17937329E683820014FCAC /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				5D17937629E683B30014FCAC /* AudioPlayerVisiblityState.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		5D17937429E683860014FCAC /* MainView */ = {
+			isa = PBXGroup;
+			children = (
+				46C2E97129DE8E4A005DD3D5 /* MiniPlayerView.swift */,
+				469676B429DC0FA5007724EF /* AudioPlayerView.swift */,
+			);
+			path = MainView;
+			sourceTree = "<group>";
+		};
+		5D17937529E683890014FCAC /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				4677786329DC96490089C807 /* SongDurationSlider.swift */,
+				4677786829DCA0B80089C807 /* AudioScreenButtons.swift */,
+				4677786A29DCA42B0089C807 /* AudioImageView.swift */,
+				46AB0B7629DD60A100C347E7 /* FloatingScreenView.swift */,
+			);
+			path = Components;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -424,11 +475,12 @@
 				46F64E9529DB050100B44B3D /* SearchView.swift in Sources */,
 				4699F99C29E341060098A849 /* ArtistModelNetworking.swift in Sources */,
 				469676BB29DC442A007724EF /* TabBarManager.swift in Sources */,
-				46F64E9929DB084800B44B3D /* refrencefile.swift in Sources */,
 				46F44FC929DAD35800936230 /* MusicApp.swift in Sources */,
+				5D17937729E683B30014FCAC /* AudioPlayerVisiblityState.swift in Sources */,
 				469676E329DC649F007724EF /* CustomTabItem.swift in Sources */,
 				46F64E9329DB04F200B44B3D /* FavouriteView.swift in Sources */,
 				46AE280029E424C600F535AD /* SearchBar.swift in Sources */,
+				5D17937029E680640014FCAC /* UIConstants.swift in Sources */,
 				46C2E97229DE8E4A005DD3D5 /* MiniPlayerView.swift in Sources */,
 				46BE562B29E0921F006526BC /* OnboardingView.swift in Sources */,
 				46F44FDB29DAE8B200936230 /* TabBar.swift in Sources */,

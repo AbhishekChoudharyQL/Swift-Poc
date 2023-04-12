@@ -22,6 +22,7 @@ struct CustomTabItem: View {
                 .padding(.horizontal)
         })
         .tint(.white)
+        .padding()
     }
 }
 

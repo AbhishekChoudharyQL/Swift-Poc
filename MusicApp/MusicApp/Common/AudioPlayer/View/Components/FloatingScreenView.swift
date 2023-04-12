@@ -10,7 +10,6 @@ import SwiftUI
 struct FloatingScreenView: View {
     
     //MARK: - Properties
-    @State var opacity : Double = 1
     @State var height : CGFloat = 0
     @State var floating = false
     
@@ -18,29 +17,12 @@ struct FloatingScreenView: View {
     var body: some View {
         GeometryReader { geo in
             ZStack(alignment: .top, content: {
-                                AudioPlayerView()
-//                                 if self.floating {
-//                                     MiniPlayerView()
-//                                         .transition(.move(edge: .top))
-//                                      if !self.floating {
-//                                       AudioPlayerView()
-//                                     }
-//                                 }
-//                                if self.floating {
-//                                    MiniPlayerView()
-//                                        .transition(.move(edge: .bottom))
-//                                }
+                AudioPlayerView()
+
                 if self.floating {
                     MiniPlayerView()
-
-//                    if !self.floating {
-//                        AudioPlayerView()
-//                    }
                 }
-//
-            })//: Setting dynamic frame for Zstack
-//            .frame(width: UIScreen.main.bounds.width,height: UIScreen.main.bounds.height)
-//            .edgesIgnoringSafeArea(.top)
+            })
             .gesture(DragGesture()
                 .onChanged({
                     (value) in
@@ -50,14 +32,11 @@ struct FloatingScreenView: View {
                 .onEnded({ (value) in
                     onGestureEnded(value, geo)
                 })
-            ).opacity(opacity)
-                .offset(y:self.height)
-                .scaleEffect(1.0)
-            //                .animation(.easeInOut)
-
+            )
+            .offset(y:self.height)
+            .scaleEffect(1.0)
         }.frame(width: UIScreen.main.bounds.width,height: UIScreen.main.bounds.height)
-        //:- Geometry Reader Ends Here
-    } //:- Body Ends Here
+    }
 
     //MARK: - private methods
     private func onGestureChange(_ value: DragGesture.Value)  {
@@ -69,11 +48,9 @@ struct FloatingScreenView: View {
     private func onGestureEnded(_ value: DragGesture.Value, _ geo: GeometryProxy) {
         if self.height > 100 && !self.floating {
             self.height = geo.size.height - 40 // this will give the height of
-            self.opacity = 1                      // minimized screen
             self.floating = true
         }  else if self.height >= geo.size.height - 160 && self.floating {
             self.height = 0
-            self.opacity = 1
 
             self.floating = false
         }
@@ -84,7 +61,6 @@ struct FloatingScreenView: View {
             }
             else {
                 self.height = geo.size.height - 170
-                self.opacity = 1
                 self.floating = false
             }
         }

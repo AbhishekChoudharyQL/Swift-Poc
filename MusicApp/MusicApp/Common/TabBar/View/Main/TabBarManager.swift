@@ -13,27 +13,22 @@ struct TabBarManager: View {
     
     var body: some View {
         VStack(alignment: .center, content: {
-            
             switch selectedTab {
             case .home:
                 HomeView()
-//            case .music:
-//                FloatingScreenView()
             case .heart:
                 FavouriteView()
             case .magnifyingglass:
                 SearchView()
             }
         })
-        .frame(height: UIScreen.main.bounds.height)
-//        .padding(.bottom, -60)
         .overlay(alignment: .bottom ,content: {
             VStack(spacing: 0, content: {
-                FloatingScreenView()
-              
+                FloatingScreenView()    
                 TabBar(selectedTab: $selectedTab)
             })
         })
+        .ignoresSafeArea(.keyboard, edges: .bottom)
     }
 }
 

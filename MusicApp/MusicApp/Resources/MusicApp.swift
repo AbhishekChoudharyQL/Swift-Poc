@@ -15,26 +15,20 @@ enum UserSession {
 
 @main
 struct MusicApp: App {
-//    var networking = Networking()
-    
+    //MARK: - Properties
     @State var userSession : UserSession = .userOnIntroScreen
     
+    //MARK: - View Builder
     var body: some Scene {
         WindowGroup {
-            
-            switch userSession {
-            case .userOnIntroScreen:
-                OnboardingView(userSession: $userSession)
-            case .userOnMainApp:
-                TabBarManager()
-            }
-            
-//            HomeView()
-//                .environmentObject(networking)
-//           OnboardingView()
-            //TabBarManager()
-//            AudioPlayerView()
-//            PlaylistApi()
+//            switch userSession {
+//            case .userOnIntroScreen:
+//                OnboardingView(userSession: $userSession)
+//            case .userOnMainApp:
+//                TabBarManager()
+//            }
+//            SearchView()
+            TabBarManager()
         }
     }
 }
