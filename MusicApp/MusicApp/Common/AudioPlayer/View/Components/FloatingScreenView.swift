@@ -10,13 +10,7 @@ import SwiftUI
 struct FloatingScreenView: View {
     
     //MARK: - Properties
-    @State var offset : CGFloat = 0 {
-        didSet {
-            //print("new line")
-            //print(offset)
-        }
-    }
-    @State var floating = false
+    @State var offset : CGFloat = 0
     @State var audioPlayerVisiblityState : AudioPlayerVisiblityState = .minimised
     
     //MARK: - View Builder
@@ -24,9 +18,18 @@ struct FloatingScreenView: View {
         GeometryReader { geo in
             ZStack(alignment: .top, content: {
                 AudioPlayerView()
-
-                if self.floating {
+                
+                if audioPlayerVisiblityState == .minimised {
                     MiniPlayerView()
+                }
+            })
+            .onAppear(perform: {
+                if audioPlayerVisiblityState == .minimised {
+                    offset = geo.size.height - 40
+                }
+                
+                if audioPlayerVisiblityState == .maximised {
+                    offset = 0
                 }
             })
             .gesture(DragGesture()
@@ -53,22 +56,16 @@ struct FloatingScreenView: View {
     }
 
     private func onGestureEnded(_ value: DragGesture.Value, _ geo: GeometryProxy) {
-        //print("ongesture ended, ", value.translation.height)
-        if (self.offset > (geo.size.height / 2) && !(self.floating)) {
-            self.offset = geo.size.height - 40 // this will give the height of miniplayer
-            self.floating = true
+        let middlePoint = geo.size.height / 2
+        if self.offset > middlePoint {
+            self.offset = geo.size.height - 40
+            audioPlayerVisiblityState = .minimised
             
-        } else{
-            
-            if self.offset < geo.size.height - 320  {
-                self.offset = 0
-                self.floating = false
-            }
-            
-//            else {
-//                self.offset = geo.size.height - 170
-//                self.floating = false
-//            }
+        }
+        
+        if self.offset < middlePoint  {
+            self.offset = 0
+            audioPlayerVisiblityState = .maximised
         }
     }
 }

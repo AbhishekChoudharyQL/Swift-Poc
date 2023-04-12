@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum AudioPlayerVisiblityState {
+enum AudioPlayerVisiblityState : Equatable {
     case hidden
     case minimised
     case maximised
