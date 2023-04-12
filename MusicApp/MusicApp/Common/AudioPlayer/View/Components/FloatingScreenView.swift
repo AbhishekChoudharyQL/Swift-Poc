@@ -49,7 +49,6 @@ struct FloatingScreenView: View {
 
     //MARK: - private methods
     private func onGestureChange(_ value: DragGesture.Value)  {
-       print("ongesture changed, ", value.translation.height)
         if self.offset >= 0 {
             self.offset += value.translation.height
         }
@@ -68,6 +67,7 @@ struct FloatingScreenView: View {
             audioPlayerVisiblityState = .maximised
         }
     }
+
 }
 
 //MARK: - Previews

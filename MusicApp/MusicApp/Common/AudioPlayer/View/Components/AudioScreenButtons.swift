@@ -13,15 +13,13 @@ struct AudioScreenButtons: View {
     var buttonName : String = ""
     //MARK: - View Builder
     var body: some View {
-        //:- Reusable button properties
+        // 𝐑𝐞𝐮𝐬𝐚𝐛𝐥𝐞 𝐛𝐮𝐭𝐭𝐨𝐧 𝐩𝐫𝐨𝐩𝐞𝐫𝐭𝐢𝐞𝐬..
         Button(action: {print("tapped")}, label: {
             Image(systemName: buttonName)
                 .resizable()
-//                .frame(width: 50,height: 50)
-                .frame(width: 35,height: 30)
+                .frame(width: 35,height: 35)
                 .aspectRatio(contentMode: .fit)
-                .foregroundColor(.white)
-//                .background(.white)
+                .foregroundColor(.white)          
         })
     }
 }
