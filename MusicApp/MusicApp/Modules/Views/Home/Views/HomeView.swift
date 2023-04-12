@@ -16,17 +16,17 @@ struct HomeView: View {
     var body: some View {
         ZStack {
             //  𝑺𝒆𝒕𝒕𝒊𝒏𝒈 𝒖𝒑 𝒃𝒂𝒄𝒌𝒈𝒓𝒐𝒖𝒏𝒅 𝒊𝒎𝒂𝒈𝒆𝒔 𝒇𝒐𝒓 𝒉𝒐𝒎𝒆 𝒔𝒄𝒓𝒆𝒆𝒏 𝒊𝒏𝒔𝒊𝒅𝒆 𝒁𝒔𝒕𝒂𝒄𝒌..
-            Image("musichome")
-                .resizable()
-                .ignoresSafeArea()
-                .scaledToFill()
-                .opacity(isAnimating ? 1.0 : 0.38)
+//            Image("musichome")
+//                .resizable()
+//                .ignoresSafeArea()
+//                .scaledToFill()
+//                .opacity(isAnimating ? 1.0 : 0.38)
             // 𝐏𝐚𝐫𝐞𝐧𝐭 𝐕𝐬𝐭𝐚𝐜𝐤 𝐭𝐨 𝐡𝐨𝐥𝐝 𝐭𝐢𝐭𝐥𝐞, 𝐚𝐫𝐭𝐢𝐬𝐭𝐬-𝐬𝐜𝐫𝐨𝐥𝐥𝐕𝐢𝐞𝐰, 𝐩𝐥𝐚𝐲𝐥𝐢𝐬𝐭-𝐬𝐜𝐫𝐨𝐥𝐥𝐕𝐢𝐞𝐰..
             ScrollView(.vertical,showsIndicators: false){
                 VStack(alignment: .center) {
                     // 𝐒𝐞𝐭𝐭𝐢𝐧𝐠 𝐮𝐩 𝐭𝐢𝐭𝐥𝐞 𝐟𝐨𝐫 𝐡𝐨𝐦𝐞 𝐬𝐜𝐫𝐞𝐞𝐧..
-                    Text("𝒐𝒏𝒃𝒆𝒂𝒕𝒔 𝑴𝒖𝒔𝒊𝒄")
-                        .foregroundColor(AppColor.sliderAccentColor)
+                    Text("𝖔𝖓𝖇𝖊𝖆𝖙𝖘 𝕸𝖚𝖘𝖎𝖈")
+                        .foregroundColor(AppColor.lightColor)
                         .font(.custom("Georgia", size: 45, relativeTo: .headline))
                         .bold().padding(.bottom, 20)
                         .padding(.top,30)
@@ -42,9 +42,9 @@ struct HomeView: View {
                                     RoundedRectangle(cornerRadius: 25)
                                         .fill(Color.white)
                                         .frame(width: 200 , height: 150)
-                                        .shadow(color: .pink, radius: 10 )
+//                                        .shadow(color: AppColor.shadowColor, radius: 10 )
                                     Text("Artist-Name")
-                                        .foregroundColor(.white)
+                                        .foregroundColor(Color.white)
                                 }
                             }.padding()
                         }
@@ -62,25 +62,28 @@ struct HomeView: View {
                                     RoundedRectangle(cornerRadius: 25)
                                         .fill(Color.white)
                                         .frame(height: 150)
-                                        .shadow(color: .pink, radius: 10 )
+//                                        .shadow(color: AppColor.shadowColor, radius: 10 )
                                         .padding(.trailing, 5)
                                     Text("Playlist-Name")
-                                        .foregroundColor(.white)
-                                }
+                                        .foregroundColor(Color.white)
+                                }.padding(.trailing,10)
+                                    .padding(.bottom,12)
                                 VStack(spacing: 10){
                                     RoundedRectangle(cornerRadius: 25)
                                         .fill(Color.white)
                                         .frame(height: 150)
-                                        .shadow(color: .pink, radius: 10 )
+//                                        .shadow(color: AppColor.shadowColor, radius: 10 )
                                         .padding(.leading, 5)
                                     Text("Playlist-Name")
-                                        .foregroundColor(.white)
-                                }
+                                        .foregroundColor(Color.white)
+                                }.padding(.trailing,10)
+                                    .padding(.bottom,12)
                             }.frame(width: UIScreen.main.bounds.width * 0.9)
                         } // 𝗟𝗼𝗼𝗽 𝗲𝗻𝗱𝘀 𝗵𝗲𝗿𝗲..
                 }  // 𝐏𝐚𝐫𝐞𝐧𝐭 𝐕𝐬𝐭𝐚𝐜𝐤 𝐞𝐧𝐝𝐬 𝐡𝐞𝐫𝐞 𝐭𝐡𝐚𝐭 𝐡𝐨𝐥𝐝𝐬 𝐓𝐢𝐭𝐥𝐞,𝐚𝐫𝐭𝐢𝐬𝐭, 𝐩𝐥𝐚𝐲𝐥𝐢s𝐭𝐬..
             }
         } // 𝐙𝐬𝐭𝐚𝐜𝐤 𝐞𝐧𝐝𝐬 𝐡𝐞𝐫𝐞 ..
+        .background(AppColor.backgroundColor)
         .onAppear {
             withAnimation(.easeIn(duration: 1.58)){
                 isAnimating = true

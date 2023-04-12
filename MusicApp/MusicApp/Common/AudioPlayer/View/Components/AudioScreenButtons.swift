@@ -19,7 +19,7 @@ struct AudioScreenButtons: View {
                 .resizable()
                 .frame(width: 35,height: 35)
                 .aspectRatio(contentMode: .fit)
-                .foregroundColor(.white)          
+                .foregroundColor(AppColor.lightColor)          
         })
     }
 }

@@ -15,14 +15,14 @@ struct SearchView: View {
     //MARK: - View Builder
     var body: some View {
         ZStack {
-            Image("musichome")
-                .resizable()
-                .opacity(0.8)
-                .edgesIgnoringSafeArea(.all)
+//            Image("musichome")
+//                .resizable()
+//                .opacity(0.8)
+//                .edgesIgnoringSafeArea(.all)
             
             VStack {
                 Text("Search Your Favorites")
-                    .foregroundColor(.white)
+                    .foregroundColor(AppColor.lightColor)
                     .bold()
                     .font(.largeTitle)
                 
@@ -36,7 +36,7 @@ struct SearchView: View {
                     }
                 }.padding(.bottom)
             }
-        }
+        }.background(AppColor.backgroundColor)
     }
 }
 

@@ -18,11 +18,11 @@ struct TabBar: View {
                     ForEach(TabItems.allCases, id: \.rawValue) { element in
                         CustomTabItem(tab: element, itemAction: {
                             selectedTab = element
-                        }).opacity(selectedTab == element ? 1 : 0.5)
+                        }).opacity(selectedTab == element ? 1 : 0.4)
                     }
                 })
                 .frame(width: UIConstants.screenWidth)
-                .background(Color.black)
+                .background(AppColor.greenSpotify)
                 
             })
         })
