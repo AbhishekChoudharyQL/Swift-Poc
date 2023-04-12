@@ -10,7 +10,12 @@ import SwiftUI
 struct FloatingScreenView: View {
     
     //MARK: - Properties
-    @State var height : CGFloat = 0
+    @State var offset : CGFloat = 0 {
+        didSet {
+            print("new line")
+            print(offset)
+        }
+    }
     @State var floating = false
     
     //MARK: - View Builder
@@ -33,39 +38,40 @@ struct FloatingScreenView: View {
                     onGestureEnded(value, geo)
                 })
             )
-            .offset(y:self.height)
+            .offset(y: self.offset)
             .scaleEffect(1.0)
-        }.frame(width: UIScreen.main.bounds.width,height: UIScreen.main.bounds.height)
+        }.frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
     }
 
     //MARK: - private methods
     private func onGestureChange(_ value: DragGesture.Value)  {
-        if self.height >= 0 {
-            self.height += value.translation.height
+//        print("ongesture changed, ", value.translation.height)
+        if self.offset >= 0 {
+            self.offset += value.translation.height
         }
     }
 
     private func onGestureEnded(_ value: DragGesture.Value, _ geo: GeometryProxy) {
-        if self.height > 100 && !self.floating {
-            self.height = geo.size.height - 40 // this will give the height of
+        //print("ongesture ended, ", value.translation.height)
+        if self.offset > 100 && !(self.floating) {
+            self.offset = geo.size.height - 40 // this will give the height of miniplayer
             self.floating = true
-        }  else if self.height >= geo.size.height - 160 && self.floating {
-            self.height = 0
-
+        }  else if self.offset >= geo.size.height - 160 && self.floating {
+            self.offset = 0
             self.floating = false
         }
         else{
-            if self.height < geo.size.height - 320  {
-                self.height = 0
+            if self.offset < geo.size.height - 320  {
+                self.offset = 0
                 self.floating = false
             }
-            else {
-                self.height = geo.size.height - 170
-                self.floating = false
-            }
+//            else {
+//                self.offset = geo.size.height - 170
+//                self.floating = false
+//            }
         }
     }
-}//:- FloatingScreenView Ends Here
+}
 
 //MARK: - Previews
 struct FlaotingScreenView_Previews: PreviewProvider {
@@ -73,6 +79,3 @@ struct FlaotingScreenView_Previews: PreviewProvider {
         FloatingScreenView()
     }
 }
-
-
-//160

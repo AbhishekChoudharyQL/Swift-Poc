@@ -10,7 +10,6 @@ import SwiftUI
 struct AudioImageView: View {
     //MARK: - View Builder
     var body: some View {
-        //: Reusable image properties for song images ..
         Image("juja-han-uT55XxQLQGU-unsplash")
             .resizable()
             .frame(width: 250,height: 250)

@@ -8,10 +8,6 @@
 import SwiftUI
 
 struct MiniPlayerView: View {
-    //MARK: - Properties
-    @State var opacityOfMiniPlayer : Double = 1
-    @State var heightOfMiniPlayer : CGFloat = 0
-    @State var floatingStatusOfMiniPlayer = false
     //MARK: - View Builder
     var body: some View {
         HStack(alignment: .top,spacing: 10,content: {
@@ -35,17 +31,13 @@ struct MiniPlayerView: View {
                    AudioScreenButtons(buttonName: "play.circle.fill")
                     .padding(.top)
                     .padding(.trailing)
-                    AudioScreenButtons(buttonName: "forward.circle.fill")
+                   AudioScreenButtons(buttonName: "forward.circle.fill")
                     .padding(.top)
             }
             Spacer()
-        }).background(AppColor.sliderAccentColor)
-            .frame(width: UIScreen.main.bounds.width,height: UIScreen.main.bounds.height*0.01)
-//            .padding(.all,25)
-//            .cornerRadius(25)
-//            .padding(.leading,20)
-//            .padding(.trailing,20)
- //95
+        })
+        .background(AppColor.sliderAccentColor)
+        .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height * 0.01)
         
     }
 }
