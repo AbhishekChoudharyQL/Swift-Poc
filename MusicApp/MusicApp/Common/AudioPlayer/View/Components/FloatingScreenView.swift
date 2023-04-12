@@ -73,8 +73,8 @@ struct FloatingScreenView: View {
                 self.floating = false
             }
         }
-        print("zeoreader-height:\(geo.size.height)")
-        print("\(self.offset)")
+//        print("zeoreader-height:\(geo.size.height)")
+//        print("\(self.offset)")
     }
 
 }
