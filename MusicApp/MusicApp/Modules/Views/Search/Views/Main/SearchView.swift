@@ -36,7 +36,9 @@ struct SearchView: View {
                     }
                 }.padding(.bottom)
             }
-        }.background(AppColor.backgroundColor)
+        }
+//        .frame(width: UIScreen.main.bounds.width,height: UIScreen.main.bounds.height)
+        .background(AppColor.backgroundColor)
     }
 }
 

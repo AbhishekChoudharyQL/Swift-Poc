@@ -83,6 +83,7 @@ struct HomeView: View {
                 }  // 𝐏𝐚𝐫𝐞𝐧𝐭 𝐕𝐬𝐭𝐚𝐜𝐤 𝐞𝐧𝐝𝐬 𝐡𝐞𝐫𝐞 𝐭𝐡𝐚𝐭 𝐡𝐨𝐥𝐝𝐬 𝐓𝐢𝐭𝐥𝐞,𝐚𝐫𝐭𝐢𝐬𝐭, 𝐩𝐥𝐚𝐲𝐥𝐢s𝐭𝐬..
             }
         } // 𝐙𝐬𝐭𝐚𝐜𝐤 𝐞𝐧𝐝𝐬 𝐡𝐞𝐫𝐞 ..
+//        .frame(width: UIScreen.main.bounds.width,height: UIScreen.main.bounds.height)
         .background(AppColor.backgroundColor)
         .onAppear {
             withAnimation(.easeIn(duration: 1.58)){
