@@ -15,7 +15,7 @@ struct FloatingScreenView: View {
     
     //MARK: - View Builder
     var body: some View {
-        GeometryReader { geo in
+        GeometryReader { geometryReaderProxy in
             ZStack(alignment: .top, content: {
                 AudioPlayerView()
                 
@@ -23,9 +23,10 @@ struct FloatingScreenView: View {
                     MiniPlayerView()
                 }
             })
+            .frame(width: geometryReaderProxy.size.width, height: geometryReaderProxy.size.height)
             .onAppear(perform: {
                 if audioPlayerVisiblityState == .minimised {
-                    offset = geo.size.height - 40
+                    offset = getMiniplayerOffset(from: geometryReaderProxy)
                 }
                 
                 if audioPlayerVisiblityState == .maximised {
@@ -39,12 +40,12 @@ struct FloatingScreenView: View {
                 })
 
                 .onEnded({ (value) in
-                    onGestureEnded(value, geo)
+                    onGestureEnded(value, geometryReaderProxy)
                 })
             )
             .offset(y: self.offset)
             .scaleEffect(1.0)
-        }.frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
+        }
     }
 
     //MARK: - private methods
@@ -57,7 +58,7 @@ struct FloatingScreenView: View {
     private func onGestureEnded(_ value: DragGesture.Value, _ geo: GeometryProxy) {
         let middlePoint = geo.size.height / 2
         if self.offset > middlePoint {
-            self.offset = geo.size.height - 40
+            self.offset = getMiniplayerOffset(from: geo)
             audioPlayerVisiblityState = .minimised
             
         }
@@ -66,6 +67,10 @@ struct FloatingScreenView: View {
             self.offset = 0
             audioPlayerVisiblityState = .maximised
         }
+    }
+    
+    private func getMiniplayerOffset(from geometryProxy: GeometryProxy) -> Double {
+        (geometryProxy.size.height)
     }
 
 }

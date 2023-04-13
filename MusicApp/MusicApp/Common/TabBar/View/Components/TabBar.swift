@@ -10,17 +10,17 @@ import SwiftUI
 
 struct TabBar: View {
     @Binding var selectedTab : TabItems
-//    @State var offset : CGFloat = 0
+    
     var body: some View {
         ZStack( content: {
             VStack(content: {
                 HStack(content: {
                     ForEach(TabItems.allCases, id: \.rawValue) { element in
-                        Spacer()
                         CustomTabItem(tab: element, itemAction: {
                             selectedTab = element
-                        }).opacity(selectedTab == element ? 1 : 0.4)
-                            
+                        })
+                        .opacity(selectedTab == element ? 1 : 0.4)
+//                        .offset(x: <#T##CGFloat#>, y: <#T##CGFloat#>)
                     }
                 })
                 .frame(width: UIConstants.screenWidth)
