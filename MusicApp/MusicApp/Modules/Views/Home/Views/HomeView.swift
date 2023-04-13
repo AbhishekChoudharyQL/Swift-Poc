@@ -24,12 +24,22 @@ struct HomeView: View {
             // 𝐏𝐚𝐫𝐞𝐧𝐭 𝐕𝐬𝐭𝐚𝐜𝐤 𝐭𝐨 𝐡𝐨𝐥𝐝 𝐭𝐢𝐭𝐥𝐞, 𝐚𝐫𝐭𝐢𝐬𝐭𝐬-𝐬𝐜𝐫𝐨𝐥𝐥𝐕𝐢𝐞𝐰, 𝐩𝐥𝐚𝐲𝐥𝐢𝐬𝐭-𝐬𝐜𝐫𝐨𝐥𝐥𝐕𝐢𝐞𝐰..
             ScrollView(.vertical,showsIndicators: false){
                 VStack(alignment: .center) {
+                    HStack( content: {
+                        Image("onbeats-logo")
+                            .resizable()
+                            .scaledToFit()
+//                        Text("𝖔𝖓𝖇𝖊𝖆𝖙𝖘")
+//                            .foregroundColor(AppColor.greenSpotify)
+//                            .font(.custom("Georgia", size: 45, relativeTo: .headline))
+//                            .bold().padding(.bottom, 20)
+//                            .padding(.top,30)
+                    })
                     // 𝐒𝐞𝐭𝐭𝐢𝐧𝐠 𝐮𝐩 𝐭𝐢𝐭𝐥𝐞 𝐟𝐨𝐫 𝐡𝐨𝐦𝐞 𝐬𝐜𝐫𝐞𝐞𝐧..
-                    Text("𝖔𝖓𝖇𝖊𝖆𝖙𝖘 𝕸𝖚𝖘𝖎𝖈")
-                        .foregroundColor(AppColor.lightColor)
-                        .font(.custom("Georgia", size: 45, relativeTo: .headline))
-                        .bold().padding(.bottom, 20)
-                        .padding(.top,30)
+//                    Text("𝖔𝖓𝖇𝖊𝖆𝖙𝖘")
+//                        .foregroundColor(AppColor.greenSpotify)
+//                        .font(.custom("Georgia", size: 45, relativeTo: .headline))
+//                        .bold().padding(.bottom, 20)
+//                        .padding(.top,30)
                     // 𝙑𝙨𝙩𝙖𝙘𝙠 𝙩𝙤 𝙙𝙞𝙨𝙥𝙡𝙖𝙮 "𝙍𝙚𝙘𝙤𝙢𝙢𝙚𝙣𝙙𝙚𝙙 𝘼𝙧𝙩𝙞𝙨𝙩 𝙏𝙞𝙩𝙡𝙚" 𝙖𝙣𝙙 𝙨𝙘𝙧𝙤𝙡𝙡𝙫𝙞𝙚𝙬 𝙤𝙛 𝙖𝙧𝙩𝙞𝙨𝙩𝙨..
                     Text("Recommended Artist")
                         .foregroundColor(Color.white)

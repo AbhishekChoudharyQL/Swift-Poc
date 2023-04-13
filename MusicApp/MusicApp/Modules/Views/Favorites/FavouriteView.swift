@@ -12,11 +12,12 @@ struct FavouriteView: View {
         ZStack{
             VStack(content: {
                 Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
-                    .foregroundColor(AppColor.lightColor)
+                    .foregroundColor(AppColor.greenSpotify)
                 Spacer()
             })
-        }.frame(width: UIScreen.main.bounds.width,height: UIScreen.main.bounds.height)
-        .background(AppColor.backgroundColor)
+        }.background(AppColor.backgroundColor)
+//        .frame(width: UIScreen.main.bounds.width,height: UIScreen.main.bounds.height)
+        
        
     }
        
