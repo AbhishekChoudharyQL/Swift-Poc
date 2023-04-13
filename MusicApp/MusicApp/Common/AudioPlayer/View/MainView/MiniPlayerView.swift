@@ -19,19 +19,9 @@ struct MiniPlayerView: View {
                 .padding(.trailing)
             Spacer()
             HStack(alignment: .top){
-//                Text("Song-Name")
-//                    .foregroundColor(Color.white)
-//                    .fontDesign(.serif)
-//                    .font(.custom("Helvitica", fixedSize: 25))
-//                    .fontWeight(.bold)
-//                    .multilineTextAlignment(.center)
-//                    .padding(.top)
-//                    .padding(.leading,15)
                 SongNameTextModifier(text: "Song-Name", modifier: .MiniplayerText)
-
                 // 𝐂𝐚𝐥𝐥𝐢𝐧𝐠 𝐀𝐮𝐝𝐢𝐨𝐒𝐜𝐫𝐞𝐞𝐧𝐁𝐮𝐭𝐭𝐨𝐧𝐬𝐕𝐢𝐞𝐰 𝐭𝐨 𝐝𝐢𝐬𝐩𝐥𝐚𝐲 𝐛𝐮𝐭𝐭𝐨𝐧𝐬 𝐨𝐟 𝐦𝐢𝐧𝐢 𝐩𝐥𝐚𝐲𝐞𝐫...
                    AudioScreenButtons(buttonName: "play.circle.fill")
-//                    .background(Color.white)
                     .padding(.top)
                     .padding(.trailing)
                    AudioScreenButtons(buttonName: "forward.circle.fill")

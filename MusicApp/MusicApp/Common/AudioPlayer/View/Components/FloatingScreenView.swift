@@ -45,7 +45,7 @@ struct FloatingScreenView: View {
             )
             .offset(y: self.offset)
             .scaleEffect(1.0)
-        }
+        }.frame(width: UIScreen.main.bounds.width,height: UIScreen.main.bounds.height)
     }
 
     //MARK: - private methods
@@ -70,7 +70,8 @@ struct FloatingScreenView: View {
     }
     
     private func getMiniplayerOffset(from geometryProxy: GeometryProxy) -> Double {
-        (geometryProxy.size.height)
+//        (geometryProxy.size.height)
+        return  (geometryProxy.size.height-20)
     }
 
 }

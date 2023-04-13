@@ -26,7 +26,7 @@ struct SongNameTextModifier: View {
             .padding()
         case .MiniplayerText:
             Text(text)
-                .foregroundColor(.white)
+            .foregroundColor(.white)
             .fontDesign(.serif)
             .font(.custom("Helvitica", fixedSize: 25))
             .fontWeight(.bold)
