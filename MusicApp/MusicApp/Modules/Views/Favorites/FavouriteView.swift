@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct FavouriteView: View {
+  
     var body: some View {
         ZStack{
             VStack(content: {
@@ -17,8 +18,8 @@ struct FavouriteView: View {
             })
         }.background(AppColor.backgroundColor)
 //        .frame(width: UIScreen.main.bounds.width,height: UIScreen.main.bounds.height)
-        
-       
+            
+            
     }
        
 }
@@ -26,5 +27,6 @@ struct FavouriteView: View {
 struct FavouriteView_Previews: PreviewProvider {
     static var previews: some View {
         FavouriteView()
+            .environmentObject(PlaylistApi())
     }
 }

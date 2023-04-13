@@ -7,20 +7,13 @@
 
 import SwiftUI
 
-//artist json = "https://api.jsonserve.com/A5rmJ5"
 struct HomeView: View {
     //MARK: - Properties
-    @EnvironmentObject var playlists : PlaylistApi
+    @State var playlists = [Playlist]()
     @State var isAnimating = false
     //MARK: - View Builder
     var body: some View {
         ZStack {
-            //  𝑺𝒆𝒕𝒕𝒊𝒏𝒈 𝒖𝒑 𝒃𝒂𝒄𝒌𝒈𝒓𝒐𝒖𝒏𝒅 𝒊𝒎𝒂𝒈𝒆𝒔 𝒇𝒐𝒓 𝒉𝒐𝒎𝒆 𝒔𝒄𝒓𝒆𝒆𝒏 𝒊𝒏𝒔𝒊𝒅𝒆 𝒁𝒔𝒕𝒂𝒄𝒌..
-//            Image("musichome")
-//                .resizable()
-//                .ignoresSafeArea()
-//                .scaledToFill()
-//                .opacity(isAnimating ? 1.0 : 0.38)
             // 𝐏𝐚𝐫𝐞𝐧𝐭 𝐕𝐬𝐭𝐚𝐜𝐤 𝐭𝐨 𝐡𝐨𝐥𝐝 𝐭𝐢𝐭𝐥𝐞, 𝐚𝐫𝐭𝐢𝐬𝐭𝐬-𝐬𝐜𝐫𝐨𝐥𝐥𝐕𝐢𝐞𝐰, 𝐩𝐥𝐚𝐲𝐥𝐢𝐬𝐭-𝐬𝐜𝐫𝐨𝐥𝐥𝐕𝐢𝐞𝐰..
             ScrollView(.vertical,showsIndicators: false){
                 VStack(alignment: .center) {
@@ -28,19 +21,7 @@ struct HomeView: View {
                         Image("onbeats-logo")
                             .resizable()
                             .scaledToFit()
-//                        Text("𝖔𝖓𝖇𝖊𝖆𝖙𝖘")
-//                            .foregroundColor(AppColor.greenSpotify)
-//                            .font(.custom("Georgia", size: 45, relativeTo: .headline))
-//                            .bold().padding(.bottom, 20)
-//                            .padding(.top,30)
                     })
-                    // 𝐒𝐞𝐭𝐭𝐢𝐧𝐠 𝐮𝐩 𝐭𝐢𝐭𝐥𝐞 𝐟𝐨𝐫 𝐡𝐨𝐦𝐞 𝐬𝐜𝐫𝐞𝐞𝐧..
-//                    Text("𝖔𝖓𝖇𝖊𝖆𝖙𝖘")
-//                        .foregroundColor(AppColor.greenSpotify)
-//                        .font(.custom("Georgia", size: 45, relativeTo: .headline))
-//                        .bold().padding(.bottom, 20)
-//                        .padding(.top,30)
-                    // 𝙑𝙨𝙩𝙖𝙘𝙠 𝙩𝙤 𝙙𝙞𝙨𝙥𝙡𝙖𝙮 "𝙍𝙚𝙘𝙤𝙢𝙢𝙚𝙣𝙙𝙚𝙙 𝘼𝙧𝙩𝙞𝙨𝙩 𝙏𝙞𝙩𝙡𝙚" 𝙖𝙣𝙙 𝙨𝙘𝙧𝙤𝙡𝙡𝙫𝙞𝙚𝙬 𝙤𝙛 𝙖𝙧𝙩𝙞𝙨𝙩𝙨..
                     Text("Recommended Artist")
                         .foregroundColor(Color.white)
                         .font(.title2)
@@ -52,7 +33,7 @@ struct HomeView: View {
                                     RoundedRectangle(cornerRadius: 25)
                                         .fill(Color.white)
                                         .frame(width: 200 , height: 150)
-//                                        .shadow(color: AppColor.shadowColor, radius: 10 )
+                                        .shadow(color: AppColor.greenSpotify, radius: 10 )
                                     Text("Artist-Name")
                                         .foregroundColor(Color.white)
                                 }
@@ -72,7 +53,7 @@ struct HomeView: View {
                                     RoundedRectangle(cornerRadius: 25)
                                         .fill(Color.white)
                                         .frame(height: 150)
-//                                        .shadow(color: AppColor.shadowColor, radius: 10 )
+                                        .shadow(color: AppColor.lightColor, radius: 4,x: -10,y: 0 )
                                         .padding(.trailing, 5)
                                     Text("Playlist-Name")
                                         .foregroundColor(Color.white)
@@ -82,7 +63,7 @@ struct HomeView: View {
                                     RoundedRectangle(cornerRadius: 25)
                                         .fill(Color.white)
                                         .frame(height: 150)
-//                                        .shadow(color: AppColor.shadowColor, radius: 10 )
+                                        .shadow(color: AppColor.lightColor, radius: 4,x: 10,y: 0 )
                                         .padding(.leading, 5)
                                     Text("Playlist-Name")
                                         .foregroundColor(Color.white)
@@ -93,12 +74,9 @@ struct HomeView: View {
                 }  // 𝐏𝐚𝐫𝐞𝐧𝐭 𝐕𝐬𝐭𝐚𝐜𝐤 𝐞𝐧𝐝𝐬 𝐡𝐞𝐫𝐞 𝐭𝐡𝐚𝐭 𝐡𝐨𝐥𝐝𝐬 𝐓𝐢𝐭𝐥𝐞,𝐚𝐫𝐭𝐢𝐬𝐭, 𝐩𝐥𝐚𝐲𝐥𝐢s𝐭𝐬..
             }
         } // 𝐙𝐬𝐭𝐚𝐜𝐤 𝐞𝐧𝐝𝐬 𝐡𝐞𝐫𝐞 ..
-//        .frame(width: UIScreen.main.bounds.width,height: UIScreen.main.bounds.height)
         .background(AppColor.backgroundColor)
         .onAppear {
-            withAnimation(.easeIn(duration: 1.58)){
-                isAnimating = true
-            }
+            PlaylistApi().getPlaylist()
         }
     }
 }

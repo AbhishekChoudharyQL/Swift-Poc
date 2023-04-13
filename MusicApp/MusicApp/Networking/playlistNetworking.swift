@@ -8,7 +8,7 @@
 import Foundation
 
 class PlaylistApi : ObservableObject {
-    @Published var playlist : [Playlist] = []
+    @Published var playlist = [Playlist]()
     
     func getPlaylist() {
         let headers = [
@@ -16,7 +16,7 @@ class PlaylistApi : ObservableObject {
             "X-RapidAPI-Host": "deezerdevs-deezer.p.rapidapi.com"
         ]
 
-        let request = NSMutableURLRequest(url: NSURL(string: "https://deezerdevs-deezer.p.rapidapi.com/infos")! as URL,
+        let request = NSMutableURLRequest(url: NSURL(string: "https://deezerdevs-deezer.p.rapidapi.com/playlist/12")! as URL,
                                                 cachePolicy: .useProtocolCachePolicy,
                                             timeoutInterval: 10.0)
         request.httpMethod = "GET"
@@ -33,8 +33,10 @@ class PlaylistApi : ObservableObject {
             }
             if let data = data {
                 do {
-                    let jsonResponse = try JSONDecoder().decode([Playlist].self, from: data)
-                    self.playlist = jsonResponse
+                    let jsonResponse = try JSONDecoder().decode(Playlist.self, from: data)
+                    self.playlist.append(jsonResponse)
+//                    self.playlist = jsonResponse
+                    print(self.playlist)
                 } catch  {
                     print(error)
                 }
