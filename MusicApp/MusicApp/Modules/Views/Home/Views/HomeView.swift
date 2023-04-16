@@ -15,29 +15,32 @@ struct HomeView: View {
     var body: some View {
         ZStack {
             // 𝐏𝐚𝐫𝐞𝐧𝐭 𝐕𝐬𝐭𝐚𝐜𝐤 𝐭𝐨 𝐡𝐨𝐥𝐝 𝐭𝐢𝐭𝐥𝐞, 𝐚𝐫𝐭𝐢𝐬𝐭𝐬-𝐬𝐜𝐫𝐨𝐥𝐥𝐕𝐢𝐞𝐰, 𝐩𝐥𝐚𝐲𝐥𝐢𝐬𝐭-𝐬𝐜𝐫𝐨𝐥𝐥𝐕𝐢𝐞𝐰..
-            ScrollView(.vertical,showsIndicators: false){
-                VStack(alignment: .center) {
-                    HStack( content: {
-                        Image("onbeats-logo")
-                            .resizable()
-                            .scaledToFit()
-                    })
-                    Text("Recommended Artist")
-                        .foregroundColor(Color.white)
-                        .font(.title2)
-                        .bold()
-                    ScrollView(.horizontal, showsIndicators: false) {
-                        HStack{
-                            ForEach(artistApi.artists, id: \.id) { artist in
-                                VStack {
-                                 let imageURL = URL(string: artist.picture_medium ?? "")
-                                   if let imageURL = imageURL {
-                                    AsyncImage(url: imageURL) { image in
+        ScrollView(.vertical,showsIndicators: false){
+          VStack(alignment: .center) {
+            HStack( content: {
+                Image("onbeats-logo")
+                .resizable()
+                .scaledToFit()
+                })
+                Text("Recommended Artist")
+                .foregroundColor(Color.white)
+                .font(.title2)
+                .bold()
+              ScrollView(.horizontal, showsIndicators: false) {
+                    HStack{
+                        ForEach(artistApi.artists, id: \.id) { artist in
+                            VStack {
+                            let imageURL = URL(string: artist.picture_medium ?? "")
+                              if let imageURL = imageURL {
+                                AsyncImage(url: imageURL) { image in
                                        image
                                       .resizable()
                                       .aspectRatio(contentMode: .fit)
-                                      .frame(width: 100, height: 100)
+                                      .frame(width: 102, height: 105)
                                       .clipShape(Circle())
+                                      .overlay(
+                                        Circle().stroke(AppColor.greenSpotify,lineWidth: 2)
+                                      )
                                         } placeholder: {
                                         Image(systemName: "person.fill")
                                         .resizable()
