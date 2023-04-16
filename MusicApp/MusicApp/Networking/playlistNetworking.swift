@@ -7,7 +7,7 @@
 
 import Foundation
 
-class PlaylistApi : ObservableObject {
+class playlistNetworking : ObservableObject {
     @Published var playlist = [Playlist]()
     
     func getPlaylist() {
@@ -36,7 +36,7 @@ class PlaylistApi : ObservableObject {
                     let jsonResponse = try JSONDecoder().decode(Playlist.self, from: data)
                     self.playlist.append(jsonResponse)
 //                    self.playlist = jsonResponse
-                    print(self.playlist)
+//                    print(self.playlist)
                 } catch  {
                     print(error)
                 }

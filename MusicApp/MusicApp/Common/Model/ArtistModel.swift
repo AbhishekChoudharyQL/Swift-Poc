@@ -8,9 +8,9 @@
 import Foundation
 
 struct Artist : Codable,Identifiable {
-    var id : Int
-    var name : String
-    var picture_medium : String
-    var tracklist : String
+    var id : Int?
+    var name : String?
+    var picture_medium : String?
+    var tracklist : String?
 }
 

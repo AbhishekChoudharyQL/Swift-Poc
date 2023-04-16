@@ -9,7 +9,7 @@ import SwiftUI
 
 struct HomeView: View {
     //MARK: - Properties
-    @State var playlists = [Playlist]()
+    @ObservedObject var artistApi = ArtistApi()
     @State var isAnimating = false
     //MARK: - View Builder
     var body: some View {
@@ -28,16 +28,33 @@ struct HomeView: View {
                         .bold()
                     ScrollView(.horizontal, showsIndicators: false) {
                         HStack{
-                            ForEach(0..<4, id: \.self){ index in
+                            ForEach(artistApi.artists, id: \.id) { artist in
                                 VStack {
-                                    RoundedRectangle(cornerRadius: 25)
-                                        .fill(Color.white)
-                                        .frame(width: 200 , height: 150)
-                                        .shadow(color: AppColor.greenSpotify, radius: 10 )
-                                    Text("Artist-Name")
-                                        .foregroundColor(Color.white)
+                                 let imageURL = URL(string: artist.picture_medium ?? "")
+                                   if let imageURL = imageURL {
+                                    AsyncImage(url: imageURL) { image in
+                                       image
+                                      .resizable()
+                                      .aspectRatio(contentMode: .fit)
+                                      .frame(width: 100, height: 100)
+                                      .clipShape(Circle())
+                                        } placeholder: {
+                                        Image(systemName: "person.fill")
+                                        .resizable()
+                                        .aspectRatio(contentMode: .fit)
+                                        .frame(width: 100, height: 100)
+                                        }
+                                          } else {
+                                                Image(systemName: "person.fill")
+                                                .resizable()
+                                                .aspectRatio(contentMode: .fit)
+                                                .frame(width: 100, height: 100)
+                                                     }
+                                    Text(artist.name ?? "")
+                                        .font(.caption)
+                                        .foregroundColor(.white)
                                 }
-                            }.padding()
+                            }
                         }
                     }.frame(width: UIScreen.main.bounds.width, height: 200)//: - 𝙎𝙘𝙧𝙤𝙡𝙡 𝙑𝙞𝙚𝙬 𝙛𝙤𝙧 𝙖𝙧𝙩𝙞𝙨𝙩𝙨 𝙚𝙣𝙙𝙨 𝙝𝙚𝙧𝙚...
                     // 𝐏𝐥𝐚𝐲𝐥𝐢𝐬𝐭 𝐡𝐞𝐚𝐝𝐥𝐢𝐧𝐞 𝐬𝐭𝐚𝐫𝐭𝐬 𝐡𝐞𝐫𝐞..
@@ -53,7 +70,7 @@ struct HomeView: View {
                                     RoundedRectangle(cornerRadius: 25)
                                         .fill(Color.white)
                                         .frame(height: 150)
-                                        .shadow(color: AppColor.lightColor, radius: 4,x: -10,y: 0 )
+                                        .shadow(color: AppColor.greenSpotify, radius: 8,x: 0,y: 0 )
                                         .padding(.trailing, 5)
                                     Text("Playlist-Name")
                                         .foregroundColor(Color.white)
@@ -63,7 +80,7 @@ struct HomeView: View {
                                     RoundedRectangle(cornerRadius: 25)
                                         .fill(Color.white)
                                         .frame(height: 150)
-                                        .shadow(color: AppColor.lightColor, radius: 4,x: 10,y: 0 )
+                                        .shadow(color: AppColor.greenSpotify, radius: 8,x: 0,y: 0 )
                                         .padding(.leading, 5)
                                     Text("Playlist-Name")
                                         .foregroundColor(Color.white)
@@ -76,7 +93,8 @@ struct HomeView: View {
         } // 𝐙𝐬𝐭𝐚𝐜𝐤 𝐞𝐧𝐝𝐬 𝐡𝐞𝐫𝐞 ..
         .background(AppColor.backgroundColor)
         .onAppear {
-            PlaylistApi().getPlaylist()
+            artistApi.getArtists(ids: [], completion:{
+            })
         }
     }
 }
@@ -84,6 +102,6 @@ struct HomeView: View {
 struct HomeView_Previews: PreviewProvider {
     static var previews: some View {
         HomeView()
-            .environmentObject(PlaylistApi())
+            .environmentObject(playlistNetworking())
     }
 }
