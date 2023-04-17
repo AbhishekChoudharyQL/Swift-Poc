@@ -28,8 +28,6 @@
 		46B6F04329ED6B8C0015391C /* TextModifierForSmallCaptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B6F04229ED6B8C0015391C /* TextModifierForSmallCaptions.swift */; };
 		46B6F04529ED6C340015391C /* DefaultPlaceholderImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B6F04429ED6C340015391C /* DefaultPlaceholderImage.swift */; };
 		46B6F04729ED6CEA0015391C /* AsyncImageModifierForPlaylist.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B6F04629ED6CEA0015391C /* AsyncImageModifierForPlaylist.swift */; };
-		46B6F04929ED739E0015391C /* ScrollViewArtist.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B6F04829ED739E0015391C /* ScrollViewArtist.swift */; };
-		46B6F04B29ED78280015391C /* PlaylistView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B6F04A29ED78280015391C /* PlaylistView.swift */; };
 		46B9114E29E81E1D00B01A4B /* ArtistApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B9114D29E81E1D00B01A4B /* ArtistApi.swift */; };
 		46BCC28529E5285200ACF2C0 /* playlistModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46BCC28429E5285200ACF2C0 /* playlistModel.swift */; };
 		46BCC28B29E52B4000ACF2C0 /* playlistNetworking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46BCC28A29E52B4000ACF2C0 /* playlistNetworking.swift */; };
@@ -72,8 +70,6 @@
 		46B6F04229ED6B8C0015391C /* TextModifierForSmallCaptions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextModifierForSmallCaptions.swift; sourceTree = "<group>"; };
 		46B6F04429ED6C340015391C /* DefaultPlaceholderImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultPlaceholderImage.swift; sourceTree = "<group>"; };
 		46B6F04629ED6CEA0015391C /* AsyncImageModifierForPlaylist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsyncImageModifierForPlaylist.swift; sourceTree = "<group>"; };
-		46B6F04829ED739E0015391C /* ScrollViewArtist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollViewArtist.swift; sourceTree = "<group>"; };
-		46B6F04A29ED78280015391C /* PlaylistView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaylistView.swift; sourceTree = "<group>"; };
 		46B9114D29E81E1D00B01A4B /* ArtistApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtistApi.swift; sourceTree = "<group>"; };
 		46BCC28429E5285200ACF2C0 /* playlistModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = playlistModel.swift; sourceTree = "<group>"; };
 		46BCC28A29E52B4000ACF2C0 /* playlistNetworking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = playlistNetworking.swift; sourceTree = "<group>"; };
@@ -284,8 +280,6 @@
 				46B6F04229ED6B8C0015391C /* TextModifierForSmallCaptions.swift */,
 				46B6F04429ED6C340015391C /* DefaultPlaceholderImage.swift */,
 				46B6F04629ED6CEA0015391C /* AsyncImageModifierForPlaylist.swift */,
-				46B6F04829ED739E0015391C /* ScrollViewArtist.swift */,
-				46B6F04A29ED78280015391C /* PlaylistView.swift */,
 			);
 			path = ComponentViews;
 			sourceTree = "<group>";
@@ -529,7 +523,6 @@
 				46AB0B7729DD60A100C347E7 /* FloatingScreenView.swift in Sources */,
 				469A527229E499BD006369E5 /* ArtistModel.swift in Sources */,
 				4677786B29DCA42B0089C807 /* AudioImageView.swift in Sources */,
-				46B6F04929ED739E0015391C /* ScrollViewArtist.swift in Sources */,
 				46D22C0629E06E9E00ACDE82 /* PageModel.swift in Sources */,
 				46BCC28529E5285200ACF2C0 /* playlistModel.swift in Sources */,
 				46B6F04529ED6C340015391C /* DefaultPlaceholderImage.swift in Sources */,
@@ -549,7 +542,6 @@
 				46A6CF6029E6B55A003CF724 /* SongNameTextModifier.swift in Sources */,
 				46C2E97229DE8E4A005DD3D5 /* MiniPlayerView.swift in Sources */,
 				46BE562B29E0921F006526BC /* OnboardingView.swift in Sources */,
-				46B6F04B29ED78280015391C /* PlaylistView.swift in Sources */,
 				46C689DC29EC505F00B722B8 /* SearchApi.swift in Sources */,
 				46B9114E29E81E1D00B01A4B /* ArtistApi.swift in Sources */,
 				46F44FDB29DAE8B200936230 /* TabBar.swift in Sources */,

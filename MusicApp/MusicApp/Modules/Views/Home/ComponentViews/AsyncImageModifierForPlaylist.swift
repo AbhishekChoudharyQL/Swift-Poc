@@ -26,6 +26,6 @@ struct AsyncImageModifierForPlaylist: View {
 
 struct AsyncImageModifierForPlaylist_Previews: PreviewProvider {
     static var previews: some View {
-        AsyncImageModifierForPlaylist(imageUrl: URL(string: "")!)
+        AsyncImageModifierForPlaylist(imageUrl: URL(string: "http://")!)
     }
 }

@@ -30,6 +30,6 @@ struct AsyncImageModifierArtist: View {
 
 struct AsyncImageModifier_Previews: PreviewProvider {
     static var previews: some View {
-        AsyncImageModifierArtist(imageUrl: URL(string: "")!)
+        AsyncImageModifierArtist(imageUrl: URL(string: "http://")!)
     }
 }

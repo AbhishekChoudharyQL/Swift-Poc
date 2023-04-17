@@ -11,8 +11,9 @@ struct TextModifierForSmallCaptions: View {
     var texttoBeModified : String
     var body: some View {
        Text(texttoBeModified)
-            .font(.caption)
+            .font(.caption2)
             .foregroundColor(.white)
+            .multilineTextAlignment(.center)
     }
 }
 
