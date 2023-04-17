@@ -9,6 +9,7 @@ import SwiftUI
 
 struct SearchView: View {
     //MARK: - Properties
+//    @ObservedObject var searchApi = SearchApi()
     @State private var searchText = ""
     @State private var showCancelButton: Bool = false
     
@@ -31,9 +32,10 @@ struct SearchView: View {
                     }
                 }.padding(.bottom)
             }
-        }
-//        .frame(width: UIScreen.main.bounds.width,height: UIScreen.main.bounds.height)
-        .background(AppColor.backgroundColor)
+        }.background(AppColor.backgroundColor)
+//            .onAppear{
+//                searchApi.getSearchResults(parameter: searchText)
+//            }
     }
 }
 

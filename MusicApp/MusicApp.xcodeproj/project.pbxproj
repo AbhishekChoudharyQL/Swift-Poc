@@ -21,6 +21,7 @@
 		46AB0B7729DD60A100C347E7 /* FloatingScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46AB0B7629DD60A100C347E7 /* FloatingScreenView.swift */; };
 		46AB0B7C29DDB1CA00C347E7 /* AppColors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 46AB0B7B29DDB1CA00C347E7 /* AppColors.xcassets */; };
 		46AE280029E424C600F535AD /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46AE27FF29E424C600F535AD /* SearchBar.swift */; };
+		46B6F03629ED46B80015391C /* PlaylistViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B6F03529ED46B80015391C /* PlaylistViewModel.swift */; };
 		46B9114E29E81E1D00B01A4B /* ArtistApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B9114D29E81E1D00B01A4B /* ArtistApi.swift */; };
 		46BCC28529E5285200ACF2C0 /* playlistModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46BCC28429E5285200ACF2C0 /* playlistModel.swift */; };
 		46BCC28B29E52B4000ACF2C0 /* playlistNetworking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46BCC28A29E52B4000ACF2C0 /* playlistNetworking.swift */; };
@@ -56,6 +57,7 @@
 		46AB0B7629DD60A100C347E7 /* FloatingScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatingScreenView.swift; sourceTree = "<group>"; };
 		46AB0B7B29DDB1CA00C347E7 /* AppColors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = AppColors.xcassets; sourceTree = "<group>"; };
 		46AE27FF29E424C600F535AD /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
+		46B6F03529ED46B80015391C /* PlaylistViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaylistViewModel.swift; sourceTree = "<group>"; };
 		46B9114D29E81E1D00B01A4B /* ArtistApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtistApi.swift; sourceTree = "<group>"; };
 		46BCC28429E5285200ACF2C0 /* playlistModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = playlistModel.swift; sourceTree = "<group>"; };
 		46BCC28A29E52B4000ACF2C0 /* playlistNetworking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = playlistNetworking.swift; sourceTree = "<group>"; };
@@ -226,6 +228,7 @@
 		46A28DC329E73ACF0043FC04 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				46B6F03529ED46B80015391C /* PlaylistViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -498,6 +501,7 @@
 				46BCC28529E5285200ACF2C0 /* playlistModel.swift in Sources */,
 				46F44FD729DAD37500936230 /* HomeView.swift in Sources */,
 				46BE562929E08DF5006526BC /* PageView.swift in Sources */,
+				46B6F03629ED46B80015391C /* PlaylistViewModel.swift in Sources */,
 				46F64E9529DB050100B44B3D /* SearchView.swift in Sources */,
 				469676BB29DC442A007724EF /* TabBarManager.swift in Sources */,
 				46F44FC929DAD35800936230 /* MusicApp.swift in Sources */,

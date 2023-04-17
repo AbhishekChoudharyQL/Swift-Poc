@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct SearchBar: View {
+    @ObservedObject var searchApi = SearchApi()
     @Binding var text: String
         @Binding var showCancelButton: Bool
         
@@ -20,6 +21,7 @@ struct SearchBar: View {
                     self.showCancelButton = true
                 }, onCommit: {
                     // Do search functionality here
+                    searchApi.getSearchResults(parameter: text)
                 })
                     .foregroundColor(.white)
                 

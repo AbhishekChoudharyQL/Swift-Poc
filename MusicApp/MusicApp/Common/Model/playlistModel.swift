@@ -7,17 +7,15 @@
 
 import Foundation
 
-struct Playlist : Codable,Identifiable {
-    var id : Int
-    var title : String
-    var picture_medium : String
-    var tracks : Tracks
+struct PlaylistResponse: Codable ,Equatable,Hashable{
+    var data: [Data]?
 }
-struct Tracks : Codable {
-    var data : [Data]
+struct Data: Codable ,Equatable,Hashable {
+    var id: Int?
+    var title: String?
+    var picture: String?
+    var user: User?
 }
-struct Data : Codable,Identifiable {
-    var id : Int
-    var title_short: String
-    var preview : String
+struct User: Codable ,Equatable,Hashable {
+    var tracklist: String?
 }
