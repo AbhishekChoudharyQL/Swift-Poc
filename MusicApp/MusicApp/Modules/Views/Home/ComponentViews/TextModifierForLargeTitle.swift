@@ -9,6 +9,7 @@ import SwiftUI
 
 struct TextModifierForLargeTitle: View {
     var text : String
+    
     var body: some View {
         Text(text)
             .foregroundColor(Color.white)

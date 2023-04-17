@@ -11,10 +11,12 @@ struct AsyncImageModifierForPlaylist: View {
     let imageUrl : URL
     var body: some View {
         AsyncImage(url: imageUrl) {  image in
+            
             image
                 .resizable()
                 .aspectRatio(contentMode: .fit)
                 .frame(width: 102, height: 105)
+            
         } placeholder: {
             Image(systemName: "person.fill")
                 .resizable()
@@ -26,6 +28,6 @@ struct AsyncImageModifierForPlaylist: View {
 
 struct AsyncImageModifierForPlaylist_Previews: PreviewProvider {
     static var previews: some View {
-        AsyncImageModifierForPlaylist(imageUrl: URL(string: "")!)
+        AsyncImageModifierForPlaylist(imageUrl: URL(string: "http")!)
     }
 }

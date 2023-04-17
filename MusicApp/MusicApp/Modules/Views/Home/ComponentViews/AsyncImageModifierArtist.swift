@@ -9,6 +9,7 @@ import SwiftUI
 
 struct AsyncImageModifierArtist: View {
     let imageUrl : URL
+    
     var body: some View {
         AsyncImage(url: imageUrl) { image in
             image
@@ -30,6 +31,6 @@ struct AsyncImageModifierArtist: View {
 
 struct AsyncImageModifier_Previews: PreviewProvider {
     static var previews: some View {
-        AsyncImageModifierArtist(imageUrl: URL(string: "")!)
+        AsyncImageModifierArtist(imageUrl: URL(string: "http://")!)
     }
 }
