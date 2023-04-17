@@ -32,6 +32,7 @@ class PlaylistViewModel : ObservableObject {
                          self.playlistData1 = Array(self.playlistData[0..<self.playlistData.count/2+1])
                          self.playlistData2 = Array(self.playlistData[self.playlistData.count/2+1..<self.playlistData.count])
                      }
+              
 //                    print(self.playlistData1)
                   }
                }    catch {

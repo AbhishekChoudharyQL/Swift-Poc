@@ -15,8 +15,8 @@ struct HomeView: View {
 //MARK: - View Builder
    var body: some View {
    ZStack {
+     ScrollView(.vertical,showsIndicators: false){
     // 𝐏𝐚𝐫𝐞𝐧𝐭 𝐕𝐬𝐭𝐚𝐜𝐤 𝐭𝐨 𝐡𝐨𝐥𝐝 𝐭𝐢𝐭𝐥𝐞, 𝐚𝐫𝐭𝐢𝐬𝐭𝐬-𝐬𝐜𝐫𝐨𝐥𝐥𝐕𝐢𝐞𝐰, 𝐩𝐥𝐚𝐲𝐥𝐢𝐬𝐭-𝐬𝐜𝐫𝐨𝐥𝐥𝐕𝐢𝐞𝐰..
-    ScrollView(.vertical,showsIndicators: false){
         VStack(alignment: .center) {
           LogoView()
           TextModifierForLargeTitle(text: "Recommended Artist")
@@ -39,7 +39,7 @@ struct HomeView: View {
       TextModifierForLargeTitle(text: "𝑻𝒓𝒆𝒏𝒅𝒊𝒏𝒈 𝑷𝒍𝒂𝒚𝒍𝒊𝒔𝒕")
          HStack(content: {
             VStack(content: {
-            ForEach(playlistViewModel.playlistData1,id: \.data){
+            ForEach(playlistViewModel.playlistData,id: \.data){
                 playlistResponse in
                 if let data = playlistResponse.data {
                     ForEach(data,id: \.id) {
@@ -53,23 +53,6 @@ struct HomeView: View {
                         TextModifierForSmallCaptions(texttoBeModified: playlistData.title ?? "")
                          }
                        }
-                    }
-                })
-                VStack(content: {
-                    ForEach(playlistViewModel.playlistData2,id: \.data){
-                        playlistResponse in
-                        if let data = playlistResponse.data {
-                            ForEach(data,id: \.id) {
-                                playlistData in
-                                let imageURL = URL(string: playlistData.picture ?? "")
-                                if let imageURL = imageURL {
-                                    AsyncImageModifierForPlaylist(imageUrl: imageURL)
-                                } else {
-                                    DefaultPlaceholderImage()
-                                }
-                                TextModifierForSmallCaptions(texttoBeModified: playlistData.title ?? "")
-                            }
-                        }
                     }
                 })
             })
