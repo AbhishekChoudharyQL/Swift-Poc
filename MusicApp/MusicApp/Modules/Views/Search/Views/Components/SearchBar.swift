@@ -8,9 +8,10 @@
 import SwiftUI
 
 struct SearchBar: View {
-    @ObservedObject var searchApi = SearchApi()
+//    @ObservedObject var searchApi = SearchApi()
+//    @ObservedObject var searchApi = SearchApiViewModel()
     @Binding var text: String
-        @Binding var showCancelButton: Bool
+    @Binding var showCancelButton: Bool
         
         var body: some View {
             HStack {
@@ -21,7 +22,8 @@ struct SearchBar: View {
                     self.showCancelButton = true
                 }, onCommit: {
                     // Do search functionality here
-                    searchApi.getSearchResults(parameter: text)
+//                    searchApi.getSearchResults(parameter: text)
+//                    SearchApiViewModel().getSearchResults(parameter: text)
                 })
                     .foregroundColor(.white)
                 

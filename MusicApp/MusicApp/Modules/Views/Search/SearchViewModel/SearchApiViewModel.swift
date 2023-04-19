@@ -1,16 +1,15 @@
 //
-//  SearchApi.swift
+//  SearchApiViewModel.swift
 //  MusicApp
 //
-//  Created by abhishek on 16/04/23.
+//  Created by abhishek on 19/04/23.
 //
 
 import Foundation
 
-class SearchApi : ObservableObject {
-    @Published var searchResult = [SearchResult]()
-    
-    @Published var serchbrtext : String = ""
+class SearchApiViewModel : ObservableObject {
+    @Published var searchResult = [SearchData]()
+    @Published var serchbrtext : String = "eminem"
     
     func getSearchResults(parameter: String){
         let headers = [
@@ -18,15 +17,17 @@ class SearchApi : ObservableObject {
             "X-RapidAPI-Host": "deezerdevs-deezer.p.rapidapi.com"
         ]
 
-        let request = NSMutableURLRequest(url: NSURL(string: "https://deezerdevs-deezer.p.rapidapi.com/search?q=\(parameter)")! as URL,
-                                                cachePolicy: .useProtocolCachePolicy,
-                                            timeoutInterval: 10.0)
+        guard  let url = URL(string: "https://deezerdevs-deezer.p.rapidapi.com/search?q=\(parameter)") else {
+            print("Cannot find url")
+            return
+        }
+        var request = URLRequest(url: url)
         request.httpMethod = "GET"
         request.allHTTPHeaderFields = headers
         
         let session = URLSession.shared
         let dataTask = session.dataTask(with: request as URLRequest, completionHandler: {
-            (data,error ,response) -> Void in
+            (data,response , error) -> Void in
             if (error != nil){
                 print(error as Any)
             }
@@ -34,7 +35,8 @@ class SearchApi : ObservableObject {
                 do {
                      let jsonResponse = try JSONDecoder().decode(SearchResult.self, from: data)
                         DispatchQueue.main.async{
-                            self.searchResult.append(jsonResponse)
+//                            self.searchResult.append(jsonResponse)
+                            self.searchResult = jsonResponse.data
                             print(self.searchResult)
                     }
                         
@@ -46,3 +48,27 @@ class SearchApi : ObservableObject {
         dataTask.resume()
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

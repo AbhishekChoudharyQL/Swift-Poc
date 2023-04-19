@@ -7,8 +7,19 @@
 
 import Foundation
 
-struct SearchModel : Codable , Identifiable {
-    var id : String?
-    var  title_short : String?
-    var preview : String?
+// MARK: - SearchResult
+struct SearchResult: Codable {
+    let data: [SearchData]
+    let total: Int
+    let next: String
+}
+//MARK: - SearchData 
+struct SearchData: Codable, Identifiable {
+    let id: Int
+    let title, titleShort: String?
+    let link: String?
+    let duration, rank: Int?
+    let explicitLyrics: Bool?
+    let preview: String?
+    let md5Image: String?
 }

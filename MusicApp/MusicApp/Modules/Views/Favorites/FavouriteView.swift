@@ -18,7 +18,7 @@ struct FavouriteView: View {
                     }
                 }
                 Spacer()
-            }
+        }.background(Color.black)
         .onAppear(){
         }
     }
