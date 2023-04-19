@@ -25,15 +25,6 @@ class PlaylistViewModel : ObservableObject {
                 DispatchQueue.main.async {
                     self.playlistData.append(jsonResponse)
 //                        print(self.playlistData)
-                    if self.playlistData.count % 2 == 0 {
-                         self.playlistData1 = Array(self.playlistData[0..<self.playlistData.count/2])
-                         self.playlistData2 = Array(self.playlistData[self.playlistData.count/2..<self.playlistData.count])
-                     } else {
-                         self.playlistData1 = Array(self.playlistData[0..<self.playlistData.count/2+1])
-                         self.playlistData2 = Array(self.playlistData[self.playlistData.count/2+1..<self.playlistData.count])
-                     }
-              
-//                    print(self.playlistData1)
                   }
                }    catch {
                   print("catched-error: \(error)")
@@ -41,16 +32,6 @@ class PlaylistViewModel : ObservableObject {
             }
         }).resume()
     }
-//    func divideIntoArray() {
-//        ForEach(0..<playlistData.count) {
-//            index in
-//            if(index%2==0){
-//                playlistData1 = playlistData[index]
-//            }
-//            else {
-//                playlistData2 = playlistData[index]
-//            }
-//        }
-//    }
-    }
+
+}
 
