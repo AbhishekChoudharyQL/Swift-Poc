@@ -9,7 +9,7 @@ import Foundation
 
 class SearchApiViewModel : ObservableObject {
     @Published var searchResult = [SearchData]()
-    @Published var serchbrtext : String = "eminem"
+    @Published var serchbrtext : String = "Eminem"
     
     func getSearchResults(parameter: String){
         let headers = [
