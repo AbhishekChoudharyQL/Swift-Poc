@@ -43,8 +43,7 @@ struct HomeView: View {
 //                .frame(width: 200)
             VStack {
                 TextModifierForLargeTitle(text: "𝑻𝒓𝒆𝒏𝒅𝒊𝒏𝒈 𝑷𝒍𝒂𝒚𝒍𝒊𝒔𝒕")
-                PlaylistCollectionView(playlistData: $playlistViewModel.playlistData)
-                    .frame(width: UIScreen.main.bounds.width - 32)
+                PlaylistCollectionView(playlistData: $playlistViewModel.playlistCollectionViewData)
             }
 
          }  // 𝐏𝐚𝐫𝐞𝐧𝐭 𝐕𝐬𝐭𝐚𝐜𝐤 𝐞𝐧𝐝𝐬 𝐡𝐞𝐫𝐞 𝐭𝐡𝐚𝐭 𝐡𝐨𝐥𝐝𝐬 𝐓𝐢𝐭𝐥𝐞,𝐚𝐫𝐭𝐢𝐬𝐭, 𝐩𝐥𝐚𝐲𝐥𝐢s𝐭𝐬..
@@ -64,35 +63,3 @@ struct HomeView: View {
     HomeView()
       }
     }
-////MARK: - Reusable Grid-View
-//struct ReusablePlaylist: View {
-//    let  playlistViewModel: PlaylistViewModel
-//    let columns = [
-//        GridItem(.flexible(), spacing: 10),
-//        GridItem(.flexible(), spacing: 10)
-//    ]
-//
-//    var body: some View {
-//        ScrollView {
-//            LazyVGrid(columns: columns, spacing: 20) {
-//                ForEach(playlistViewModel.playlistData, id: \.data) { playlistResponse in
-//                    ForEach(playlistResponse.data ?? [], id: \.id) { playlistData in
-//                        VStack(spacing: 10) {
-//                            let imageURL = URL(string: playlistData.picture ?? "")
-//                            if let imageURL = imageURL {
-//                                AsyncImageModifierForPlaylist(imageUrl: imageURL)
-//                                    .frame(maxWidth: .infinity, maxHeight: 200)
-//                            } else {
-//                                DefaultPlaceholderImage()
-//                                    .frame(maxWidth: .infinity, maxHeight: 200)
-//                            }
-//                            TextModifierForSmallCaptions(texttoBeModified: playlistData.title ?? "")
-//                                .frame(maxWidth: .infinity)
-//                        }
-//                    }
-//                }
-//            }.padding(.horizontal, 20)
-//        }
-//
-//    }
-//}

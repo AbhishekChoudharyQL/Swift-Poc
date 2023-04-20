@@ -10,8 +10,7 @@ import SwiftUI
 
 class PlaylistViewModel : ObservableObject {
     @Published var playlistData = [PlaylistResponse]()
-    @Published var playlistData1 = [PlaylistResponse]()
-    @Published var playlistData2 = [PlaylistResponse]()
+    @Published var playlistCollectionViewData = [PlaylistCollectionViewData]()
 
     func getPlaylistData() {
         guard let url = URL(string: "https://api.deezer.com/chart/0/playlists?limit=16") else {
@@ -25,6 +24,9 @@ class PlaylistViewModel : ObservableObject {
                 DispatchQueue.main.async {
                     self.playlistData.append(jsonResponse)
 //                        print(self.playlistData)
+//                    self.playlistCollectionViewData = (self.playlistData.first?.data)!
+                    self.playlistCollectionViewData = self.playlistData.flatMap { $0.data ?? [] }
+//                    print(self.playlistCollectionViewData)
                   }
                }    catch {
                   print("catched-error: \(error)")
@@ -34,4 +36,5 @@ class PlaylistViewModel : ObservableObject {
     }
 
 }
+
 

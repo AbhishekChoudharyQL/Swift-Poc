@@ -8,9 +8,9 @@
 import Foundation
 
 struct PlaylistResponse: Codable ,Equatable,Hashable{
-    var data: [Data]?
+    var data: [PlaylistCollectionViewData]?
 }
-struct Data: Codable ,Equatable,Hashable {
+struct PlaylistCollectionViewData: Codable ,Equatable,Hashable {
     var id: Int?
     var title: String?
     var picture: String?

@@ -57,4 +57,4 @@ struct SearchBar: View {
           SearchBar(searchApi: SearchApiViewModel(), text: .constant(""), showCancelButton: .constant(false))
     }
 }
-//
+
