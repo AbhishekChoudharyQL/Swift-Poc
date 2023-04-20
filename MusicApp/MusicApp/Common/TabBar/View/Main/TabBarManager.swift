@@ -7,10 +7,13 @@
 
 import SwiftUI
 
-// Root View
+
+//MARK: - Root View
 struct TabBarManager: View {
+    //MARK: - Properties
     @State var selectedTab: TabItems = .home
     
+    //MARK: - View Builder
     var body: some View {
         VStack(alignment: .center, content: {
             switch selectedTab {
@@ -32,6 +35,7 @@ struct TabBarManager: View {
     }
 }
 
+//MARK: - Previews
 struct TabBarManager_Previews: PreviewProvider {
     static var previews: some View {
         TabBarManager()
