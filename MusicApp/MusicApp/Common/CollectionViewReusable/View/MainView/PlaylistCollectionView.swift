@@ -55,7 +55,6 @@ struct PlaylistCollectionView: UIViewRepresentable {
         
         func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
             return parent.playlistData.count
-            
         }
         
         func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -86,7 +85,7 @@ struct PlaylistCollectionView: UIViewRepresentable {
         override func layoutSubviews() {
             super.layoutSubviews()
             
-            if !__CGSizeEqualToSize(bounds.size, self.intrinsicContentSize) {
+            if !(__CGSizeEqualToSize(bounds.size, self.intrinsicContentSize)) {
                 self.invalidateIntrinsicContentSize()
             }
         }
