@@ -27,9 +27,9 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TikTok Instrumental hits" textAlignment="center" lineBreakMode="clip" baselineAdjustment="alignBaselines" minimumScaleFactor="0.25" adjustsLetterSpacingToFitWidth="YES" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5aM-I0-Qt4">
-                                <rect key="frame" x="10" y="190" width="160" height="50"/>
+                                <rect key="frame" x="10" y="188" width="160" height="52"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="uvs-r5-fJd"/>
+                                    <constraint firstAttribute="height" constant="52" id="ev5-Ma-Dac"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleCaption1"/>
                                 <nil key="textColor"/>
@@ -44,7 +44,7 @@
                             <constraint firstAttribute="trailing" secondItem="xAQ-rV-eUz" secondAttribute="trailing" id="KOs-vP-PDY"/>
                             <constraint firstItem="xAQ-rV-eUz" firstAttribute="top" secondItem="lis-L8-eD6" secondAttribute="top" id="Te9-UQ-Vgs"/>
                             <constraint firstItem="xAQ-rV-eUz" firstAttribute="leading" secondItem="lis-L8-eD6" secondAttribute="leading" id="Txo-Ga-d0V"/>
-                            <constraint firstItem="5aM-I0-Qt4" firstAttribute="top" secondItem="xAQ-rV-eUz" secondAttribute="bottom" constant="10" id="WEj-Ud-VOm"/>
+                            <constraint firstItem="5aM-I0-Qt4" firstAttribute="top" secondItem="xAQ-rV-eUz" secondAttribute="bottom" constant="8" id="WEj-Ud-VOm"/>
                         </constraints>
                     </view>
                 </subviews>

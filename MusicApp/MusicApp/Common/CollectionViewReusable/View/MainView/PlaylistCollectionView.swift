@@ -19,22 +19,19 @@ struct PlaylistCollectionView: UIViewRepresentable {
         layout.minimumLineSpacing = 0
         layout.minimumInteritemSpacing = 0
         
-        let collectionView = UICollectionView(frame: .infinite, collectionViewLayout: layout)
+        let collectionView = DynamicHeightCollectionView(frame: .zero, collectionViewLayout: layout)
         collectionView.delegate = context.coordinator.self
         collectionView.dataSource = context.coordinator.self
         collectionView.translatesAutoresizingMaskIntoConstraints = false
         collectionView.backgroundColor = .clear
-        collectionView.isSpringLoaded = false
         collectionView.isScrollEnabled = false
         
         let playlistCellNib = UINib(nibName: "PlaylistCollectionViewCell", bundle: nil)
         
         collectionView.register(playlistCellNib, forCellWithReuseIdentifier: "PlaylistCollectionViewCell")
         
-        let edgeInsets = UIEdgeInsets(top: 20, left: 0, bottom: 200, right: 0)
+        let edgeInsets = UIEdgeInsets(top: 20, left: 0, bottom: 20, right: 0)
         collectionView.contentInset = edgeInsets
-        
-        
         
         return collectionView
     }
@@ -55,6 +52,7 @@ struct PlaylistCollectionView: UIViewRepresentable {
             self.parent = collectionView
         }
         
+        
         func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
             return parent.playlistData.count
             
@@ -72,6 +70,29 @@ struct PlaylistCollectionView: UIViewRepresentable {
         func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
             let size = (collectionView.frame.width / 2)
             return CGSize(width: size, height: size)
+        }
+    }
+    
+    class DynamicHeightCollectionView: UICollectionView {
+        
+        override init(frame: CGRect, collectionViewLayout layout: UICollectionViewLayout) {
+            super.init(frame: frame, collectionViewLayout: layout)
+        }
+        
+        required init?(coder: NSCoder) {
+            fatalError("init(coder:) has not been implemented")
+        }
+        
+        override func layoutSubviews() {
+            super.layoutSubviews()
+            
+            if !__CGSizeEqualToSize(bounds.size, self.intrinsicContentSize) {
+                self.invalidateIntrinsicContentSize()
+            }
+        }
+        
+        override var intrinsicContentSize: CGSize {
+            return contentSize
         }
     }
 }

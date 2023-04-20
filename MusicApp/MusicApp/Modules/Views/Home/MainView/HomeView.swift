@@ -24,7 +24,7 @@ struct HomeView: View {
                     RecommendedArtistsHorizontalList(artistApi: artistApi)
                     TextModifierForLargeTitle(text: "𝑻𝒓𝒆𝒏𝒅𝒊𝒏𝒈 𝑷𝒍𝒂𝒚𝒍𝒊𝒔𝒕")
                     PlaylistCollectionView(playlistData: $playlistViewModel.playlistCollectionViewData)
-                        .frame(width: UIConstants.screenWidth, alignment: .center)
+                        .padding(.bottom, 180)
                 }
             }
         }
