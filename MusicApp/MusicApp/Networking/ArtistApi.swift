@@ -36,8 +36,6 @@ class ArtistApi : ObservableObject {
                         let jsonResponse = try JSONDecoder().decode(Artist.self, from: data)
                         DispatchQueue.main.async{
                             self.artists.append(jsonResponse)
-    //                        print(self.artists)
-//                            print(self.artists[0].tracklist)
                         }
                         // increment count and check if all requests have completed
                         count += 1

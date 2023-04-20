@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="PlaylistCollectionViewCell" id="gTV-IL-0wX" customClass="PlaylistCollectionViewCell" customModule="MusicApp" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="200" height="270"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="200" height="270"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lis-L8-eD6">
+                        <rect key="frame" x="10" y="10" width="180" height="250"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="xAQ-rV-eUz">
+                                <rect key="frame" x="0.0" y="0.0" width="180" height="180"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="xAQ-rV-eUz" secondAttribute="height" multiplier="1:1" id="MXL-Dc-82Y"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TikTok Instrumental hits" textAlignment="center" lineBreakMode="clip" baselineAdjustment="alignBaselines" minimumScaleFactor="0.25" adjustsLetterSpacingToFitWidth="YES" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5aM-I0-Qt4">
+                                <rect key="frame" x="10" y="190" width="160" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="uvs-r5-fJd"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleCaption1"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="5aM-I0-Qt4" secondAttribute="trailing" constant="10" id="7ym-s6-2o7"/>
+                            <constraint firstItem="5aM-I0-Qt4" firstAttribute="leading" secondItem="lis-L8-eD6" secondAttribute="leading" constant="10" id="Ard-30-jAO"/>
+                            <constraint firstAttribute="bottom" secondItem="5aM-I0-Qt4" secondAttribute="bottom" constant="10" id="E0X-He-fH5"/>
+                            <constraint firstAttribute="trailing" secondItem="xAQ-rV-eUz" secondAttribute="trailing" id="KOs-vP-PDY"/>
+                            <constraint firstItem="xAQ-rV-eUz" firstAttribute="top" secondItem="lis-L8-eD6" secondAttribute="top" id="Te9-UQ-Vgs"/>
+                            <constraint firstItem="xAQ-rV-eUz" firstAttribute="leading" secondItem="lis-L8-eD6" secondAttribute="leading" id="Txo-Ga-d0V"/>
+                            <constraint firstItem="5aM-I0-Qt4" firstAttribute="top" secondItem="xAQ-rV-eUz" secondAttribute="bottom" constant="10" id="WEj-Ud-VOm"/>
+                        </constraints>
+                    </view>
+                </subviews>
+            </view>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="lis-L8-eD6" secondAttribute="bottom" constant="10" id="3iu-fa-jjs"/>
+                <constraint firstItem="lis-L8-eD6" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="10" id="GzM-4l-EfS"/>
+                <constraint firstItem="lis-L8-eD6" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="10" id="NhH-UH-j4B"/>
+                <constraint firstAttribute="trailing" secondItem="lis-L8-eD6" secondAttribute="trailing" constant="10" id="OCz-ap-ogX"/>
+            </constraints>
+            <size key="customSize" width="200" height="265"/>
+            <connections>
+                <outlet property="playlistImageView" destination="xAQ-rV-eUz" id="YgL-0n-Oxu"/>
+                <outlet property="playlistTitleLabel" destination="5aM-I0-Qt4" id="jEK-Oj-ro6"/>
+            </connections>
+            <point key="canvasLocation" x="103.81679389312977" y="42.95774647887324"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
