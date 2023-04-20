@@ -17,7 +17,13 @@ enum UserSession {
 struct MusicApp: App {
     //MARK: - Properties
     @State var userSession : UserSession = .userOnIntroScreen
-    
+//    @State var playlistData : [PlaylistResponse] = [PlaylistResponse(data: [Data(id: 0, title: "Songs", picture: "Sing", user: nil),
+//                                                                Data(id: 0, title: "Songs", picture: "Sing", user: nil),
+//                                                                Data(id: 0, title: "Songs", picture: "Sing", user: nil),
+//                                                                Data(id: 0, title: "Songs", picture: "Sing", user: nil),
+//                                                                Data(id: 0, title: "Songs", picture: "Sing", user: nil),
+//                                                                Data(id: 0, title: "Songs", picture: "Sing", user: nil)])]
+
     //MARK: - View Builder
     var body: some Scene {
         WindowGroup {
@@ -29,6 +35,7 @@ struct MusicApp: App {
 //            }
 //            SearchView()
             TabBarManager()
+//            PlaylistCollectionView(playlistData: $playlistData)
         }
     }
 }

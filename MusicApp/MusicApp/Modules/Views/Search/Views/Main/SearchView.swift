@@ -9,9 +9,8 @@ import SwiftUI
 
 struct SearchView: View {
     //MARK: - Properties
-    @State private var searchText = ""
+    @ObservedObject var  viewModel = SearchApiViewModel()
     @State private var showCancelButton: Bool = false
-    
     //MARK: - View Builder
     var body: some View {
         ZStack {
@@ -20,25 +19,43 @@ struct SearchView: View {
                     .foregroundColor(AppColor.greenSpotify)
                     .bold()
                     .font(.largeTitle)
-                
-                SearchBar(text: $searchText, showCancelButton: $showCancelButton)
+                SearchBar(searchApi: viewModel, text: $viewModel.serchbrtext, showCancelButton: $showCancelButton)
                     .padding(.horizontal)
                 
                 ScrollView {
-                    ForEach(0..<9) { index in
-                        Text("Favorite Songs")
-                            .foregroundColor(.white)
-                    }
-                }.padding(.bottom)
-            }
+                        VStack(alignment: .leading,content: {
+                            ForEach(viewModel.searchResult){
+                                index in
+                                HStack(content: {
+                                    Text(index.title ?? "No result")
+                                        .foregroundColor(.white)
+                                        .font(.subheadline)
+                                    Spacer()
+                                    Button{
+                                        print("Button-Tap")
+                                    } label: {
+                                        Label("Play", systemImage: "play.circle")
+                                            .foregroundColor(AppColor.greenSpotify)
+                                    }
+                                }).frame(height: 20)
+                            }
+                        }).padding(.leading,5)
+                          .padding(.trailing,5)
+                         .padding(.bottom, 180)
+                } // Scroll View Ends here ...
+                
+            }.background(AppColor.backgroundColor)
+                .onAppear{
+                    viewModel.getSearchResults(parameter: viewModel.serchbrtext)
+                }
         }
-//        .frame(width: UIScreen.main.bounds.width,height: UIScreen.main.bounds.height)
-        .background(AppColor.backgroundColor)
+        
     }
 }
-
-struct SearchView_Previews: PreviewProvider {
-    static var previews: some View {
-        SearchView()
+    //MARK: - Previews
+    struct SearchView_Previews: PreviewProvider {
+        static var previews: some View {
+            SearchView()
+        }
     }
-}
+    
