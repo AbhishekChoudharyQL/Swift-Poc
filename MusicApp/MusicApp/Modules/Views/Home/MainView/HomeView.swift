@@ -41,11 +41,11 @@ struct HomeView: View {
 
 //     PlaylistCollectionView(playlistData: $playlistViewModel.playlistData)
 //                .frame(width: 200)
-//            VStack {
-//                TextModifierForLargeTitle(text: "𝑻𝒓𝒆𝒏𝒅𝒊𝒏𝒈 𝑷𝒍𝒂𝒚𝒍𝒊𝒔𝒕")
-//                PlaylistCollectionView(playlistData: $playlistViewModel.playlistData)
-//                    .frame(width: UIScreen.main.bounds.width - 32)
-//            }
+            VStack {
+                TextModifierForLargeTitle(text: "𝑻𝒓𝒆𝒏𝒅𝒊𝒏𝒈 𝑷𝒍𝒂𝒚𝒍𝒊𝒔𝒕")
+                PlaylistCollectionView(playlistData: $playlistViewModel.playlistData)
+                    .frame(width: UIScreen.main.bounds.width - 32)
+            }
 
          }  // 𝐏𝐚𝐫𝐞𝐧𝐭 𝐕𝐬𝐭𝐚𝐜𝐤 𝐞𝐧𝐝𝐬 𝐡𝐞𝐫𝐞 𝐭𝐡𝐚𝐭 𝐡𝐨𝐥𝐝𝐬 𝐓𝐢𝐭𝐥𝐞,𝐚𝐫𝐭𝐢𝐬𝐭, 𝐩𝐥𝐚𝐲𝐥𝐢s𝐭𝐬..
       }  // Parent Scroll View ends
@@ -64,7 +64,7 @@ struct HomeView: View {
     HomeView()
       }
     }
-//MARK: - Reusable Grid-View
+////MARK: - Reusable Grid-View
 //struct ReusablePlaylist: View {
 //    let  playlistViewModel: PlaylistViewModel
 //    let columns = [

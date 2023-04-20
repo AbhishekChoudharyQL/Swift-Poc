@@ -8,15 +8,18 @@
 import Foundation
 
 class SearchApiViewModel : ObservableObject {
+    //MARK: - Properties
     @Published var searchResult = [SearchData]()
-    @Published var serchbrtext : String = "Eminem"
-    
+    @Published var serchbrtext : String = ""
+    @Published var ischanging = false
+
+    //MARK: - Method to fetch search results using Api
     func getSearchResults(parameter: String){
         let headers = [
             "X-RapidAPI-Key": "7ca238eddemshdabbbb187dde8e1p17372ejsn4c83797d547a",
             "X-RapidAPI-Host": "deezerdevs-deezer.p.rapidapi.com"
         ]
-
+         print(parameter)
         guard  let url = URL(string: "https://deezerdevs-deezer.p.rapidapi.com/search?q=\(parameter)") else {
             print("Cannot find url")
             return
@@ -47,6 +50,7 @@ class SearchApiViewModel : ObservableObject {
         })
         dataTask.resume()
     }
+   
 }
 
 

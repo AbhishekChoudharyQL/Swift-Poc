@@ -16,11 +16,11 @@ struct PlaylistCollectionView: UIViewRepresentable {
     func makeUIView(context: Context) -> UICollectionView {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .vertical
-        let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
-        collectionView.delegate = context.coordinator
-        collectionView.dataSource = context.coordinator
+        let collectionView = UICollectionView(frame: .infinite, collectionViewLayout: layout)
+        collectionView.delegate = context.coordinator.self
+        collectionView.dataSource = context.coordinator.self
         collectionView.translatesAutoresizingMaskIntoConstraints = false
-        collectionView.backgroundColor = .white
+        collectionView.backgroundColor = .red
         collectionView.register(PlaylistCell.self, forCellWithReuseIdentifier: "PlaylistCell")
         return collectionView
     }
@@ -65,19 +65,20 @@ struct PlaylistCollectionView: UIViewRepresentable {
         //MARK: - Cell Identifier
         static let identifier = "PlaylistCell"
         //MARK: - Private Methods
-        private var playlistImageView: UIImageView {
+        private var playlistImageView: UIImageView = {
             let imageView = UIImageView()
             imageView.contentMode = .scaleAspectFill
             imageView.layer.cornerRadius = 8
             imageView.clipsToBounds = true
             return imageView
-        }
-        private var playlistTitleLabel: UILabel {
-            let label = UILabel()
+        }()
+        private var playlistTitleLabel: UILabel = {
+            let label = UILabel(frame: CGRect(x: 0, y: 0, width: 100, height: 200))
             label.font = .systemFont(ofSize: 18, weight: .semibold)
+            label.backgroundColor = .cyan
             label.numberOfLines = 0
             return label
-        }
+        }()
         
         //MARK: - Method to configure cell
         func configure(playlist: PlaylistResponse) {

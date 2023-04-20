@@ -7,8 +7,11 @@
 
 import SwiftUI
 
+//MARK: - Reusable logo view for home screen
 struct LogoView: View {
+    //MARK: - Properties
     var imageName : String = "onbeats-logo"
+    //MARK: - View Builder
     var body: some View {
         HStack( content: {
             Image(imageName)
@@ -17,7 +20,7 @@ struct LogoView: View {
         })
     }
 }
-
+ //MARK: - Previews
 struct LogoView_Previews: PreviewProvider {
     static var previews: some View {
         LogoView()

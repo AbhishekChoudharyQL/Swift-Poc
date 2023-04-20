@@ -6,10 +6,9 @@
 //
 
 import SwiftUI
-
 struct SearchBar: View {
     //MARK: - Properties
-    @ObservedObject var searchApi = SearchApiViewModel()
+    @ObservedObject var searchApi : SearchApiViewModel
     @Binding var text: String
     @Binding var showCancelButton: Bool
     //MARK: - View Builder
@@ -20,8 +19,14 @@ struct SearchBar: View {
 
             TextField("Search", text: $searchApi.serchbrtext, onEditingChanged: { isEditing in
                 self.showCancelButton = true
+                print("Before")
+                print(searchApi.serchbrtext)
             }, onCommit: {
+                print("After")
+                print(searchApi.serchbrtext)
+                searchApi.ischanging = true
                 searchApi.getSearchResults(parameter: searchApi.serchbrtext)
+
             })
                 .foregroundColor(.white)
 
@@ -49,7 +54,7 @@ struct SearchBar: View {
    //MARK: - Previews
    struct SearchBar_Previews: PreviewProvider {
       static var previews: some View {
-        SearchBar(text: .constant(""), showCancelButton: .constant(false))
+          SearchBar(searchApi: SearchApiViewModel(), text: .constant(""), showCancelButton: .constant(false))
     }
 }
-
+//
