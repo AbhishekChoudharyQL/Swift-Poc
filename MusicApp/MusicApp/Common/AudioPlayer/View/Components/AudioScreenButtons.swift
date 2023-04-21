@@ -11,10 +11,12 @@ import SwiftUI
 struct AudioScreenButtons: View {
    //MARK: - Properties
     var buttonName : String = ""
+    var buttonAction : ()->() = {}
     //MARK: - View Builder
     var body: some View {
         // 𝐑𝐞𝐮𝐬𝐚𝐛𝐥𝐞 𝐛𝐮𝐭𝐭𝐨𝐧 𝐩𝐫𝐨𝐩𝐞𝐫𝐭𝐢𝐞𝐬..
-        Button(action: {print("tapped")}, label: {
+        Button(action: {print("tapped")},
+            label: {
             Image(systemName: buttonName)
                 .resizable()
                 .frame(width: 35,height: 35)

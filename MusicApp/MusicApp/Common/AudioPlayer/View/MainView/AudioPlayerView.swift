@@ -11,15 +11,14 @@ import SwiftUI
 
 struct AudioPlayerView: View {
     //MARK: - Properties
-//    @State private var yoffSet : CGFloat = 0
-    @ObservedObject var audioPlayerViewModel = AudioPlayerViewModel()
+    @StateObject var audioPlayerViewModel = AudioPlayerViewModel()
     @State var isPlaying = false
     
     //MARK: - View Builder
     var body: some View {
         ZStack{
             VStack(alignment: .center, spacing: 10, content: {
-                HStack(alignment: .center,content: {
+                HStack(alignment: .bottom,content: {
                     Spacer()
                     AudioScreenButtons(buttonName: "heart")
                 })
@@ -37,25 +36,26 @@ struct AudioPlayerView: View {
             .padding()
         }.background(AppColor.backgroundColor)
             .onAppear{
-                audioPlayerViewModel.playSound(sound: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3")
+                print("Calling view model")
+                audioPlayerViewModel.setupAudio()
             }
     }
-    
+
     //MARK: - Resuable Method to show buttons and perform actions on buttons
-    fileprivate func audioPlayerButtonFunctions() -> HStack<TupleView<(AudioScreenButtons, some View, AudioScreenButtons)>> {
+    fileprivate func audioPlayerButtonFunctions() -> some View {
+        print("Method called")
+
         return HStack(alignment: .center,spacing: 80, content: {
             AudioScreenButtons(buttonName: "backward.circle.fill")
-            AudioScreenButtons(buttonName: isPlaying ? "pause.circle.fill" : "play.circle.fill")
-                .onTapGesture {
-                    audioPlayerViewModel.playSound(sound: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3")
-                    isPlaying.toggle()
-                    if isPlaying {
-                        audioPlayerViewModel.audioPlayer?.play()
+            AudioScreenButtons(buttonName: audioPlayerViewModel.playerState == .isPaused ? "play.circle.fill" :"pause.circle.fill",buttonAction: {
+                if audioPlayerViewModel.playerState == .isPaused {
+                        audioPlayerViewModel.setupAudio()
+//                        audioPlayerViewModel.playerState = .isPlaying
+                } else if audioPlayerViewModel.playerState == .isPlaying {
+                        audioPlayerViewModel.setupAudio()
+//                        audioPlayerViewModel.playerState = .isPaused
                     }
-                    else {
-                        audioPlayerViewModel.audioPlayer?.pause()
-                    }
-                }
+            })
             AudioScreenButtons(buttonName: "forward.circle.fill")
         })
     }
