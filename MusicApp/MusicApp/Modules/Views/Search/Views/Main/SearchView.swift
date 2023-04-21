@@ -31,13 +31,13 @@ struct SearchView: View {
                                         .foregroundColor(.white)
                                         .font(.subheadline)
                                     Spacer()
-                                    Button{
-                                        print("Button-Tap")
-                                    } label: {
-                                        Label("Play", systemImage: "play.circle")
-                                            .foregroundColor(AppColor.greenSpotify)
-                                    }
+                                    Image(systemName: "play.circle.fill")
+                                        .foregroundColor(AppColor.greenSpotify)
                                 }).frame(height: 20)
+                                    .contentShape(Rectangle())
+                                    .onTapGesture {
+                                        print("search list tapped")
+                                    }
                             }
                         }).padding(.leading,5)
                           .padding(.trailing,5)

@@ -22,4 +22,9 @@ struct SearchData: Codable, Identifiable {
     let explicitLyrics: Bool?
     let preview: String?
     let md5Image: String?
+    let artist : SearchArtist
+}
+
+struct SearchArtist : Codable {
+    let picture_medium : String
 }

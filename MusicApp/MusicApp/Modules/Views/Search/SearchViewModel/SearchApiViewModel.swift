@@ -40,7 +40,7 @@ class SearchApiViewModel : ObservableObject {
                         DispatchQueue.main.async{
 //                            self.searchResult.append(jsonResponse)
                             self.searchResult = jsonResponse.data
-                            print(self.searchResult)
+//                            print(self.searchResult)
                     }
                         
                 } catch  {

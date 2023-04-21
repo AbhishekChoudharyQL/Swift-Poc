@@ -24,7 +24,7 @@ struct TabBarManager: View {
         })
         .overlay(alignment: .bottom ,content: {
             VStack(spacing: 0, content: {
-                FloatingScreenView()    
+                FloatingScreenView(audioPlayerViewModel: AudioPlayerViewModel())    
                 TabBar(selectedTab: $selectedTab)
             })
         })
