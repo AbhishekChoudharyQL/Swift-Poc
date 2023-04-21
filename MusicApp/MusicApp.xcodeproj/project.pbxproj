@@ -17,6 +17,7 @@
 		469676E329DC649F007724EF /* CustomTabItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 469676E229DC649F007724EF /* CustomTabItem.swift */; };
 		469A527229E499BD006369E5 /* ArtistModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 469A527129E499BD006369E5 /* ArtistModel.swift */; };
 		469E5C3529ECEACB00CE3302 /* SearchModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 469E5C3429ECEACB00CE3302 /* SearchModel.swift */; };
+		46A21C7229F338520081A9BA /* AsyncImageSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46A21C7129F338520081A9BA /* AsyncImageSearchView.swift */; };
 		46A6CF6029E6B55A003CF724 /* SongNameTextModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46A6CF5F29E6B55A003CF724 /* SongNameTextModifier.swift */; };
 		46AB0B7729DD60A100C347E7 /* FloatingScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46AB0B7629DD60A100C347E7 /* FloatingScreenView.swift */; };
 		46AB0B7C29DDB1CA00C347E7 /* AppColors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 46AB0B7B29DDB1CA00C347E7 /* AppColors.xcassets */; };
@@ -66,6 +67,7 @@
 		469676E229DC649F007724EF /* CustomTabItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabItem.swift; sourceTree = "<group>"; };
 		469A527129E499BD006369E5 /* ArtistModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtistModel.swift; sourceTree = "<group>"; };
 		469E5C3429ECEACB00CE3302 /* SearchModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchModel.swift; sourceTree = "<group>"; };
+		46A21C7129F338520081A9BA /* AsyncImageSearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsyncImageSearchView.swift; sourceTree = "<group>"; };
 		46A6CF5F29E6B55A003CF724 /* SongNameTextModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongNameTextModifier.swift; sourceTree = "<group>"; };
 		46AB0B7629DD60A100C347E7 /* FloatingScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatingScreenView.swift; sourceTree = "<group>"; };
 		46AB0B7B29DDB1CA00C347E7 /* AppColors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = AppColors.xcassets; sourceTree = "<group>"; };
@@ -340,6 +342,7 @@
 			isa = PBXGroup;
 			children = (
 				46AE27FF29E424C600F535AD /* SearchBar.swift */,
+				46A21C7129F338520081A9BA /* AsyncImageSearchView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -681,6 +684,7 @@
 				46F64E9329DB04F200B44B3D /* FavouriteView.swift in Sources */,
 				46AE280029E424C600F535AD /* SearchBar.swift in Sources */,
 				46B6F03F29ED67860015391C /* TextModifierForLargeTitle.swift in Sources */,
+				46A21C7229F338520081A9BA /* AsyncImageSearchView.swift in Sources */,
 				5D17937029E680640014FCAC /* UIConstants.swift in Sources */,
 				46A6CF6029E6B55A003CF724 /* SongNameTextModifier.swift in Sources */,
 				46C2E97229DE8E4A005DD3D5 /* MiniPlayerView.swift in Sources */,

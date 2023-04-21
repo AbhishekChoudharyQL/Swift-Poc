@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+//MARK: - Main View
 struct HomeView: View {
     
     //MARK: - Observed Properties
@@ -14,7 +15,7 @@ struct HomeView: View {
     @ObservedObject var playlistViewModel = PlaylistViewModel()
     @State var isAnimating = false
     
-    //MARK: - View Builder
+    //MARK: - Main View Builder
     var body: some View {
         ZStack {
             ScrollView(.vertical,showsIndicators: false){
@@ -44,11 +45,12 @@ struct HomeView_Previews: PreviewProvider {
     }
 }
 
+//MARK: - Resuable Recommended Artist View
 struct RecommendedArtistsHorizontalList: View {
     //MARK: - Properties
     @ObservedObject var artistApi : ArtistApi
     
-    //MARK: - View Builder
+    //MARK: - Resuable Recommended View Builder
     var body: some View {
         ScrollView(.horizontal, showsIndicators: false) {
             HStack{
