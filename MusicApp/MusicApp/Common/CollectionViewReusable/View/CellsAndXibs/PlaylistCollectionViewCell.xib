@@ -22,25 +22,23 @@
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="xAQ-rV-eUz">
                                 <rect key="frame" x="0.0" y="0.0" width="180" height="180"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="xAQ-rV-eUz" secondAttribute="height" multiplier="1:1" id="MXL-Dc-82Y"/>
-                                </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TikTok Instrumental hits" textAlignment="center" lineBreakMode="clip" baselineAdjustment="alignBaselines" minimumScaleFactor="0.25" adjustsLetterSpacingToFitWidth="YES" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5aM-I0-Qt4">
                                 <rect key="frame" x="10" y="188" width="160" height="52"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="52" id="ev5-Ma-Dac"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" style="UICTFontTextStyleCaption1"/>
-                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" systemColor="labelColor"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="5aM-I0-Qt4" secondAttribute="trailing" constant="10" id="7ym-s6-2o7"/>
                             <constraint firstItem="5aM-I0-Qt4" firstAttribute="leading" secondItem="lis-L8-eD6" secondAttribute="leading" constant="10" id="Ard-30-jAO"/>
                             <constraint firstAttribute="bottom" secondItem="5aM-I0-Qt4" secondAttribute="bottom" constant="10" id="E0X-He-fH5"/>
+                            <constraint firstItem="xAQ-rV-eUz" firstAttribute="height" secondItem="lis-L8-eD6" secondAttribute="height" multiplier="0.72" id="JmS-TV-XZl"/>
                             <constraint firstAttribute="trailing" secondItem="xAQ-rV-eUz" secondAttribute="trailing" id="KOs-vP-PDY"/>
                             <constraint firstItem="xAQ-rV-eUz" firstAttribute="top" secondItem="lis-L8-eD6" secondAttribute="top" id="Te9-UQ-Vgs"/>
                             <constraint firstItem="xAQ-rV-eUz" firstAttribute="leading" secondItem="lis-L8-eD6" secondAttribute="leading" id="Txo-Ga-d0V"/>
@@ -65,8 +63,8 @@
         </collectionViewCell>
     </objects>
     <resources>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        <systemColor name="labelColor">
+            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

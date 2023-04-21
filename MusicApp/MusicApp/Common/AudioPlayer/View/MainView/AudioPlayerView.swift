@@ -11,41 +11,57 @@ import SwiftUI
 
 struct AudioPlayerView: View {
     //MARK: - Properties
-    @State private var yoffSet : CGFloat = 0
+//    @State private var yoffSet : CGFloat = 0
+    @ObservedObject var audioPlayerViewModel = AudioPlayerViewModel()
+    @State var isPlaying = false
+    
     //MARK: - View Builder
     var body: some View {
         ZStack{
             VStack(alignment: .center, spacing: 10, content: {
-                // 𝐂𝐚𝐥𝐥𝐢𝐧𝐠 𝐀𝐮𝐝𝐢𝐨𝐒𝐜𝐫𝐞𝐞𝐧𝐁𝐮𝐭𝐭𝐨𝐧𝐬𝐕𝐢𝐞𝐰 𝐭𝐨 𝐝𝐢𝐬𝐩𝐥𝐚𝐲 𝐛𝐮𝐭𝐭𝐨𝐧𝐬 𝐨𝐟 𝐦𝐢𝐧𝐢 𝐩𝐥𝐚𝐲𝐞𝐫...
                 HStack(alignment: .center,content: {
                     Spacer()
                     AudioScreenButtons(buttonName: "heart")
                 })
                 .padding(.top,10)
-                // 𝐂𝐚𝐥𝐥𝐢𝐧𝐠 𝐀𝐮𝐝𝐢𝐨𝐈𝐦𝐚𝐠𝐞 𝐭𝐨 𝐬𝐡𝐨𝐰 𝐢𝐦𝐚𝐠𝐞 𝐨𝐟 𝐬𝐨𝐧𝐠 𝐛𝐞𝐢𝐧𝐠 𝐩𝐥𝐚𝐲𝐞𝐝...
                 AudioImageView()
                     .padding(.leading,30)
                     .padding(.trailing,30)
                     .padding(.bottom,-10)
-                // 𝐂𝐚𝐥𝐥𝐢𝐧𝐠 𝐓𝐞𝐱𝐭 𝐌𝐨𝐝𝐢𝐟𝐢𝐞𝐫 𝐄𝐧𝐮𝐦 ..
                 SongNameTextModifier(text: "Song-Name", modifier: .AudioPlayerText)
-//                VStack(content: {
-                    // 𝐂𝐚𝐥𝐥𝐢𝐧𝐠 𝐒𝐨𝐧𝐠𝐃𝐮𝐫𝐚𝐭𝐢𝐨𝐧 𝐬𝐥𝐢𝐝𝐞𝐫 𝐭𝐨 𝐬𝐡𝐨𝐰 𝐝𝐮𝐫𝐚𝐭𝐢𝐨𝐧 𝐨𝐟 𝐬𝐨𝐧𝐠 𝐩𝐥𝐚𝐲𝐞𝐝...
-                    SongDurationSlider()
-                    HStack(alignment: .center,spacing: 80, content: {
-                        // Calling AudioScreenButtonsView to display buttons of mini player...
-                        AudioScreenButtons(buttonName: "backward.circle.fill")
-                        AudioScreenButtons(buttonName: "play.circle.fill")
-                        AudioScreenButtons(buttonName: "forward.circle.fill")
-                    }).padding()
-//                }).padding(.bottom,50)
+                SongDurationSlider()
+                audioPlayerButtonFunctions()
+                .padding()
             })
             .frame(width: UIScreen.main.bounds.width,height:UIScreen.main.bounds.height)
             .padding()
         }.background(AppColor.backgroundColor)
+            .onAppear{
+                audioPlayerViewModel.playSound(sound: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3")
+            }
+    }
+    
+    //MARK: - Resuable Method to show buttons and perform actions on buttons
+    fileprivate func audioPlayerButtonFunctions() -> HStack<TupleView<(AudioScreenButtons, some View, AudioScreenButtons)>> {
+        return HStack(alignment: .center,spacing: 80, content: {
+            AudioScreenButtons(buttonName: "backward.circle.fill")
+            AudioScreenButtons(buttonName: isPlaying ? "pause.circle.fill" : "play.circle.fill")
+                .onTapGesture {
+                    audioPlayerViewModel.playSound(sound: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3")
+                    isPlaying.toggle()
+                    if isPlaying {
+                        audioPlayerViewModel.audioPlayer?.play()
+                    }
+                    else {
+                        audioPlayerViewModel.audioPlayer?.pause()
+                    }
+                }
+            AudioScreenButtons(buttonName: "forward.circle.fill")
+        })
     }
 }
 
+//MARK: - Previews
 struct AudioPlayerView_Previews: PreviewProvider {
     static var previews: some View {
         AudioPlayerView()
