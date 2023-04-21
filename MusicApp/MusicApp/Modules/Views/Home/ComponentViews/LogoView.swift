@@ -11,6 +11,7 @@ import SwiftUI
 struct LogoView: View {
     //MARK: - Properties
     var imageName : String = "onbeats-logo"
+    
     //MARK: - View Builder
     var body: some View {
         HStack( content: {
@@ -20,6 +21,7 @@ struct LogoView: View {
         })
     }
 }
+
  //MARK: - Previews
 struct LogoView_Previews: PreviewProvider {
     static var previews: some View {

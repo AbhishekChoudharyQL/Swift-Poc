@@ -8,7 +8,10 @@
 import SwiftUI
 
 struct AsyncImageModifierForPlaylist: View {
+    //MARK: - Properties
     let imageUrl : URL
+    
+    //MARK: - View Builder
     var body: some View {
         AsyncImage(url: imageUrl) {  image in
             image
@@ -24,6 +27,7 @@ struct AsyncImageModifierForPlaylist: View {
     }
 }
 
+ //MARK: - Previews
 struct AsyncImageModifierForPlaylist_Previews: PreviewProvider {
     static var previews: some View {
         AsyncImageModifierForPlaylist(imageUrl: URL(string: "http://")!)

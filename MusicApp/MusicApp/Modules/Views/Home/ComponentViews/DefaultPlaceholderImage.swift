@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct DefaultPlaceholderImage: View {
+    //MARK: - View Builder
     var body: some View {
         Image(systemName: "person.fill")
             .resizable()
@@ -16,6 +17,7 @@ struct DefaultPlaceholderImage: View {
     }
 }
 
+ //MARK: - Previews
 struct DefaultPlaceholderImage_Previews: PreviewProvider {
     static var previews: some View {
         DefaultPlaceholderImage()

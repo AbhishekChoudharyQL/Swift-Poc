@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct MiniPlayerView: View {
+    //MARK: - Properties
     @StateObject var audioPlayerViewModel : AudioPlayerViewModel
     
     //MARK: - View Builder

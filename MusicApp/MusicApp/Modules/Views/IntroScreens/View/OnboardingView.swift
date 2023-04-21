@@ -47,15 +47,18 @@ struct OnboardingView: View {
 
             }
     }
-    func incrementPage() {
+    
+    //MARK: - Private Methods
+    private func incrementPage() {
            pageIndex += 1
        }
        
-       func goToZero() {
+    private func goToZero() {
            pageIndex = 0
        }
 }
 
+  //MARK: - Previews
 struct IntroScreensView_Previews: PreviewProvider {
     static var previews: some View {
         OnboardingView(userSession: .constant(.userOnIntroScreen))

@@ -50,7 +50,7 @@ struct RecommendedArtistsHorizontalList: View {
     //MARK: - Properties
     @ObservedObject var artistApi : ArtistApi
     
-    //MARK: - Resuable Recommended View Builder
+    //MARK: - Resuable Recommended Artist View Builder
     var body: some View {
         ScrollView(.horizontal, showsIndicators: false) {
             HStack{

@@ -8,8 +8,10 @@
 import SwiftUI
 
 struct TextModifierForLargeTitle: View {
-    //MARK: - 
+    //MARK: - Properties
     var text : String
+    
+    //MARK: - View Builder
     var body: some View {
         Text(text)
             .foregroundColor(Color.white)
@@ -18,6 +20,7 @@ struct TextModifierForLargeTitle: View {
     }
 }
 
+ //MARK: - Previews
 struct TextModifierHomeScreen_Previews: PreviewProvider {
     static var previews: some View {
         TextModifierForLargeTitle(text: "")

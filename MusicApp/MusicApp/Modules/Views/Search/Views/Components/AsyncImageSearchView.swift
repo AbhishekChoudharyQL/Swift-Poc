@@ -8,17 +8,16 @@
 import SwiftUI
 
 struct AsyncImageSearchView: View {
+    //MARK: - Properties
     let imageUrl : URL
+    
+    //MARK: - View Builder
     var body: some View {
         AsyncImage(url: imageUrl) { image in
             image
                 .resizable()
                 .aspectRatio(contentMode: .fit)
                 .frame(width: 50, height: 50)
-//                .clipShape(Circle())
-//                .overlay(
-//                    Rectangle().stroke(AppColor.greenSpotify,lineWidth: 2)
-//                )
         } placeholder: {
             Image(systemName: "person.fill")
                 .resizable()
@@ -28,6 +27,7 @@ struct AsyncImageSearchView: View {
     }
 }
 
+ //MARK: - Previews
 struct AsyncImageSearchView_Previews: PreviewProvider {
     static var previews: some View {
         AsyncImageSearchView(imageUrl: URL(string: "https//")!)
