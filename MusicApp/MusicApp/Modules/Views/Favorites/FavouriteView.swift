@@ -9,10 +9,18 @@ import SwiftUI
 
 struct FavouriteView: View {
     var body: some View {
-        VStack(content: {
-            Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
-            Spacer()
-        })
+//        ZStack{
+
+        VStack {
+                ScrollView(.horizontal) {
+                    LazyHStack {
+
+                    }
+                }
+                Spacer()
+        }.background(Color.black)
+        .onAppear(){
+        }
     }
        
 }
@@ -20,5 +28,6 @@ struct FavouriteView: View {
 struct FavouriteView_Previews: PreviewProvider {
     static var previews: some View {
         FavouriteView()
+            
     }
 }

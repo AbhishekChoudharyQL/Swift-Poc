@@ -9,39 +9,53 @@ import SwiftUI
 
 struct SearchView: View {
     //MARK: - Properties
-    @State private var searchText = ""
+    @ObservedObject var  viewModel = SearchApiViewModel()
     @State private var showCancelButton: Bool = false
-    
     //MARK: - View Builder
     var body: some View {
         ZStack {
-            Image("musichome")
-                .resizable()
-                .opacity(0.8)
-                .edgesIgnoringSafeArea(.all)
-            
             VStack {
                 Text("Search Your Favorites")
-                    .foregroundColor(.white)
+                    .foregroundColor(AppColor.greenSpotify)
                     .bold()
                     .font(.largeTitle)
-                
-                SearchBar(text: $searchText, showCancelButton: $showCancelButton)
+                SearchBar(searchApi: viewModel, text: $viewModel.serchbrtext, showCancelButton: $showCancelButton)
                     .padding(.horizontal)
                 
                 ScrollView {
-                    ForEach(0..<9) { index in
-                        Text("Favorite Songs")
-                            .foregroundColor(.white)
-                    }
-                }.padding(.bottom)
-            }
+                        VStack(alignment: .leading,content: {
+                            ForEach(viewModel.searchResult){
+                                index in
+                                HStack(content: {
+                                    Text(index.title ?? "No result")
+                                        .foregroundColor(.white)
+                                        .font(.subheadline)
+                                    Spacer()
+                                    Button{
+                                        print("Button-Tap")
+                                    } label: {
+                                        Label("Play", systemImage: "play.circle")
+                                            .foregroundColor(AppColor.greenSpotify)
+                                    }
+                                }).frame(height: 20)
+                            }
+                        }).padding(.leading,5)
+                          .padding(.trailing,5)
+                         .padding(.bottom, 180)
+                } // Scroll View Ends here ...
+                
+            }.background(AppColor.backgroundColor)
+                .onAppear{
+                    viewModel.getSearchResults(parameter: viewModel.serchbrtext)
+                }
+        }
+        
+    }
+}
+    //MARK: - Previews
+    struct SearchView_Previews: PreviewProvider {
+        static var previews: some View {
+            SearchView()
         }
     }
-}
-
-struct SearchView_Previews: PreviewProvider {
-    static var previews: some View {
-        SearchView()
-    }
-}
+    

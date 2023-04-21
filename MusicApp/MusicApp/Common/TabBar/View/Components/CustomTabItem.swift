@@ -20,6 +20,7 @@ struct CustomTabItem: View {
                 .font(.system(size: 25,weight: .regular,design: .default))
                 .frame(width: 50, height: 50, alignment: .center)
                 .padding(.horizontal)
+                .foregroundColor(.white)
         })
         .tint(.white)
         .padding()
