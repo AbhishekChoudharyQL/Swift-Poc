@@ -13,14 +13,16 @@ struct FloatingScreenView: View {
     @State var offset : CGFloat = 0
     @State var audioPlayerVisiblityState : AudioPlayerVisiblityState = .minimised
     
+    @StateObject var audioPlayerViewModel : AudioPlayerViewModel
+    
     //MARK: - View Builder
     var body: some View {
         GeometryReader { geometryReaderProxy in
             ZStack(alignment: .top, content: {
-                AudioPlayerView()
+                AudioPlayerView(audioPlayerViewModel: audioPlayerViewModel)
                 
                 if audioPlayerVisiblityState == .minimised {
-                    MiniPlayerView()
+                    MiniPlayerView(audioPlayerViewModel: audioPlayerViewModel)
                 }
             })
             .frame(width: geometryReaderProxy.size.width, height: geometryReaderProxy.size.height)
@@ -79,6 +81,6 @@ struct FloatingScreenView: View {
 //MARK: - Previews
 struct FlaotingScreenView_Previews: PreviewProvider {
     static var previews: some View {
-        FloatingScreenView()
+        FloatingScreenView(audioPlayerViewModel: AudioPlayerViewModel())
     }
 }

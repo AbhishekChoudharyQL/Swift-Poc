@@ -11,7 +11,7 @@ import SwiftUI
 
 struct AudioPlayerView: View {
     //MARK: - Properties
-    @StateObject var audioPlayerViewModel = AudioPlayerViewModel()
+    @StateObject var audioPlayerViewModel : AudioPlayerViewModel
     @State var isPlaying = false
     
     //MARK: - View Builder
@@ -20,7 +20,9 @@ struct AudioPlayerView: View {
             VStack(alignment: .center, spacing: 10, content: {
                 HStack(alignment: .bottom,content: {
                     Spacer()
-                    AudioScreenButtons(buttonName: "heart")
+                    AudioScreenButtons(buttonName: "heart", buttonAction: {
+                        
+                    })
                 })
                 .padding(.top,10)
                 AudioImageView()
@@ -35,10 +37,6 @@ struct AudioPlayerView: View {
             .frame(width: UIScreen.main.bounds.width,height:UIScreen.main.bounds.height)
             .padding()
         }.background(AppColor.backgroundColor)
-            .onAppear{
-                print("Calling view model")
-                audioPlayerViewModel.setupAudio()
-            }
     }
 
     //MARK: - Resuable Method to show buttons and perform actions on buttons
@@ -46,17 +44,17 @@ struct AudioPlayerView: View {
         print("Method called")
 
         return HStack(alignment: .center,spacing: 80, content: {
-            AudioScreenButtons(buttonName: "backward.circle.fill")
-            AudioScreenButtons(buttonName: audioPlayerViewModel.playerState == .isPaused ? "play.circle.fill" :"pause.circle.fill",buttonAction: {
-                if audioPlayerViewModel.playerState == .isPaused {
-                        audioPlayerViewModel.setupAudio()
-//                        audioPlayerViewModel.playerState = .isPlaying
-                } else if audioPlayerViewModel.playerState == .isPlaying {
-                        audioPlayerViewModel.setupAudio()
-//                        audioPlayerViewModel.playerState = .isPaused
-                    }
+            AudioScreenButtons(buttonName: "backward.circle.fill", buttonAction: {
+                
             })
-            AudioScreenButtons(buttonName: "forward.circle.fill")
+            AudioScreenButtons(buttonName: audioPlayerViewModel.playerState == .isPaused ? "play.circle.fill" :"pause.circle.fill",buttonAction: {
+                
+                audioPlayerViewModel.setupAudio()
+                
+            })
+            AudioScreenButtons(buttonName: "forward.circle.fill", buttonAction: {
+                
+            })
         })
     }
 }
@@ -64,6 +62,6 @@ struct AudioPlayerView: View {
 //MARK: - Previews
 struct AudioPlayerView_Previews: PreviewProvider {
     static var previews: some View {
-        AudioPlayerView()
+        AudioPlayerView(audioPlayerViewModel: AudioPlayerViewModel())
     }
 }

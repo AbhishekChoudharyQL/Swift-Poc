@@ -31,7 +31,6 @@ class AudioPlayerViewModel : ObservableObject {
             pauseAudio()
         case .isPaused:
             playAudio()
-            playerState = .isPlaying
         }
     }
     
@@ -40,10 +39,12 @@ class AudioPlayerViewModel : ObservableObject {
         if let url = URL(string: currentSongUrl){
             audioPlayer = AVPlayer(url: url)
             audioPlayer?.play()
+            playerState = .isPlaying
         }
     }
      private func pauseAudio(){
-        audioPlayer?.pause()
+         audioPlayer?.pause()
+         playerState = .isPaused
     }
     
 }

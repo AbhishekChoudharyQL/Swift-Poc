@@ -11,11 +11,11 @@ import SwiftUI
 struct AudioScreenButtons: View {
    //MARK: - Properties
     var buttonName : String = ""
-    var buttonAction : ()->() = {}
+    var buttonAction : () -> ()
     //MARK: - View Builder
     var body: some View {
         // 𝐑𝐞𝐮𝐬𝐚𝐛𝐥𝐞 𝐛𝐮𝐭𝐭𝐨𝐧 𝐩𝐫𝐨𝐩𝐞𝐫𝐭𝐢𝐞𝐬..
-        Button(action: {print("tapped")},
+        Button(action: {buttonAction()},
             label: {
             Image(systemName: buttonName)
                 .resizable()
@@ -28,6 +28,8 @@ struct AudioScreenButtons: View {
 //MARK: - Previews
 struct AudioScreenButton_Previews: PreviewProvider {
     static var previews: some View {
-        AudioScreenButtons()
+        AudioScreenButtons(buttonAction: {
+            
+        })
     }
 }

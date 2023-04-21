@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct MiniPlayerView: View {
+    @StateObject var audioPlayerViewModel : AudioPlayerViewModel
+    
     //MARK: - View Builder
     var body: some View {
         HStack(alignment: .top,spacing: 10,content: {
@@ -21,10 +23,14 @@ struct MiniPlayerView: View {
             HStack(alignment: .top){
                 SongNameTextModifier(text: "Song-Name", modifier: .MiniplayerText)
                 // 𝐂𝐚𝐥𝐥𝐢𝐧𝐠 𝐀𝐮𝐝𝐢𝐨𝐒𝐜𝐫𝐞𝐞𝐧𝐁𝐮𝐭𝐭𝐨𝐧𝐬𝐕𝐢𝐞𝐰 𝐭𝐨 𝐝𝐢𝐬𝐩𝐥𝐚𝐲 𝐛𝐮𝐭𝐭𝐨𝐧𝐬 𝐨𝐟 𝐦𝐢𝐧𝐢 𝐩𝐥𝐚𝐲𝐞𝐫...
-                   AudioScreenButtons(buttonName: "play.circle.fill")
+                AudioScreenButtons(buttonName: audioPlayerViewModel.playerState == .isPaused ? "play.circle.fill" :"pause.circle.fill", buttonAction: {
+                    audioPlayerViewModel.setupAudio()
+                })
                     .padding(.top)
                     .padding(.trailing)
-                   AudioScreenButtons(buttonName: "forward.circle.fill")
+                AudioScreenButtons(buttonName: "forward.circle.fill", buttonAction: {
+                    
+                })
                     .foregroundColor(.white)
                     .padding(.top)
             }
@@ -38,7 +44,7 @@ struct MiniPlayerView: View {
 //MARK: - Previews
 struct MiniPlayerView_Previews: PreviewProvider {
     static var previews: some View {
-        MiniPlayerView()
+        MiniPlayerView(audioPlayerViewModel: AudioPlayerViewModel())
     }
 }
 
