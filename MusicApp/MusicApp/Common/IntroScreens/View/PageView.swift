@@ -20,24 +20,25 @@ struct PageView: View {
                 .scaledToFit()
                 .padding()
                 .cornerRadius(30)
-                .background(.gray.opacity(0.30))
+                .background(AppColor.greenSpotify.opacity(0.40))
                 .cornerRadius(10)
                 .padding()
                 .frame(height: UIScreen.main.bounds.height/2)
-                   
+                   Spacer()
                //MARK: - Setting UP Title
                 Text(page.title)
                 .font(.largeTitle)
+                .font(.system(size: 46))
                 .italic()
                 .bold()
                 .padding()
-                .foregroundColor(AppColor.sliderAccentColor)
+                .foregroundColor(AppColor.greenSpotify)
             
                //MARK: - Setting Up Page Description
                 Text(page.description)
                 .font(.title2)
                 .frame(width: 300)
-                .foregroundColor(.indigo)
+                .foregroundColor(AppColor.greenSpotify)
                 .padding()
                 .bold()
         }

@@ -12,7 +12,7 @@ import SwiftUI
 struct AudioPlayerView: View {
     //MARK: - Properties
     @StateObject var audioPlayerViewModel : AudioPlayerViewModel
-    @State var isPlaying = false
+//    @State var isPlaying = false
     
     //MARK: - View Builder
     var body: some View {
@@ -39,9 +39,9 @@ struct AudioPlayerView: View {
         }.background(AppColor.backgroundColor)
     }
 
-    //MARK: - Resuable Method to show buttons and perform actions on buttons
+    //MARK: - Resuable Method to show buttons and perform audio actions on buttons
     fileprivate func audioPlayerButtonFunctions() -> some View {
-        print("Method called")
+//        print("Method called")
 
         return HStack(alignment: .center,spacing: 80, content: {
             AudioScreenButtons(buttonName: "backward.circle.fill", buttonAction: {

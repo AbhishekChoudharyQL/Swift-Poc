@@ -19,11 +19,11 @@ struct SearchBar: View {
                 .foregroundColor(.gray)
             TextField("Search", text: $searchApi.serchbrtext, onEditingChanged: { isEditing in
                 self.showCancelButton = true
-                print("Before")
+//                print("Before")
                 print(searchApi.serchbrtext)
             }, onCommit: {
-                print("After")
-                print(searchApi.serchbrtext)
+//                print("After")
+//                print(searchApi.serchbrtext)
                 searchApi.ischanging = true
                 searchApi.getSearchResults(parameter: searchApi.serchbrtext)
             })

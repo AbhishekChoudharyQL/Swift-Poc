@@ -151,7 +151,6 @@
 		469676AD29DC0464007724EF /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				46D22C0429E06E6A00ACDE82 /* IntroScreens */,
 				4677786229DC96090089C807 /* Home */,
 				46AB0B7529DD4F9500C347E7 /* Search */,
 				46AB0B7329DD4F7800C347E7 /* Favorites */,
@@ -202,6 +201,7 @@
 		469676DA29DC634F007724EF /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				46D22C0429E06E6A00ACDE82 /* IntroScreens */,
 				46BCC28629E528A800ACF2C0 /* CommonModels */,
 				5D00F67F29F1483B008A814B /* CollectionViewReusable */,
 				469676AE29DC04B4007724EF /* TabBar */,
@@ -833,7 +833,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"MusicApp/Preview Content\"";
-				DEVELOPMENT_TEAM = 7T7922B75K;
+				DEVELOPMENT_TEAM = Z363RXULWR;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -846,7 +846,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = iOSDevManni.CoffeeAndCode.MusicAppNew;
+				PRODUCT_BUNDLE_IDENTIFIER = iOSDevManni.CoffeeAndCode.MusicApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -865,7 +865,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"MusicApp/Preview Content\"";
-				DEVELOPMENT_TEAM = 7T7922B75K;
+				DEVELOPMENT_TEAM = Z363RXULWR;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -878,7 +878,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = iOSDevManni.CoffeeAndCode.MusicAppNew;
+				PRODUCT_BUNDLE_IDENTIFIER = iOSDevManni.CoffeeAndCode.MusicApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;

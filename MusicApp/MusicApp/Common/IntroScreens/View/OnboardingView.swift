@@ -28,22 +28,24 @@ struct OnboardingView: View {
                         }
                        ).buttonStyle(.borderedProminent)
                           .buttonStyle(.bordered)
+                          .padding(.bottom,40)
                 } else {
                     Button("Next", action: incrementPage)
                         .buttonStyle(.borderedProminent)
                         .padding(.bottom,40)
+                        .frame(width: 150)
                 }
-                
                 }) .tag(page.tag)
             }
-        }).frame(height: UIScreen.main.bounds.height)
+        }).frame(height: UIScreen.main.bounds.height+10)
+            .background(Color.black)
             .padding(.bottom,30)
         .animation(.easeInOut, value: pageIndex)// 2
             .indexViewStyle(.page(backgroundDisplayMode: .interactive))
             .tabViewStyle(PageTabViewStyle())
             .onAppear {
-                dotApppearence.currentPageIndicatorTintColor = .black
-                dotApppearence.pageIndicatorTintColor = .gray
+                dotApppearence.currentPageIndicatorTintColor = .white
+                dotApppearence.pageIndicatorTintColor = UIColor(AppColor.greenSpotify)
 
             }
     }

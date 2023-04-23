@@ -10,7 +10,8 @@ import SwiftUI
 struct SearchResultsView: View {
     //MARK: - Properties
     @ObservedObject var viewModel : SearchApiViewModel
-    
+//    @ObservedObject var audioPlayerViewModel : AudioPlayerViewModel
+    @StateObject var audioPlayerViewModel : AudioPlayerViewModel
     //MARK: - View Builder
     var body: some View {
         ForEach(viewModel.searchResult){
@@ -33,6 +34,11 @@ struct SearchResultsView: View {
                 .contentShape(Rectangle())
                 .onTapGesture {
                     print("search list tapped")
+//                    if let currentSongUrl = index.preview {
+//                        audioPlayerViewModel.currentSongUrl = currentSongUrl
+//                        audioPlayerViewModel.setupAudio()
+//                        audioPlayerViewModel.playerState = .isPlaying
+//                    }
                 }
         }
     }
@@ -41,6 +47,6 @@ struct SearchResultsView: View {
   //MARK: - Previews
 struct SearchResultsView_Previews: PreviewProvider {
     static var previews: some View {
-        SearchResultsView(viewModel: SearchApiViewModel())
+        SearchResultsView(viewModel: SearchApiViewModel(), audioPlayerViewModel: AudioPlayerViewModel())
     }
 }

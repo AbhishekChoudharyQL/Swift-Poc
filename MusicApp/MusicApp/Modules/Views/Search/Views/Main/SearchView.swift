@@ -10,6 +10,7 @@ import SwiftUI
 struct SearchView: View {
     //MARK: - Properties
     @ObservedObject var  viewModel = SearchApiViewModel()
+    @ObservedObject var audioPlayerViewModel = AudioPlayerViewModel() // try stateobject
     @State private var showCancelButton: Bool = false
     
     //MARK: - View Builder
@@ -24,7 +25,7 @@ struct SearchView: View {
                     .padding(.horizontal)
             ScrollView {
                     VStack(alignment: .leading,spacing: 10,content: {
-                        SearchResultsView(viewModel: viewModel)
+                        SearchResultsView(viewModel: viewModel, audioPlayerViewModel:audioPlayerViewModel)
                         }).padding(.leading,5)
                           .padding(.trailing,5)
                          .padding(.bottom, 180)
