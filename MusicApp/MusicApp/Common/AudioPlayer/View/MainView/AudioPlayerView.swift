@@ -11,8 +11,7 @@ import SwiftUI
 
 struct AudioPlayerView: View {
     //MARK: - Properties
-    @StateObject var audioPlayerViewModel : AudioPlayerViewModel
-//    @State var isPlaying = false
+    @ObservedObject var audioPlayerViewModel : AudioPlayerViewModel
     
     //MARK: - View Builder
     var body: some View {
@@ -21,7 +20,6 @@ struct AudioPlayerView: View {
                 HStack(alignment: .bottom,content: {
                     Spacer()
                     AudioScreenButtons(buttonName: "heart", buttonAction: {
-                        
                     })
                 })
                 .padding(.top,10)
@@ -29,7 +27,7 @@ struct AudioPlayerView: View {
                     .padding(.leading,30)
                     .padding(.trailing,30)
                     .padding(.bottom,-10)
-                SongNameTextModifier(text: "Song-Name", modifier: .AudioPlayerText)
+                SongNameTextModifier(text: audioPlayerViewModel.songTitle, modifier: .AudioPlayerText)
                 SongDurationSlider()
                 audioPlayerButtonFunctions()
                 .padding()
@@ -40,20 +38,15 @@ struct AudioPlayerView: View {
     }
 
     //MARK: - Resuable Method to show buttons and perform audio actions on buttons
-    fileprivate func audioPlayerButtonFunctions() -> some View {
-//        print("Method called")
-
+     func audioPlayerButtonFunctions() -> some View {
         return HStack(alignment: .center,spacing: 80, content: {
             AudioScreenButtons(buttonName: "backward.circle.fill", buttonAction: {
-                
             })
             AudioScreenButtons(buttonName: audioPlayerViewModel.playerState == .isPaused ? "play.circle.fill" :"pause.circle.fill",buttonAction: {
-                
+                print("Updating state to play preview")
                 audioPlayerViewModel.setupAudio()
-                
             })
             AudioScreenButtons(buttonName: "forward.circle.fill", buttonAction: {
-                
             })
         })
     }

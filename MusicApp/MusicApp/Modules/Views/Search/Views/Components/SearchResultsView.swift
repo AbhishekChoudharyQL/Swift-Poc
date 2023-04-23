@@ -12,6 +12,8 @@ struct SearchResultsView: View {
     @ObservedObject var viewModel : SearchApiViewModel
 //    @ObservedObject var audioPlayerViewModel : AudioPlayerViewModel
     @StateObject var audioPlayerViewModel : AudioPlayerViewModel
+//    @State var audioPlayerView = AudioPlayerView(audioPlayerViewModel: AudioPlayerViewModel())
+
     //MARK: - View Builder
     var body: some View {
         ForEach(viewModel.searchResult){
@@ -34,12 +36,14 @@ struct SearchResultsView: View {
                 .contentShape(Rectangle())
                 .onTapGesture {
                     print("search list tapped")
-//                    if let currentSongUrl = index.preview {
-//                        audioPlayerViewModel.currentSongUrl = currentSongUrl
-//                        audioPlayerViewModel.setupAudio()
+                    if let currentSongUrl = index.preview {
+                        audioPlayerViewModel.currentSongUrl = currentSongUrl
+                        audioPlayerViewModel.songTitle = index.title ?? "Music"
+                        audioPlayerViewModel.setupAudio()
 //                        audioPlayerViewModel.playerState = .isPlaying
-//                    }
+
                 }
+            }
         }
     }
 }

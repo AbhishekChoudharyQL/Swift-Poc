@@ -15,6 +15,7 @@ struct SongNameTextModifier: View {
  //MARK: - Properties
     var text : String
     var modifier : TextModifier
+    
  //MARK: - View Builder
     var body: some View {
         switch modifier {
@@ -36,6 +37,7 @@ struct SongNameTextModifier: View {
         }
     }
 }
+
  //MARK: - Previews
 struct SongNameTextModifier_Previews: PreviewProvider {
     static var previews: some View {

@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct AudioImageView: View {
+    
     //MARK: - View Builder
     var body: some View {
         Image("juja-han-uT55XxQLQGU-unsplash")
@@ -17,6 +18,7 @@ struct AudioImageView: View {
             .clipShape(Circle())
     }
 }
+
 //MARK: - Previews
 struct AudioImageVierw_Previews: PreviewProvider {
     static var previews: some View {

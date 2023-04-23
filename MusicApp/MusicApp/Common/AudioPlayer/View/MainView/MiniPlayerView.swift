@@ -42,6 +42,7 @@ struct MiniPlayerView: View {
         
     }
 }
+
 //MARK: - Previews
 struct MiniPlayerView_Previews: PreviewProvider {
     static var previews: some View {
