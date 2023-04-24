@@ -8,7 +8,7 @@
 import SwiftUI
 struct SearchBar: View {
     //MARK: - Properties
-    @ObservedObject var searchApi : SearchApiViewModel
+    @StateObject var searchViewModel : SearchApiViewModel
     @Binding var text: String
     @Binding var showCancelButton: Bool
     
@@ -17,16 +17,17 @@ struct SearchBar: View {
          HStack {
             Image(systemName: "magnifyingglass")
                 .foregroundColor(.gray)
-            TextField("Search", text: $searchApi.serchbrtext, onEditingChanged: { isEditing in
+            TextField("Search", text: $searchViewModel.serchbrtext, onEditingChanged: { isEditing in
                 self.showCancelButton = true
-                print(searchApi.serchbrtext)
+                print(searchViewModel.serchbrtext)
             }, onCommit: {
-                searchApi.ischanging = true
-                searchApi.getSearchResults(parameter: searchApi.serchbrtext)
+                searchViewModel.ischanging = true
+                searchViewModel.getSearchResults(parameter: searchViewModel.serchbrtext)
             })
                 .foregroundColor(.white)
             Button(action: {
-                self.searchApi.serchbrtext = ""
+                self.searchViewModel.serchbrtext = ""
+                emptyArray()
             }) {
                 Image(systemName: "xmark.circle.fill")
                     .foregroundColor(.gray)
@@ -40,16 +41,22 @@ struct SearchBar: View {
             Button("Cancel") {
                 self.text = ""
                 self.showCancelButton = false
+                emptyArray()
             }
             .foregroundColor(.white)
           }
         }
-    }
+    
+    //MARK: - Methods
+   func emptyArray(){
+       searchViewModel.searchResult = []
+   }
+ }
 
    //MARK: - Previews
    struct SearchBar_Previews: PreviewProvider {
       static var previews: some View {
-          SearchBar(searchApi: SearchApiViewModel(), text: .constant(""), showCancelButton: .constant(false))
+          SearchBar(searchViewModel: SearchApiViewModel(), text: .constant(""), showCancelButton: .constant(false))
     }
 }
 

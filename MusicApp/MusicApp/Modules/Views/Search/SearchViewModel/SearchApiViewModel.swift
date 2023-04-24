@@ -19,6 +19,7 @@ class SearchApiViewModel : ObservableObject {
             "X-RapidAPI-Key": "7ca238eddemshdabbbb187dde8e1p17372ejsn4c83797d547a",
             "X-RapidAPI-Host": "deezerdevs-deezer.p.rapidapi.com"
         ]
+        
         guard let encodedParameter = parameter.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) else {
             print("Failed to encode search parameter")
             return

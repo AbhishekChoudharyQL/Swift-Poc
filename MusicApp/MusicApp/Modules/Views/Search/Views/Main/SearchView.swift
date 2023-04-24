@@ -10,7 +10,7 @@ import SwiftUI
 struct SearchView: View {
     //MARK: - Properties
     @ObservedObject var  viewModel = SearchApiViewModel()
-    @ObservedObject var audioPlayerViewModel = AudioPlayerViewModel() // try stateobject
+    @StateObject var audioPlayerViewModel : AudioPlayerViewModel // try stateobject
     @State private var showCancelButton: Bool = false
     
     //MARK: - View Builder
@@ -21,11 +21,11 @@ struct SearchView: View {
                     .foregroundColor(AppColor.greenSpotify)
                     .bold()
                     .font(.largeTitle)
-                SearchBar(searchApi: viewModel, text: $viewModel.serchbrtext, showCancelButton: $showCancelButton)
+                SearchBar(searchViewModel: viewModel, text: $viewModel.serchbrtext, showCancelButton: $showCancelButton)
                     .padding(.horizontal)
             ScrollView {
                     VStack(alignment: .leading,spacing: 10,content: {
-                        SearchResultsView(viewModel: viewModel, audioPlayerViewModel:audioPlayerViewModel, audioPlayerView: AudioPlayerView(audioPlayerViewModel: audioPlayerViewModel))
+                        SearchResultsView(viewModel: viewModel, audioPlayerViewModel: audioPlayerViewModel)
                         }).padding(.leading,5)
                           .padding(.trailing,5)
                          .padding(.bottom, 180)
@@ -41,7 +41,7 @@ struct SearchView: View {
     //MARK: - Previews
     struct SearchView_Previews: PreviewProvider {
         static var previews: some View {
-            SearchView()
+            SearchView(audioPlayerViewModel: AudioPlayerViewModel())
         }
     }
 

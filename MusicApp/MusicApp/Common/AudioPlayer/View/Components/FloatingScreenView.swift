@@ -21,7 +21,7 @@ struct FloatingScreenView: View {
                 AudioPlayerView(audioPlayerViewModel: audioPlayerViewModel)
                 
                 if audioPlayerVisiblityState == .minimised {
-                    MiniPlayerView(audioPlayerViewModel: audioPlayerViewModel)
+                    MiniPlayerView(audioPlayerViewModel: audioPlayerViewModel, miniplayeSongTitleManager: SearchApiViewModel())
                 }
             })
             .frame(width: geometryReaderProxy.size.width, height: geometryReaderProxy.size.height)

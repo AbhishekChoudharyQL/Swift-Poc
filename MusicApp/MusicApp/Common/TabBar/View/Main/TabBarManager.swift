@@ -10,7 +10,7 @@ import SwiftUI
 // Root View
 struct TabBarManager: View {
     @State var selectedTab: TabItems = .home
-    
+    @StateObject var audioPlayerStateManager : AudioPlayerViewModel
     var body: some View {
         VStack(alignment: .center, content: {
             switch selectedTab {
@@ -19,12 +19,12 @@ struct TabBarManager: View {
             case .heart:
                 FavouriteView()
             case .magnifyingglass:
-                SearchView()
+                SearchView( audioPlayerViewModel: audioPlayerStateManager)
             }
         })
         .overlay(alignment: .bottom ,content: {
             VStack(spacing: 0, content: {
-                FloatingScreenView(audioPlayerViewModel: AudioPlayerViewModel())    
+                FloatingScreenView(audioPlayerViewModel: audioPlayerStateManager)
                 TabBar(selectedTab: $selectedTab)
             })
         })
@@ -33,7 +33,8 @@ struct TabBarManager: View {
 }
 
 struct TabBarManager_Previews: PreviewProvider {
+    static var audioPlayerViewManager = AudioPlayerViewModel()
     static var previews: some View {
-        TabBarManager()
+        TabBarManager(audioPlayerStateManager: audioPlayerViewManager)
     }
 }

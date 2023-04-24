@@ -11,7 +11,7 @@ import SwiftUI
 
 struct AudioPlayerView: View {
     //MARK: - Properties
-    @ObservedObject var audioPlayerViewModel : AudioPlayerViewModel
+    @StateObject var audioPlayerViewModel : AudioPlayerViewModel
     
     //MARK: - View Builder
     var body: some View {

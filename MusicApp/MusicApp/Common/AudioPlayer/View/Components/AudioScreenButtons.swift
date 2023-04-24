@@ -4,8 +4,7 @@
 //
 //  Created by abhishek on 04/04/23.
 //
-//UIScreen.main.bounds.width*0.09
-//UIScreen.main.bounds.height*0.05
+
 import SwiftUI
 
 struct AudioScreenButtons: View {
