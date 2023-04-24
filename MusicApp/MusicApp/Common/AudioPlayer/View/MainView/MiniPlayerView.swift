@@ -13,16 +13,19 @@ struct MiniPlayerView: View {
     @StateObject var miniplayeSongTitleManager : SearchApiViewModel
     //MARK: - View Builder
     var body: some View {
-        HStack(alignment: .top,spacing: 10,content: {
+        HStack(alignment: .top,spacing: 0,content: {
             // 𝐒𝐞𝐭𝐭𝐢𝐧𝐠 𝐮𝐩 𝐬𝐨𝐧𝐠 𝐢𝐦𝐚𝐠𝐞 𝐭𝐨 𝐝𝐢𝐬𝐩𝐥𝐚𝐲 𝐢𝐧 𝐦𝐢𝐧𝐢 𝐩𝐥𝐚𝐲𝐞𝐫 ..
-           Image("juja-han-uT55XxQLQGU-unsplash")
+           Image("music")
                 .resizable()
                 .scaledToFill()
-                .frame(width: 30,height: UIScreen.main.bounds.height/7)
-                .padding(.trailing)
+                .clipShape(RoundedRectangle(cornerRadius: 10))
+                .frame(width: 50,height: UIScreen.main.bounds.height/12)
+                .padding(.leading,5)
+                .padding(.bottom,5)
             Spacer()
             HStack(alignment: .top){
                 SongNameTextModifier(text: audioPlayerViewModel.songTitle.isEmpty ? "Play Music":audioPlayerViewModel.songTitle, modifier: .MiniplayerText)
+                    .padding(.trailing,10)
                 // 𝐂𝐚𝐥𝐥𝐢𝐧𝐠 𝐀𝐮𝐝𝐢𝐨𝐒𝐜𝐫𝐞𝐞𝐧𝐁𝐮𝐭𝐭𝐨𝐧𝐬𝐕𝐢𝐞𝐰 𝐭𝐨 𝐝𝐢𝐬𝐩𝐥𝐚𝐲 𝐛𝐮𝐭𝐭𝐨𝐧𝐬 𝐨𝐟 𝐦𝐢𝐧𝐢 𝐩𝐥𝐚𝐲𝐞𝐫...
                 AudioScreenButtons(buttonName: audioPlayerViewModel.playerState == .isPaused ? "play.circle.fill" :"pause.circle.fill", buttonAction: {
                     audioPlayerViewModel.setupAudio()
