@@ -25,7 +25,7 @@ struct SearchView: View {
                     .padding(.horizontal)
             ScrollView {
                     VStack(alignment: .leading,spacing: 10,content: {
-                        SearchResultsView(viewModel: viewModel, audioPlayerViewModel:audioPlayerViewModel)
+                        SearchResultsView(viewModel: viewModel, audioPlayerViewModel:audioPlayerViewModel, audioPlayerView: AudioPlayerView(audioPlayerViewModel: audioPlayerViewModel))
                         }).padding(.leading,5)
                           .padding(.trailing,5)
                          .padding(.bottom, 180)

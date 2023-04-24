@@ -39,7 +39,6 @@ struct MiniPlayerView: View {
         })
         .background(AppColor.backgroundColor)
         .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height * 0.01)
-        
     }
 }
 

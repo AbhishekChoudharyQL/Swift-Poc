@@ -12,7 +12,6 @@ struct FloatingScreenView: View {
     //MARK: - Properties
     @State var offset : CGFloat = 0
     @State var audioPlayerVisiblityState : AudioPlayerVisiblityState = .minimised
-    
     @StateObject var audioPlayerViewModel : AudioPlayerViewModel
     
     //MARK: - View Builder

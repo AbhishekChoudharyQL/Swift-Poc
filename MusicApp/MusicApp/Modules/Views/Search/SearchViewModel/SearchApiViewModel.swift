@@ -14,13 +14,16 @@ class SearchApiViewModel : ObservableObject {
     @Published var ischanging = false
 
     //MARK: - Method to fetch search results using Api
-    func getSearchResults(parameter: String){
+    func getSearchResults(parameter: String) {
         let headers = [
             "X-RapidAPI-Key": "7ca238eddemshdabbbb187dde8e1p17372ejsn4c83797d547a",
             "X-RapidAPI-Host": "deezerdevs-deezer.p.rapidapi.com"
         ]
-         print(parameter)
-        guard  let url = URL(string: "https://deezerdevs-deezer.p.rapidapi.com/search?q=\(parameter)") else {
+        guard let encodedParameter = parameter.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) else {
+            print("Failed to encode search parameter")
+            return
+        }
+        guard let url = URL(string: "https://deezerdevs-deezer.p.rapidapi.com/search?q=\(encodedParameter)") else {
             print("Cannot find url")
             return
         }
@@ -38,11 +41,8 @@ class SearchApiViewModel : ObservableObject {
                 do {
                      let jsonResponse = try JSONDecoder().decode(SearchResult.self, from: data)
                         DispatchQueue.main.async{
-//                            self.searchResult.append(jsonResponse)
                             self.searchResult = jsonResponse.data
-//                            print(self.searchResult)
                     }
-                        
                 } catch  {
                     print(error)
                 }
@@ -50,7 +50,6 @@ class SearchApiViewModel : ObservableObject {
         })
         dataTask.resume()
     }
-   
 }
 
 

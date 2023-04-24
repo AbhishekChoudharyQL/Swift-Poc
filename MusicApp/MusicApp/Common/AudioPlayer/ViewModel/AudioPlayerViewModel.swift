@@ -16,15 +16,15 @@ enum PlayerState {
 }
 
 class AudioPlayerViewModel : ObservableObject {
-    
+
     //MARK: - Properties
-    @Published var currentSongUrl : String = ""
+    @Published var currentSongUrl : String = "https://cdns-preview-8.dzcdn.net/stream/c-831730343d351794fd0a464a6d9b22c8-5.mp3"
 //    @Published var previousSongUrl : String = ""
 //    @Published var nextSongUrl : String = ""
     @Published var playerState : PlayerState = .isPaused
     @Published var songTitle : String = ""
     var audioPlayer : AVPlayer?
-    
+
     //MARK: - Public Methods
     func setupAudio(){
         print(playerState)
@@ -36,7 +36,7 @@ class AudioPlayerViewModel : ObservableObject {
             playAudio()
         }
     }
-    
+
     //MARK: - Private Methods
     private func playAudio(){
         print(currentSongUrl)
