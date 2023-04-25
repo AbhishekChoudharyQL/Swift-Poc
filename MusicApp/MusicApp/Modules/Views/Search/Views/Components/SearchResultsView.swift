@@ -34,7 +34,7 @@ struct SearchResultsView: View {
                 .padding()
                 .contentShape(Rectangle())
                 .onTapGesture {
-                    print("search list tapped")
+//                    print("search list tapped")
                     if let currentSongUrl = index.preview {
                         audioPlayerViewModel.currentSongUrl = currentSongUrl
                         audioPlayerViewModel.songTitle = index.title ?? "Music"

@@ -35,7 +35,7 @@ class SearchApi : ObservableObject {
                      let jsonResponse = try JSONDecoder().decode(SearchResult.self, from: data)
                         DispatchQueue.main.async{
                             self.searchResult.append(jsonResponse)
-                            print(self.searchResult)
+//                            print(self.searchResult)
                     }
                         
                 } catch  {

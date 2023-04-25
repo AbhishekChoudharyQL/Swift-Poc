@@ -44,7 +44,7 @@ struct AudioPlayerView: View {
             AudioScreenButtons(buttonName: "backward.circle.fill", buttonAction: {
             })
             AudioScreenButtons(buttonName: audioPlayerViewModel.playerState == .isPaused ? "play.circle.fill" :"pause.circle.fill",buttonAction: {
-                print("Updating state to play preview")
+//                print("Updating state to play preview")
                 audioPlayerViewModel.setupAudio()
             })
             AudioScreenButtons(buttonName: "forward.circle.fill", buttonAction: {

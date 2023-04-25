@@ -22,7 +22,9 @@ class AudioPlayerViewModel : ObservableObject {
     @Published var playerState : PlayerState = .isPaused
     @Published var songTitle : String = ""
     @Published var audioPlayer : AVPlayer?
+    @Published var sliderProgress = 0.0
 
+    
     //MARK: - Public Methods
     func setupAudio(){
         switch playerState {
@@ -39,11 +41,23 @@ class AudioPlayerViewModel : ObservableObject {
         if let url = URL(string: currentSongUrl){
             audioPlayer = AVPlayer(url: url)
             audioPlayer?.play()
+            setupSlider()
             playerState = .isPlaying
+            
         }
     }
      private func pauseAudio(){
          audioPlayer?.pause()
          playerState = .isPaused
+         
     }
+    
+    func setupSlider(){
+        guard let duration = audioPlayer?.currentTime() else { return }
+        sliderProgress = CMTimeGetSeconds(duration)
+        print(sliderProgress)
+        
+    }
+        
 }
+
