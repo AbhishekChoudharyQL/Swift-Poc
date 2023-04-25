@@ -22,7 +22,7 @@ struct SongNameTextModifier: View {
         case .AudioPlayerText:
             Text(text)
             .foregroundColor(.white)
-            .font(.title)
+            .font(.headline)
             .fontWeight(.bold)
             .padding()
         case .MiniplayerText:

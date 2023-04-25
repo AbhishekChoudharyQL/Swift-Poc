@@ -22,7 +22,8 @@ struct AudioPlayerView: View {
                     AudioScreenButtons(buttonName: "heart", buttonAction: {
                     })
                 })
-                .padding(.top,10)
+                .padding(.top ,20)
+                .padding(.bottom,10)
                 AudioImageView()
                     .padding(.leading,30)
                     .padding(.trailing,30)
@@ -40,11 +41,10 @@ struct AudioPlayerView: View {
 
     //MARK: - Resuable Method to show buttons and perform audio actions on buttons
      func audioPlayerButtonFunctions() -> some View {
-        return HStack(alignment: .center,spacing: 80, content: {
+         return HStack(alignment: .bottom,spacing: 80, content: {
             AudioScreenButtons(buttonName: "backward.circle.fill", buttonAction: {
             })
             AudioScreenButtons(buttonName: audioPlayerViewModel.playerState == .isPaused ? "play.circle.fill" :"pause.circle.fill",buttonAction: {
-//                print("Updating state to play preview")
                 audioPlayerViewModel.setupAudio()
             })
             AudioScreenButtons(buttonName: "forward.circle.fill", buttonAction: {

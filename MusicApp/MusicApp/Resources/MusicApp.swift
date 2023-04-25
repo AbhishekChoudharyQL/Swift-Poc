@@ -18,12 +18,7 @@ struct MusicApp: App {
     //MARK: - Properties
     @State var userSession : UserSession = .userOnIntroScreen
     @StateObject var audioPlayerManager = AudioPlayerViewModel()
-//    @State var playlistData : [PlaylistResponse] = [PlaylistResponse(data: [Data(id: 0, title: "Songs", picture: "Sing", user: nil),
-//                                                                Data(id: 0, title: "Songs", picture: "Sing", user: nil),
-//                                                                Data(id: 0, title: "Songs", picture: "Sing", user: nil),
-//                                                                Data(id: 0, title: "Songs", picture: "Sing", user: nil),
-//                                                                Data(id: 0, title: "Songs", picture: "Sing", user: nil),
-//                                                                Data(id: 0, title: "Songs", picture: "Sing", user: nil)])]
+
 
     //MARK: - View Builder
     var body: some Scene {
@@ -37,6 +32,7 @@ struct MusicApp: App {
 //            SearchView()
             TabBarManager( audioPlayerStateManager: audioPlayerManager )
 //            PlaylistCollectionView(playlistData: $playlistData)
+           
         }
     }
 }
