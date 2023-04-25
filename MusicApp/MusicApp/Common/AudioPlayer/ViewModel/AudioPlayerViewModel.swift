@@ -23,7 +23,7 @@ class AudioPlayerViewModel : ObservableObject {
     @Published var songTitle : String = ""
     @Published var audioPlayer : AVPlayer?
     @Published var sliderProgress = 0.0
-
+    
     
     //MARK: - Public Methods
     func setupAudio(){
@@ -53,11 +53,14 @@ class AudioPlayerViewModel : ObservableObject {
     }
     
     func setupSlider(){
-        guard let duration = audioPlayer?.currentTime() else { return }
-        sliderProgress = CMTimeGetSeconds(duration)
-        print(sliderProgress)
+        audioPlayer?.addPeriodicTimeObserver(forInterval: CMTimeMake(value: 1, timescale: 1), queue: .main){
+            time in
+            let fraction = CMTimeGetSeconds(time)
+            self.sliderProgress = fraction
+        }
         
     }
         
 }
+
 
