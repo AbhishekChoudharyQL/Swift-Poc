@@ -16,7 +16,7 @@ struct AudioPlayerView: View {
     //MARK: - View Builder
     var body: some View {
         ZStack{
-            VStack(alignment: .center, spacing: 10, content: {
+            VStack(alignment: .center, spacing: 0, content: {
                 HStack(alignment: .bottom,content: {
                     Spacer()
                     AudioScreenButtons(buttonName: "heart", buttonAction: {
@@ -28,7 +28,8 @@ struct AudioPlayerView: View {
                     .padding(.trailing,30)
                     .padding(.bottom,-10)
                 SongNameTextModifier(text: audioPlayerViewModel.songTitle, modifier: .AudioPlayerText)
-                SongDurationSlider()
+                SongDurationSlider(audioPlayerViewModelForSlider: audioPlayerViewModel)
+                    .padding(.bottom,40)
                 audioPlayerButtonFunctions()
                 .padding()
             })

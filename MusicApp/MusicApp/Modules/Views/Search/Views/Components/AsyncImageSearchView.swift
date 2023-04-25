@@ -17,7 +17,7 @@ struct AsyncImageSearchView: View {
             image
                 .resizable()
                 .aspectRatio(contentMode: .fit)
-                .frame(width: 50, height: 50)
+                .frame(width: 60, height: 50)
         } placeholder: {
             Image(systemName: "person.fill")
                 .resizable()

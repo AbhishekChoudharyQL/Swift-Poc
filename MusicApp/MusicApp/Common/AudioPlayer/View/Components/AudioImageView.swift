@@ -11,11 +11,12 @@ struct AudioImageView: View {
     
     //MARK: - View Builder
     var body: some View {
-        Image("juja-han-uT55XxQLQGU-unsplash")
+        Image("music")
             .resizable()
-            .frame(width: 250,height: 250)
-            .scaledToFit()
-            .clipShape(Circle())
+            .frame(width: 220,height: 200)
+            .scaledToFill()
+//            .clipShape(Circle())
+            .padding(.top,50)
     }
 }
 

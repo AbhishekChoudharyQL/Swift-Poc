@@ -26,7 +26,7 @@ struct MiniPlayerView: View {
             HStack(alignment: .top){
                 SongNameTextModifier(text: audioPlayerViewModel.songTitle.isEmpty ? "Play Music":audioPlayerViewModel.songTitle, modifier: .MiniplayerText)
                     .padding(.trailing,10)
-                // 𝐂𝐚𝐥𝐥𝐢𝐧𝐠 𝐀𝐮𝐝𝐢𝐨𝐒𝐜𝐫𝐞𝐞𝐧𝐁𝐮𝐭𝐭𝐨𝐧𝐬𝐕𝐢𝐞𝐰 𝐭𝐨 𝐝𝐢𝐬𝐩𝐥𝐚𝐲 𝐛𝐮𝐭𝐭𝐨𝐧𝐬 𝐨𝐟 𝐦𝐢𝐧𝐢 𝐩𝐥𝐚𝐲𝐞𝐫...
+               
                 AudioScreenButtons(buttonName: audioPlayerViewModel.playerState == .isPaused ? "play.circle.fill" :"pause.circle.fill", buttonAction: {
                     audioPlayerViewModel.setupAudio()
                 })

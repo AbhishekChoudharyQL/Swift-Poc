@@ -19,11 +19,9 @@ class AudioPlayerViewModel : ObservableObject {
 
     //MARK: - Properties
     @Published var currentSongUrl : String = ""
-//    @Published var previousSongUrl : String = ""
-//    @Published var nextSongUrl : String = ""
     @Published var playerState : PlayerState = .isPaused
     @Published var songTitle : String = ""
-    @Published var isPlaying : Bool = false
+//    @Published var isPlaying : Bool = false
     @Published var audioPlayer : AVPlayer?
 
     //MARK: - Public Methods
