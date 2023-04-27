@@ -8,14 +8,14 @@
 import SwiftUI
 
 struct HomeView: View {
+    @State var selectedTab : TabItems = .stocks
+    init(){
+        UITabBar.appearance().isHidden = true
+    }
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world!")
-        }
-        .padding()
+        ZStack(content: {
+            TabBarManager(selectedTab: selectedTab)
+        })
     }
 }
 
@@ -24,3 +24,4 @@ struct ContentView_Previews: PreviewProvider {
         HomeView()
     }
 }
+

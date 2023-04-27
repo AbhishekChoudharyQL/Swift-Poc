@@ -20,9 +20,10 @@ struct CustomTabBar: View {
                             .foregroundColor(tab == selectedTab ? .green : .gray)
                             .font(.system(size: 30))
                             .onTapGesture {
-                                withAnimation(.easeIn(duration: 0.1)){
-                                    selectedTab = tab
-                                }
+//                                withAnimation(.easeIn(duration: 0.1)){
+//                                    selectedTab = tab
+//                                }
+                                selectedTab = tab
                         }
                         
                             
