@@ -15,27 +15,30 @@ struct StocksView: View {
                 NavigationStack {
                     CardView()
                         .padding()
-                    List{
-                        Group{
-                            Text("Amazon")
-                            Text("Microsoft")
-                            Text("Tesla")
-                            Text("Facebook")
-                        }
-                        Group{
-                            Text("Netflix")
-                            Text("gjkgj")
-                            Text("Teslgfva")
-                            Text("Facebgjfhook")
-                        }
-                        Group{
-                            Text("Netflix23")
-                            Text("gjkgjhg78")
-                            Text("Teslgfva452")
-                            Text("Facebgjfhook238")
-                        }
-                      
-                    }
+//                         PagerView()
+//                    List{
+//                        Group{
+//                            Text("Amazon")
+//                            Text("Microsoft")
+//                            Text("Tesla")
+//                            Text("Facebook")
+//                        }
+//                        Group{
+//                            Text("Netflix")
+//                            Text("gjkgj")
+//                            Text("Teslgfva")
+//                            Text("Facebgjfhook")
+//                        }
+//                        Group{
+//                            Text("Netflix23")
+//                            Text("gjkgjhg78")
+//                            Text("Teslgfva452")
+//                            Text("Facebgjfhook238")
+//                        }
+//
+//                    }
+//                    TopTabBar()
+                    SlidingView()
                      }
                      .searchable(text: $searchText, prompt: "Look for something")
             }

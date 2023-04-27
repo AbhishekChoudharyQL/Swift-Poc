@@ -20,18 +20,13 @@ struct CustomTabBar: View {
                             .foregroundColor(tab == selectedTab ? .green : .gray)
                             .font(.system(size: 30))
                             .onTapGesture {
-//                                withAnimation(.easeIn(duration: 0.1)){
-//                                    selectedTab = tab
-//                                }
                                 selectedTab = tab
                         }
-                        
-                            
                     }
                     Spacer()
                     
                 }
-            }.frame(width: nil,height: 70)
+            }.frame(width: nil,height: 60)
             .background(.ultraThickMaterial)
                 .cornerRadius(15)
     }

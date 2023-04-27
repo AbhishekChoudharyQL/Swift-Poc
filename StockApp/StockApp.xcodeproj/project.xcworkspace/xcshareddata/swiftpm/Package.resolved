@@ -1,0 +1,14 @@
+{
+  "pins" : [
+    {
+      "identity" : "slidingtabview#installation",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/QuynhNguyen/SlidingTabView#installation",
+      "state" : {
+        "branch" : "master",
+        "revision" : "b0f0662977418824d50546b2850a523dcd793bb0"
+      }
+    }
+  ],
+  "version" : 2
+}

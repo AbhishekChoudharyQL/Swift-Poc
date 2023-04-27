@@ -9,22 +9,22 @@ import SwiftUI
 
 struct TabBarManager: View {
     @State var selectedTab : TabItems
+    
     var body: some View {
-        VStack(content: {
+        VStack {
             switch selectedTab {
             case .bookmark:
                 BookmarkList()
             case .stocks :
                 StocksView()
             }
-        })
-        VStack {
             Spacer()
-         CustomTabBar(selectedTab: $selectedTab)
+            CustomTabBar(selectedTab: $selectedTab)
+                .ignoresSafeArea()
         }
-        
     }
 }
+
 
 struct TabBarManager_Previews: PreviewProvider {
     static var previews: some View {
