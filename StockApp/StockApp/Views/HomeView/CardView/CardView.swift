@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct CardView: View {
+    
+    //MARK: - View Builder
     var body: some View {
         ScrollView(.horizontal,showsIndicators: false){
             HStack(spacing: 25){
@@ -20,6 +22,7 @@ struct CardView: View {
     }
 }
 
+   // MARK: - Previews
 struct CardView_Previews: PreviewProvider {
     static var previews: some View {
         CardView()

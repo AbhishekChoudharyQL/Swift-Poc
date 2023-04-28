@@ -27,6 +27,8 @@
 		463F447729FAB47200D960E8 /* StocksViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 463F447629FAB47200D960E8 /* StocksViewModel.swift */; };
 		46C8967A29FB8A200074C836 /*  MostBoughtViewComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46C8967929FB8A200074C836 /*  MostBoughtViewComponent.swift */; };
 		46C8967E29FB98B60074C836 /* ExploreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46C8967D29FB98B60074C836 /* ExploreData.swift */; };
+		46C8968229FBE1290074C836 /* CardModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46C8968129FBE1290074C836 /* CardModel.swift */; };
+		46C8968529FBE8C90074C836 /* LoaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46C8968429FBE8C90074C836 /* LoaderView.swift */; };
 		46E6CB5129FAE78400F3020C /* TopTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46E6CB5029FAE78400F3020C /* TopTabBar.swift */; };
 /* End PBXBuildFile section */
 
@@ -51,6 +53,8 @@
 		463F447629FAB47200D960E8 /* StocksViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StocksViewModel.swift; sourceTree = "<group>"; };
 		46C8967929FB8A200074C836 /*  MostBoughtViewComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = " MostBoughtViewComponent.swift"; sourceTree = "<group>"; };
 		46C8967D29FB98B60074C836 /* ExploreData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreData.swift; sourceTree = "<group>"; };
+		46C8968129FBE1290074C836 /* CardModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardModel.swift; sourceTree = "<group>"; };
+		46C8968429FBE8C90074C836 /* LoaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoaderView.swift; sourceTree = "<group>"; };
 		46E6CB5029FAE78400F3020C /* TopTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopTabBar.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -87,11 +91,11 @@
 		463F444929FA829A00D960E8 /* StockApp */ = {
 			isa = PBXGroup;
 			children = (
-				46E6CB5229FAFED300F3020C /* PagerStripeView */,
-				463F447529FAB40600D960E8 /* ViewModel */,
+				46C8968329FBE8A50074C836 /* CommonView */,
+				463F445929FA848B00D960E8 /* Tab */,
 				463F447229FAB34400D960E8 /* Model */,
 				463F446029FA850E00D960E8 /* Views */,
-				463F445929FA848B00D960E8 /* Tab */,
+				463F447529FAB40600D960E8 /* ViewModel */,
 				463F444E29FA829C00D960E8 /* Assets.xcassets */,
 				463F445029FA829C00D960E8 /* Preview Content */,
 			);
@@ -119,6 +123,7 @@
 		463F446029FA850E00D960E8 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				46E6CB5229FAFED300F3020C /* PagerStripeView */,
 				46C8967329FB887E0074C836 /* BookMarkView */,
 				46C8967029FB87830074C836 /* HomeView */,
 			);
@@ -163,6 +168,7 @@
 			children = (
 				463F446529FA857B00D960E8 /* CardView.swift */,
 				463F446329FA855800D960E8 /* CardComponentView.swift */,
+				46C8968129FBE1290074C836 /* CardModel.swift */,
 			);
 			path = CardView;
 			sourceTree = "<group>";
@@ -234,6 +240,14 @@
 				46C8967D29FB98B60074C836 /* ExploreData.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		46C8968329FBE8A50074C836 /* CommonView */ = {
+			isa = PBXGroup;
+			children = (
+				46C8968429FBE8C90074C836 /* LoaderView.swift */,
+			);
+			path = CommonView;
 			sourceTree = "<group>";
 		};
 		46E6CB5229FAFED300F3020C /* PagerStripeView */ = {
@@ -326,6 +340,7 @@
 				460A304129FB075A008F92D0 /* OrderView.swift in Sources */,
 				463F447729FAB47200D960E8 /* StocksViewModel.swift in Sources */,
 				463F445B29FA849900D960E8 /* TabModel.swift in Sources */,
+				46C8968229FBE1290074C836 /* CardModel.swift in Sources */,
 				463F444D29FA829A00D960E8 /* HomeView.swift in Sources */,
 				460A304329FB0780008F92D0 /* StockListView.swift in Sources */,
 				463F446229FA852A00D960E8 /* BookmarkList.swift in Sources */,
@@ -337,6 +352,7 @@
 				463F447429FAB35500D960E8 /* StocksModel.swift in Sources */,
 				460A303A29FB056A008F92D0 /* SlidingView.swift in Sources */,
 				463F444B29FA829A00D960E8 /* StockAppApp.swift in Sources */,
+				46C8968529FBE8C90074C836 /* LoaderView.swift in Sources */,
 				463F446629FA857B00D960E8 /* CardView.swift in Sources */,
 				463F446429FA855800D960E8 /* CardComponentView.swift in Sources */,
 			);

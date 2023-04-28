@@ -8,23 +8,37 @@
 import Foundation
 
 class StocksViewModel : ObservableObject {
-    @Published var stocksList : [StocksModel] = []
     
-//    func getStockData() {
-//        let url = URL(string: "https://api.jsonserve.com/q9hdYs")
-//        let urlRequest = URLRequest(url: url)
-//        let dataTask = URLSession.shared.dataTask(with: urlRequest, completionHandler: {
-//            data ,response , url in
-//            if let data = data {
-//                do {
-//                    let jsonResponse = JSONDecoder().decode(StocksModel, from: data)
-//                    self .stocksList = jsonResponse
-//                } catch  {
-//                    print("Error caught while catching error")
-//                }
-//            }
-//        })
-//    }
-    
+    //MARK: - Published Properties
+    @Published var stocksList : [Stocks] = []
+    @Published var isLoading : Bool = true
+    //MARK: - Method to get stock data
+    func getStockData() {
+        print(isLoading)
+        guard let url = URL(string: "https://api.jsonserve.com/q9hdYs") else { return  }
+        let urlRequest = URLRequest(url: url)
+        let session = URLSession.shared
+        let dataTask = session.dataTask(with: urlRequest as URLRequest, completionHandler: {
+            data , response , error in
+            if error != nil {
+                print(error as Any)
+            }
+            guard let data = data else{
+                print("data is not found")
+                return
+            }
+            do {
+                let jsonResponse = try JSONDecoder().decode(StocksModel.self, from: data)
+                DispatchQueue.main.async {
+                    self.stocksList = jsonResponse.stocks
+                }
+            } catch  {
+                print("Error caught")
+            }
+        })
+        dataTask.resume()
+        isLoading = false
+        print(isLoading)
+    }
     
 }

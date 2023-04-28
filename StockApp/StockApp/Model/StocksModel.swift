@@ -7,6 +7,7 @@
 
 import Foundation
 
+//MARK: - Model for stocks
 struct StocksModel : Codable {
     var stocks : [Stocks]
 }
