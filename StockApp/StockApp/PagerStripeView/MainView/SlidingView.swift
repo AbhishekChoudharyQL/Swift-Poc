@@ -21,14 +21,15 @@ struct SlidingView: View {
                 ExploreView()
             }
             else if tabIndex == 1 {
-                OrderView()
+                StockListView()
             }
             else if tabIndex == 2 {
-                StockListView()
+               OrderView()
             }
             Spacer()
         }
-        .padding()
+//        .padding()
+        // this padding caused a lot of trouble ... it appeared above tab bar
     }
 }
 

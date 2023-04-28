@@ -42,7 +42,8 @@ struct StocksView: View {
                      }
                      .searchable(text: $searchText, prompt: "Look for something")
             }
-        }).background(Color.blue)
+        })
+        .background(Color.black)
     }
 }
 

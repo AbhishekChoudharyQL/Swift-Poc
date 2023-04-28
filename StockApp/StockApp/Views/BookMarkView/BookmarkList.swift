@@ -35,7 +35,7 @@ struct BookmarkList: View {
                     }
                      }
             }
-        }).background(Color.blue)
+        }).background(Color.red)
         
     }
 }

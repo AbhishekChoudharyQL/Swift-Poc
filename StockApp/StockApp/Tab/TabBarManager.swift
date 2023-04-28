@@ -9,7 +9,7 @@ import SwiftUI
 
 struct TabBarManager: View {
     @State var selectedTab : TabItems
-    
+
     var body: some View {
         VStack {
             switch selectedTab {
@@ -22,7 +22,9 @@ struct TabBarManager: View {
             CustomTabBar(selectedTab: $selectedTab)
                 .ignoresSafeArea()
         }
+//        .background(Color.cyan)
     }
+    
 }
 
 

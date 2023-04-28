@@ -23,7 +23,7 @@ struct CardComponentView: View {
                     .foregroundColor(isNegative ? .red : .green)
                     .bold()
             }
-        }.layoutPriority(50)
+        }.layoutPriority(20)
             .padding()
         .cornerRadius(10)
         .overlay(
