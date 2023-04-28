@@ -18,11 +18,10 @@ struct TabBarManager: View {
             case .stocks :
                 StocksView()
             }
-            Spacer()
+            Spacer().frame(height: 0)
             CustomTabBar(selectedTab: $selectedTab)
                 .ignoresSafeArea()
         }
-//        .background(Color.cyan)
     }
     
 }
