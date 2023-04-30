@@ -22,6 +22,8 @@ struct StocksView: View {
                     SlidingView()
                      }
                      .searchable(text: $searchText, prompt: "Look for something")
+                     .navigationTitle("iInvest")
+                     .background(Color.green)
             }
         })
         .background(Color.black)

@@ -29,6 +29,7 @@
 		46C8967E29FB98B60074C836 /* ExploreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46C8967D29FB98B60074C836 /* ExploreData.swift */; };
 		46C8968229FBE1290074C836 /* CardModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46C8968129FBE1290074C836 /* CardModel.swift */; };
 		46C8968529FBE8C90074C836 /* LoaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46C8968429FBE8C90074C836 /* LoaderView.swift */; };
+		46D25B8729FEB6F50063F8FD /* LineChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46D25B8629FEB6F50063F8FD /* LineChartView.swift */; };
 		46E6CB5129FAE78400F3020C /* TopTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46E6CB5029FAE78400F3020C /* TopTabBar.swift */; };
 /* End PBXBuildFile section */
 
@@ -55,6 +56,7 @@
 		46C8967D29FB98B60074C836 /* ExploreData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreData.swift; sourceTree = "<group>"; };
 		46C8968129FBE1290074C836 /* CardModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardModel.swift; sourceTree = "<group>"; };
 		46C8968429FBE8C90074C836 /* LoaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoaderView.swift; sourceTree = "<group>"; };
+		46D25B8629FEB6F50063F8FD /* LineChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineChartView.swift; sourceTree = "<group>"; };
 		46E6CB5029FAE78400F3020C /* TopTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopTabBar.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -204,6 +206,7 @@
 			children = (
 				463F446729FA85DD00D960E8 /* StocksView.swift */,
 				460A304229FB0780008F92D0 /* StockListView.swift */,
+				46D25B8629FEB6F50063F8FD /* LineChartView.swift */,
 			);
 			path = StocksView;
 			sourceTree = "<group>";
@@ -352,6 +355,7 @@
 				463F447429FAB35500D960E8 /* StocksModel.swift in Sources */,
 				460A303A29FB056A008F92D0 /* SlidingView.swift in Sources */,
 				463F444B29FA829A00D960E8 /* StockAppApp.swift in Sources */,
+				46D25B8729FEB6F50063F8FD /* LineChartView.swift in Sources */,
 				46C8968529FBE8C90074C836 /* LoaderView.swift in Sources */,
 				463F446629FA857B00D960E8 /* CardView.swift in Sources */,
 				463F446429FA855800D960E8 /* CardComponentView.swift in Sources */,

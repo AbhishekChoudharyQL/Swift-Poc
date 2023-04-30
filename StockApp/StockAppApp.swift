@@ -11,9 +11,10 @@ import SwiftUI
 struct StockAppApp: App {
     var body: some Scene {
         WindowGroup {
-            HomeView()
+//            HomeView()
 //            ExploreView()
 //            DummyView()
+            LineChartView()
         }
     }
 }
