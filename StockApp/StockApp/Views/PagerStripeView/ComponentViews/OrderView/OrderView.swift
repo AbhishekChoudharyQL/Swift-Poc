@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct OrderView: View {
+    
+    //MARK: - View Builder
     var body: some View {
         VStack(spacing: 0){
             Image("No-order")
@@ -24,6 +26,7 @@ struct OrderView: View {
     }
 }
 
+  //MARK: - Previews
 struct OrderView_Previews: PreviewProvider {
     static var previews: some View {
         OrderView()

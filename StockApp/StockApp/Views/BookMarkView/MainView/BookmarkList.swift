@@ -8,14 +8,15 @@
 import SwiftUI
 
 struct BookmarkList: View {
+    
+    //MARK: - Properties
     @Environment(\.managedObjectContext) var managedContext
     @FetchRequest(sortDescriptors: [SortDescriptor(\.name)]) var stocks: FetchedResults<StockData>
+    
+    //MARK: - View Builder
     var body: some View {
         ZStack(content: {
-           
             Form{
-                Text("\u{20B9}")
-                    .font(.largeTitle)
                 Text("My Watch List")
                     .foregroundColor(.green)
                     .font(.custom("Italic", size: CGFloat(22)))
@@ -25,7 +26,7 @@ struct BookmarkList: View {
                     stock in
                     HStack(content: {
                         Text(stock.name!)
-                            .padding()
+                        .padding()
                           Spacer()
                         VStack(content: {
                             Text("Market Price")
@@ -36,12 +37,12 @@ struct BookmarkList: View {
                     })
                 }.onDelete(perform: deleteStock)
             }.formStyle(.grouped)
-                
         })
-        
     }
+    
+    //MARK: - Private Methods
     private func currentPriceFormatter(currentPrice: Double) -> Text {
-        return Text("₹" + String(format: "%.2f", currentPrice))
+        return Text("\u{20B9}" + String(format: "%.2f", currentPrice))
     }
     private func deleteStock(offset: IndexSet){
         withAnimation {
@@ -51,6 +52,7 @@ struct BookmarkList: View {
     }
 }
 
+ //MARK: - Previews
 struct BookmarkList_Previews: PreviewProvider {
     static var previews: some View {
         BookmarkList()

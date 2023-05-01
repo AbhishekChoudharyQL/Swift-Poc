@@ -9,7 +9,7 @@ import SwiftUI
 
 struct SellBuyCustomButton: View {
   
-   
+   //MARK: - View Builder
     var body: some View {
         HStack(spacing: 20,content: {
             Button("Sell"){
@@ -26,11 +26,14 @@ struct SellBuyCustomButton: View {
     }
 }
 
+  //MARK: - Previews
 struct SellBuyCustomButton_Previews: PreviewProvider {
     static var previews: some View {
         SellBuyCustomButton()
     }
 }
+
+ //MARK: - Custom Button
 struct GrowingButton : ButtonStyle {
     func makeBody(configuration: Configuration) -> some View {
         configuration.label

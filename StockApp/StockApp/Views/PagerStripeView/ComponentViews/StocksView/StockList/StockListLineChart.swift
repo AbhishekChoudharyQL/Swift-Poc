@@ -1,5 +1,5 @@
 //
-//  LineChartViewForList.swift
+//  StockListLineChart.swift
 //  StockApp
 //
 //  Created by abhishek on 01/05/23.
@@ -7,12 +7,16 @@
 
 import SwiftUI
 
-struct LineChartViewForList: View {
-    var lineModel : LineChartModel
+struct StockListLineChart: View {
+    
+    //MARK: - Properties
+    var points : [Double] = []
     var normalizedValues: [Double] {
-        let maxPrice = lineModel.priceValues.max() ?? 1.0
-        return lineModel.priceValues.map { $0 / maxPrice }
+        let maxPrice = points.max() ?? 1.0
+        return points.map { $0 / maxPrice }
     }
+    
+    //MARK: - View Builder
     var body: some View {
         VStack{
             if lineColor() == true {
@@ -23,10 +27,12 @@ struct LineChartViewForList: View {
                 LineView(yValues: normalizedValues)
                     .stroke(Color.red, lineWidth: 2.5)
             }
-        }
+        }.frame(width: 50,height: 30)
     }
+    
+    //MARK: - Private Methods
     private  func lineColor() -> Bool {
-        if lineModel.priceValues[0] > lineModel.priceValues[lineModel.priceValues.count-1]{
+        if points[0] >= points[points.count-1]{
             return false
         }
         else{
@@ -35,12 +41,14 @@ struct LineChartViewForList: View {
     }
 }
 
-struct LineChartViewForList_Previews: PreviewProvider {
+//MARK: - Previews
+struct StockListLineChart_Previews: PreviewProvider {
     static var previews: some View {
-        LineChartViewForList(lineModel: LineChartModel(priceValues: [142.0, 148.6, 181.3, 125.2, 149.9], isBookmarked: false, name: "Spice Jet", currentPrice: 64.90, highestPrice: 81.60))
+        StockListLineChart()
     }
 }
-// MARK: - Line chart subview
+
+//MARK: - SubView to show Stock Line Chart 
 struct LineView : Shape {
     var yValues : [Double]
     let padding: CGFloat = 16.0

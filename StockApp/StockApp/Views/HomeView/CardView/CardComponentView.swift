@@ -8,10 +8,14 @@
 import SwiftUI
 
 struct CardComponentView: View {
+    
+    //MARK: - Properties
     var title : String = ""
     var currentStatus : String = ""
     var changedStatus : String = ""
     var isNegative : Bool = false
+    
+    //MARK: - View Builder
     var body: some View {
         VStack(alignment: .leading,spacing: 20){
            Text(title)
@@ -24,7 +28,6 @@ struct CardComponentView: View {
                     .bold()
             }
         }
-//        .frame(width: 20,height: 20)
         .layoutPriority(20)
             .padding()
         .cornerRadius(10)
@@ -32,10 +35,10 @@ struct CardComponentView: View {
             RoundedRectangle(cornerRadius: 10)
                 .stroke(Color(.sRGB, red: 120/255, green: 130/255, blue: 130/255, opacity: 0.4), lineWidth: 1.5)
                 )
-//        .background(Color.red)
-    }
-}
+            }
+        }
 
+   //MARK: - Previews
 struct CardComponentView_Previews: PreviewProvider {
     static var previews: some View {
         CardComponentView()

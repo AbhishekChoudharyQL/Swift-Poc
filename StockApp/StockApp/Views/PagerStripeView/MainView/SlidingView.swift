@@ -9,13 +9,17 @@ import SwiftUI
 import SlidingTabView
 
 struct SlidingView: View {
+    
+    //MARK: - Properties
     @State private var tabIndex = 0
+    
+    //MARK: - View Builder
     var body: some View {
         VStack {
             SlidingTabView(selection: $tabIndex,
-                         tabs: ["Explore","Stocks","Orders"],
-                         animation: .easeInOut,activeAccentColor: .green,
-                          selectionBarColor: .green)
+                 tabs: ["Explore","Stocks","Orders"],
+                 animation: .easeInOut,activeAccentColor: .green,
+                  selectionBarColor: .green)
                   Spacer()
             if tabIndex == 0 {
                 ExploreView()
@@ -31,6 +35,7 @@ struct SlidingView: View {
     }
 }
 
+  //MARK: - Previews
 struct SlidingView_Previews: PreviewProvider {
     static var previews: some View {
         SlidingView()

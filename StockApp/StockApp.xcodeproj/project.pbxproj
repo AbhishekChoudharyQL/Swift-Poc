@@ -30,12 +30,11 @@
 		46B7FFAA29FF8E0800EE8CB0 /* BookmarkDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B7FFA929FF8E0800EE8CB0 /* BookmarkDataModel.swift */; };
 		46B7FFAD29FF95CF00EE8CB0 /* StockModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 46B7FFAB29FF95CF00EE8CB0 /* StockModel.xcdatamodeld */; };
 		46B7FFB229FF9D9700EE8CB0 /* LineChartModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B7FFB129FF9D9700EE8CB0 /* LineChartModel.swift */; };
-		46B7FFB429FFCF0A00EE8CB0 /* LineModelForList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B7FFB329FFCF0A00EE8CB0 /* LineModelForList.swift */; };
-		46B7FFB629FFCF8100EE8CB0 /* LineChartViewForList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B7FFB529FFCF8000EE8CB0 /* LineChartViewForList.swift */; };
 		46C8967A29FB8A200074C836 /*  MostBoughtViewComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46C8967929FB8A200074C836 /*  MostBoughtViewComponent.swift */; };
 		46C8967E29FB98B60074C836 /* ExploreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46C8967D29FB98B60074C836 /* ExploreData.swift */; };
 		46C8968229FBE1290074C836 /* CardModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46C8968129FBE1290074C836 /* CardModel.swift */; };
 		46C8968529FBE8C90074C836 /* LoaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46C8968429FBE8C90074C836 /* LoaderView.swift */; };
+		46C902392A00357D00D46998 /* StockListLineChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46C902382A00357D00D46998 /* StockListLineChart.swift */; };
 		46D25B8729FEB6F50063F8FD /* LineChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46D25B8629FEB6F50063F8FD /* LineChartView.swift */; };
 		46E6CB5129FAE78400F3020C /* TopTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46E6CB5029FAE78400F3020C /* TopTabBar.swift */; };
 /* End PBXBuildFile section */
@@ -64,12 +63,11 @@
 		46B7FFA929FF8E0800EE8CB0 /* BookmarkDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarkDataModel.swift; sourceTree = "<group>"; };
 		46B7FFAC29FF95CF00EE8CB0 /* StockModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = StockModel.xcdatamodel; sourceTree = "<group>"; };
 		46B7FFB129FF9D9700EE8CB0 /* LineChartModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineChartModel.swift; sourceTree = "<group>"; };
-		46B7FFB329FFCF0A00EE8CB0 /* LineModelForList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineModelForList.swift; sourceTree = "<group>"; };
-		46B7FFB529FFCF8000EE8CB0 /* LineChartViewForList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineChartViewForList.swift; sourceTree = "<group>"; };
 		46C8967929FB8A200074C836 /*  MostBoughtViewComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = " MostBoughtViewComponent.swift"; sourceTree = "<group>"; };
 		46C8967D29FB98B60074C836 /* ExploreData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreData.swift; sourceTree = "<group>"; };
 		46C8968129FBE1290074C836 /* CardModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardModel.swift; sourceTree = "<group>"; };
 		46C8968429FBE8C90074C836 /* LoaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoaderView.swift; sourceTree = "<group>"; };
+		46C902382A00357D00D46998 /* StockListLineChart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockListLineChart.swift; sourceTree = "<group>"; };
 		46D25B8629FEB6F50063F8FD /* LineChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineChartView.swift; sourceTree = "<group>"; };
 		46E6CB5029FAE78400F3020C /* TopTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopTabBar.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -183,6 +181,7 @@
 			isa = PBXGroup;
 			children = (
 				460A304229FB0780008F92D0 /* StockListView.swift */,
+				46C902382A00357D00D46998 /* StockListLineChart.swift */,
 			);
 			path = StockList;
 			sourceTree = "<group>";
@@ -222,15 +221,6 @@
 			path = MainView;
 			sourceTree = "<group>";
 		};
-		46B7FFB829FFD21D00EE8CB0 /* ComponentViews */ = {
-			isa = PBXGroup;
-			children = (
-				46B7FFB329FFCF0A00EE8CB0 /* LineModelForList.swift */,
-				46B7FFB529FFCF8000EE8CB0 /* LineChartViewForList.swift */,
-			);
-			path = ComponentViews;
-			sourceTree = "<group>";
-		};
 		46C8967029FB87830074C836 /* HomeView */ = {
 			isa = PBXGroup;
 			children = (
@@ -261,7 +251,6 @@
 		46C8967329FB887E0074C836 /* BookMarkView */ = {
 			isa = PBXGroup;
 			children = (
-				46B7FFB829FFD21D00EE8CB0 /* ComponentViews */,
 				46B7FFB729FFD20B00EE8CB0 /* MainView */,
 				46B7FFAE29FF966600EE8CB0 /* DataModel */,
 			);
@@ -424,7 +413,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				463F446829FA85DD00D960E8 /* StocksView.swift in Sources */,
-				46B7FFB629FFCF8100EE8CB0 /* LineChartViewForList.swift in Sources */,
 				463F445D29FA84BC00D960E8 /* CustomTabBar.swift in Sources */,
 				460A304129FB075A008F92D0 /* OrderView.swift in Sources */,
 				46B7FFAA29FF8E0800EE8CB0 /* BookmarkDataModel.swift in Sources */,
@@ -436,7 +424,6 @@
 				460A304329FB0780008F92D0 /* StockListView.swift in Sources */,
 				463F446229FA852A00D960E8 /* BookmarkList.swift in Sources */,
 				46B7FFAD29FF95CF00EE8CB0 /* StockModel.xcdatamodeld in Sources */,
-				46B7FFB429FFCF0A00EE8CB0 /* LineModelForList.swift in Sources */,
 				46C8967E29FB98B60074C836 /* ExploreData.swift in Sources */,
 				46B7FFA129FF8ADE00EE8CB0 /* BookmarkButtonView.swift in Sources */,
 				46E6CB5129FAE78400F3020C /* TopTabBar.swift in Sources */,
@@ -444,6 +431,7 @@
 				463F445F29FA84EB00D960E8 /* TabBarManager.swift in Sources */,
 				46B7FF9F29FF8A0C00EE8CB0 /* SellBuyCustomButton.swift in Sources */,
 				46C8967A29FB8A200074C836 /*  MostBoughtViewComponent.swift in Sources */,
+				46C902392A00357D00D46998 /* StockListLineChart.swift in Sources */,
 				463F447429FAB35500D960E8 /* StocksModel.swift in Sources */,
 				460A303A29FB056A008F92D0 /* SlidingView.swift in Sources */,
 				463F444B29FA829A00D960E8 /* StockAppApp.swift in Sources */,

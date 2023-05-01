@@ -51,6 +51,8 @@ struct  MostBoughtViewComponent: View {
             .stroke(Color(.sRGB, red: 120/255, green: 130/255, blue: 130/255, opacity: 0.4), lineWidth: 1.5)
             )
     }
+    
+    //MARK: - Private Methods
     private func currentPriceFormatter() -> Text {
         return Text("₹" + String(format: "%.2f", currentValue))
     }

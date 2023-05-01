@@ -26,6 +26,8 @@ struct StockListView: View {
                             Text(name)
                         }
                         Spacer()
+                        StockListLineChart(points: stockData.values)
+                            .padding()
                         VStack(content: {
                             Text("Market Price")
                                 .foregroundColor(.secondary)

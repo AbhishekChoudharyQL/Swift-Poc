@@ -8,7 +8,11 @@
 import SwiftUI
 
 struct CustomTabBar: View {
+    
+    //MARK: - Properties
     @Binding var  selectedTab : TabItems
+    
+    //MARK: - View Builder
     var body: some View {
             HStack{
                 ForEach(TabItems.allCases,id: \.rawValue){
@@ -20,17 +24,17 @@ struct CustomTabBar: View {
                             .foregroundColor(tab == selectedTab ? .green : .gray)
                             .font(.system(size: 30))
                             .onTapGesture {
-                                selectedTab = tab
+                            selectedTab = tab
                         }
                     }
                     Spacer()
-                    
                 }
             }.frame(width: nil,height: 60)
             .background(.ultraThinMaterial)
     }
 }
 
+  //MARK: - Previews
 struct CustomTabBar_Previews: PreviewProvider {
     static var previews: some View {
         CustomTabBar(selectedTab: .constant(.stocks))
