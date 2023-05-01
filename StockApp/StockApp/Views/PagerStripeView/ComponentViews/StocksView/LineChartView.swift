@@ -38,7 +38,6 @@ struct LineChartView: View {
                             .padding(.trailing,10)
                     }
                 }
-            
                 VStack(alignment: .leading,spacing: 0){
                     
                     Text(name)
@@ -131,6 +130,4 @@ struct GrowingButton : ButtonStyle {
             .animation(.easeOut(duration: 0.2), value: configuration.isPressed)
             .frame(width: 120)
     }
-    
-    
 }

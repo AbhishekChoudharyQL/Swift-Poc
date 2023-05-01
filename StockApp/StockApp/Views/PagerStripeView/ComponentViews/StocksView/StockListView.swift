@@ -16,20 +16,24 @@ struct StockListView: View {
     var body: some View {
 
         ZStack{
+            NavigationView(content:{
                 List{
                     ForEach(stockViewModel.stocksList,id: \.name) {
                         stockData in
-                        HStack(content: {
-                            if let name = stockData.name {
-                                Text(name)
-                            }
-                            Spacer()
-                                if let curentPrice = stockData.current_price{
-                                    currentPriceFormatter(currentPrice: curentPrice)
-                            }
-                       })
+                        NavigationLink(destination: LineChartView(priceValues: stockData.values,name: stockData.name!,currentPrice: stockData.current_price ?? 0.0)) {
+                            HStack(content: {
+                                if let name = stockData.name {
+                                    Text(name)
+                                }
+                                Spacer()
+                                    if let curentPrice = stockData.current_price{
+                                        currentPriceFormatter(currentPrice: curentPrice)
+                                }
+                           })
+                        }
                     }
                 }
+            })
             if stockViewModel.isLoading {
                        LoaderView()
                        }
