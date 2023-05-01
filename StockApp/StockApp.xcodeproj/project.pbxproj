@@ -25,6 +25,13 @@
 		463F446829FA85DD00D960E8 /* StocksView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 463F446729FA85DD00D960E8 /* StocksView.swift */; };
 		463F447429FAB35500D960E8 /* StocksModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 463F447329FAB35500D960E8 /* StocksModel.swift */; };
 		463F447729FAB47200D960E8 /* StocksViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 463F447629FAB47200D960E8 /* StocksViewModel.swift */; };
+		46B7FF9F29FF8A0C00EE8CB0 /* SellBuyCustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B7FF9E29FF8A0C00EE8CB0 /* SellBuyCustomButton.swift */; };
+		46B7FFA129FF8ADE00EE8CB0 /* BookmarkButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B7FFA029FF8ADE00EE8CB0 /* BookmarkButtonView.swift */; };
+		46B7FFAA29FF8E0800EE8CB0 /* BookmarkDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B7FFA929FF8E0800EE8CB0 /* BookmarkDataModel.swift */; };
+		46B7FFAD29FF95CF00EE8CB0 /* StockModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 46B7FFAB29FF95CF00EE8CB0 /* StockModel.xcdatamodeld */; };
+		46B7FFB229FF9D9700EE8CB0 /* LineChartModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B7FFB129FF9D9700EE8CB0 /* LineChartModel.swift */; };
+		46B7FFB429FFCF0A00EE8CB0 /* LineModelForList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B7FFB329FFCF0A00EE8CB0 /* LineModelForList.swift */; };
+		46B7FFB629FFCF8100EE8CB0 /* LineChartViewForList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B7FFB529FFCF8000EE8CB0 /* LineChartViewForList.swift */; };
 		46C8967A29FB8A200074C836 /*  MostBoughtViewComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46C8967929FB8A200074C836 /*  MostBoughtViewComponent.swift */; };
 		46C8967E29FB98B60074C836 /* ExploreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46C8967D29FB98B60074C836 /* ExploreData.swift */; };
 		46C8968229FBE1290074C836 /* CardModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46C8968129FBE1290074C836 /* CardModel.swift */; };
@@ -52,6 +59,13 @@
 		463F446729FA85DD00D960E8 /* StocksView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StocksView.swift; sourceTree = "<group>"; };
 		463F447329FAB35500D960E8 /* StocksModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StocksModel.swift; sourceTree = "<group>"; };
 		463F447629FAB47200D960E8 /* StocksViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StocksViewModel.swift; sourceTree = "<group>"; };
+		46B7FF9E29FF8A0C00EE8CB0 /* SellBuyCustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SellBuyCustomButton.swift; sourceTree = "<group>"; };
+		46B7FFA029FF8ADE00EE8CB0 /* BookmarkButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarkButtonView.swift; sourceTree = "<group>"; };
+		46B7FFA929FF8E0800EE8CB0 /* BookmarkDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarkDataModel.swift; sourceTree = "<group>"; };
+		46B7FFAC29FF95CF00EE8CB0 /* StockModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = StockModel.xcdatamodel; sourceTree = "<group>"; };
+		46B7FFB129FF9D9700EE8CB0 /* LineChartModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineChartModel.swift; sourceTree = "<group>"; };
+		46B7FFB329FFCF0A00EE8CB0 /* LineModelForList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineModelForList.swift; sourceTree = "<group>"; };
+		46B7FFB529FFCF8000EE8CB0 /* LineChartViewForList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineChartViewForList.swift; sourceTree = "<group>"; };
 		46C8967929FB8A200074C836 /*  MostBoughtViewComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = " MostBoughtViewComponent.swift"; sourceTree = "<group>"; };
 		46C8967D29FB98B60074C836 /* ExploreData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreData.swift; sourceTree = "<group>"; };
 		46C8968129FBE1290074C836 /* CardModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardModel.swift; sourceTree = "<group>"; };
@@ -148,6 +162,75 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
+		46B7FF9D29FF89C700EE8CB0 /* StocksLineChart */ = {
+			isa = PBXGroup;
+			children = (
+				46B7FFAF29FF9D4100EE8CB0 /* Views */,
+				46B7FFB029FF9D6200EE8CB0 /* Model */,
+			);
+			path = StocksLineChart;
+			sourceTree = "<group>";
+		};
+		46B7FFA429FF8C8100EE8CB0 /* MainView */ = {
+			isa = PBXGroup;
+			children = (
+				463F446729FA85DD00D960E8 /* StocksView.swift */,
+			);
+			path = MainView;
+			sourceTree = "<group>";
+		};
+		46B7FFA529FF8C9F00EE8CB0 /* StockList */ = {
+			isa = PBXGroup;
+			children = (
+				460A304229FB0780008F92D0 /* StockListView.swift */,
+			);
+			path = StockList;
+			sourceTree = "<group>";
+		};
+		46B7FFAE29FF966600EE8CB0 /* DataModel */ = {
+			isa = PBXGroup;
+			children = (
+				46B7FFAB29FF95CF00EE8CB0 /* StockModel.xcdatamodeld */,
+				46B7FFA929FF8E0800EE8CB0 /* BookmarkDataModel.swift */,
+			);
+			path = DataModel;
+			sourceTree = "<group>";
+		};
+		46B7FFAF29FF9D4100EE8CB0 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				46D25B8629FEB6F50063F8FD /* LineChartView.swift */,
+				46B7FFA029FF8ADE00EE8CB0 /* BookmarkButtonView.swift */,
+				46B7FF9E29FF8A0C00EE8CB0 /* SellBuyCustomButton.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		46B7FFB029FF9D6200EE8CB0 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				46B7FFB129FF9D9700EE8CB0 /* LineChartModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		46B7FFB729FFD20B00EE8CB0 /* MainView */ = {
+			isa = PBXGroup;
+			children = (
+				463F446129FA852A00D960E8 /* BookmarkList.swift */,
+			);
+			path = MainView;
+			sourceTree = "<group>";
+		};
+		46B7FFB829FFD21D00EE8CB0 /* ComponentViews */ = {
+			isa = PBXGroup;
+			children = (
+				46B7FFB329FFCF0A00EE8CB0 /* LineModelForList.swift */,
+				46B7FFB529FFCF8000EE8CB0 /* LineChartViewForList.swift */,
+			);
+			path = ComponentViews;
+			sourceTree = "<group>";
+		};
 		46C8967029FB87830074C836 /* HomeView */ = {
 			isa = PBXGroup;
 			children = (
@@ -178,7 +261,9 @@
 		46C8967329FB887E0074C836 /* BookMarkView */ = {
 			isa = PBXGroup;
 			children = (
-				463F446129FA852A00D960E8 /* BookmarkList.swift */,
+				46B7FFB829FFD21D00EE8CB0 /* ComponentViews */,
+				46B7FFB729FFD20B00EE8CB0 /* MainView */,
+				46B7FFAE29FF966600EE8CB0 /* DataModel */,
 			);
 			path = BookMarkView;
 			sourceTree = "<group>";
@@ -204,9 +289,9 @@
 		46C8967629FB893A0074C836 /* StocksView */ = {
 			isa = PBXGroup;
 			children = (
-				463F446729FA85DD00D960E8 /* StocksView.swift */,
-				460A304229FB0780008F92D0 /* StockListView.swift */,
-				46D25B8629FEB6F50063F8FD /* LineChartView.swift */,
+				46B7FFA429FF8C8100EE8CB0 /* MainView */,
+				46B7FFA529FF8C9F00EE8CB0 /* StockList */,
+				46B7FF9D29FF89C700EE8CB0 /* StocksLineChart */,
 			);
 			path = StocksView;
 			sourceTree = "<group>";
@@ -339,18 +424,25 @@
 			buildActionMask = 2147483647;
 			files = (
 				463F446829FA85DD00D960E8 /* StocksView.swift in Sources */,
+				46B7FFB629FFCF8100EE8CB0 /* LineChartViewForList.swift in Sources */,
 				463F445D29FA84BC00D960E8 /* CustomTabBar.swift in Sources */,
 				460A304129FB075A008F92D0 /* OrderView.swift in Sources */,
+				46B7FFAA29FF8E0800EE8CB0 /* BookmarkDataModel.swift in Sources */,
+				46B7FFB229FF9D9700EE8CB0 /* LineChartModel.swift in Sources */,
 				463F447729FAB47200D960E8 /* StocksViewModel.swift in Sources */,
 				463F445B29FA849900D960E8 /* TabModel.swift in Sources */,
 				46C8968229FBE1290074C836 /* CardModel.swift in Sources */,
 				463F444D29FA829A00D960E8 /* HomeView.swift in Sources */,
 				460A304329FB0780008F92D0 /* StockListView.swift in Sources */,
 				463F446229FA852A00D960E8 /* BookmarkList.swift in Sources */,
+				46B7FFAD29FF95CF00EE8CB0 /* StockModel.xcdatamodeld in Sources */,
+				46B7FFB429FFCF0A00EE8CB0 /* LineModelForList.swift in Sources */,
 				46C8967E29FB98B60074C836 /* ExploreData.swift in Sources */,
+				46B7FFA129FF8ADE00EE8CB0 /* BookmarkButtonView.swift in Sources */,
 				46E6CB5129FAE78400F3020C /* TopTabBar.swift in Sources */,
 				460A303F29FB0719008F92D0 /* ExploreView.swift in Sources */,
 				463F445F29FA84EB00D960E8 /* TabBarManager.swift in Sources */,
+				46B7FF9F29FF8A0C00EE8CB0 /* SellBuyCustomButton.swift in Sources */,
 				46C8967A29FB8A200074C836 /*  MostBoughtViewComponent.swift in Sources */,
 				463F447429FAB35500D960E8 /* StocksModel.swift in Sources */,
 				460A303A29FB056A008F92D0 /* SlidingView.swift in Sources */,
@@ -578,6 +670,19 @@
 			productName = SlidingTabView;
 		};
 /* End XCSwiftPackageProductDependency section */
+
+/* Begin XCVersionGroup section */
+		46B7FFAB29FF95CF00EE8CB0 /* StockModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				46B7FFAC29FF95CF00EE8CB0 /* StockModel.xcdatamodel */,
+			);
+			currentVersion = 46B7FFAC29FF95CF00EE8CB0 /* StockModel.xcdatamodel */;
+			path = StockModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 463F443F29FA829A00D960E8 /* Project object */;
 }

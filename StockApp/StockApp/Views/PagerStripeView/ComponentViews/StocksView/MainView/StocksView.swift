@@ -15,7 +15,8 @@ struct StocksView: View {
     // MARK: - View Builder
     var body: some View {
         ZStack(content: {
-            VStack(spacing: 100){
+            
+            VStack(spacing: 0){ // 100
                 NavigationStack {
                     CardView()
                         .padding()
@@ -24,9 +25,10 @@ struct StocksView: View {
                      .searchable(text: $searchText, prompt: "Look for something")
                      .navigationTitle("iInvest")
                      .background(Color.green)
+                     .navigationBarHidden(false)
             }
         })
-        .background(Color.black)
+        
     }
 }
 

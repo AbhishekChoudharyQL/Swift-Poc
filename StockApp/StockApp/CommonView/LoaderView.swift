@@ -13,9 +13,6 @@ struct LoaderView: View {
                 .background(Color.clear)
                 .progressViewStyle(CircularProgressViewStyle(tint: .green))
                 .scaleEffect(4)
-                
-            
-        
     }
 }
 

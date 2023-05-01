@@ -9,12 +9,12 @@ import SwiftUI
 
 @main
 struct StockAppApp: App {
+    @StateObject private var bookmarkDataModel = BookmarkDataModel()
     var body: some Scene {
         WindowGroup {
             HomeView()
-//            ExploreView()
-//            DummyView()
-//            LineChartView()
+                //MARK: - injecting into database
+                .environment(\.managedObjectContext, bookmarkDataModel.container.viewContext)
         }
     }
 }

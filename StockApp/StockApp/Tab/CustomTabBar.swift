@@ -28,7 +28,6 @@ struct CustomTabBar: View {
                 }
             }.frame(width: nil,height: 60)
             .background(.ultraThinMaterial)
-//                .cornerRadius(15)
     }
 }
 

@@ -3,7 +3,7 @@
 //  StockApp
 //
 //  Created by abhishek on 27/04/23.
-//
+//https://api.jsonserve.com/q9hdYs
 
 import Foundation
 
@@ -15,7 +15,7 @@ class StocksViewModel : ObservableObject {
     //MARK: - Method to get stock data
     func getStockData() {
         print(isLoading)
-        guard let url = URL(string: "https://api.jsonserve.com/q9hdYs") else { return  }
+        guard let url = URL(string: "https://api.jsonserve.com/ps3H4N") else { return  }
         let urlRequest = URLRequest(url: url)
         let session = URLSession.shared
         let dataTask = session.dataTask(with: urlRequest as URLRequest, completionHandler: {

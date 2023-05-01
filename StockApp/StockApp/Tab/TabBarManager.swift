@@ -23,7 +23,6 @@ struct TabBarManager: View {
                 .ignoresSafeArea()
         }
     }
-    
 }
 
 
