@@ -9,6 +9,7 @@ import Foundation
 
 struct LineChartModel {
     var priceValues: [Double]
+    var isBookmarked : Bool
     var name : String
     var currentPrice : Double
     var highestPrice : Double

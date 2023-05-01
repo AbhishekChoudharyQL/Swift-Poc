@@ -23,13 +23,16 @@ struct CardComponentView: View {
                     .foregroundColor(isNegative ? .red : .green)
                     .bold()
             }
-        }.layoutPriority(20)
+        }
+//        .frame(width: 20,height: 20)
+        .layoutPriority(20)
             .padding()
         .cornerRadius(10)
         .overlay(
             RoundedRectangle(cornerRadius: 10)
                 .stroke(Color(.sRGB, red: 120/255, green: 130/255, blue: 130/255, opacity: 0.4), lineWidth: 1.5)
                 )
+//        .background(Color.red)
     }
 }
 

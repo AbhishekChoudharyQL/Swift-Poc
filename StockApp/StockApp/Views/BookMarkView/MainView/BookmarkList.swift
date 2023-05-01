@@ -14,6 +14,8 @@ struct BookmarkList: View {
         ZStack(content: {
            
             Form{
+                Text("\u{20B9}")
+                    .font(.largeTitle)
                 Text("My Watch List")
                     .foregroundColor(.green)
                     .font(.custom("Italic", size: CGFloat(22)))
@@ -24,23 +26,28 @@ struct BookmarkList: View {
                     HStack(content: {
                         Text(stock.name!)
                             .padding()
-                    
+                          Spacer()
                         VStack(content: {
                             Text("Market Price")
                                 .foregroundColor(.secondary)
                             currentPriceFormatter(currentPrice: stock.currentPrice)
                                 .bold()
                         })
-                        
                     })
-                }
-
-            }
-        }).background(Color.red)
+                }.onDelete(perform: deleteStock)
+            }.formStyle(.grouped)
+                
+        })
         
     }
     private func currentPriceFormatter(currentPrice: Double) -> Text {
         return Text("₹" + String(format: "%.2f", currentPrice))
+    }
+    private func deleteStock(offset: IndexSet){
+        withAnimation {
+            offset.map{stocks[$0]}.forEach(managedContext.delete)
+            BookmarkDataModel().save(Context: managedContext)
+        }
     }
 }
 

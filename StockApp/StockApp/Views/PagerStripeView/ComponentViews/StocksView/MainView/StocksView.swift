@@ -10,22 +10,19 @@ import SwiftUI
 struct StocksView: View {
     
     //MARK: - Properties
-    @State private var searchText = ""
+    @State var searchText = ""
     
     // MARK: - View Builder
     var body: some View {
         ZStack(content: {
-            
             VStack(spacing: 0){ // 100
-                NavigationStack {
+            NavigationStack {
+                VStack(content: {
                     CardView()
                         .padding()
                     SlidingView()
-                     }
-                     .searchable(text: $searchText, prompt: "Look for something")
-                     .navigationTitle("iInvest")
-                     .background(Color.green)
-                     .navigationBarHidden(false)
+                })
+                 }.searchable(text: $searchText, placement: .navigationBarDrawer(displayMode: .always), prompt: "Look for something")
             }
         })
         

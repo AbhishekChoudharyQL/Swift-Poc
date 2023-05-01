@@ -65,7 +65,7 @@ struct LineChartView: View {
 //MARK: - Previews
 struct LineChartView_Previews: PreviewProvider {
     static var previews: some View {
-        LineChartView(listChartModel: LineChartModel(priceValues: [142.0, 148.6, 181.3, 125.2, 149.9], name: "Spice Jet", currentPrice: 64.90, highestPrice: 81.60))
+        LineChartView(listChartModel: LineChartModel(priceValues: [142.0, 148.6, 181.3, 125.2, 149.9], isBookmarked: false, name: "Spice Jet", currentPrice: 64.90, highestPrice: 81.60))
     }
 }
 

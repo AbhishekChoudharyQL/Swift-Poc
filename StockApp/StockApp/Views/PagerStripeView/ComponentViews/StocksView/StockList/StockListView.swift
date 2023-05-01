@@ -17,28 +17,27 @@ struct StockListView: View {
     ZStack{
         NavigationView(content:{
             List{
-                ForEach(stockViewModel.stocksList,id: \.name) {
-                    stockData in
-                    NavigationLink(destination: LineChartView(listChartModel: LineChartModel(priceValues: stockData.values, name: stockData.name!, currentPrice: stockData.current_price!, highestPrice: stockData.highest_price!)))
-                    {
-                        HStack(content: {
-                            if let name = stockData.name {
-                                Text(name)
-                            }
-                            Spacer()
-                            VStack(content: {
-                                Text("Market Price")
-                                    .foregroundColor(.secondary)
-                                if let curentPrice = stockData.current_price{
-                                currentPriceFormatter(currentPrice: curentPrice)
-                                        .bold()
-                            }
-                            })
-                             
-                       })
-                    }
+            ForEach(stockViewModel.stocksList,id: \.name) {
+                stockData in
+                NavigationLink(destination: LineChartView(listChartModel: LineChartModel(priceValues: stockData.values, isBookmarked: false, name: stockData.name!, currentPrice: stockData.current_price!, highestPrice: stockData.highest_price!)))
+                {
+                    HStack(content: {
+                        if let name = stockData.name {
+                            Text(name)
+                        }
+                        Spacer()
+                        VStack(content: {
+                            Text("Market Price")
+                                .foregroundColor(.secondary)
+                            if let curentPrice = stockData.current_price{
+                            currentPriceFormatter(currentPrice: curentPrice)
+                                    .bold()
+                        }
+                        })
+                   })
                 }
             }
+        }
         }).navigationBarHidden(false)
         if stockViewModel.isLoading {
                    LoaderView()

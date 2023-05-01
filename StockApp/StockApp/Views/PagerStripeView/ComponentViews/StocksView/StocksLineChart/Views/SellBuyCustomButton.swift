@@ -14,7 +14,6 @@ struct SellBuyCustomButton: View {
         HStack(spacing: 20,content: {
             Button("Sell"){
                 print("sell btn is tapped")
-          
             }
             .background(Color.red)
             .buttonStyle(GrowingButton())

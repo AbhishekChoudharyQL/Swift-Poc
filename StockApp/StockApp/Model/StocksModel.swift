@@ -17,4 +17,5 @@ struct Stocks : Codable {
     var current_price : Double?
     var highest_price : Double?
     var values : [Double]
+    var isBookmarked: Bool?
 }

@@ -28,8 +28,6 @@ struct SlidingView: View {
             }
             Spacer()
         }
-//        .padding()
-        // this padding caused a lot of trouble ... it appeared above tab bar
     }
 }
 
