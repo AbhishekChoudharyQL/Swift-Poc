@@ -36,7 +36,6 @@
 		46C8968529FBE8C90074C836 /* LoaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46C8968429FBE8C90074C836 /* LoaderView.swift */; };
 		46C902392A00357D00D46998 /* StockListLineChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46C902382A00357D00D46998 /* StockListLineChart.swift */; };
 		46D25B8729FEB6F50063F8FD /* LineChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46D25B8629FEB6F50063F8FD /* LineChartView.swift */; };
-		46E6CB5129FAE78400F3020C /* TopTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46E6CB5029FAE78400F3020C /* TopTabBar.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -69,7 +68,6 @@
 		46C8968429FBE8C90074C836 /* LoaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoaderView.swift; sourceTree = "<group>"; };
 		46C902382A00357D00D46998 /* StockListLineChart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockListLineChart.swift; sourceTree = "<group>"; };
 		46D25B8629FEB6F50063F8FD /* LineChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineChartView.swift; sourceTree = "<group>"; };
-		46E6CB5029FAE78400F3020C /* TopTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopTabBar.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,7 +85,6 @@
 		463F443E29FA829A00D960E8 = {
 			isa = PBXGroup;
 			children = (
-				46E6CB5029FAE78400F3020C /* TopTabBar.swift */,
 				463F444A29FA829A00D960E8 /* StockAppApp.swift */,
 				463F444929FA829A00D960E8 /* StockApp */,
 				463F444829FA829A00D960E8 /* Products */,
@@ -426,7 +423,6 @@
 				46B7FFAD29FF95CF00EE8CB0 /* StockModel.xcdatamodeld in Sources */,
 				46C8967E29FB98B60074C836 /* ExploreData.swift in Sources */,
 				46B7FFA129FF8ADE00EE8CB0 /* BookmarkButtonView.swift in Sources */,
-				46E6CB5129FAE78400F3020C /* TopTabBar.swift in Sources */,
 				460A303F29FB0719008F92D0 /* ExploreView.swift in Sources */,
 				463F445F29FA84EB00D960E8 /* TabBarManager.swift in Sources */,
 				46B7FF9F29FF8A0C00EE8CB0 /* SellBuyCustomButton.swift in Sources */,
