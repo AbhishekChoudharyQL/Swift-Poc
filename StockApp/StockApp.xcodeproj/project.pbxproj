@@ -36,6 +36,9 @@
 		46C8968529FBE8C90074C836 /* LoaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46C8968429FBE8C90074C836 /* LoaderView.swift */; };
 		46C902392A00357D00D46998 /* StockListLineChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46C902382A00357D00D46998 /* StockListLineChart.swift */; };
 		46D25B8729FEB6F50063F8FD /* LineChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46D25B8629FEB6F50063F8FD /* LineChartView.swift */; };
+		46F8A1372A00EF25007445B7 /* LaunchScreenStep.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46F8A1362A00EF25007445B7 /* LaunchScreenStep.swift */; };
+		46F8A1392A00F1D1007445B7 /* LaunchScreenStateManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46F8A1382A00F1D1007445B7 /* LaunchScreenStateManager.swift */; };
+		46F8A13B2A00F4CA007445B7 /* LaunchScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46F8A13A2A00F4CA007445B7 /* LaunchScreenView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -68,6 +71,9 @@
 		46C8968429FBE8C90074C836 /* LoaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoaderView.swift; sourceTree = "<group>"; };
 		46C902382A00357D00D46998 /* StockListLineChart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockListLineChart.swift; sourceTree = "<group>"; };
 		46D25B8629FEB6F50063F8FD /* LineChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineChartView.swift; sourceTree = "<group>"; };
+		46F8A1362A00EF25007445B7 /* LaunchScreenStep.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchScreenStep.swift; sourceTree = "<group>"; };
+		46F8A1382A00F1D1007445B7 /* LaunchScreenStateManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchScreenStateManager.swift; sourceTree = "<group>"; };
+		46F8A13A2A00F4CA007445B7 /* LaunchScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchScreenView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +108,7 @@
 		463F444929FA829A00D960E8 /* StockApp */ = {
 			isa = PBXGroup;
 			children = (
+				46F8A1352A00EEF8007445B7 /* LaunchScreen */,
 				46C8968329FBE8A50074C836 /* CommonView */,
 				463F445929FA848B00D960E8 /* Tab */,
 				463F447229FAB34400D960E8 /* Model */,
@@ -333,6 +340,16 @@
 			path = PagerStripeView;
 			sourceTree = "<group>";
 		};
+		46F8A1352A00EEF8007445B7 /* LaunchScreen */ = {
+			isa = PBXGroup;
+			children = (
+				46F8A1362A00EF25007445B7 /* LaunchScreenStep.swift */,
+				46F8A1382A00F1D1007445B7 /* LaunchScreenStateManager.swift */,
+				46F8A13A2A00F4CA007445B7 /* LaunchScreenView.swift */,
+			);
+			path = LaunchScreen;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -419,6 +436,7 @@
 				46C8968229FBE1290074C836 /* CardModel.swift in Sources */,
 				463F444D29FA829A00D960E8 /* HomeView.swift in Sources */,
 				460A304329FB0780008F92D0 /* StockListView.swift in Sources */,
+				46F8A13B2A00F4CA007445B7 /* LaunchScreenView.swift in Sources */,
 				463F446229FA852A00D960E8 /* BookmarkList.swift in Sources */,
 				46B7FFAD29FF95CF00EE8CB0 /* StockModel.xcdatamodeld in Sources */,
 				46C8967E29FB98B60074C836 /* ExploreData.swift in Sources */,
@@ -427,7 +445,9 @@
 				463F445F29FA84EB00D960E8 /* TabBarManager.swift in Sources */,
 				46B7FF9F29FF8A0C00EE8CB0 /* SellBuyCustomButton.swift in Sources */,
 				46C8967A29FB8A200074C836 /*  MostBoughtViewComponent.swift in Sources */,
+				46F8A1372A00EF25007445B7 /* LaunchScreenStep.swift in Sources */,
 				46C902392A00357D00D46998 /* StockListLineChart.swift in Sources */,
+				46F8A1392A00F1D1007445B7 /* LaunchScreenStateManager.swift in Sources */,
 				463F447429FAB35500D960E8 /* StocksModel.swift in Sources */,
 				460A303A29FB056A008F92D0 /* SlidingView.swift in Sources */,
 				463F444B29FA829A00D960E8 /* StockAppApp.swift in Sources */,

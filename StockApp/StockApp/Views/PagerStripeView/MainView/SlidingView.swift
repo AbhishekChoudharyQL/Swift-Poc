@@ -21,16 +21,20 @@ struct SlidingView: View {
                  animation: .easeInOut,activeAccentColor: .green,
                   selectionBarColor: .green)
                   Spacer()
-            if tabIndex == 0 {
-                ExploreView()
-            }
-            else if tabIndex == 1 {
-                StockListView()
-            }
-            else if tabIndex == 2 {
-               OrderView()
-            }
+            slidingTabSelector()
             Spacer()
+        }
+    }
+    
+    //MARK: - Private Methods
+    private func slidingTabSelector() ->  some View {
+        switch tabIndex {
+        case 0 :
+            return AnyView(ExploreView())
+        case 1 :
+            return AnyView(StockListView())
+        default:
+            return AnyView(OrderView())
         }
     }
 }

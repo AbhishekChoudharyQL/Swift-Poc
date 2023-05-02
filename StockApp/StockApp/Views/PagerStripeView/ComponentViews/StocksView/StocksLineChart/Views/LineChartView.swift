@@ -59,7 +59,7 @@ struct LineChartView: View {
         }
     }
     private func currentPriceFormatter(currentPrice: Double) -> Text {
-        return Text("₹" + String(format: "%.2f", currentPrice))
+        return Text("\u{20B9}" + String(format: "%.2f", currentPrice))
     }
 
 }

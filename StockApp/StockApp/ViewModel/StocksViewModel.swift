@@ -14,7 +14,6 @@ class StocksViewModel : ObservableObject {
     @Published var isLoading : Bool = true
     //MARK: - Method to get stock data
     func getStockData() {
-//        print(isLoading)
         guard let url = URL(string: "https://api.jsonserve.com/ps3H4N") else { return  }
         let urlRequest = URLRequest(url: url)
         let session = URLSession.shared
@@ -38,7 +37,6 @@ class StocksViewModel : ObservableObject {
         })
         dataTask.resume()
         isLoading = false
-//        print(isLoading)
     }
     
 }

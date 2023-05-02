@@ -19,8 +19,7 @@ struct StockListView: View {
             List{
             ForEach(stockViewModel.stocksList,id: \.name) {
                 stockData in
-                NavigationLink(destination: LineChartView(listChartModel: LineChartModel(priceValues: stockData.values, isBookmarked: false, name: stockData.name!, currentPrice: stockData.current_price!, highestPrice: stockData.highest_price!)))
-                {
+                NavigationLink(destination: LineChartView(listChartModel: LineChartModel(priceValues: stockData.values, isBookmarked: false, name: stockData.name ?? "Spice Jet", currentPrice: stockData.current_price ?? 0.0, highestPrice: stockData.highest_price ?? 0.0))){
                     HStack(content: {
                         if let name = stockData.name {
                             Text(name)
@@ -35,11 +34,11 @@ struct StockListView: View {
                             currentPriceFormatter(currentPrice: curentPrice)
                                     .bold()
                         }
-                        })
-                   })
-                }
-            }
-        }
+                    })
+                })
+             }
+          }
+       }
         }).navigationBarHidden(false)
         if stockViewModel.isLoading {
                    LoaderView()

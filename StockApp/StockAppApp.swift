@@ -10,11 +10,18 @@ import SwiftUI
 @main
 struct StockAppApp: App {
     @StateObject private var bookmarkDataModel = BookmarkDataModel()
+    @StateObject var launchScreenState = LaunchScreenStateManager()
     var body: some Scene {
         WindowGroup {
-            HomeView()
-                //MARK: - injecting into database
-                .environment(\.managedObjectContext, bookmarkDataModel.container.viewContext)
+            ZStack(content: {
+                HomeView()
+                    //MARK: - injecting into database
+                    .environment(\.managedObjectContext, bookmarkDataModel.container.viewContext)
+                if launchScreenState.state != .finished {
+                                   LaunchScreenView()
+                               }
+            }).environmentObject(launchScreenState)
+         
         }
     }
 }
