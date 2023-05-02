@@ -10,7 +10,7 @@ import SwiftUI
 struct StockListLineChart: View {
     
     //MARK: - Properties
-    var points : [Double] = []
+    var points : [Double] = [0]
     var normalizedValues: [Double] {
         let maxPrice = points.max() ?? 1.0
         return points.map { $0 / maxPrice }
@@ -56,7 +56,7 @@ struct LineView : Shape {
     func path(in rect : CGRect) -> Path {
         let xIncrement = (rect.width - 2*padding) / CGFloat(yValues.count - 1)
         var path = Path()
-        path.move(to: CGPoint(x: padding, y: yValues[0]*Double(rect.height)))
+        path.move(to: CGPoint(x: padding + CGFloat(yValues[0]) * xIncrement, y: (1.0 - yValues[0]) * Double(rect.height)))
         for i in 1..<yValues.count {
             let x = padding + CGFloat(i) * xIncrement
             let y = (1.0 - yValues[i]) * Double(rect.height)

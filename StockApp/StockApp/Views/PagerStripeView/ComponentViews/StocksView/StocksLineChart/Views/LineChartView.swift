@@ -21,10 +21,10 @@ struct LineChartView: View {
         ZStack {
             Line()
                .stroke(style: StrokeStyle(lineWidth: 1, dash: [5]))
-               .frame(height: 1)
-            VStack{
-                BookmarkButtonView(listChartModel: listChartModel)
-                VStack(alignment: .leading,spacing: 0){
+               .frame(height: 150)
+            VStack(content: {
+                    BookmarkButtonView(listChartModel: listChartModel)
+                VStack(alignment: .leading, content: {
                     Text(listChartModel.name)
                         .font(.title)
                         .bold()
@@ -33,18 +33,20 @@ struct LineChartView: View {
                     currentPriceFormatter(currentPrice: listChartModel.currentPrice)
                         .font(.title2)
                         .padding()
-                    if LineColorFlag() == true {
-                        LineShape(yValues: normalizedValues)
-                            .stroke(Color.green, lineWidth: 2.5)
-                    }
-                    else if LineColorFlag() == false {
-                        LineShape(yValues: normalizedValues)
-                            .stroke(Color.red, lineWidth: 2.5)
-                    }
-                }
-                SellBuyCustomButton()
-            }
-        }.frame(width: 385,height: 350)
+                })
+                Spacer()
+                        if LineColorFlag() == true {
+                            LineShape(yValues: normalizedValues)
+                                .stroke(Color.green, lineWidth: 2.5)
+                        }
+                        else if LineColorFlag() == false {
+                            LineShape(yValues: normalizedValues)
+                                .stroke(Color.red, lineWidth: 2.5)
+                        }
+                        SellBuyCustomButton()
+                    .padding(.bottom,30)
+            })
+        }
     }
     
     //MARK: - Private Methods
@@ -77,7 +79,7 @@ struct LineShape : Shape {
     func path(in rect : CGRect) -> Path {
         let xIncrement = (rect.width - 2*padding) / CGFloat(yValues.count - 1)
         var path = Path()
-        path.move(to: CGPoint(x: padding, y: yValues[0]*Double(rect.height)))
+        path.move(to: CGPoint(x: padding + CGFloat(yValues[0]) * xIncrement, y: (1.0 - yValues[0]) * Double(rect.height)))
         for i in 1..<yValues.count {
             let x = padding + CGFloat(i) * xIncrement
             let y = (1.0 - yValues[i]) * Double(rect.height)
