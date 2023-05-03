@@ -15,7 +15,7 @@ struct CustomSearchBarView: View {
             Image(systemName: "magnifyingglass")
                 .foregroundColor(.white)
                 .padding(.trailing , 50)
-            TextField("", text: $locationManager.searchText, prompt: Text("Search Places...").foregroundColor(.white))
+            TextField("", text: $locationManager.searchText, prompt: Text("Search Places...").foregroundColor(.white)).foregroundColor(.white)
         }).padding(.vertical,12)
             .padding(.horizontal)
             .background {
