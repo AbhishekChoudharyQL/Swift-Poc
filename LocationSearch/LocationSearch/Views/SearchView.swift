@@ -13,17 +13,8 @@ struct SearchView: View {
         ZStack(content: {
             VStack(content: {
                 SearchViewNavigationTitle()
-                HStack(content: {
-                    Image(systemName: "magnifyingglass")
-                        .foregroundColor(.white)
-                        .padding(.trailing , 50)
-                    TextField("", text: $locationManager.searchText, prompt: Text("Search Places...").foregroundColor(.white))
-                }).padding(.vertical,12)
-                    .padding(.horizontal)
-                    .background {
-                        RoundedRectangle(cornerRadius: 20,style: .continuous)
-                            .strokeBorder(.gray)
-                    }
+                CustomSearchBarView(locationManager: locationManager)
+                
             }).padding()
             .frame(maxHeight: .infinity,alignment: .top)
         }).background(Color.black)
@@ -35,4 +26,5 @@ struct SearchView_Previews: PreviewProvider {
       ContentView()
     }
 }
+
 
