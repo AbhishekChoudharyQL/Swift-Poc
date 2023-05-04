@@ -67,9 +67,12 @@ struct SearchView: View {
                 MapSelectionView()
                     .environmentObject(locationManager)
                 AnnotationData(locationManager: locationManager)
-                
             } label: {}
                 .labelsHidden()
+        }.onDisappear {
+            locationManager.pickedLocation = nil
+            locationManager.pickedPlaceMark = nil
+            locationManager.mapView.removeAnnotations(locationManager.mapView.annotations)
         }
     }
   }

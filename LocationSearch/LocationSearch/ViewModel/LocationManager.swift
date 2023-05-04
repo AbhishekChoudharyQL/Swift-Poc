@@ -47,21 +47,23 @@ class LocationManager : NSObject,ObservableObject, MKMapViewDelegate, CLLocation
     //MARK: - Methods
     func fetchPlaces(value: String){
      //MARK: Fetching places using MKLocalSearch & Asyn/Await
-        Task{
-            do {
-                let request = MKLocalSearch.Request()
-                request.naturalLanguageQuery = value.lowercased()
-                let response = try await MKLocalSearch(request: request).start()
-                await MainActor.run(body: {
-                    self.fetchedPlaces = response.mapItems.compactMap({
-                        item -> CLPlacemark? in
-                        return item.placemark
-                    })
-                })
-            } catch {
-                print("Error caught")
+        Task {
+                do {
+                    let request = MKLocalSearch.Request()
+                    request.naturalLanguageQuery = value.lowercased()
+                    let response = try await MKLocalSearch(request: request).start()
+
+                    // Update fetchedPlaces on main thread
+                    await MainActor.run {
+                        self.fetchedPlaces = response.mapItems.compactMap {
+                            item -> CLPlacemark? in
+                            return item.placemark
+                        }
+                    }
+                } catch {
+                    print("Error caught")
+                }
             }
-        }
     }
     
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
@@ -70,6 +72,7 @@ class LocationManager : NSObject,ObservableObject, MKMapViewDelegate, CLLocation
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         guard let currentLocation = locations.last else {return}
         self.userLocation = currentLocation
+        mapView.showsUserLocation = true
     }
     //MARK: Location Authorization
     func locationManagerDidChangeAuthorization(_ manager: CLLocationManager) {
@@ -100,10 +103,14 @@ class LocationManager : NSObject,ObservableObject, MKMapViewDelegate, CLLocation
         return marker
     }
     func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, didChange newState: MKAnnotationView.DragState, fromOldState oldState: MKAnnotationView.DragState) {
-        guard let newLocation = view.annotation?.coordinate else {return}
-        self.pickedLocation = .init(latitude: newLocation.latitude, longitude: newLocation.longitude)
-        self.updatePlacemark(location: .init(latitude: newLocation.latitude, longitude: newLocation.longitude))
+        guard let newLocation = view.annotation?.coordinate else { return }
+        
+        DispatchQueue.main.async {
+            self.pickedLocation = CLLocation(latitude: newLocation.latitude, longitude: newLocation.longitude)
+            self.updatePlacemark(location: self.pickedLocation!)
+        }
     }
+
     func updatePlacemark(location : CLLocation){
         Task {
             do {

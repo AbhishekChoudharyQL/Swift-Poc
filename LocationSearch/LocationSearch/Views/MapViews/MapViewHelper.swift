@@ -15,6 +15,7 @@ struct MapViewHelper : UIViewRepresentable {
     
         //MARK: - UIView Representable Methods
     func makeUIView(context: Context) -> MKMapView{
+        
         return locationManager.mapView
     }
     func updateUIView(_ uiView: MKMapView, context: Context) {}

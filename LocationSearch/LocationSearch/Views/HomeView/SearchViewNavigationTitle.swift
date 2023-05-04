@@ -9,7 +9,7 @@ import SwiftUI
 
 struct SearchViewNavigationTitle: View {
     
-    //MARK: View Builder
+    //MARK: - View Builder
     var body: some View {
         HStack(spacing: 15, content: {
                     Button{

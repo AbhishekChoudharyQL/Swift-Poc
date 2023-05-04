@@ -18,6 +18,7 @@ struct MapSelectionView: View {
            MapViewHelper()
                 .environmentObject(locationManager)
                 .ignoresSafeArea()
+            
         }
     }
 }
