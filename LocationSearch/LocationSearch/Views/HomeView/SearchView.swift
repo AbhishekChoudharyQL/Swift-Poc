@@ -10,7 +10,7 @@ import MapKit
 struct SearchView: View {
     
     //MARK: - Properties
-    @StateObject var locationManager : LocationManager = .init()
+    @ObservedObject var locationManager : LocationManager = .init()
     @State var navigationTag : String?
     
     //MARK: - View Builder
