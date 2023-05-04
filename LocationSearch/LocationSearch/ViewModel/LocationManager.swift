@@ -88,7 +88,7 @@ class LocationManager : NSObject,ObservableObject, MKMapViewDelegate, CLLocation
     func addDraggablePin(coordinates : CLLocationCoordinate2D){
         let annotation = MKPointAnnotation()
         annotation.coordinate = coordinates
-        annotation.title = "Selected Location"
+        annotation.title = "Choosen Location"
         mapView.addAnnotation(annotation)
     }
     
@@ -102,5 +102,23 @@ class LocationManager : NSObject,ObservableObject, MKMapViewDelegate, CLLocation
     func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, didChange newState: MKAnnotationView.DragState, fromOldState oldState: MKAnnotationView.DragState) {
         guard let newLocation = view.annotation?.coordinate else {return}
         self.pickedLocation = .init(latitude: newLocation.latitude, longitude: newLocation.longitude)
+        self.updatePlacemark(location: .init(latitude: newLocation.latitude, longitude: newLocation.longitude))
+    }
+    func updatePlacemark(location : CLLocation){
+        Task {
+            do {
+                guard let place = try await reverseLocationCoordinates(location: location) else {return}
+                await MainActor.run(body: {
+                    self.pickedPlaceMark = place
+                })
+            } catch {
+                print("Error while updating placemark")
+            }
+        }
+    }
+    //MARK: Displaying the new location data
+    func reverseLocationCoordinates(location : CLLocation) async throws -> CLPlacemark?{
+        let place = try await CLGeocoder().reverseGeocodeLocation(location).first
+        return place
     }
 }

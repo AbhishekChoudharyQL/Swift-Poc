@@ -9,6 +9,8 @@ import SwiftUI
 
 
 struct CustomSearchBarView: View {
+    
+    //MARK: - Properties
     @State var locationManager : LocationManager
     var body: some View {
         HStack(content: {
