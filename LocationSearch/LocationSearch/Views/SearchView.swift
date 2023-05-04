@@ -6,11 +6,13 @@
 //
 
 import SwiftUI
-
+import MapKit
 struct SearchView: View {
     
     //MARK: - Properties
     @StateObject var locationManager : LocationManager = .init()
+    @State var navigationTag : String?
+    
     var body: some View {
         ZStack(content: {
             VStack(content: {
@@ -41,7 +43,13 @@ struct SearchView: View {
                 
                 else{
                 Button {
-                  print("current location btn is tapped")
+                  
+                 if let coordinate = locationManager.userLocation?.coordinate {
+                     locationManager.mapView.region = .init(center: coordinate, latitudinalMeters: coordinate.latitude, longitudinalMeters: coordinate.longitude)
+//                     locationManager.mapView.setRegion(locationManager.mapView.region, animated: true)
+                     locationManager.addDraggablePin(coordinates: coordinate)
+                    }
+                    navigationTag = "MAPVIEW"
                 } label: {
                     Label {
                         Text("Use Current Location")
@@ -55,7 +63,14 @@ struct SearchView: View {
                 }
             }).padding()
             .frame(maxHeight: .infinity,alignment: .top)
-        }).background(Color.black)
+        }).background {
+            Color.black
+            NavigationLink( tag: "MAPVIEW", selection: $navigationTag){
+                MapViewSelection()
+                    .environmentObject(locationManager)
+            } label: {}
+                .labelsHidden()
+        }
     }
 }
 
@@ -66,4 +81,23 @@ struct SearchView_Previews: PreviewProvider {
     }
 }
 
+//MARK: - MapView Live Selection
+struct MapViewSelection  : View {
+    @EnvironmentObject var locationManager : LocationManager
+    var body : some View {
+        ZStack{
+           MapViewHelper()
+                .environmentObject(locationManager)
+                .ignoresSafeArea()
+        }
+    }
+}
 
+//MARK: - UIkit MapView
+struct MapViewHelper : UIViewRepresentable {
+    @EnvironmentObject var locationManager : LocationManager
+    func makeUIView(context: Context) -> MKMapView{
+        return locationManager.mapView
+    }
+    func updateUIView(_ uiView: MKMapView, context: Context) {}
+}
