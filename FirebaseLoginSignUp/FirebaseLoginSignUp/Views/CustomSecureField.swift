@@ -1,5 +1,5 @@
 //
-//  CustomTextfield.swift
+//  CustomSecureField.swift
 //  FirebaseLoginSignUp
 //
 //  Created by abhishek on 05/05/23.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct CustomTextfield: View {
+struct CustomSecureField: View {
     var imageName : String = ""
     var placeholderText : String = ""
    @State var promptString : String
@@ -18,8 +18,8 @@ struct CustomTextfield: View {
                 .scaledToFit()
                 .frame(height: 45)
                 .foregroundColor(.white)
-                .padding(.trailing,40)
-            TextField("",text: $promptString,prompt: Text(placeholderText).foregroundColor(.white)).foregroundColor(.white)
+                .padding(.trailing,65)
+            SecureField("",text: $promptString,prompt: Text(placeholderText).foregroundColor(.white)).foregroundColor(.white)
         }).padding()
             .frame(width: 320)
         .background{
@@ -30,8 +30,8 @@ struct CustomTextfield: View {
     }
 }
 
-struct CustomTextfield_Previews: PreviewProvider {
+struct CustomSecureField_Previews: PreviewProvider {
     static var previews: some View {
-        CustomTextfield(promptString: "")
+        CustomSecureField(promptString: "")
     }
 }

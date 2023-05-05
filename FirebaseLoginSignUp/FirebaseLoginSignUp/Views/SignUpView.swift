@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct SignUpView: View {
-//    var signUpData : SignUpData = .userNamePlaceholder
+
     @State var userNameText : String
     @State var emailText : String
     @State var passwordText : String
@@ -22,7 +22,7 @@ struct SignUpView: View {
                 })
                 Text("Sign-Up")
                     .foregroundColor(.white)
-                    .padding()
+                    .padding([.top,.bottom],20)
                     .font(
                         .custom(
                         "AmericanTypewriter",
@@ -30,10 +30,28 @@ struct SignUpView: View {
                         .weight(.medium)
                         )
                     .underline()
-                CustomTextfield(imageName: SignUpData.personImage.rawValue, placeholderText: SignUpData.userNamePlaceholder.rawValue, promptString: userNameText)
-                CustomTextfield(imageName: SignUpData.emailImage.rawValue, placeholderText: SignUpData.emailPlaceholder.rawValue, promptString: emailText)
-                CustomTextfield(imageName: SignUpData.passwordImage.rawValue, placeholderText: SignUpData.passwordPlaceholder.rawValue, promptString: passwordText)
-            })
+                VStack(spacing: 20, content: {
+                    CustomTextfield(imageName: SignUpData.personImage.rawValue, placeholderText: SignUpData.userNamePlaceholder.rawValue, promptString: userNameText)
+                    CustomTextfield(imageName: SignUpData.emailImage.rawValue, placeholderText: SignUpData.emailPlaceholder.rawValue, promptString: emailText)
+                    CustomSecureField(imageName: SignUpData.passwordImage.rawValue, placeholderText: SignUpData.passwordPlaceholder.rawValue, promptString: passwordText)
+                })
+                VStack(content: {
+                    SignUpButton()
+                    HStack(content: {
+                        Text("Alredy have an account ?")
+                            .foregroundColor(.white)
+                        Button(action: {
+                            print("Login-btn tapped")
+                        }) {
+                            Text("Login")
+                                .foregroundColor(.white)
+                                .font(.bold(.title3)())
+                        }
+                    })
+                }).padding()
+               
+              
+            }).padding(.bottom,20)
         }).frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
             .background(
             LinearGradient(gradient: Gradient(colors: [AppColor.topGradientColor, AppColor.bottomGradientColor]),startPoint: .top, endPoint: .bottom)
