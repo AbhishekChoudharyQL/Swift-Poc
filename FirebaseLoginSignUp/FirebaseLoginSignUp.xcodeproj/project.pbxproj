@@ -1,0 +1,388 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		46B26C662A04CD2D0015DCB9 /* FirebaseLoginSignUpApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B26C652A04CD2D0015DCB9 /* FirebaseLoginSignUpApp.swift */; };
+		46B26C682A04CD2D0015DCB9 /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B26C672A04CD2D0015DCB9 /* SignUpView.swift */; };
+		46B26C6A2A04CD2E0015DCB9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 46B26C692A04CD2E0015DCB9 /* Assets.xcassets */; };
+		46B26C6D2A04CD2E0015DCB9 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 46B26C6C2A04CD2E0015DCB9 /* Preview Assets.xcassets */; };
+		46B26C752A04CDC00015DCB9 /* CustomShapeAndLogo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B26C742A04CDC00015DCB9 /* CustomShapeAndLogo.swift */; };
+		46B26C782A04D1B00015DCB9 /* ColorSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B26C772A04D1B00015DCB9 /* ColorSet.swift */; };
+		46B26C7A2A04E1EE0015DCB9 /* SignUpPageTitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B26C792A04E1EE0015DCB9 /* SignUpPageTitle.swift */; };
+		46B26C7C2A0503540015DCB9 /* CustomTextfield.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B26C7B2A0503540015DCB9 /* CustomTextfield.swift */; };
+		46B26C7F2A050DA50015DCB9 /* SignUpData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B26C7E2A050DA50015DCB9 /* SignUpData.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		46B26C622A04CD2D0015DCB9 /* FirebaseLoginSignUp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FirebaseLoginSignUp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		46B26C652A04CD2D0015DCB9 /* FirebaseLoginSignUpApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseLoginSignUpApp.swift; sourceTree = "<group>"; };
+		46B26C672A04CD2D0015DCB9 /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
+		46B26C692A04CD2E0015DCB9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		46B26C6C2A04CD2E0015DCB9 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		46B26C742A04CDC00015DCB9 /* CustomShapeAndLogo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomShapeAndLogo.swift; sourceTree = "<group>"; };
+		46B26C772A04D1B00015DCB9 /* ColorSet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorSet.swift; sourceTree = "<group>"; };
+		46B26C792A04E1EE0015DCB9 /* SignUpPageTitle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpPageTitle.swift; sourceTree = "<group>"; };
+		46B26C7B2A0503540015DCB9 /* CustomTextfield.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextfield.swift; sourceTree = "<group>"; };
+		46B26C7E2A050DA50015DCB9 /* SignUpData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpData.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		46B26C5F2A04CD2D0015DCB9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		46B26C592A04CD2D0015DCB9 = {
+			isa = PBXGroup;
+			children = (
+				46B26C642A04CD2D0015DCB9 /* FirebaseLoginSignUp */,
+				46B26C632A04CD2D0015DCB9 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		46B26C632A04CD2D0015DCB9 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				46B26C622A04CD2D0015DCB9 /* FirebaseLoginSignUp.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		46B26C642A04CD2D0015DCB9 /* FirebaseLoginSignUp */ = {
+			isa = PBXGroup;
+			children = (
+				46B26C7D2A050D800015DCB9 /* SignUpPageModel */,
+				46B26C652A04CD2D0015DCB9 /* FirebaseLoginSignUpApp.swift */,
+				46B26C762A04D19E0015DCB9 /* AppColors */,
+				46B26C732A04CDA90015DCB9 /* Views */,
+				46B26C692A04CD2E0015DCB9 /* Assets.xcassets */,
+				46B26C6B2A04CD2E0015DCB9 /* Preview Content */,
+			);
+			path = FirebaseLoginSignUp;
+			sourceTree = "<group>";
+		};
+		46B26C6B2A04CD2E0015DCB9 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				46B26C6C2A04CD2E0015DCB9 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		46B26C732A04CDA90015DCB9 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				46B26C672A04CD2D0015DCB9 /* SignUpView.swift */,
+				46B26C792A04E1EE0015DCB9 /* SignUpPageTitle.swift */,
+				46B26C742A04CDC00015DCB9 /* CustomShapeAndLogo.swift */,
+				46B26C7B2A0503540015DCB9 /* CustomTextfield.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		46B26C762A04D19E0015DCB9 /* AppColors */ = {
+			isa = PBXGroup;
+			children = (
+				46B26C772A04D1B00015DCB9 /* ColorSet.swift */,
+			);
+			path = AppColors;
+			sourceTree = "<group>";
+		};
+		46B26C7D2A050D800015DCB9 /* SignUpPageModel */ = {
+			isa = PBXGroup;
+			children = (
+				46B26C7E2A050DA50015DCB9 /* SignUpData.swift */,
+			);
+			path = SignUpPageModel;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		46B26C612A04CD2D0015DCB9 /* FirebaseLoginSignUp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 46B26C702A04CD2E0015DCB9 /* Build configuration list for PBXNativeTarget "FirebaseLoginSignUp" */;
+			buildPhases = (
+				46B26C5E2A04CD2D0015DCB9 /* Sources */,
+				46B26C5F2A04CD2D0015DCB9 /* Frameworks */,
+				46B26C602A04CD2D0015DCB9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = FirebaseLoginSignUp;
+			productName = FirebaseLoginSignUp;
+			productReference = 46B26C622A04CD2D0015DCB9 /* FirebaseLoginSignUp.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		46B26C5A2A04CD2D0015DCB9 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1410;
+				LastUpgradeCheck = 1410;
+				TargetAttributes = {
+					46B26C612A04CD2D0015DCB9 = {
+						CreatedOnToolsVersion = 14.1;
+					};
+				};
+			};
+			buildConfigurationList = 46B26C5D2A04CD2D0015DCB9 /* Build configuration list for PBXProject "FirebaseLoginSignUp" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 46B26C592A04CD2D0015DCB9;
+			productRefGroup = 46B26C632A04CD2D0015DCB9 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				46B26C612A04CD2D0015DCB9 /* FirebaseLoginSignUp */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		46B26C602A04CD2D0015DCB9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				46B26C6D2A04CD2E0015DCB9 /* Preview Assets.xcassets in Resources */,
+				46B26C6A2A04CD2E0015DCB9 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		46B26C5E2A04CD2D0015DCB9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				46B26C782A04D1B00015DCB9 /* ColorSet.swift in Sources */,
+				46B26C752A04CDC00015DCB9 /* CustomShapeAndLogo.swift in Sources */,
+				46B26C7F2A050DA50015DCB9 /* SignUpData.swift in Sources */,
+				46B26C7C2A0503540015DCB9 /* CustomTextfield.swift in Sources */,
+				46B26C682A04CD2D0015DCB9 /* SignUpView.swift in Sources */,
+				46B26C662A04CD2D0015DCB9 /* FirebaseLoginSignUpApp.swift in Sources */,
+				46B26C7A2A04E1EE0015DCB9 /* SignUpPageTitle.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		46B26C6E2A04CD2E0015DCB9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		46B26C6F2A04CD2E0015DCB9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		46B26C712A04CD2E0015DCB9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"FirebaseLoginSignUp/Preview Content\"";
+				DEVELOPMENT_TEAM = Z363RXULWR;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = abhishek.FirebaseLoginSignUp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		46B26C722A04CD2E0015DCB9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"FirebaseLoginSignUp/Preview Content\"";
+				DEVELOPMENT_TEAM = Z363RXULWR;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = abhishek.FirebaseLoginSignUp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		46B26C5D2A04CD2D0015DCB9 /* Build configuration list for PBXProject "FirebaseLoginSignUp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				46B26C6E2A04CD2E0015DCB9 /* Debug */,
+				46B26C6F2A04CD2E0015DCB9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		46B26C702A04CD2E0015DCB9 /* Build configuration list for PBXNativeTarget "FirebaseLoginSignUp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				46B26C712A04CD2E0015DCB9 /* Debug */,
+				46B26C722A04CD2E0015DCB9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 46B26C5A2A04CD2D0015DCB9 /* Project object */;
+}
