@@ -25,7 +25,7 @@ struct LoginView: View {
                           )
                     VStack(spacing: 30,content: {
                         CustomTextfield(imageName: LoginData.personImage.rawValue, placeholderText: LoginData.userNamePlaceholder.rawValue, inputString: loginUserName )
-                        CustomSecureField(imageName: LoginData.passwordImage.rawValue, placeholderText: LoginData.passwordPlaceholder.rawValue, promptString: loginPassword)
+                        CustomSecureField(imageName: LoginData.passwordImage.rawValue, placeholderText: LoginData.passwordPlaceholder.rawValue, inputString: loginPassword)
                         LoginButton(text: "LOGIN")
                     })
                     HStack(content: {

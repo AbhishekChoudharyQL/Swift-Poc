@@ -10,13 +10,13 @@ import SwiftUI
 struct CustomSecureField: View {
     var imageName : String = ""
     var placeholderText : String = ""
-   @State var promptString : String
+   @State var inputString : String = "samplestring"
     var body: some View {
         HStack(content: {
             PasswordTextfieldImage()
                 .padding(.leading,-15)
                 .padding(.trailing,40)
-            SecureField("",text: $promptString,prompt: Text(placeholderText).foregroundColor(.white)).foregroundColor(.white)
+            SecureField("",text: $inputString,prompt: Text(placeholderText).foregroundColor(.white)).foregroundColor(.white)
         }).padding()
             .frame(width: 320,height: 65)
         .background{
@@ -28,6 +28,6 @@ struct CustomSecureField: View {
 
 struct CustomSecureField_Previews: PreviewProvider {
     static var previews: some View {
-        CustomSecureField(promptString: "")
+        CustomSecureField(inputString: "")
     }
 }

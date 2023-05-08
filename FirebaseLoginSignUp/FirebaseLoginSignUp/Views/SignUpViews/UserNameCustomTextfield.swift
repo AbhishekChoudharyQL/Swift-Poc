@@ -1,20 +1,19 @@
 //
-//  CustomTextfield.swift
+//  UserNameCustomTextfield.swift
 //  FirebaseLoginSignUp
 //
-//  Created by abhishek on 05/05/23.
-// UIScreen.main.bounds.height/11
+//  Created by abhishek on 08/05/23.
+//
 
 import SwiftUI
 
-struct CustomTextfield: View {
-//    @ObservedObject var firebaseAuth : FirebaseAuth
+struct UserNameCustomTextfield: View {
     var imageName : String = ""
     var placeholderText : String = ""
    @State var inputString : String = "samplestring12345"
     var body: some View {
         HStack(content: {
-            Image(systemName: SignUpData.emailImage.rawValue)
+            Image(systemName: SignUpData.personImage.rawValue)
                 .resizable()
                 .scaledToFit()
                 .frame(height: 66)
@@ -30,11 +29,10 @@ struct CustomTextfield: View {
                
         }
     }
-  
 }
 
-struct CustomTextfield_Previews: PreviewProvider {
+struct UserNameCustomTextfield_Previews: PreviewProvider {
     static var previews: some View {
-        CustomTextfield( inputString: "")
+        UserNameCustomTextfield()
     }
 }

@@ -23,6 +23,8 @@
 		46B26C8C2A0529A70015DCB9 /* UIConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B26C8B2A0529A70015DCB9 /* UIConstants.swift */; };
 		46B26C8F2A052CAA0015DCB9 /* LoginData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B26C8E2A052CAA0015DCB9 /* LoginData.swift */; };
 		46B26C912A052F430015DCB9 /* LoginButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B26C902A052F430015DCB9 /* LoginButton.swift */; };
+		46C8785B2A08E6A300908E24 /* FirebaseAuth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46C8785A2A08E6A300908E24 /* FirebaseAuth.swift */; };
+		46C8785D2A08F82600908E24 /* UserNameCustomTextfield.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46C8785C2A08F82600908E24 /* UserNameCustomTextfield.swift */; };
 		46D3E56F2A08274300279717 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 46D3E56E2A08274300279717 /* FirebaseAuth */; };
 		46D3E5712A08274300279717 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 46D3E5702A08274300279717 /* FirebaseFirestore */; };
 		46D3E5732A082B8200279717 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 46D3E5722A082B8200279717 /* GoogleService-Info.plist */; };
@@ -47,6 +49,8 @@
 		46B26C8B2A0529A70015DCB9 /* UIConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIConstants.swift; sourceTree = "<group>"; };
 		46B26C8E2A052CAA0015DCB9 /* LoginData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginData.swift; sourceTree = "<group>"; };
 		46B26C902A052F430015DCB9 /* LoginButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginButton.swift; sourceTree = "<group>"; };
+		46C8785A2A08E6A300908E24 /* FirebaseAuth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseAuth.swift; sourceTree = "<group>"; };
+		46C8785C2A08F82600908E24 /* UserNameCustomTextfield.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserNameCustomTextfield.swift; sourceTree = "<group>"; };
 		46D3E5722A082B8200279717 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		46D3E5762A083CC600279717 /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -83,6 +87,7 @@
 		46B26C642A04CD2D0015DCB9 /* FirebaseLoginSignUp */ = {
 			isa = PBXGroup;
 			children = (
+				46C878592A08E68900908E24 /* ViewModel */,
 				46B26C652A04CD2D0015DCB9 /* FirebaseLoginSignUpApp.swift */,
 				46B26C882A0529850015DCB9 /* Constants */,
 				46B26C762A04D19E0015DCB9 /* AppColors */,
@@ -131,6 +136,7 @@
 				46B26C802A051C4E0015DCB9 /* CustomSecureField.swift */,
 				46B26C822A051E080015DCB9 /* SignUpButton.swift */,
 				46A638A42A055EEE001C5A12 /* PasswordTextfieldImage.swift */,
+				46C8785C2A08F82600908E24 /* UserNameCustomTextfield.swift */,
 			);
 			path = SignUpViews;
 			sourceTree = "<group>";
@@ -159,6 +165,14 @@
 				46B26C8E2A052CAA0015DCB9 /* LoginData.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		46C878592A08E68900908E24 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				46C8785A2A08E6A300908E24 /* FirebaseAuth.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -239,6 +253,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				46C8785B2A08E6A300908E24 /* FirebaseAuth.swift in Sources */,
 				46B26C812A051C4E0015DCB9 /* CustomSecureField.swift in Sources */,
 				46B26C782A04D1B00015DCB9 /* ColorSet.swift in Sources */,
 				46A638A52A055EEE001C5A12 /* PasswordTextfieldImage.swift in Sources */,
@@ -247,6 +262,7 @@
 				46B26C7C2A0503540015DCB9 /* CustomTextfield.swift in Sources */,
 				46B26C8F2A052CAA0015DCB9 /* LoginData.swift in Sources */,
 				46B26C832A051E080015DCB9 /* SignUpButton.swift in Sources */,
+				46C8785D2A08F82600908E24 /* UserNameCustomTextfield.swift in Sources */,
 				46B26C682A04CD2D0015DCB9 /* SignUpView.swift in Sources */,
 				46B26C662A04CD2D0015DCB9 /* FirebaseLoginSignUpApp.swift in Sources */,
 				46D3E5772A083CC600279717 /* WelcomeView.swift in Sources */,
