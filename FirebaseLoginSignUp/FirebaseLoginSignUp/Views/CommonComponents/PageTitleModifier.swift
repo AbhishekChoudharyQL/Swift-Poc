@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct SignUpPageTitle: View {
+struct PageTitleModifier: View {
     var body: some View {
         Text("FoodPie")
             .foregroundColor(.white)
@@ -23,6 +23,6 @@ struct SignUpPageTitle: View {
 
 struct SignUpPageTitle_Previews: PreviewProvider {
     static var previews: some View {
-        SignUpPageTitle()
+        PageTitleModifier()
     }
 }

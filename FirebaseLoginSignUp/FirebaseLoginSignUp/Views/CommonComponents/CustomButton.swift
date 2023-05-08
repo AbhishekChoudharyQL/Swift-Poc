@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct SignUpButton: View {
+struct CustomButton: View {
     var text : String
     var action: () -> Void
     var body: some View {

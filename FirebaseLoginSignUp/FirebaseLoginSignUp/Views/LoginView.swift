@@ -8,8 +8,10 @@
 import SwiftUI
 
 struct LoginView: View {
-   @State var loginUserName : String
-   @State var loginPassword : String
+    //MARK: - Properties
+    @ObservedObject var loginViewModel : LoginViewModel = LoginViewModel()
+    
+    //MARK: - View Builder
     var body: some View {
         NavigationView(content: {
             ZStack(content: {
@@ -24,9 +26,9 @@ struct LoginView: View {
                             .weight(.heavy)
                           )
                     VStack(spacing: 30,content: {
-                        CustomTextfield(imageName: LoginData.personImage.rawValue, placeholderText: LoginData.userNamePlaceholder.rawValue, inputString: loginUserName )
-                        CustomSecureField(imageName: LoginData.passwordImage.rawValue, placeholderText: LoginData.passwordPlaceholder.rawValue, inputString: loginPassword)
-                        LoginButton(text: "LOGIN")
+                        CustomTextfield(imageName: LoginData.personImage.rawValue, placeholderText: LoginData.emailNamePlaceholder.rawValue, inputString: $loginViewModel.emailText )
+                        CustomSecureField(imageName: LoginData.passwordImage.rawValue, placeholderText: LoginData.passwordPlaceholder.rawValue, inputString: $loginViewModel.passwordText)
+                        CustomButton(text: "LOGIN", action: loginViewModel.loginUser)
                     })
                     HStack(content: {
                         Text("Don't have an account?")
@@ -43,15 +45,14 @@ struct LoginView: View {
             }).frame(width:UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
                 .background(
                 LinearGradient(gradient: Gradient(colors: [AppColor.topGradientColor, AppColor.bottomGradientColor]),startPoint: .top, endPoint: .bottom)
-                    )
+                )
         })
-       
-
     }
 }
 
+//MARK: - Previews
 struct LoginView_Previews: PreviewProvider {
     static var previews: some View {
-        LoginView(loginUserName: "", loginPassword: "")
+        LoginView()
     }
 }

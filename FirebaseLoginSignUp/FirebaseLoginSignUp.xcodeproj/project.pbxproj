@@ -14,17 +14,17 @@
 		46B26C6D2A04CD2E0015DCB9 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 46B26C6C2A04CD2E0015DCB9 /* Preview Assets.xcassets */; };
 		46B26C752A04CDC00015DCB9 /* CustomShapeAndLogo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B26C742A04CDC00015DCB9 /* CustomShapeAndLogo.swift */; };
 		46B26C782A04D1B00015DCB9 /* ColorSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B26C772A04D1B00015DCB9 /* ColorSet.swift */; };
-		46B26C7A2A04E1EE0015DCB9 /* SignUpPageTitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B26C792A04E1EE0015DCB9 /* SignUpPageTitle.swift */; };
+		46B26C7A2A04E1EE0015DCB9 /* PageTitleModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B26C792A04E1EE0015DCB9 /* PageTitleModifier.swift */; };
 		46B26C7C2A0503540015DCB9 /* CustomTextfield.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B26C7B2A0503540015DCB9 /* CustomTextfield.swift */; };
 		46B26C7F2A050DA50015DCB9 /* SignUpData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B26C7E2A050DA50015DCB9 /* SignUpData.swift */; };
 		46B26C812A051C4E0015DCB9 /* CustomSecureField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B26C802A051C4E0015DCB9 /* CustomSecureField.swift */; };
-		46B26C832A051E080015DCB9 /* SignUpButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B26C822A051E080015DCB9 /* SignUpButton.swift */; };
+		46B26C832A051E080015DCB9 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B26C822A051E080015DCB9 /* CustomButton.swift */; };
 		46B26C872A0529210015DCB9 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B26C862A0529210015DCB9 /* LoginView.swift */; };
 		46B26C8C2A0529A70015DCB9 /* UIConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B26C8B2A0529A70015DCB9 /* UIConstants.swift */; };
 		46B26C8F2A052CAA0015DCB9 /* LoginData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B26C8E2A052CAA0015DCB9 /* LoginData.swift */; };
-		46B26C912A052F430015DCB9 /* LoginButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B26C902A052F430015DCB9 /* LoginButton.swift */; };
-		46C8785B2A08E6A300908E24 /* FirebaseAuth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46C8785A2A08E6A300908E24 /* FirebaseAuth.swift */; };
-		46C8785D2A08F82600908E24 /* UserNameCustomTextfield.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46C8785C2A08F82600908E24 /* UserNameCustomTextfield.swift */; };
+		46C8785B2A08E6A300908E24 /* SignUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46C8785A2A08E6A300908E24 /* SignUpViewModel.swift */; };
+		46C8785F2A091DFB00908E24 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46C8785E2A091DFB00908E24 /* LoginViewModel.swift */; };
+		46C878622A091E8200908E24 /* FirebaseAuth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46C878612A091E8200908E24 /* FirebaseAuth.swift */; };
 		46D3E56F2A08274300279717 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 46D3E56E2A08274300279717 /* FirebaseAuth */; };
 		46D3E5712A08274300279717 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 46D3E5702A08274300279717 /* FirebaseFirestore */; };
 		46D3E5732A082B8200279717 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 46D3E5722A082B8200279717 /* GoogleService-Info.plist */; };
@@ -40,17 +40,17 @@
 		46B26C6C2A04CD2E0015DCB9 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		46B26C742A04CDC00015DCB9 /* CustomShapeAndLogo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomShapeAndLogo.swift; sourceTree = "<group>"; };
 		46B26C772A04D1B00015DCB9 /* ColorSet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorSet.swift; sourceTree = "<group>"; };
-		46B26C792A04E1EE0015DCB9 /* SignUpPageTitle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpPageTitle.swift; sourceTree = "<group>"; };
+		46B26C792A04E1EE0015DCB9 /* PageTitleModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageTitleModifier.swift; sourceTree = "<group>"; };
 		46B26C7B2A0503540015DCB9 /* CustomTextfield.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextfield.swift; sourceTree = "<group>"; };
 		46B26C7E2A050DA50015DCB9 /* SignUpData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpData.swift; sourceTree = "<group>"; };
 		46B26C802A051C4E0015DCB9 /* CustomSecureField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSecureField.swift; sourceTree = "<group>"; };
-		46B26C822A051E080015DCB9 /* SignUpButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpButton.swift; sourceTree = "<group>"; };
+		46B26C822A051E080015DCB9 /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
 		46B26C862A0529210015DCB9 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		46B26C8B2A0529A70015DCB9 /* UIConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIConstants.swift; sourceTree = "<group>"; };
 		46B26C8E2A052CAA0015DCB9 /* LoginData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginData.swift; sourceTree = "<group>"; };
-		46B26C902A052F430015DCB9 /* LoginButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginButton.swift; sourceTree = "<group>"; };
-		46C8785A2A08E6A300908E24 /* FirebaseAuth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseAuth.swift; sourceTree = "<group>"; };
-		46C8785C2A08F82600908E24 /* UserNameCustomTextfield.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserNameCustomTextfield.swift; sourceTree = "<group>"; };
+		46C8785A2A08E6A300908E24 /* SignUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewModel.swift; sourceTree = "<group>"; };
+		46C8785E2A091DFB00908E24 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		46C878612A091E8200908E24 /* FirebaseAuth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseAuth.swift; sourceTree = "<group>"; };
 		46D3E5722A082B8200279717 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		46D3E5762A083CC600279717 /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -87,8 +87,9 @@
 		46B26C642A04CD2D0015DCB9 /* FirebaseLoginSignUp */ = {
 			isa = PBXGroup;
 			children = (
-				46C878592A08E68900908E24 /* ViewModel */,
 				46B26C652A04CD2D0015DCB9 /* FirebaseLoginSignUpApp.swift */,
+				46C878602A091E6E00908E24 /* Firebase */,
+				46C878592A08E68900908E24 /* ViewModel */,
 				46B26C882A0529850015DCB9 /* Constants */,
 				46B26C762A04D19E0015DCB9 /* AppColors */,
 				46B26C8D2A052C850015DCB9 /* Models */,
@@ -111,9 +112,10 @@
 		46B26C732A04CDA90015DCB9 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				46B26C852A0529130015DCB9 /* Login */,
-				46B26C842A0528FC0015DCB9 /* SignUpViews */,
+				46B26C672A04CD2D0015DCB9 /* SignUpView.swift */,
+				46B26C862A0529210015DCB9 /* LoginView.swift */,
 				46D3E5762A083CC600279717 /* WelcomeView.swift */,
+				46C878632A0925FA00908E24 /* CommonComponents */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -124,30 +126,6 @@
 				46B26C772A04D1B00015DCB9 /* ColorSet.swift */,
 			);
 			path = AppColors;
-			sourceTree = "<group>";
-		};
-		46B26C842A0528FC0015DCB9 /* SignUpViews */ = {
-			isa = PBXGroup;
-			children = (
-				46B26C672A04CD2D0015DCB9 /* SignUpView.swift */,
-				46B26C792A04E1EE0015DCB9 /* SignUpPageTitle.swift */,
-				46B26C742A04CDC00015DCB9 /* CustomShapeAndLogo.swift */,
-				46B26C7B2A0503540015DCB9 /* CustomTextfield.swift */,
-				46B26C802A051C4E0015DCB9 /* CustomSecureField.swift */,
-				46B26C822A051E080015DCB9 /* SignUpButton.swift */,
-				46A638A42A055EEE001C5A12 /* PasswordTextfieldImage.swift */,
-				46C8785C2A08F82600908E24 /* UserNameCustomTextfield.swift */,
-			);
-			path = SignUpViews;
-			sourceTree = "<group>";
-		};
-		46B26C852A0529130015DCB9 /* Login */ = {
-			isa = PBXGroup;
-			children = (
-				46B26C862A0529210015DCB9 /* LoginView.swift */,
-				46B26C902A052F430015DCB9 /* LoginButton.swift */,
-			);
-			path = Login;
 			sourceTree = "<group>";
 		};
 		46B26C882A0529850015DCB9 /* Constants */ = {
@@ -170,9 +148,31 @@
 		46C878592A08E68900908E24 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				46C8785A2A08E6A300908E24 /* FirebaseAuth.swift */,
+				46C8785A2A08E6A300908E24 /* SignUpViewModel.swift */,
+				46C8785E2A091DFB00908E24 /* LoginViewModel.swift */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		46C878602A091E6E00908E24 /* Firebase */ = {
+			isa = PBXGroup;
+			children = (
+				46C878612A091E8200908E24 /* FirebaseAuth.swift */,
+			);
+			path = Firebase;
+			sourceTree = "<group>";
+		};
+		46C878632A0925FA00908E24 /* CommonComponents */ = {
+			isa = PBXGroup;
+			children = (
+				46B26C792A04E1EE0015DCB9 /* PageTitleModifier.swift */,
+				46B26C742A04CDC00015DCB9 /* CustomShapeAndLogo.swift */,
+				46B26C7B2A0503540015DCB9 /* CustomTextfield.swift */,
+				46B26C802A051C4E0015DCB9 /* CustomSecureField.swift */,
+				46B26C822A051E080015DCB9 /* CustomButton.swift */,
+				46A638A42A055EEE001C5A12 /* PasswordTextfieldImage.swift */,
+			);
+			path = CommonComponents;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -253,7 +253,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				46C8785B2A08E6A300908E24 /* FirebaseAuth.swift in Sources */,
+				46C878622A091E8200908E24 /* FirebaseAuth.swift in Sources */,
+				46C8785B2A08E6A300908E24 /* SignUpViewModel.swift in Sources */,
 				46B26C812A051C4E0015DCB9 /* CustomSecureField.swift in Sources */,
 				46B26C782A04D1B00015DCB9 /* ColorSet.swift in Sources */,
 				46A638A52A055EEE001C5A12 /* PasswordTextfieldImage.swift in Sources */,
@@ -261,15 +262,14 @@
 				46B26C7F2A050DA50015DCB9 /* SignUpData.swift in Sources */,
 				46B26C7C2A0503540015DCB9 /* CustomTextfield.swift in Sources */,
 				46B26C8F2A052CAA0015DCB9 /* LoginData.swift in Sources */,
-				46B26C832A051E080015DCB9 /* SignUpButton.swift in Sources */,
-				46C8785D2A08F82600908E24 /* UserNameCustomTextfield.swift in Sources */,
+				46B26C832A051E080015DCB9 /* CustomButton.swift in Sources */,
 				46B26C682A04CD2D0015DCB9 /* SignUpView.swift in Sources */,
+				46C8785F2A091DFB00908E24 /* LoginViewModel.swift in Sources */,
 				46B26C662A04CD2D0015DCB9 /* FirebaseLoginSignUpApp.swift in Sources */,
 				46D3E5772A083CC600279717 /* WelcomeView.swift in Sources */,
 				46B26C8C2A0529A70015DCB9 /* UIConstants.swift in Sources */,
 				46B26C872A0529210015DCB9 /* LoginView.swift in Sources */,
-				46B26C7A2A04E1EE0015DCB9 /* SignUpPageTitle.swift in Sources */,
-				46B26C912A052F430015DCB9 /* LoginButton.swift in Sources */,
+				46B26C7A2A04E1EE0015DCB9 /* PageTitleModifier.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

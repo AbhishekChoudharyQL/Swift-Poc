@@ -9,7 +9,6 @@ import SwiftUI
 
 struct PasswordTextfieldImage: View {
     var body: some View {
-        
         Circle()
             .fill(Color.white)
             .frame(height: 65)

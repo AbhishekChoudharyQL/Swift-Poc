@@ -8,9 +8,11 @@
 import SwiftUI
 
 struct WelcomeView: View {
+    //MARK: - Properties
     var userName: String
     var email: String
     
+    //MARK: - View Builder
     var body: some View {
         VStack {
             Text("Welcome, \(userName)!")
@@ -21,9 +23,6 @@ struct WelcomeView: View {
             Text("Email: \(email)")
                 .font(.headline)
                 .padding(.bottom, 10)
-            
-            // Add any other content you want to display on the welcome screen
-            
             Spacer()
         }
         .padding()
