@@ -8,11 +8,11 @@
 import SwiftUI
 
 struct SignUpButton: View {
+    var text : String
+    var action: () -> Void
     var body: some View {
-        Button (action: {
-            print("Sign up button tapped")
-        }) {
-            Text("Sign Up")
+        Button (action: action) {
+            Text(text)
                 .frame(width: 300,height: 55)
                 .background(.white)
                 .foregroundColor(AppColor.bottomGradientColor)
@@ -21,8 +21,3 @@ struct SignUpButton: View {
     }
 }
 
-struct SignUpButton_Previews: PreviewProvider {
-    static var previews: some View {
-        SignUpButton()
-    }
-}

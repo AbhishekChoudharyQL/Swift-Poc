@@ -3,27 +3,28 @@
 //  FirebaseLoginSignUp
 //
 //  Created by abhishek on 05/05/23.
-//
+// UIScreen.main.bounds.height/11
 
 import SwiftUI
 
 struct CustomTextfield: View {
     var imageName : String = ""
     var placeholderText : String = ""
-   @State var promptString : String
+   @State var inputString : String
     var body: some View {
         HStack(content: {
             Image(systemName: imageName)
                 .resizable()
                 .scaledToFit()
-                .frame(height: 45)
+                .frame(height: 66)
                 .foregroundColor(.white)
+                .padding(.leading,-15)
                 .padding(.trailing,40)
-            TextField("",text: $promptString,prompt: Text(placeholderText).foregroundColor(.white)).foregroundColor(.white)
+            TextField("",text: $inputString,prompt: Text(placeholderText).foregroundColor(.white)).foregroundColor(.white)
         }).padding()
-            .frame(width: 320)
+            .frame(width: 320,height: 65)
         .background{
-            RoundedRectangle(cornerRadius: 20)
+            RoundedRectangle(cornerRadius: 32)
                 .strokeBorder(.white)
                
         }
@@ -32,6 +33,6 @@ struct CustomTextfield: View {
 
 struct CustomTextfield_Previews: PreviewProvider {
     static var previews: some View {
-        CustomTextfield(promptString: "")
+        CustomTextfield(inputString: "")
     }
 }

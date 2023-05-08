@@ -13,19 +13,15 @@ struct CustomSecureField: View {
    @State var promptString : String
     var body: some View {
         HStack(content: {
-            Image(systemName: imageName)
-                .resizable()
-                .scaledToFit()
-                .frame(height: 45)
-                .foregroundColor(.white)
-                .padding(.trailing,65)
+            PasswordTextfieldImage()
+                .padding(.leading,-15)
+                .padding(.trailing,40)
             SecureField("",text: $promptString,prompt: Text(placeholderText).foregroundColor(.white)).foregroundColor(.white)
         }).padding()
-            .frame(width: 320)
+            .frame(width: 320,height: 65)
         .background{
-            RoundedRectangle(cornerRadius: 20)
+            RoundedRectangle(cornerRadius: 32)
                 .strokeBorder(.white)
-               
         }
     }
 }

@@ -20,7 +20,6 @@ struct CustomShapeAndLogo: View {
                         .frame(width: 85,height: 85)
                         .rotationEffect(Angle(degrees: 60))
                 }
-        
         }).background{
             Color.white.opacity(0.14)
                 .clipShape(RoundedRectangle(cornerRadius: 15))

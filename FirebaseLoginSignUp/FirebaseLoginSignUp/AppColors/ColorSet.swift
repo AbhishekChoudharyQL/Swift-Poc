@@ -12,7 +12,7 @@ import SwiftUI
 
 
 class AppColor {
-    static let topGradientColor = Color(red: 241/255, green: 138/255, blue: 121/255)
-    static let bottomGradientColor = Color(red: 230/255, green: 43/255, blue: 108/255)
+    static let topGradientColor = Color(red: 254/255, green: 129/255, blue: 86/255)
+    static let bottomGradientColor = Color(red: 243/255, green: 44/255, blue: 53/255)
   
 }
