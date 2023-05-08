@@ -8,9 +8,12 @@
 import SwiftUI
 
 struct CustomTextfield: View {
+    //MARK: - properties
     var imageName : String = ""
     var placeholderText : String = ""
-   @State var inputString : String
+    @Binding var inputString : String
+    
+    //MARK: - View Builder
     var body: some View {
         HStack(content: {
             Image(systemName: imageName)
@@ -20,7 +23,7 @@ struct CustomTextfield: View {
                 .foregroundColor(.white)
                 .padding(.leading,-15)
                 .padding(.trailing,40)
-            TextField("",text: $inputString,prompt: Text(placeholderText).foregroundColor(.white)).foregroundColor(.white)
+            TextField("N/A",text: $inputString, prompt: Text(placeholderText).foregroundColor(.white)).foregroundColor(.white)
         }).padding()
             .frame(width: 320,height: 65)
         .background{
@@ -33,6 +36,6 @@ struct CustomTextfield: View {
 
 struct CustomTextfield_Previews: PreviewProvider {
     static var previews: some View {
-        CustomTextfield(inputString: "")
+        CustomTextfield(inputString: .constant("Manni"))
     }
 }

@@ -8,12 +8,17 @@
 import SwiftUI
 import FirebaseAuth
 
+//UI : 09 / 10
+//Reusable components : 09/10
+//Code quality : 08 /10
+//Logical Reasoning / Understanding : 05 /10
+
 struct SignUpView: View {
     
     //MARK: - Properties
-    @State var userNameText : String
-    @State var emailText : String
-    @State var passwordText : String
+    @State var userNameText : String = ""
+    @State var emailText : String = ""
+    @State var passwordText : String = ""
     @State private var isSignUpSuccessful = false
     
     //MARK: - View Builder
@@ -36,9 +41,9 @@ struct SignUpView: View {
                     .weight(.medium)
                     )
             VStack(spacing: 15, content: {
-                CustomTextfield(imageName: SignUpData.personImage.rawValue, placeholderText: SignUpData.userNamePlaceholder.rawValue, inputString: userNameText)
-                CustomTextfield(imageName: SignUpData.emailImage.rawValue, placeholderText: SignUpData.emailPlaceholder.rawValue, inputString: emailText)
-                CustomSecureField(imageName: SignUpData.passwordImage.rawValue, placeholderText: SignUpData.passwordPlaceholder.rawValue, promptString: passwordText)
+                CustomTextfield(imageName: SignUpData.personImage.rawValue, placeholderText: SignUpData.userNamePlaceholder.rawValue, inputString: $userNameText)
+                CustomTextfield(imageName: SignUpData.emailImage.rawValue, placeholderText: SignUpData.emailPlaceholder.rawValue, inputString: $emailText)
+                CustomSecureField(imageName: SignUpData.passwordImage.rawValue, placeholderText: SignUpData.passwordPlaceholder.rawValue, promptString: $passwordText)
             })
             VStack(content: {
                 SignUpButton(text: "SIGN UP", action: register)
@@ -66,19 +71,22 @@ struct SignUpView: View {
     
     //MARK: - Methods
     func register(){
+        print("Attempting to register user, with email address \(emailText), and password \(passwordText)")
         Auth.auth().createUser(withEmail: emailText, password: passwordText){
             result , error in
             if let error = error {
-                         print("Error registering user: \(error.localizedDescription)")
+                         print("Error registering user: \n\(error)")
                      } else {
                          print("User registered successfully!")
                          isSignUpSuccessful = true
                      }
         }
     }
+    
     func login() {
         Auth.auth().signIn(withEmail: emailText, password: passwordText){
             result , error in
+            
             if error != nil {
                 print(error?.localizedDescription ?? "Login error")
             }
