@@ -8,13 +8,15 @@
 import SwiftUI
 
 struct CustomTextfield: View {
-//    @ObservedObject var firebaseAuth : FirebaseAuth
+    //MARK: - Properties
     var imageName : String = ""
     var placeholderText : String = ""
    @Binding var inputString : String
+    
+    //MARK: - View Builder
     var body: some View {
         HStack(content: {
-            Image(systemName: SignUpData.emailImage.rawValue)
+            Image(systemName: imageName)
                 .resizable()
                 .scaledToFit()
                 .frame(height: 66)
@@ -30,9 +32,9 @@ struct CustomTextfield: View {
                
         }
     }
-  
 }
 
+//MARK: - Previews
 struct CustomTextfield_Previews: PreviewProvider {
     static var previews: some View {
         CustomTextfield(inputString: .constant(""))

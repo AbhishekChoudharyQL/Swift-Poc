@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct CustomShapeAndLogo: View {
+    //MARK: - View Builder
     var body: some View {
         ZStack(content: {
             Image("FoodLogo")
@@ -29,6 +30,7 @@ struct CustomShapeAndLogo: View {
     }
 }
 
+   //MARK: - Previews
 struct CustomShapeAndLogo_Previews: PreviewProvider {
     static var previews: some View {
         CustomShapeAndLogo()

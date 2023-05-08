@@ -9,18 +9,19 @@ import Foundation
 import FirebaseAuth
 
 class FireBaseAuth : ObservableObject {
-    @Published var signUpStatus = false
-    func register(email: String,password : String){
-        Auth.auth().createUser(withEmail: email, password: password){
-            result , error in
-            if let error = error {
-                         print("Error registering user: \(error.localizedDescription)")
-                     } else {
-                         print("User registered successfully!")
-                         self.signUpStatus = true
-                     }
+    
+    //MARK: - Methods
+    func register(email: String, password: String, completion: @escaping (Bool) -> Void) {
+            Auth.auth().createUser(withEmail: email, password: password) { _, error in
+                if let error = error {
+                    print("Error registering user: \(error.localizedDescription)")
+                    completion(false)
+                } else {
+                    print("User registered successfully!")
+                    completion(true)
+                }
+            }
         }
-    }
     
     func login(email : String, password : String) {
         Auth.auth().signIn(withEmail: email, password: password){

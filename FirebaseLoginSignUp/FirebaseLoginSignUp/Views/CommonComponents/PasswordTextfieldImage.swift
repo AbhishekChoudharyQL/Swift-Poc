@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct PasswordTextfieldImage: View {
+    //MARK: - Properties
     var body: some View {
         Circle()
             .fill(Color.white)
@@ -22,6 +23,7 @@ struct PasswordTextfieldImage: View {
     }
 }
 
+//MARK: -  Previews
 struct PasswordTextfieldImage_Previews: PreviewProvider {
     static var previews: some View {
         PasswordTextfieldImage()

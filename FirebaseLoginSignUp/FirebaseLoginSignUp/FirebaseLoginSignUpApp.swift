@@ -13,10 +13,10 @@ import FirebaseAuth
 @main
 struct FirebaseLoginSignUpApp: App {
    
+    //MARK: - View Builder
     var body: some Scene {
         WindowGroup {
            SignUpView()
-//            LoginView()
                 .task({
                FirebaseApp.configure()
                 })

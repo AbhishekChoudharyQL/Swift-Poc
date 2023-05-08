@@ -8,9 +8,12 @@
 import SwiftUI
 
 struct CustomSecureField: View {
+    //MARK: - Properties
     var imageName : String = ""
     var placeholderText : String = ""
    @Binding var inputString : String
+    
+    //MARK: - View Builder
     var body: some View {
         HStack(content: {
             PasswordTextfieldImage()
@@ -26,6 +29,7 @@ struct CustomSecureField: View {
     }
 }
 
+//MARK: - Previews
 struct CustomSecureField_Previews: PreviewProvider {
     static var previews: some View {
         CustomSecureField(inputString: .constant(""))

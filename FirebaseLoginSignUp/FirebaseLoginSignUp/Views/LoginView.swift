@@ -10,6 +10,7 @@ import SwiftUI
 struct LoginView: View {
     //MARK: - Properties
     @ObservedObject var loginViewModel : LoginViewModel = LoginViewModel()
+    @State var navigationFlag = false
     
     //MARK: - View Builder
     var body: some View {
@@ -33,8 +34,13 @@ struct LoginView: View {
                     HStack(content: {
                         Text("Don't have an account?")
                             .foregroundColor(.white)
+                            .padding(.trailing,5)
+                        NavigationLink(destination: SignUpView().navigationBarBackButtonHidden(true), isActive: self.$navigationFlag, label: {
+                            EmptyView()
+                        })
                         Button(action: {
                             print("Login-btn tapped")
+                            self.navigationFlag = true
                         }) {
                             Text("Sign Up Now")
                                 .foregroundColor(.white)
