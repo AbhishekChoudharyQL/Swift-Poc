@@ -23,14 +23,16 @@ class FireBaseAuth : ObservableObject {
             }
         }
     
-    func login(email : String, password : String) {
+    func login(email : String, password : String,completion: @escaping (Bool) -> Void) {
         Auth.auth().signIn(withEmail: email, password: password){
             result , error in
             if error != nil {
                 print(error?.localizedDescription ?? "Login error")
+                completion(false)
             }
             else {
                 print("Login successfully")
+                completion(true)
             }
         }
     }

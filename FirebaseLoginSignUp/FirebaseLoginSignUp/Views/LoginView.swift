@@ -48,6 +48,9 @@ struct LoginView: View {
                         }
                     })
                 })
+                NavigationLink(destination: WelcomeView(userName: "", email: loginViewModel.emailText).navigationBarBackButtonHidden(true), isActive: $loginViewModel.logInStatus) {
+                    EmptyView()
+                }
             }).frame(width:UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
                 .background(
                 LinearGradient(gradient: Gradient(colors: [AppColor.topGradientColor, AppColor.bottomGradientColor]),startPoint: .top, endPoint: .bottom)
