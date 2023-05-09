@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct CustomSecureField: View {
+    
     //MARK: - Properties
     var imageName : String = ""
     var placeholderText : String = ""

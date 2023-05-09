@@ -16,7 +16,8 @@ struct FirebaseLoginSignUpApp: App {
     //MARK: - View Builder
     var body: some Scene {
         WindowGroup {
-           SignUpView()
+//           SignUpView()
+              StateManager(firebaseAuth: FireBaseAuth(), signUpViewModel: SignUpViewModel())
                 .task({
                FirebaseApp.configure()
                 })

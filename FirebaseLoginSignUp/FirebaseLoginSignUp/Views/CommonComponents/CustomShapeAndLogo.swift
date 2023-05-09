@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct CustomShapeAndLogo: View {
+    
     //MARK: - View Builder
     var body: some View {
         ZStack(content: {
@@ -25,8 +26,6 @@ struct CustomShapeAndLogo: View {
             Color.white.opacity(0.14)
                 .clipShape(RoundedRectangle(cornerRadius: 15))
         }
-        
-
     }
 }
 

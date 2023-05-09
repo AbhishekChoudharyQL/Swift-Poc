@@ -8,19 +8,19 @@
 import SwiftUI
 
 struct WelcomeView: View {
+    
     //MARK: - Properties
-    var userName: String
-    var email: String
+    @ObservedObject var viewModel : SignUpViewModel
     
     //MARK: - View Builder
     var body: some View {
         VStack {
-            Text("Welcome, \(userName)!")
+            Text("Welcome, \(viewModel.userName)!")
                 .font(.title)
                 .fontWeight(.bold)
                 .padding(.bottom, 20)
             
-            Text("Email: \(email)")
+            Text("Email: \(viewModel.emailText)")
                 .font(.headline)
                 .padding(.bottom, 10)
             Spacer()

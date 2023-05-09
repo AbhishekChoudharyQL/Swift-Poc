@@ -10,6 +10,15 @@ import FirebaseAuth
 
 class FireBaseAuth : ObservableObject {
     
+    //MARK: - SignIn- SignOut Status enum
+    enum SignInStatus {
+        case signedIn
+        case signedOut
+    }
+    
+    //MARK: - Properties
+    @Published var state : SignInStatus = .signedOut
+    
     //MARK: - Methods
     func register(email: String, password: String, completion: @escaping (Bool) -> Void) {
             Auth.auth().createUser(withEmail: email, password: password) { _, error in
@@ -19,6 +28,7 @@ class FireBaseAuth : ObservableObject {
                 } else {
                     print("User registered successfully!")
                     completion(true)
+                    
                 }
             }
         }
@@ -33,7 +43,18 @@ class FireBaseAuth : ObservableObject {
             else {
                 print("Login successfully")
                 completion(true)
+                self.state = .signedIn
+                print("\(self.state)")
             }
+        }
+    }
+    
+    func signOut() {
+        do {
+            try Auth.auth().signOut()
+            self.state = .signedOut
+        } catch let signOutError as NSError {
+            print("Error signing out :\(signOutError)")
         }
     }
 }

@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct PageTitleModifier: View {
+    
     //MARK: - View Builder
     var body: some View {
         Text("FoodPie")
@@ -18,7 +19,7 @@ struct PageTitleModifier: View {
                 "AmericanTypewriter",
                 fixedSize: 34)
                 .weight(.heavy)
-              )
+            )
     }
 }
 

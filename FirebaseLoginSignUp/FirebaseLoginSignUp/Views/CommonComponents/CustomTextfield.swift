@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct CustomTextfield: View {
+    
     //MARK: - Properties
     var imageName : String = ""
     var placeholderText : String = ""
@@ -29,7 +30,6 @@ struct CustomTextfield: View {
         .background{
             RoundedRectangle(cornerRadius: 32)
                 .strokeBorder(.white)
-               
         }
     }
 }

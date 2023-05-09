@@ -8,7 +8,8 @@
 import SwiftUI
 
 struct PasswordTextfieldImage: View {
-    //MARK: - Properties
+    
+    //MARK: - View Builder
     var body: some View {
         Circle()
             .fill(Color.white)

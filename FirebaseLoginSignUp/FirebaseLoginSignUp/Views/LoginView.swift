@@ -8,9 +8,11 @@
 import SwiftUI
 
 struct LoginView: View {
+    
     //MARK: - Properties
     @ObservedObject var loginViewModel : LoginViewModel = LoginViewModel()
     @State var navigationFlag = false
+    @ObservedObject var signUpViewModel : SignUpViewModel
     
     //MARK: - View Builder
     var body: some View {
@@ -27,7 +29,7 @@ struct LoginView: View {
                             .weight(.heavy)
                           )
                     VStack(spacing: 30,content: {
-                        CustomTextfield(imageName: LoginData.personImage.rawValue, placeholderText: LoginData.emailNamePlaceholder.rawValue, inputString: $loginViewModel.emailText )
+                        CustomTextfield(imageName: LoginData.emailImage.rawValue, placeholderText: LoginData.emailNamePlaceholder.rawValue, inputString: $loginViewModel.emailText )
                         CustomSecureField(imageName: LoginData.passwordImage.rawValue, placeholderText: LoginData.passwordPlaceholder.rawValue, inputString: $loginViewModel.passwordText)
                         CustomButton(text: "LOGIN", action: loginViewModel.loginUser)
                     })
@@ -48,9 +50,9 @@ struct LoginView: View {
                         }
                     })
                 })
-                NavigationLink(destination: WelcomeView(userName: "", email: loginViewModel.emailText).navigationBarBackButtonHidden(true), isActive: $loginViewModel.logInStatus) {
-                    EmptyView()
-                }
+//                NavigationLink(destination: WelcomeView(userName: signUpViewModel.userName, email: loginViewModel.emailText).navigationBarBackButtonHidden(true), isActive: $loginViewModel.logInStatus) {
+//                    EmptyView()
+//                }
             }).frame(width:UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
                 .background(
                 LinearGradient(gradient: Gradient(colors: [AppColor.topGradientColor, AppColor.bottomGradientColor]),startPoint: .top, endPoint: .bottom)
@@ -62,6 +64,6 @@ struct LoginView: View {
 //MARK: - Previews
 struct LoginView_Previews: PreviewProvider {
     static var previews: some View {
-        LoginView()
+        LoginView(signUpViewModel: SignUpViewModel())
     }
 }

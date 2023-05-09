@@ -8,7 +8,7 @@
 import Foundation
 
 enum LoginData : String {
-    case personImage = "person.circle.fill",
+    case emailImage = "envelope.circle.fill",
     emailNamePlaceholder = "Your email",
      passwordImage = "key.fill",
      passwordPlaceholder = "Password"
