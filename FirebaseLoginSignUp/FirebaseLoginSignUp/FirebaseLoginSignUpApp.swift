@@ -12,21 +12,25 @@ import FirebaseAuth
 
 @main
 struct FirebaseLoginSignUpApp: App {
+    
+    //MARK: - Properties
    @StateObject var fireBaseAuth = FireBaseAuth()
    @StateObject var signupViewModel = SignUpViewModel()
    @StateObject var loginViewModel = LoginViewModel()
+   @StateObject var currentUserInfo = CurrentUserInfo()
+    
+    init() {
+        FirebaseApp.configure()
+    }
+    
     //MARK: - View Builder
     var body: some Scene {
         WindowGroup {
-//           SignUpView()
             StateManager()
                 .environmentObject(fireBaseAuth)
                 .environmentObject(signupViewModel)
                 .environmentObject(loginViewModel)
-                .task({
-               FirebaseApp.configure()
-                })
-           
+                .environmentObject(currentUserInfo)
         }
     }
 }

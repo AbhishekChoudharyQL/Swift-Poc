@@ -10,10 +10,9 @@ import SwiftUI
 struct LoginView: View {
     
     //MARK: - Properties
-    @ObservedObject var loginViewModel : LoginViewModel 
+    @ObservedObject var loginViewModel : LoginViewModel
     @State var navigationFlag = false
     @ObservedObject var signUpViewModel : SignUpViewModel
-//    @Binding var rootIsActive : Bool
     
     //MARK: - View Builder
     var body: some View {
@@ -25,10 +24,10 @@ struct LoginView: View {
                         .foregroundColor(.white)
                         .font(
                             .custom(
-                            "AmericanTypewriter",
-                            fixedSize: 34)
+                                "AmericanTypewriter",
+                                fixedSize: 34)
                             .weight(.heavy)
-                          )
+                        )
                     VStack(spacing: 30,content: {
                         CustomTextfield(imageName: LoginData.emailImage.rawValue, placeholderText: LoginData.emailNamePlaceholder.rawValue, inputString: $loginViewModel.emailText )
                         CustomSecureField(imageName: LoginData.passwordImage.rawValue, placeholderText: LoginData.passwordPlaceholder.rawValue, inputString: $loginViewModel.passwordText)
@@ -53,7 +52,7 @@ struct LoginView: View {
                 })
             }).frame(width:UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
                 .background(
-                LinearGradient(gradient: Gradient(colors: [AppColor.topGradientColor, AppColor.bottomGradientColor]),startPoint: .top, endPoint: .bottom)
+                    LinearGradient(gradient: Gradient(colors: [AppColor.topGradientColor, AppColor.bottomGradientColor]),startPoint: .top, endPoint: .bottom)
                 )
                 .navigationViewStyle(.stack)
         })

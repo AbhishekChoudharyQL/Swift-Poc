@@ -9,6 +9,7 @@ import Foundation
 import FirebaseAuth
 
 class SignUpViewModel : ObservableObject {
+    
     //MARK: - Properties
     @Published var emailText : String = ""
     @Published var passwordText : String = ""
@@ -18,7 +19,8 @@ class SignUpViewModel : ObservableObject {
     
     //MARK: - Methods
     func registerUser() {
-        fireBaseSignUp.register(email: emailText, password: passwordText) { [weak self] success in
+    fireBaseSignUp.register(email: emailText, password: passwordText)
+        { [weak self] success in
             if success {
                 DispatchQueue.main.async {
                     self?.SignUpStatus = true
@@ -26,5 +28,4 @@ class SignUpViewModel : ObservableObject {
             }
         }
     }
-
 }
