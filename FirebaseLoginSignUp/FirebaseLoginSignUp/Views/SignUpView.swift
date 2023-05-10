@@ -11,12 +11,14 @@ import FirebaseAuth
 struct SignUpView: View {
     
 //MARK: - Properties
-@ObservedObject var signUpViewModel : SignUpViewModel = SignUpViewModel()
-@State var navigationFlag = false
+   @ObservedObject var signUpViewModel : SignUpViewModel
+   @ObservedObject var loginviewModel : LoginViewModel
+   @State var navigationFlag = false
+
     
     //MARK: - View Builder
   var body: some View {
-  NavigationView(content: {
+      NavigationStack(root: {
   ZStack(content: {
     VStack(content: {
         HStack(alignment: .center,spacing: 0,content: {
@@ -45,9 +47,9 @@ struct SignUpView: View {
                         Text("Alredy have an account ?")
                             .foregroundColor(.white)
                             .padding(.trailing,5)
-                        NavigationLink(destination: LoginView(signUpViewModel: signUpViewModel).navigationBarBackButtonHidden(true), isActive: self.$navigationFlag, label: {
+                        NavigationLink(destination: LoginView(loginViewModel: loginviewModel, signUpViewModel: signUpViewModel).navigationBarBackButtonHidden(true), isActive: self.$navigationFlag, label: {
                             EmptyView()
-                        })
+                        }).isDetailLink(false)
                         Button(action: {
                             print("SignUp-btn tapped")
                             self.navigationFlag = true
@@ -59,13 +61,11 @@ struct SignUpView: View {
                         })
                     }).padding()
                 }).padding(.bottom,20)
-//              NavigationLink(destination: WelcomeView(userName: signUpViewModel.userName, email: signUpViewModel.emailText).navigationBarBackButtonHidden(true), isActive: $signUpViewModel.signInStatus) {
-//                                EmptyView()
-//                            }
             }).frame(width:UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
                 .background(
                 LinearGradient(gradient: Gradient(colors: [AppColor.topGradientColor, AppColor.bottomGradientColor]),startPoint: .top, endPoint: .bottom)
                 )
+                .navigationViewStyle(.stack)
          })
     }
 }
@@ -73,7 +73,7 @@ struct SignUpView: View {
 //MARK: - Previews
 struct SignUpView_Previews: PreviewProvider {
     static var previews: some View {
-        SignUpView()
+        SignUpView(signUpViewModel: SignUpViewModel(), loginviewModel: LoginViewModel())
     }
 }
 

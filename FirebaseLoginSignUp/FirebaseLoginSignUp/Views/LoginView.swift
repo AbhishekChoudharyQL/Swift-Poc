@@ -10,13 +10,14 @@ import SwiftUI
 struct LoginView: View {
     
     //MARK: - Properties
-    @ObservedObject var loginViewModel : LoginViewModel = LoginViewModel()
+    @ObservedObject var loginViewModel : LoginViewModel 
     @State var navigationFlag = false
     @ObservedObject var signUpViewModel : SignUpViewModel
+//    @Binding var rootIsActive : Bool
     
     //MARK: - View Builder
     var body: some View {
-        NavigationView(content: {
+        NavigationStack(root: {
             ZStack(content: {
                 VStack(spacing: 40,content: {
                     CustomShapeAndLogo()
@@ -37,9 +38,9 @@ struct LoginView: View {
                         Text("Don't have an account?")
                             .foregroundColor(.white)
                             .padding(.trailing,5)
-                        NavigationLink(destination: SignUpView().navigationBarBackButtonHidden(true), isActive: self.$navigationFlag, label: {
+                        NavigationLink(destination: SignUpView(signUpViewModel: signUpViewModel, loginviewModel: loginViewModel).navigationBarBackButtonHidden(true), isActive: self.$navigationFlag, label: {
                             EmptyView()
-                        })
+                        }).isDetailLink(false)
                         Button(action: {
                             print("Login-btn tapped")
                             self.navigationFlag = true
@@ -50,13 +51,11 @@ struct LoginView: View {
                         }
                     })
                 })
-//                NavigationLink(destination: WelcomeView(userName: signUpViewModel.userName, email: loginViewModel.emailText).navigationBarBackButtonHidden(true), isActive: $loginViewModel.logInStatus) {
-//                    EmptyView()
-//                }
             }).frame(width:UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
                 .background(
                 LinearGradient(gradient: Gradient(colors: [AppColor.topGradientColor, AppColor.bottomGradientColor]),startPoint: .top, endPoint: .bottom)
                 )
+                .navigationViewStyle(.stack)
         })
     }
 }
@@ -64,6 +63,6 @@ struct LoginView: View {
 //MARK: - Previews
 struct LoginView_Previews: PreviewProvider {
     static var previews: some View {
-        LoginView(signUpViewModel: SignUpViewModel())
+        LoginView(loginViewModel: LoginViewModel(), signUpViewModel: SignUpViewModel())
     }
 }

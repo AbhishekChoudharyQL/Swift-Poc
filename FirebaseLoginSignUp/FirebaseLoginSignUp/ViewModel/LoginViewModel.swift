@@ -15,6 +15,7 @@ class LoginViewModel : ObservableObject {
     @Published var userName : String = ""
     @Published var firebaseLogin : FireBaseAuth = FireBaseAuth()
     @Published var logInStatus : Bool = false
+//    @Published var isLogOut : Bool = true
     //MARK: - Methods
     public func loginUser() {
         firebaseLogin.login(email: emailText, password: passwordText){
@@ -22,6 +23,16 @@ class LoginViewModel : ObservableObject {
             if success {
                 DispatchQueue.main.async {
                     self?.logInStatus = true
+                }
+            }
+        }
+    }
+    public func signOut(){
+        firebaseLogin.signOut(){
+            [weak self] success in
+            if success {
+                DispatchQueue.main.async {
+                    self?.logInStatus = false
                 }
             }
         }

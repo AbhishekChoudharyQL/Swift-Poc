@@ -14,14 +14,14 @@ class SignUpViewModel : ObservableObject {
     @Published var passwordText : String = ""
     @Published var userName : String = ""
     @Published var fireBaseSignUp : FireBaseAuth = FireBaseAuth()
-    @Published var signInStatus : Bool = false
+    @Published var SignUpStatus : Bool = false
     
     //MARK: - Methods
     func registerUser() {
         fireBaseSignUp.register(email: emailText, password: passwordText) { [weak self] success in
             if success {
                 DispatchQueue.main.async {
-                    self?.signInStatus = true
+                    self?.SignUpStatus = true
                 }
             }
         }

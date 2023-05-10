@@ -8,24 +8,42 @@
 import SwiftUI
 
 struct StateManager: View {
-    
+    // @ObservedObject var firebaseAuth : FireBaseAuth
+   // @ObservedObject var signUpViewModel : SignUpViewModel
     //MARK: - Properties
-    @ObservedObject var firebaseAuth : FireBaseAuth
-    @ObservedObject var signUpViewModel : SignUpViewModel
-    
+    @EnvironmentObject var firebaseAuth: FireBaseAuth
+    @EnvironmentObject var signUpViewModel: SignUpViewModel
+    @EnvironmentObject var loginViewModel : LoginViewModel
+
     //MARK: - View Builder
     var body: some View {
-        switch firebaseAuth.state {
-        case .signedOut : SignUpView()
-          let _ =  print("\(firebaseAuth.state)")
-        case .signedIn : WelcomeView(viewModel: signUpViewModel)
+        let _ = print("\(firebaseAuth.state)")
+        //        switch firebaseAuth.state {
+        //        case .signedOut:
+        //            SignUpView(signUpViewModel: signUpViewModel, loginviewModel: loginViewModel)
+        //        case .signedIn:
+        //            WelcomeView(viewModel: signUpViewModel)
+        //        }
+        if loginViewModel.logInStatus == true {
+            WelcomeView(viewModel: signUpViewModel, loginViewModel: loginViewModel)
+        }
+        else if signUpViewModel.SignUpStatus == true {
+            WelcomeView(viewModel: signUpViewModel, loginViewModel: loginViewModel)
+        }
+        else if loginViewModel.logInStatus == false {
+            LoginView(loginViewModel: loginViewModel, signUpViewModel: signUpViewModel)
+        }
+        else {
+            LoginView(loginViewModel: loginViewModel, signUpViewModel: signUpViewModel)
         }
     }
 }
 
+
 //MARK: - Previews
 struct StateManager_Previews: PreviewProvider {
     static var previews: some View {
-        StateManager(firebaseAuth: FireBaseAuth(), signUpViewModel: SignUpViewModel())
+        StateManager()
+            .environmentObject(FireBaseAuth())
     }
 }
