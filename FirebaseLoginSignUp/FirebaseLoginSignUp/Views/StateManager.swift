@@ -10,22 +10,24 @@ import Firebase
 import FirebaseAuth
 
 struct StateManager: View {
+    
     //MARK: - Properties
     @EnvironmentObject var firebaseAuth: FireBaseAuth
     @EnvironmentObject var signUpViewModel: SignUpViewModel
     @EnvironmentObject var loginViewModel : LoginViewModel
     @EnvironmentObject var currentUserInfo : CurrentUserInfo
+    @StateObject var reciepeViewModel = ReciepeViewModel()
+
     //MARK: - View Builder
 var body: some View {
     if currentUserInfo.isUserLoggedIn() {
-        WelcomeView(viewModel: signUpViewModel, loginViewModel: loginViewModel, currentUserInfo: currentUserInfo)
+        WelcomeView(viewModel: signUpViewModel, loginViewModel: loginViewModel, currentUserInfo: currentUserInfo, reciepeViewModel: reciepeViewModel)
     }
     else {
         LoginView(loginViewModel: loginViewModel, signUpViewModel: signUpViewModel)
     }
   }
 }
-
 
 //MARK: - Previews
 struct StateManager_Previews: PreviewProvider {

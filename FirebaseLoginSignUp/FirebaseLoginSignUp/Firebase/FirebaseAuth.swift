@@ -10,9 +10,6 @@ import FirebaseAuth
 
 class FireBaseAuth : ObservableObject {
     
-    //MARK: - Properties
-    @Published var state : SignInStatus = .signedOut
-    
     //MARK: - Methods
     func register(email: String, password: String,
                   completion: @escaping (Bool) -> Void){

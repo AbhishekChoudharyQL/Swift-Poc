@@ -18,7 +18,8 @@ struct FirebaseLoginSignUpApp: App {
    @StateObject var signupViewModel = SignUpViewModel()
    @StateObject var loginViewModel = LoginViewModel()
    @StateObject var currentUserInfo = CurrentUserInfo()
-    
+  
+    //MARK: - Configure Firebase 
     init() {
         FirebaseApp.configure()
     }
@@ -31,6 +32,7 @@ struct FirebaseLoginSignUpApp: App {
                 .environmentObject(signupViewModel)
                 .environmentObject(loginViewModel)
                 .environmentObject(currentUserInfo)
+               
         }
     }
 }
