@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		469E72E72A0CF11E0058341A /* AddReciepeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 469E72E62A0CF11E0058341A /* AddReciepeView.swift */; };
+		469E72E92A0D049E0058341A /* GifView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 469E72E82A0D049E0058341A /* GifView.swift */; };
 		46A638A52A055EEE001C5A12 /* PasswordTextfieldImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46A638A42A055EEE001C5A12 /* PasswordTextfieldImage.swift */; };
 		46B26C662A04CD2D0015DCB9 /* FirebaseLoginSignUpApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B26C652A04CD2D0015DCB9 /* FirebaseLoginSignUpApp.swift */; };
 		46B26C682A04CD2D0015DCB9 /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B26C672A04CD2D0015DCB9 /* SignUpView.swift */; };
@@ -37,6 +39,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		469E72E62A0CF11E0058341A /* AddReciepeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddReciepeView.swift; sourceTree = "<group>"; };
+		469E72E82A0D049E0058341A /* GifView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GifView.swift; sourceTree = "<group>"; };
 		46A638A42A055EEE001C5A12 /* PasswordTextfieldImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordTextfieldImage.swift; sourceTree = "<group>"; };
 		46B26C622A04CD2D0015DCB9 /* FirebaseLoginSignUp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FirebaseLoginSignUp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		46B26C652A04CD2D0015DCB9 /* FirebaseLoginSignUpApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseLoginSignUpApp.swift; sourceTree = "<group>"; };
@@ -126,6 +130,7 @@
 				46B26C672A04CD2D0015DCB9 /* SignUpView.swift */,
 				46B26C862A0529210015DCB9 /* LoginView.swift */,
 				46D3E5762A083CC600279717 /* WelcomeView.swift */,
+				469E72E62A0CF11E0058341A /* AddReciepeView.swift */,
 				46EFA0C52A0B9A5B00373F24 /* ListView.swift */,
 				46C878632A0925FA00908E24 /* CommonComponents */,
 			);
@@ -180,6 +185,7 @@
 		46C878632A0925FA00908E24 /* CommonComponents */ = {
 			isa = PBXGroup;
 			children = (
+				469E72E82A0D049E0058341A /* GifView.swift */,
 				46B26C792A04E1EE0015DCB9 /* PageTitleModifier.swift */,
 				46B26C742A04CDC00015DCB9 /* CustomShapeAndLogo.swift */,
 				46B26C7B2A0503540015DCB9 /* CustomTextfield.swift */,
@@ -269,12 +275,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				46C878622A091E8200908E24 /* FirebaseAuth.swift in Sources */,
+				469E72E92A0D049E0058341A /* GifView.swift in Sources */,
 				46C8785B2A08E6A300908E24 /* SignUpViewModel.swift in Sources */,
 				46B26C812A051C4E0015DCB9 /* CustomSecureField.swift in Sources */,
 				46B26C782A04D1B00015DCB9 /* ColorSet.swift in Sources */,
 				46A638A52A055EEE001C5A12 /* PasswordTextfieldImage.swift in Sources */,
 				46B26C752A04CDC00015DCB9 /* CustomShapeAndLogo.swift in Sources */,
 				46C795CF2A0B815700A40447 /* CurrentUserInfo.swift in Sources */,
+				469E72E72A0CF11E0058341A /* AddReciepeView.swift in Sources */,
 				46B26C7F2A050DA50015DCB9 /* SignUpData.swift in Sources */,
 				46EFA0CA2A0BC2DF00373F24 /* ReciepeViewModel.swift in Sources */,
 				46B26C7C2A0503540015DCB9 /* CustomTextfield.swift in Sources */,

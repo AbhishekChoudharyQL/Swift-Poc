@@ -41,4 +41,40 @@ class ReciepeViewModel : ObservableObject {
             }
         }
     }
+//    func addReciepe(newReciepe: Reciepe) {
+//        let db = Firestore.firestore()
+//        let collectionRef = db.collection("Reciepes")
+//
+//        let recipeData: [String: Any] = [
+//            "name": newReciepe.name,
+//            "ingredient": newReciepe.ingredient
+//        ]
+//        print(recipeData)
+//        collectionRef.addDocument(data: recipeData) { error in
+//            if let error = error {
+//                print("Error adding recipe: \(error.localizedDescription)")
+//            } else {
+//                print("Recipe added successfully")
+//            }
+//        }
+//    }
+    func addReciepe(newReciepe: Reciepe) {
+        let db = Firestore.firestore()
+        let collectionRef = db.collection("Reciepes")
+        
+        let recipeData: [String: Any] = [
+            "name": newReciepe.name,
+            "ingredient": newReciepe.ingredient
+        ]
+        
+        collectionRef.addDocument(data: recipeData) { error in
+            if let error = error {
+                print("Error adding recipe: \(error.localizedDescription)")
+            } else {
+                print("Recipe added successfully")
+            }
+        }
+    }
+
+
 }

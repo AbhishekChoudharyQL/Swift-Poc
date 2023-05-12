@@ -12,30 +12,38 @@ struct ListView: View {
     //MARK: - Properties
     @ObservedObject var reciepeViewModel: ReciepeViewModel
     @Environment(\.dismiss) var dismiss
+    @State private var showPopUp = false
     
     //MARK: - View Builder
     var body: some View {
-        NavigationView {
+        NavigationStack {
             List(reciepeViewModel.reciepes, id: \.name) { reciepe in
                 Text(reciepe.name)
                     .foregroundColor(.pink)
-            }
+            } .toolbarBackground(Color.green, for: .navigationBar)
             .navigationBarItems(
                 trailing: HStack {
                     Button {
                        dismiss()
                     } label: {
                         Text("Back To Home")
-                            .foregroundColor(.pink)
+                            .foregroundColor(.white)
+                            .bold()
                     }
                     .padding()
-                    Button(action: {}, label: {
+                    Spacer().frame(width: 150)
+                    Button(action: {
+                        showPopUp.toggle()
+                    }, label: {
                         Image(systemName: "plus")
-                            .foregroundColor(.pink)
+                            .foregroundColor(.white)
                     })
-                    Spacer()
+                    .padding()
                 }
             )
+            .sheet(isPresented: $showPopUp){
+                AddReciepeView(reciepeViewModel: reciepeViewModel,reciepe: Reciepe(name: "banana", ingredient: "milk"))
+            }
         }
     }
 }

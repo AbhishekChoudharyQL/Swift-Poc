@@ -17,16 +17,16 @@ struct StateManager: View {
     @EnvironmentObject var loginViewModel : LoginViewModel
     @EnvironmentObject var currentUserInfo : CurrentUserInfo
     @StateObject var reciepeViewModel = ReciepeViewModel()
-
+    
     //MARK: - View Builder
-var body: some View {
-    if currentUserInfo.isUserLoggedIn() {
-        WelcomeView(viewModel: signUpViewModel, loginViewModel: loginViewModel, currentUserInfo: currentUserInfo, reciepeViewModel: reciepeViewModel)
+    var body: some View {
+        if currentUserInfo.isUserLoggedIn() {
+            WelcomeView(viewModel: signUpViewModel, loginViewModel: loginViewModel, currentUserInfo: currentUserInfo, reciepeViewModel: reciepeViewModel)
+        }
+        else {
+            LoginView(loginViewModel: loginViewModel, signUpViewModel: signUpViewModel)
+        }
     }
-    else {
-        LoginView(loginViewModel: loginViewModel, signUpViewModel: signUpViewModel)
-    }
-  }
 }
 
 //MARK: - Previews
