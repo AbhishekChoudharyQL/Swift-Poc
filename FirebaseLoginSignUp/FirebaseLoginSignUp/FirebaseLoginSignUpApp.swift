@@ -19,9 +19,11 @@ struct FirebaseLoginSignUpApp: App {
     @StateObject var loginViewModel = LoginViewModel()
     @StateObject var currentUserInfo = CurrentUserInfo()
     
-    //MARK: - Configure Firebase
+    //MARK: - Intializer
     init() {
+        //MARK: - Configure Firebase
         FirebaseApp.configure()
+        //MARK: - Setting Up Navigation Bar appearence
         UINavigationBar.appearance().backgroundColor =
         UIColor(AppColor.bottomGradientColor)
         
