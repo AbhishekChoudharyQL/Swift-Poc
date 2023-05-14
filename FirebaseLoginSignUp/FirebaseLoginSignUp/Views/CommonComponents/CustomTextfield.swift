@@ -24,7 +24,8 @@ struct CustomTextfield: View {
                 .foregroundColor(.white)
                 .padding(.leading,-15)
                 .padding(.trailing,40)
-            TextField("",text: $inputString,prompt: Text(placeholderText).foregroundColor(.white)).foregroundColor(.white)
+            TextField("",text: $inputString,prompt: Text(placeholderText).foregroundColor(.white))
+                .foregroundColor(.white)
         }).padding()
             .frame(width: 320,height: 65)
         .background{

@@ -39,7 +39,8 @@ struct AddReciepeView: View {
                             .textFieldStyle(.roundedBorder)
                             .border(.pink)
                             .padding()
-                    TextField("Ingredients", text: $reciepeIngredient, axis: .vertical)
+                    TextField("Ingredients", text: $reciepeIngredient,
+                              axis: .vertical)
                             .background(Color.orange)
                             .foregroundColor(.pink)
                             .lineLimit(5, reservesSpace: true)
@@ -56,7 +57,6 @@ struct AddReciepeView: View {
                             dismiss()
                         })
                 }.padding(.top,20)
-           
             }
         }
         .frame(width: UIScreen.main.bounds.width,
