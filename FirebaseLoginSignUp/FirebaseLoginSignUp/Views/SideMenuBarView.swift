@@ -85,6 +85,14 @@ struct SideMenuBarView: View {
                 Color.white
             }
         }
+        .gesture(
+                     DragGesture()
+                         .onEnded { value in
+                             if value.translation.width < -100 {
+                                 isPresenting = false
+                             }
+                         }
+                 )
         .frame(width: 250)
     }
 }
