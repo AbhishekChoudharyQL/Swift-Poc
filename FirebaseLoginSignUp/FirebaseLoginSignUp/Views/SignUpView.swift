@@ -63,7 +63,8 @@ struct SignUpView: View {
                 }).padding(.bottom,20)
             }).frame(width:UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
                 .background(
-                    LinearGradient(gradient: Gradient(colors: [AppColor.topGradientColor, AppColor.bottomGradientColor]),startPoint: .top, endPoint: .bottom)
+                    LinearGradient(gradient: Gradient(colors: [AppColor.topGradientColor, AppColor.bottomGradientColor]),startPoint: .top,
+                                   endPoint: .bottom)
                 )
                 .navigationViewStyle(.stack)
         })
@@ -73,7 +74,8 @@ struct SignUpView: View {
 //MARK: - Previews
 struct SignUpView_Previews: PreviewProvider {
     static var previews: some View {
-        SignUpView(signUpViewModel: SignUpViewModel(), loginviewModel: LoginViewModel())
+        SignUpView(signUpViewModel: SignUpViewModel(),
+                   loginviewModel: LoginViewModel())
     }
 }
 

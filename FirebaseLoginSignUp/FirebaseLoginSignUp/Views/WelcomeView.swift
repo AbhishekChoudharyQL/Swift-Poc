@@ -52,11 +52,11 @@ struct WelcomeView: View {
                 CustomButton(text: "Add Your Recipe", action: {
                     showListView = true
                 })
-                CustomButton(text: "Log Out", action: loginViewModel.signOut)
             }
             .padding()
             if isSideMenuVisible {
                 SideMenuBarView(currentUserInfo: currentUserInfo,
+                                loginViewModel: loginViewModel,
                                 isPresenting: $isSideMenuVisible )
                     .offset(x: isSideMenuVisible ? -70 : 0 )
                       }

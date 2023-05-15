@@ -21,10 +21,12 @@ struct StateManager: View {
     //MARK: - View Builder
     var body: some View {
         if currentUserInfo.isUserLoggedIn() {
-            WelcomeView(viewModel: signUpViewModel, loginViewModel: loginViewModel, currentUserInfo: currentUserInfo, reciepeViewModel: reciepeViewModel)
+        WelcomeView(viewModel: signUpViewModel, loginViewModel: loginViewModel,       currentUserInfo: currentUserInfo,
+                reciepeViewModel: reciepeViewModel)
         }
         else {
-            LoginView(loginViewModel: loginViewModel, signUpViewModel: signUpViewModel)
+            LoginView(loginViewModel: loginViewModel,
+                      signUpViewModel: signUpViewModel)
         }
     }
 }

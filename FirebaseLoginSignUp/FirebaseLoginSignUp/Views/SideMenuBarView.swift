@@ -11,11 +11,29 @@ struct SideMenuBarView: View {
     
     //MARK: - Properties
     @ObservedObject var currentUserInfo: CurrentUserInfo
+    @ObservedObject var loginViewModel : LoginViewModel
     @Binding var isPresenting : Bool
+    
+    //MARK: - View Builder
     var body: some View {
         ZStack(alignment: .leading){
             HStack{
                 VStack(alignment: .leading){
+                    Button{
+                        isPresenting.toggle()
+                    } label: {
+                        Image(systemName: "xmark.circle.fill")
+                            .resizable()
+                            .scaledToFill()
+                            .frame(width: 20,height: 40)
+                            .foregroundColor(AppColor.topGradientColor)
+                            .padding()
+                        Text("Close")
+                            .foregroundColor(AppColor.topGradientColor)
+                            .font(.callout)
+                            .fontWeight(.regular)
+                    }
+                    Spacer().frame(height: 100)
                     Image(systemName: "person.crop.circle")
                         .resizable()
                         .scaledToFill()
@@ -28,10 +46,10 @@ struct SideMenuBarView: View {
                         .padding(.bottom,50)
                     //MARK: SignOut Button
                     Button{
-                        
+                        loginViewModel.signOut()
                     } label: {
                         VStack{
-                        Image(systemName: "rectangle.portrait.and.arrow.forward")
+                            Image(systemName: "rectangle.portrait.and.arrow.forward")
                                 .resizable()
                                 .scaledToFill()
                                 .frame(width: 50, height: 50)
@@ -58,7 +76,7 @@ struct SideMenuBarView: View {
                                 .fontWeight(.regular)
                         }.padding(.top)
                     }
-                }
+                }.padding()
                 Spacer()
             }
             .frame(height: UIScreen.main.bounds.height)
@@ -74,7 +92,7 @@ struct SideMenuBarView: View {
 //MARK: - Previews
 struct SideMenuBarView_Previews: PreviewProvider {
     static var previews: some View {
-        SideMenuBarView(currentUserInfo: CurrentUserInfo(),
+        SideMenuBarView(currentUserInfo: CurrentUserInfo(), loginViewModel: LoginViewModel(),
                         isPresenting: .constant(false))
     }
 }

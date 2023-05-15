@@ -42,7 +42,8 @@ struct ListView: View {
                 }
             )
             .sheet(isPresented: $showPopUp){
-                AddReciepeView(reciepeViewModel: reciepeViewModel,reciepe: Reciepe(name: "banana", ingredient: "milk"))
+            AddReciepeView(reciepeViewModel: reciepeViewModel,
+                           reciepe: Reciepe(name: "banana", ingredient: "milk"))
             }
         }
     }

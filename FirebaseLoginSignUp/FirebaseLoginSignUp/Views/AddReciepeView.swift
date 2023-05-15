@@ -24,7 +24,8 @@ struct AddReciepeView: View {
                 VStack(spacing: 0){
                 GifImage("gif")
                     .scaledToFill()
-                    .frame(width: UIScreen.main.bounds.width,height: UIScreen.main.bounds.height/4)
+                    .frame(width: UIScreen.main.bounds.width,
+                           height: UIScreen.main.bounds.height/4)
                 }
                 Text("Save Your Reciepe")
                     .foregroundColor(.white)
