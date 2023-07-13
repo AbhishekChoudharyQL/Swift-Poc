@@ -7,18 +7,22 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4699DCBF2A5FBA95007E572E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4699DCBE2A5FBA95007E572E /* Assets.xcassets */; };
+		4699DCC32A5FBB6F007E572E /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4699DCC22A5FBB6F007E572E /* Colors.swift */; };
+		4699DCC52A5FBD44007E572E /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4699DCC42A5FBD44007E572E /* HomeView.swift */; };
 		46AEB1392A5EBE4B00809634 /* SmartCryptoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46AEB1382A5EBE4B00809634 /* SmartCryptoApp.swift */; };
 		46AEB13B2A5EBE4B00809634 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46AEB13A2A5EBE4B00809634 /* ContentView.swift */; };
 		46AEB1402A5EBE4C00809634 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 46AEB13F2A5EBE4C00809634 /* Preview Assets.xcassets */; };
-		46AEB1472A5ECE2900809634 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 46AEB1462A5ECE2900809634 /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4699DCBE2A5FBA95007E572E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		4699DCC22A5FBB6F007E572E /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
+		4699DCC42A5FBD44007E572E /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		46AEB1352A5EBE4B00809634 /* SmartCrypto.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SmartCrypto.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		46AEB1382A5EBE4B00809634 /* SmartCryptoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmartCryptoApp.swift; sourceTree = "<group>"; };
 		46AEB13A2A5EBE4B00809634 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		46AEB13F2A5EBE4C00809634 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		46AEB1462A5ECE2900809634 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = ../../../../Downloads/Resources/Assets.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -32,6 +36,54 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4699DCB82A5FB8FB007E572E /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				4699DCB92A5FB905007E572E /* Home */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		4699DCB92A5FB905007E572E /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				4699DCBC2A5FB924007E572E /* Modal */,
+				4699DCBA2A5FB90A007E572E /* Views */,
+				4699DCBD2A5FB946007E572E /* ViewModal */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		4699DCBA2A5FB90A007E572E /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				4699DCC42A5FBD44007E572E /* HomeView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		4699DCBC2A5FB924007E572E /* Modal */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Modal;
+			sourceTree = "<group>";
+		};
+		4699DCBD2A5FB946007E572E /* ViewModal */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModal;
+			sourceTree = "<group>";
+		};
+		4699DCC12A5FBB51007E572E /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				4699DCC22A5FBB6F007E572E /* Colors.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		46AEB12C2A5EBE4B00809634 = {
 			isa = PBXGroup;
 			children = (
@@ -51,9 +103,11 @@
 		46AEB1372A5EBE4B00809634 /* SmartCrypto */ = {
 			isa = PBXGroup;
 			children = (
+				4699DCC12A5FBB51007E572E /* Extensions */,
+				4699DCB82A5FB8FB007E572E /* Modules */,
 				46AEB1382A5EBE4B00809634 /* SmartCryptoApp.swift */,
 				46AEB13A2A5EBE4B00809634 /* ContentView.swift */,
-				46AEB1462A5ECE2900809634 /* Assets.xcassets */,
+				4699DCBE2A5FBA95007E572E /* Assets.xcassets */,
 				46AEB13E2A5EBE4C00809634 /* Preview Content */,
 			);
 			path = SmartCrypto;
@@ -126,7 +180,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				46AEB1402A5EBE4C00809634 /* Preview Assets.xcassets in Resources */,
-				46AEB1472A5ECE2900809634 /* Assets.xcassets in Resources */,
+				4699DCBF2A5FBA95007E572E /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -138,6 +192,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				46AEB13B2A5EBE4B00809634 /* ContentView.swift in Sources */,
+				4699DCC52A5FBD44007E572E /* HomeView.swift in Sources */,
+				4699DCC32A5FBB6F007E572E /* Colors.swift in Sources */,
 				46AEB1392A5EBE4B00809634 /* SmartCryptoApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
