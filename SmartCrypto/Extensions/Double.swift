@@ -9,6 +9,29 @@ import Foundation
 
 extension Double {
     
+    ///  Converrts a double into a Currency  with 2 decimal places
+    private var currencyFormatter2 : NumberFormatter {
+        let formatter = NumberFormatter()
+        formatter.usesGroupingSeparator = true
+        formatter.numberStyle = .currency
+        formatter.locale = .current        //  <- this gives us default value  i.e USD
+        formatter.currencyCode = "INR"     //  <- change currency here
+        formatter.currencySymbol = "₹"     //  <- change currency symbol
+        formatter.minimumFractionDigits = 2
+        formatter.maximumFractionDigits = 2
+        
+        return formatter
+    }
+    
+    ///  Converts Double into currency as a string with 2 decimal places
+    /// ```
+    ///   Converts 1234.56 "₹ 1,234.56"
+    ///```
+    func asCurrencyWith2Decimals() -> String {
+        let number = NSNumber(value: self)
+        return currencyFormatter2.string(from: number) ?? "₹ 0.0"
+    }
+    
     ///  Converrts a double into a Currency  with 2-6 decimal places
     private var currencyFormatter6 : NumberFormatter {
         let formatter = NumberFormatter()

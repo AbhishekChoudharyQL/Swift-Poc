@@ -20,6 +20,9 @@ struct HomeView: View {
             VStack{
                 homeHeader
                 Spacer(minLength: 0)
+                List {
+                    CoinRowView(coin: SmartCryptoPreviews.instance.coin, showHoldingColumn: true)
+                }  .listStyle(.plain)
             }
         }
     }
