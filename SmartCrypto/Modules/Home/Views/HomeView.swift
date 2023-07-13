@@ -11,6 +11,7 @@ struct HomeView: View {
     
     //MARK: - Properties
     @State private var showPortfolio : Bool = false
+    @EnvironmentObject private var viewModel : HomeViewModel
     
     //MARK: - View Builder
     var body: some View {
@@ -20,9 +21,14 @@ struct HomeView: View {
             VStack{
                 homeHeader
                 Spacer(minLength: 0)
-                List {
-                    CoinRowView(coin: SmartCryptoPreviews.instance.coin, showHoldingColumn: true)
-                }  .listStyle(.plain)
+                if !showPortfolio {
+                  allCoinsList
+                    .transition(.move(edge: .leading))
+                }
+                if showPortfolio {
+                    portfolioCoinsList
+                        .transition(.move(edge: .trailing))
+                }
             }
         }
     }
@@ -34,7 +40,7 @@ struct HomeView_Previews: PreviewProvider {
         NavigationView(content: {
             HomeView()
                 .navigationBarHidden(true)
-        })
+        }).environmentObject(preview.homeViewModel)
     }
 }
 
@@ -63,5 +69,27 @@ extension HomeView {
                     }
                 }
         }).padding(.horizontal)
+    }
+    
+    private var allCoinsList : some View {
+        List {
+            ForEach(viewModel.allCoins, content: {
+                coins in
+                CoinRowView(coin: coins, showHoldingColumn: false)
+                    .listRowInsets(.init(top: 10, leading: 6, bottom: 10, trailing: 6))
+            })
+        }
+        .listStyle(.plain)
+    }
+    
+    private var portfolioCoinsList : some View {
+        List {
+            ForEach(viewModel.portfolioCoins, content: {
+                coins in
+                CoinRowView(coin: coins, showHoldingColumn: true)
+                    .listRowInsets(.init(top: 10, leading: 6, bottom: 10, trailing: 6))
+            })
+        }
+        .listStyle(.plain)
     }
 }
