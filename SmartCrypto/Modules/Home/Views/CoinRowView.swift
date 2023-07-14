@@ -38,7 +38,7 @@ extension CoinRowView {
     
     //MARK: - Properties
     private var leftView : some View {
-        HStack(alignment: .top,spacing: 0,content: {   // if using hstack inside hstack
+        HStack(alignment: .center,spacing: 0,content: {   // if using hstack inside hstack
             //then spacing =0 helps may be to fix other elements layout
             Text("\(coin.rank)")
                 .foregroundColor(Color.theme.secondaryTextColor)
@@ -73,7 +73,7 @@ extension CoinRowView {
                         : Color.theme.redColor
                     )
             }
-        }).frame(width: UIScreen.main.bounds.width/3)
-//            .padding(.trailing , 6)
+        }).frame(width: UIScreen.main.bounds.width/3, alignment: .trailing)
+            .padding(.trailing , 6)
     }
 }

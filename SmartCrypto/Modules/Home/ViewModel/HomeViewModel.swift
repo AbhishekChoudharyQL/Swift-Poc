@@ -6,17 +6,22 @@
 //
 
 import Foundation
+import Combine
 
 class HomeViewModel : ObservableObject {
     
+    //MARK: - Properties
     @Published var allCoins : [CoinModel] = []
     @Published var portfolioCoins : [CoinModel] = []
+    private let dataService = CoinDataService()
+    private let cancelleables = Set<AnyCancellable>()
     
     init() {
+       addSubscriber()
+    }
+    
+    //MARK: - Private Methods
+    private func addSubscriber() {
         
-        DispatchQueue.main.asyncAfter(deadline: .now() + 2){
-            self.allCoins.append(SmartCryptoPreviews.instance.coin)
-            self.portfolioCoins.append(SmartCryptoPreviews.instance.coin)
-        }
     }
 }

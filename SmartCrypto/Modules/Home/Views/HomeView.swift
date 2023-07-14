@@ -20,15 +20,16 @@ struct HomeView: View {
                 .ignoresSafeArea()
             VStack{
                 homeHeader
-                Spacer(minLength: 0)
+                columnTitles
                 if !showPortfolio {
-                  allCoinsList
-                    .transition(.move(edge: .leading))
+                    allCoinsList
+                        .transition(.move(edge: .leading))
                 }
                 if showPortfolio {
                     portfolioCoinsList
                         .transition(.move(edge: .trailing))
                 }
+                Spacer(minLength: 0)
             }
         }
     }
@@ -51,7 +52,7 @@ extension HomeView {
             CircleButtonView(iconName: showPortfolio ? "plus" : "info")
                 .animation(.none)
                 .background(
-                  CircleButtonAnimation(animate: $showPortfolio)
+                    CircleButtonAnimation(animate: $showPortfolio)
                 )
             Spacer()
             Text(showPortfolio ? "Portfolio" : "Live Prices")
@@ -91,5 +92,18 @@ extension HomeView {
             })
         }
         .listStyle(.plain)
+    }
+    
+    private var columnTitles : some View{
+        HStack(content: {
+            Text("Coin")
+                .padding(.leading , 32)
+            Spacer()
+            Text("Holdings")
+            Text("Price")
+                .frame(width: UIScreen.main.bounds.width/3 , alignment: .trailing)
+                .padding(.trailing)
+        }).font(.caption)
+            .foregroundColor(Color.theme.secondaryTextColor)
     }
 }
