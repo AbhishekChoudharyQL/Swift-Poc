@@ -10,7 +10,11 @@ import SwiftUI
 struct CoinImageView: View {
     
     //MARK: - Properties
-    @StateObject var viewModel = CoinImageDownloadViewModel()
+    @StateObject var viewModel : CoinImageDownloadViewModel
+  
+    init(coin : CoinModel){
+        _viewModel = StateObject(wrappedValue: CoinImageDownloadViewModel(coin: coin))
+    }
     
     //MARK: - View Builder
     var body: some View {
@@ -28,14 +32,13 @@ struct CoinImageView: View {
                     .foregroundColor(Color.theme.secondaryTextColor)
             }
         })
-            
-        
     }
 }
 
  //MARK: - Previews
 struct CoinImageView_Previews: PreviewProvider {
     static var previews: some View {
-        CoinImageView()
+        CoinImageView(coin: preview.coin)
+            .previewLayout(.sizeThatFits)
     }
 }
