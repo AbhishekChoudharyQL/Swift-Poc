@@ -42,7 +42,9 @@ extension CoinRowView {
             //then spacing =0 helps may be to fix other elements layout
             Text("\(coin.rank)")
                 .foregroundColor(Color.theme.secondaryTextColor)
-                .frame(minWidth: 30)
+                .padding(.leading , 2)
+                .padding(.trailing, 6)
+//                .frame(minWidth: 30)
             Circle()
                 .frame(width: 30, height: 30)
             Text("\(coin.symbol.uppercased())")
