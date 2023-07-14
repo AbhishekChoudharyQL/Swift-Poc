@@ -12,6 +12,7 @@ import SwiftUI
 
 ///  - Returns :   For providing previews throughout the app
 extension PreviewProvider {
+    
     static var preview: SmartCryptoPreviews {
         return SmartCryptoPreviews.instance
     }

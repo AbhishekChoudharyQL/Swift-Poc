@@ -28,14 +28,14 @@ class NetworkManager {
     /// - `Responsible` :  `Generic network latyer responsible for making network request using publishers`
     ///  - Parameter :  Takes `url` to perform `datatask`
     ///  - Returns :  `AnyPublisher<Data,Error>`
-
+    
     static func download(url : URL) -> AnyPublisher<Data, Error> {
         URLSession.shared.dataTaskPublisher(for: url)
             .subscribe(on: DispatchQueue.global(qos: .default))
             .tryMap({ (output) -> Data in
                 guard let response = output.response as? HTTPURLResponse , response.statusCode >= 200 &&
                         response.statusCode < 300 else {
-                    throw URLError(.badServerResponse)
+                    throw NetworkingError.badURLResponse(url: url)
                 }
                 return output.data
             })
