@@ -22,6 +22,7 @@
 		46AEB1402A5EBE4C00809634 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 46AEB13F2A5EBE4C00809634 /* Preview Assets.xcassets */; };
 		46C40D962A611C4A0028EFDA /* DebugLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46C40D952A611C4A0028EFDA /* DebugLogger.swift */; };
 		46C40D992A611C9A0028EFDA /* CoinDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46C40D982A611C9A0028EFDA /* CoinDataService.swift */; };
+		46C40D9C2A6136000028EFDA /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46C40D9B2A6136000028EFDA /* NetworkManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,6 +42,7 @@
 		46AEB13F2A5EBE4C00809634 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		46C40D952A611C4A0028EFDA /* DebugLogger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DebugLogger.swift; sourceTree = "<group>"; };
 		46C40D982A611C9A0028EFDA /* CoinDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinDataService.swift; sourceTree = "<group>"; };
+		46C40D9B2A6136000028EFDA /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -136,6 +138,7 @@
 		46AEB1372A5EBE4B00809634 /* SmartCrypto */ = {
 			isa = PBXGroup;
 			children = (
+				46C40D9A2A6135EB0028EFDA /* NetworkManager */,
 				46C40D932A611C090028EFDA /* Utilities */,
 				4699DCC12A5FBB51007E572E /* Extensions */,
 				46C40D972A611C6D0028EFDA /* Services */,
@@ -178,6 +181,14 @@
 				46C40D982A611C9A0028EFDA /* CoinDataService.swift */,
 			);
 			path = Services;
+			sourceTree = "<group>";
+		};
+		46C40D9A2A6135EB0028EFDA /* NetworkManager */ = {
+			isa = PBXGroup;
+			children = (
+				46C40D9B2A6136000028EFDA /* NetworkManager.swift */,
+			);
+			path = NetworkManager;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -260,6 +271,7 @@
 				4699DCC72A5FBF36007E572E /* CircleButtonView.swift in Sources */,
 				46C40D962A611C4A0028EFDA /* DebugLogger.swift in Sources */,
 				4699DCCA2A5FD1DE007E572E /* CircleButtonAnimation.swift in Sources */,
+				46C40D9C2A6136000028EFDA /* NetworkManager.swift in Sources */,
 				46AEB1392A5EBE4B00809634 /* SmartCryptoApp.swift in Sources */,
 				4699DCD52A6004E1007E572E /* Double.swift in Sources */,
 				4699DCCF2A5FD6E3007E572E /* CoinModel.swift in Sources */,
