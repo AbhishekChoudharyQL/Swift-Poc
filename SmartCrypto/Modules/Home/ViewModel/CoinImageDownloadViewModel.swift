@@ -22,8 +22,6 @@ class CoinImageDownloadViewModel : ObservableObject {
 
     init(coin : CoinModel){
         self.coin = coin
-
-        
         dataService = CoinImageService(coin: coin)
         self.isLoading = true
         addSubscriber()

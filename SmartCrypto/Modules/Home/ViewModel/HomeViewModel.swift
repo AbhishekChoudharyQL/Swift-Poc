@@ -11,6 +11,9 @@ import Combine
 class HomeViewModel : ObservableObject {
     
     //MARK: - Properties
+    @Published var statistics : [MarketStatisticalModel] = [MarketStatisticalModel(title: "Title1", value: "Value 1",percentageChange: 1), MarketStatisticalModel(title: "Title1", value: "Value 2"),
+       MarketStatisticalModel(title: "Title3", value: "Value3"), MarketStatisticalModel(title: "Title4", value: "Value4",percentageChange: -7)
+    ]
     @Published var allCoins : [CoinModel] = []
     @Published var portfolioCoins : [CoinModel] = []
     @Published var searchText : String = ""
