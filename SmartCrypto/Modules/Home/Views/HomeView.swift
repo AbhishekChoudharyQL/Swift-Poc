@@ -20,6 +20,7 @@ struct HomeView: View {
                 .ignoresSafeArea()
             VStack{
                 homeHeader
+                SearchBarView(searchText: $viewModel.searchText)
                 columnTitles
                 if !showPortfolio {
                     allCoinsList
@@ -76,6 +77,7 @@ extension HomeView {
         List {
             ForEach(viewModel.allCoins, content: {
                 coins in
+//                CoinImageView(coin: coins)
                 CoinRowView(coin: coins, showHoldingColumn: false)
                     .listRowInsets(.init(top: 10, leading: 6, bottom: 10, trailing: 6))
             })
@@ -99,7 +101,9 @@ extension HomeView {
             Text("Coin")
                 .padding(.leading , 32)
             Spacer()
-            Text("Holdings")
+            if showPortfolio {
+                Text("Holdings")
+            }
             Text("Price")
                 .frame(width: UIScreen.main.bounds.width/3 , alignment: .trailing)
                 .padding(.trailing)

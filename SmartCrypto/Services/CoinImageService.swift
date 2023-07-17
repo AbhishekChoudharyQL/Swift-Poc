@@ -15,6 +15,8 @@ class CoinImageService {
     @Published var coinImage : UIImage? = nil
     private var imageSubscription : AnyCancellable?
     private var coin : CoinModel
+    private let imageCache = NSCache<NSString, UIImage>()
+    
     
     init(coin : CoinModel) {
         self.coin = coin
@@ -28,6 +30,12 @@ class CoinImageService {
             debugLog(logType: .optionalUnwrapFail)
             return
         }
+        
+        if let cachedImage = imageCache.object(forKey: urlString as NSString) {
+                  coinImage = cachedImage
+                  return
+              }
+        
         imageSubscription = NetworkManager.download(url: url)
             .tryMap({ (data) -> UIImage? in
                 return UIImage(data: data)
