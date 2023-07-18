@@ -4,20 +4,51 @@
 //
 //  Created by abhishek on 17/07/23.
 //
+// URL : https://api.coingecko.com/api/v3/global
+/* JSON Response : {"data":{"active_cryptocurrencies":9962,"upcoming_icos":0,"ongoing_icos":49,"ended_icos":3376,"markets":773,"total_market_cap":{"btc":41421147.74184471,"eth":654532438.9233919,"ltc":13755936228.242119,"bch":5119685634.778285,"bnb":5137707796.304504,"eos":1659331923938.5737,"xrp":1699958267328.9724,"xlm":9859846924399.95,"link":188850883220.4766,"dot":238440516350.81134,"yfi":179110348.31389806,"usd":1247188597832.6135,"aed":4580923719839.174,"ars":330521441315134.1,"aud":1830711974289.1555,"bdt":135636107713748.8,"bhd":470127741953.00244,"bmd":1247188597832.6135,"brl":5995509971272.909,"cad":1647972653746.1238,"chf":1071825150657.1624,"clp":1022285735744361.8,"cny":8935607428031.555,"czk":26380533221355.473,"dkk":8272101846795.983,"eur":1110287199825.7258,"gbp":953545525604.5111,"hkd":9745300973573.438,"huf":414297676123193.5,"idr":1.8701251192554796e+16,"ils":4543807387167.699,"inr":102294171828397.58,"jpy":172546719694118.66,"krw":1579509092486671.8,"kwd":382127361678.53235,"lkr":402090681778349.9,"mmk":2618145775062634.5,"mxn":20937194799566.758,"myr":5662859828458.975,"ngn":968042845865720.2,"nok":12485391783652.07,"nzd":1968278123818.6912,"php":67777218407804.2,"pkr":344093948781652.8,"pln":4939940676799.876,"rub":112663830380308.89,"sar":4679451619067.985,"sek":12747124288416.043,"sgd":1648128552320.8547,"thb":43142079483137.55,"try":32821886925392.965,"twd":38684676074838.88,"uah":45819683650087.26,"vef":124880994300.97968,"vnd":2.9484370605680796e+16,"zar":22492148386120.746,"xdr":920447634595.232,"xag":50246310185.357086,"xau":636901801.2551801,"bits":41421147741844.71,"sats":4142114774184471.5},"total_volume":{"btc":1203264.7124765916,"eth":19013857.168716937,"ltc":399603428.5114894,"bch":148724441.4784455,"bnb":149247976.73010504,"eos":48202806035.33699,"xrp":49382982058.06074,"xlm":286423880586.1477,"link":5486028661.385349,"dot":6926584003.363772,"yfi":5203070.738375115,"usd":36230237726.1048,"aed":133073663167.98248,"ars":9601491236555.762,"aud":53181315281.255165,"bdt":3940164651322.612,"bhd":13656988110.85517,"bmd":36230237726.1048,"brl":174166723401.6859,"cad":47872824619.38858,"chf":31136012690.15036,"clp":29696916163592.957,"cny":259575161212.45084,"czk":766341988382.5697,"dkk":240300638511.92465,"eur":32253316991.385803,"gbp":27700045634.91977,"hkd":283096374997.8034,"huf":12035151156289.352,"idr":543262484646925.8,"ils":131995451293.25432,"inr":2971597214549.9536,"jpy":5012400437464.949,"krw":45883990609587.45,"kwd":11100618767.138979,"lkr":11680543755449.197,"mmk":76055894029947.58,"mxn":608215586820.0745,"myr":164503394395.37866,"ngn":28121185918248.09,"nok":362694714505.3842,"nzd":57177546732.68226,"php":1968896075217.6787,"pkr":9995766146465.82,"pln":143502935630.05698,"rub":3272830881316.289,"sar":135935851948.3458,"sek":370297919734.10956,"sgd":47877353399.10439,"thb":1253256964014.0024,"try":953460260936.3452,"twd":1123771507360.169,"uah":1331040096151.021,"vef":3627733703.5148764,"vnd":856506993493023.9,"zar":653386251619.1375,"xdr":26738567586.14448,"xag":1459631499.2284837,"xau":18501695.49958992,"bits":1203264712476.5916,"sats":120326471247659.16},"market_cap_percentage":{"btc":46.912599141644634,"eth":18.366717547462056,"usdt":6.703941026695394,"xrp":3.0919642403149856,"bnb":3.033196717892887,"usdc":2.186598905783021,"steth":1.1831147850482124,"ada":0.873995132636713,"sol":0.8687309932379437,"doge":0.7787386104727747},"market_cap_change_percentage_24h_usd":-1.093147014326525,"updated_at":1689596707}}
+ */
 
 import Foundation
 
-struct MarketStatisticalModel : Identifiable {
+struct MarketStatisticalModel: Codable {
+    let data: DataClass?
+}
+
+// MARK: - DataClass
+struct DataClass: Codable {
+
+    let totalMarketCap, totalVolume, marketCapPercentage: [String: Double]?
+    let marketCapChangePercentage24HUsd: Double?
     
-    let id = UUID().uuidString
-    let title : String
-    let value : String
-    let percentageChange : Double?
-    
-    init(title: String, value: String, percentageChange: Double? = nil) {
-        self.title = title
-        self.value = value
-        self.percentageChange = percentageChange
+    enum CodingKeys: String, CodingKey {
+       
+        case totalMarketCap = "total_market_cap"
+        case totalVolume = "total_volume"
+        case marketCapPercentage = "market_cap_percentage"
+        case marketCapChangePercentage24HUsd = "market_cap_change_percentage_24h_usd"
+       
     }
     
+    var marketCap : String {
+        if let item = totalMarketCap?.first(where: {$0.key == "usd"}){
+            return "\(item.value)"
+        }
+        return ""
+    }
+    
+    var volume : String {
+        if let item = totalVolume?.first(where: {$0.key == "usd"}) {
+            return "\(item.value)"
+        }
+        return ""
+    }
+    
+    var btcDominance : String {
+        if let item = marketCapPercentage?.first(where: {$0.key == "btc"}){
+            return "\(item.value)"
+        }
+        return ""
+    }
 }
+
+

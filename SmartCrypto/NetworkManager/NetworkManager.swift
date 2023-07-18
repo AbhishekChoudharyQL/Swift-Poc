@@ -7,8 +7,11 @@
 
 import Foundation
 import Combine
+import SwiftUI
 
 class NetworkManager {
+    
+   
     
     enum NetworkingError : LocalizedError {
         case badURLResponse(url : URL)
@@ -30,6 +33,7 @@ class NetworkManager {
     ///  - Returns :  `AnyPublisher<Data,Error>`
     
     static func download(url : URL) -> AnyPublisher<Data, Error> {
+
         URLSession.shared.dataTaskPublisher(for: url)
             .subscribe(on: DispatchQueue.global(qos: .default))
             .tryMap({ (output) -> Data in
@@ -37,12 +41,16 @@ class NetworkManager {
                         response.statusCode < 300 else {
                     throw NetworkingError.badURLResponse(url: url)
                 }
+                print("Downloading images here")
                 return output.data
             })
             .receive(on: DispatchQueue.main)
             .eraseToAnyPublisher()    /// will take the current `publisher` and convert it  into  `AnyPublisher<Data,Error>`
         /// here it will take current publisher
     }
+ 
+
+    
     
     static func handleCompletion(completion : Subscribers.Completion<Error>){
         switch completion {

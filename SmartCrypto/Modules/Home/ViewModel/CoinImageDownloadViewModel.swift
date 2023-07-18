@@ -40,6 +40,7 @@ class CoinImageDownloadViewModel : ObservableObject {
             }
             .store(in: &cancelleable)
     }
+    
 }
 
 

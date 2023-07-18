@@ -11,13 +11,16 @@ import Combine
 class HomeViewModel : ObservableObject {
     
     //MARK: - Properties
-    @Published var statistics : [MarketStatisticalModel] = [MarketStatisticalModel(title: "Title1", value: "Value 1",percentageChange: 1), MarketStatisticalModel(title: "Title1", value: "Value 2"),
-       MarketStatisticalModel(title: "Title3", value: "Value3"), MarketStatisticalModel(title: "Title4", value: "Value4",percentageChange: -7)
+    @Published var statistics : [StatisticalModel] = [StatisticalModel(title: "Title1", value: "Value 1",percentageChanged: 1), StatisticalModel(title: "Title1", value: "Value 2"),
+        StatisticalModel(title: "Title3", value: "Value3"),
+        StatisticalModel(title: "Title4", value: "Value4",percentageChanged: -7)
     ]
+    @Published var marketStatistics : DataClass?
     @Published var allCoins : [CoinModel] = []
     @Published var portfolioCoins : [CoinModel] = []
     @Published var searchText : String = ""
-    private let dataService = CoinDataService()
+    private let coinDataService = CoinDataService()
+    private let marketDataService = MarketDataService()
     private var cancelleables = Set<AnyCancellable>()
     
     init() {
@@ -28,7 +31,7 @@ class HomeViewModel : ObservableObject {
     private func addSubscriber() {
         $searchText
         /// here we combine `searchText` publisher with `allCoins` publisher
-            .combineLatest(dataService.$allCoins)
+            .combineLatest(coinDataService.$allCoins)
             .debounce(for: 0.5, scheduler: DispatchQueue.main)
         /// this map will take  input string  , and starting coin as parameter and perform filtering and return the filtered results
         ///   use of this map funciton is optional we could have done filtering in .sink method where we finally recieve value from publisher , but it is good parctice.
@@ -48,5 +51,8 @@ class HomeViewModel : ObservableObject {
                 self?.allCoins = receivedCoins
             }
             .store(in: &cancelleables)
+        
+//        marketDataService.$marketData
+//            .map{(dataModel) -> []}
     }
 }
