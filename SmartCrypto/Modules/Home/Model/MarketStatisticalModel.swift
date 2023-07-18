@@ -31,21 +31,21 @@ struct DataClass: Codable {
     
     var marketCap : String {
         if let item = totalMarketCap?.first(where: {$0.key == "usd"}){
-            return "\(item.value)"
+            return "₹" + item.value.formatWithAbbreviation()
         }
         return ""
     }
     
     var volume : String {
         if let item = totalVolume?.first(where: {$0.key == "usd"}) {
-            return "\(item.value)"
+            return "₹" + item.value.formatWithAbbreviation()
         }
         return ""
     }
     
     var btcDominance : String {
         if let item = marketCapPercentage?.first(where: {$0.key == "btc"}){
-            return "\(item.value)"
+            return item.value.asPercentageString()
         }
         return ""
     }

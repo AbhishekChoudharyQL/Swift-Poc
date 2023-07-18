@@ -15,7 +15,7 @@ class CoinImageService {
     @Published var coinImage: UIImage? = nil
     private var imageSubscription: AnyCancellable?
     private var coin: CoinModel
-
+    
     init(coin: CoinModel) {
         self.coin = coin
         downloadCoinImage(urlString: coin.image)
@@ -33,8 +33,8 @@ class CoinImageService {
             coinImage = cachedImage
             return
         }
-
-
+        
+        
         imageSubscription = NetworkManager.download(url: url)
             .tryMap({ (data) -> UIImage? in
                 return UIImage(data: data)

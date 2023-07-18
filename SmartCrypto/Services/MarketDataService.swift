@@ -24,7 +24,7 @@ class MarketDataService {
     //MARK: - Private Methods
     private func getMarketData() {
         
-        guard let url = URL(string: "https://api.coingecko.com/api/v3/global") else {
+        guard let url = URL(string: SmartCryptoUrl.shared.marketDataUrl) else {
             debugLog(logType: .optionalUnwrapFail)
             return
         }

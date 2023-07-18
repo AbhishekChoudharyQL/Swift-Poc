@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		461D0B222A666E3B009CDC6A /* CacheManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 461D0B212A666E3B009CDC6A /* CacheManager.swift */; };
+		461D0B242A6674BD009CDC6A /* SmartCryptoURLs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 461D0B232A6674BD009CDC6A /* SmartCryptoURLs.swift */; };
 		4699DCBF2A5FBA95007E572E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4699DCBE2A5FBA95007E572E /* Assets.xcassets */; };
 		4699DCC32A5FBB6F007E572E /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4699DCC22A5FBB6F007E572E /* Colors.swift */; };
 		4699DCC52A5FBD44007E572E /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4699DCC42A5FBD44007E572E /* HomeView.swift */; };
@@ -38,6 +39,7 @@
 
 /* Begin PBXFileReference section */
 		461D0B212A666E3B009CDC6A /* CacheManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheManager.swift; sourceTree = "<group>"; };
+		461D0B232A6674BD009CDC6A /* SmartCryptoURLs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmartCryptoURLs.swift; sourceTree = "<group>"; };
 		4699DCBE2A5FBA95007E572E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4699DCC22A5FBB6F007E572E /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		4699DCC42A5FBD44007E572E /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
@@ -228,6 +230,7 @@
 			isa = PBXGroup;
 			children = (
 				46C40D9B2A6136000028EFDA /* NetworkManager.swift */,
+				461D0B232A6674BD009CDC6A /* SmartCryptoURLs.swift */,
 			);
 			path = NetworkManager;
 			sourceTree = "<group>";
@@ -310,6 +313,7 @@
 				4699DCD32A5FE37F007E572E /* PreviewExtensions.swift in Sources */,
 				4699DCC52A5FBD44007E572E /* HomeView.swift in Sources */,
 				46BF17122A65596500BB3B72 /* MarketStatisticalModel.swift in Sources */,
+				461D0B242A6674BD009CDC6A /* SmartCryptoURLs.swift in Sources */,
 				46C40D992A611C9A0028EFDA /* CoinDataService.swift in Sources */,
 				46C40DA02A614F4F0028EFDA /* CoinImageDownloadViewModel.swift in Sources */,
 				46C40DA22A615B5B0028EFDA /* CoinImageService.swift in Sources */,

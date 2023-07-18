@@ -11,8 +11,6 @@ import SwiftUI
 
 class NetworkManager {
     
-   
-    
     enum NetworkingError : LocalizedError {
         case badURLResponse(url : URL)
         case unknown
@@ -27,11 +25,9 @@ class NetworkManager {
         }
     }
     
-    
     /// - `Responsible` :  `Generic network latyer responsible for making network request using publishers`
     ///  - Parameter :  Takes `url` to perform `datatask`
     ///  - Returns :  `AnyPublisher<Data,Error>`
-    
     static func download(url : URL) -> AnyPublisher<Data, Error> {
 
         URLSession.shared.dataTaskPublisher(for: url)
@@ -49,9 +45,6 @@ class NetworkManager {
         /// here it will take current publisher
     }
  
-
-    
-    
     static func handleCompletion(completion : Subscribers.Completion<Error>){
         switch completion {
         case .finished:

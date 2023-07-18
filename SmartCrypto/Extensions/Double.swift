@@ -46,7 +46,7 @@ extension Double {
         return formatter
     }
     
-    ///  Converts Double into currency as a string with 2-6 decimal places 
+    ///  Converts Double into currency as a string with 2-6 decimal places
     /// ```
     ///   Converts 1234.56 "₹ 1,234.56"
     ///```
@@ -67,5 +67,26 @@ extension Double {
     func asPercentageString() -> String {
         return asNumberString() + "%"
     }
-
+    
+    /// Converts `1234`to `1.23k`
+    func formatWithAbbreviation() -> String{
+        
+        let trillion = self / 1_000_000_000_000
+        let billion = self / 1_000_000_000
+        let million = self / 1_000_000
+        let thousand = self / 1000
+        
+        if trillion >= 1.0 {
+            return  (trillion*10 / 10).asNumberString() + "Tr"
+        }
+        else if billion >= 1.0 {
+            return   (billion * 10 / 10).asNumberString() + "B"
+        } else if million >= 1.0 {
+            return  (million*10 / 10).asNumberString() + "M"
+        } else if thousand >= 1.0 {
+            return (thousand*10 / 10).asNumberString() + "K"
+        } else {
+            return "\(self)"
+        }
+    }
 }

@@ -9,7 +9,7 @@ import Foundation
 import SwiftUI
 
 
-/// - Responsible for :
+/// - `Responsible for` :
 ///  1)  `Saving` images to cache memory
 ///  2)  `Retreiving` cache images to display
 ///  3) `Delete` or remove cache images

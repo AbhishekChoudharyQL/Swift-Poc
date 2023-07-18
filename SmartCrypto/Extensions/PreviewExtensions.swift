@@ -24,8 +24,8 @@ class SmartCryptoPreviews {
     static let instance = SmartCryptoPreviews()
     private init() { }
     
-//    let stat1 = MarketStatisticalModel(title: "Market Cap", value: "₹984bn",percentageChange: 25.34)
-//    let stat2 = MarketStatisticalModel(title: "Total Volume", value: "₹1.23Tr")
+    let stat1 = StatisticalModel(title: "Market Cap", value: "₹984bn",percentageChanged: 25.34)
+    let stat2 = StatisticalModel(title: "Total Volume", value: "₹1.23Tr")
     let homeViewModel = HomeViewModel()
     let coin = CoinModel(
        id: "bitcoin",
