@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		461D0B222A666E3B009CDC6A /* CacheManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 461D0B212A666E3B009CDC6A /* CacheManager.swift */; };
 		461D0B242A6674BD009CDC6A /* SmartCryptoURLs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 461D0B232A6674BD009CDC6A /* SmartCryptoURLs.swift */; };
+		461D0B292A66A912009CDC6A /* PortfolioView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 461D0B282A66A912009CDC6A /* PortfolioView.swift */; };
+		461D0B2B2A66BE59009CDC6A /* XmarkButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 461D0B2A2A66BE59009CDC6A /* XmarkButton.swift */; };
 		4699DCBF2A5FBA95007E572E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4699DCBE2A5FBA95007E572E /* Assets.xcassets */; };
 		4699DCC32A5FBB6F007E572E /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4699DCC22A5FBB6F007E572E /* Colors.swift */; };
 		4699DCC52A5FBD44007E572E /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4699DCC42A5FBD44007E572E /* HomeView.swift */; };
@@ -40,6 +42,8 @@
 /* Begin PBXFileReference section */
 		461D0B212A666E3B009CDC6A /* CacheManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheManager.swift; sourceTree = "<group>"; };
 		461D0B232A6674BD009CDC6A /* SmartCryptoURLs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmartCryptoURLs.swift; sourceTree = "<group>"; };
+		461D0B282A66A912009CDC6A /* PortfolioView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortfolioView.swift; sourceTree = "<group>"; };
+		461D0B2A2A66BE59009CDC6A /* XmarkButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XmarkButton.swift; sourceTree = "<group>"; };
 		4699DCBE2A5FBA95007E572E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4699DCC22A5FBB6F007E572E /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		4699DCC42A5FBD44007E572E /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
@@ -88,9 +92,35 @@
 			path = CacheManager;
 			sourceTree = "<group>";
 		};
+		461D0B252A66A8DC009CDC6A /* Portfolio */ = {
+			isa = PBXGroup;
+			children = (
+				461D0B262A66A8F2009CDC6A /* View */,
+				461D0B272A66A8FA009CDC6A /* Components */,
+			);
+			path = Portfolio;
+			sourceTree = "<group>";
+		};
+		461D0B262A66A8F2009CDC6A /* View */ = {
+			isa = PBXGroup;
+			children = (
+				461D0B282A66A912009CDC6A /* PortfolioView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		461D0B272A66A8FA009CDC6A /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				461D0B2A2A66BE59009CDC6A /* XmarkButton.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
 		4699DCB82A5FB8FB007E572E /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				461D0B252A66A8DC009CDC6A /* Portfolio */,
 				4699DCB92A5FB905007E572E /* Home */,
 			);
 			path = Modules;
@@ -312,6 +342,7 @@
 				46AEB13B2A5EBE4B00809634 /* ContentView.swift in Sources */,
 				4699DCD32A5FE37F007E572E /* PreviewExtensions.swift in Sources */,
 				4699DCC52A5FBD44007E572E /* HomeView.swift in Sources */,
+				461D0B292A66A912009CDC6A /* PortfolioView.swift in Sources */,
 				46BF17122A65596500BB3B72 /* MarketStatisticalModel.swift in Sources */,
 				461D0B242A6674BD009CDC6A /* SmartCryptoURLs.swift in Sources */,
 				46C40D992A611C9A0028EFDA /* CoinDataService.swift in Sources */,
@@ -327,6 +358,7 @@
 				4699DCCA2A5FD1DE007E572E /* CircleButtonAnimation.swift in Sources */,
 				46C40D9C2A6136000028EFDA /* NetworkManager.swift in Sources */,
 				46C40D9E2A614E670028EFDA /* CoinImageView.swift in Sources */,
+				461D0B2B2A66BE59009CDC6A /* XmarkButton.swift in Sources */,
 				46AEB1392A5EBE4B00809634 /* SmartCryptoApp.swift in Sources */,
 				4699DCD52A6004E1007E572E /* Double.swift in Sources */,
 				46BF17142A65607800BB3B72 /* MarketDetailView.swift in Sources */,
