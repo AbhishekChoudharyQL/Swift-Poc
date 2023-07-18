@@ -18,14 +18,25 @@ struct PortfolioView: View {
         NavigationView(content: {
             ScrollView{
                 VStack(alignment: .leading,spacing: 0, content: {
-                    
+                    SearchBarView(searchText: $viewModel.searchText)
+                    ScrollView(.horizontal,showsIndicators: false) {
+                        LazyHStack(spacing: 20) {
+                            ForEach(viewModel.allCoins){
+                                coins in
+                                CoinLogoView(coin: coins)
+                                    .frame(width: 75)
+                                /// if frame is not given then bigger image will take more space and smaller
+                                ///  will take less and uneven space occurs
+                            }
+                            
+                        }
+                    }
                 })
             }
             .navigationTitle("Edit Portfolio")
             .toolbar {
                 ToolbarItem(placement: .navigationBarLeading) {
                     XmarkButton(presentationMode: _presentationMode)
-                        
                 }
             }
         })
@@ -36,6 +47,7 @@ struct PortfolioView: View {
 struct PortfolioView_Previews: PreviewProvider {
     static var previews: some View {
         PortfolioView()
+            .environmentObject(preview.homeViewModel)
     }
 }
 

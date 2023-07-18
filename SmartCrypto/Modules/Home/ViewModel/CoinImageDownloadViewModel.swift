@@ -36,7 +36,6 @@ class CoinImageDownloadViewModel : ObservableObject {
             }
     receiveValue: { [weak self] recievedImage in
                 self?.coinImage = recievedImage
-
             }
             .store(in: &cancelleable)
     }
