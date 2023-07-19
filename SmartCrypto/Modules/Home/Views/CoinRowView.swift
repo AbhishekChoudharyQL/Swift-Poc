@@ -65,7 +65,7 @@ extension CoinRowView {
     
     private var rightView : some View {
         VStack(alignment: .trailing, content: {
-            Text(coin.currentPrice.asCurrencyWith6Decimals())
+            Text(coin.updateCurrentPriceToINR.asCurrencyWith6Decimals())
                 .bold()
                 .foregroundColor(Color.theme.accentColor)
             coin.priceChangePercentage24H.map { changePercentage in
